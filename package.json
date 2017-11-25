@@ -1,0 +1,10 @@
+{
+  "name": "TvT_Rattenfalle.Tanoa",
+  "version": "0.3.5",
+  "dependencies": {
+    "grad-factions": "^1.1.1",
+    "grad-gpstracker": "0.0.4",
+    "grad-leaveNotes": "^1.0.0",
+    "grad-makeFire": "^1.0.0"
+  }
+}
