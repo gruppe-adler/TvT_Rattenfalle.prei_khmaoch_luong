@@ -36,14 +36,6 @@ createCrashSite=  {
 
 	null = [{[CRASH_SITE] execVM "helpers\createMarkerForSides.sqf";}, "BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
 
-
-	{
-		_x setVehicleLock "UNLOCKED";
-	}forEach [
-	rebel_hq1,
-	rebel_hq2,
-	rebel_hq3
-	];
 };
 
 
@@ -56,8 +48,7 @@ createRebelsSpawn = {
 		trg_base_opfor_1,
 		trg_base_opfor_2,
 		trg_base_opfor_3,
-		trg_base_opfor_4,
-		trg_base_opfor_5
+		trg_base_opfor_4
 	];
 
 	_opforSpawnSelect = selectRandom _opforSpawnPositions;

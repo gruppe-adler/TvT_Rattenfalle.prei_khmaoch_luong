@@ -16,8 +16,8 @@ if (hasInterface) then {
 	0 fadesound 0;
 };
 
-["BLU_F", "UsMPT"] call GRAD_Loadout_fnc_FactionSetLoadout;
-["OPF_F", "Taliban"] call GRAD_Loadout_fnc_FactionSetLoadout;
+["BLU_F", "US_Rattrap"] call GRAD_Loadout_fnc_FactionSetLoadout;
+["OPF_F", "Rebels_Rattrap"] call GRAD_Loadout_fnc_FactionSetLoadout;
 ["IND_F", "UsDownedPilot"] call GRAD_Loadout_fnc_FactionSetLoadout;
 
 disableRemoteSensors true;
@@ -41,10 +41,11 @@ call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf
 call compile preprocessfile "helpers\setLoadoutRandomization.sqf";
 
 
-
+/*
 [] execVM "Engima\Traffic\Init.sqf";
 [] execVM "Engima\Civilians\Init.sqf";
 [] execVM "grad_civs\init.sqf";
+*/
 
 /*
 [] execVM "grad_sandstorm\init.sqf";
