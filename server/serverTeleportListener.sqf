@@ -45,10 +45,7 @@ createRebelsSpawn = {
 
 	// those must exist
 	_opforSpawnPositions = [
-		trg_base_opfor_1,
-		trg_base_opfor_2,
-		trg_base_opfor_3,
-		trg_base_opfor_4
+		trg_base_opfor_1
 	];
 
 	_opforSpawnSelect = selectRandom _opforSpawnPositions;

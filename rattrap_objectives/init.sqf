@@ -6,9 +6,7 @@ _trigger_rescued = selectRandom [
 ];
 
 _trigger_captured_list = [
-	trg_pilots_captured_1,
-	trg_pilots_captured_2,
-	trg_pilots_captured_3
+	trg_pilots_captured_1
 ];
 
 // take 1 trigger, delete rest of stuff

@@ -271,7 +271,7 @@ class GRAD_DeathCamDisplay
 				x = safeZoneX + (safeZoneX + safeZoneW)/5;
 				y = safeZoneY + (safeZoneY + safeZoneH)/20;
 				w = safeZoneX + safeZoneW;
-				h = safeZoneH/10;
+				h = safeZoneH/9;
 				colorBackground[] = {0,0,0,0};
 			};
 			class RscText_DeathCam_quote : RscStructuredText {

@@ -5,6 +5,9 @@ private ["_marker", "_clientLoop"];
 _marker = call GRAD_pilotTracking_fnc_createPilotMarker;
 
 
+[_unit] remoteExec ["grad_pilotTracking_fnc_dropBlood", -2];
+
+
 _unit addMPEventHandler ["MPHit", {
     _unit = _this select 0;
     _source = _this select 3;    
@@ -75,18 +78,8 @@ _clientLoop = [{
         };
     };
 
-    // BLOOD TRAIL
-    
-	GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;
-	if (random 1 > 0.95) then {
-		[selectRandom [
-			"blooddrop_1", 
-			"blooddrop_2",
-			"blooddrop_3",
-			"blooddrop_4"
-		], getPos _unit] call ace_medical_blood_fnc_createBlood;
-	};
-    
+
+    GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;
 
 	
 
