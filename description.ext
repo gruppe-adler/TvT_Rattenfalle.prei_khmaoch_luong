@@ -24,6 +24,7 @@ class cfgFunctions {
     #include "grad_pilotTracking\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-gpsTracker\cfgFunctions.hpp"
+    
 };
 
 class rscTitles {  

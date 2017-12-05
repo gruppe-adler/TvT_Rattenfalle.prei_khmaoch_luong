@@ -37,9 +37,7 @@ jipTime = 60000;
 "mrk_antiair3" setMarkerAlphaLocal 1;
 
 
-
-If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
-call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
+call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 
 [] spawn {
 	#define MAKEFIRE_TREERADIUS 40                                                //distance player-->trees in order to be able to start fire (this is not exact)

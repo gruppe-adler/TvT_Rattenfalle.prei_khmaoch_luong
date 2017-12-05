@@ -34,7 +34,8 @@ createCrashSite=  {
 	_smoke = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 	_smoke2 = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 
-	null = [{[CRASH_SITE] execVM "helpers\createMarkerForSides.sqf";}, "BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
+	null = [{[CRASH_SITE] execVM "helpers\createMarkerForSides.sqf";}, 
+	"BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
 
 };
 
