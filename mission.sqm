@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1200;
+		nextID=1201;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5979.7134,5.7098312,1606.4297};
-		dir[]={-0.71874672,-0.38024113,0.58221805};
-		up[]={-0.29549113,0.92486846,0.23936225};
-		aside[]={0.62949502,6.146729e-008,0.77710354};
+		pos[]={3127.5027,15.369788,8277.6104};
+		dir[]={0.098720729,-0.19976056,0.97487134};
+		up[]={0.020127384,0.97984225,0.19875647};
+		aside[]={0.99492574,1.6734703e-009,-0.10075122};
 	};
 };
 binarizationWanted=0;
@@ -593,7 +593,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6382.6182,8.5665569,2027.916};
-			angle=3.8537829;
+			angle=3.8537819;
 			class Attributes
 			{
 				name="trg_base_blufor_1";

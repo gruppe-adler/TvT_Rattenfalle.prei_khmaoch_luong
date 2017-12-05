@@ -13,7 +13,7 @@ _bloodTrailMoving = ["BloodTrail_01_New_F", "BloodTrail_01_Old_F"];
 
    	private _randomPosAroundPlayer = [[[getPosASL _unit, 1]],[]] call BIS_fnc_randomPos;
    	private _speed = speed _unit;
-   	private _type = _bloodTrailStatic;
+   	private _type = _bloodTrailMoving;
 
     private _nearObjects = _unit nearEntities 2; // 5m must be enough
     private _placeOccupied = false;
@@ -24,11 +24,11 @@ _bloodTrailMoving = ["BloodTrail_01_New_F", "BloodTrail_01_Old_F"];
         };
     } forEach _nearObjects;
 
-   	if (_speed > 1) then {
-   		_type = selectRandom _bloodTrailMoving;
+   	if (_speed < 2) then {
+   		_type = selectRandom _bloodTrailStatic;
    	};
 
-    private _isBleeding = _unit getVariable ["ace_medical_isBleeding", false]; || _unit getVariable ["GRAD_pilotTracking_isBleeding", false];
+    private _isBleeding = (_unit getVariable ["ace_medical_isBleeding", false] || _unit getVariable ["GRAD_pilotTracking_isBleeding", false]);
 
 	  if (isNull objectParent _unit && _isBleeding && !_placeOccupied) then {
    		[

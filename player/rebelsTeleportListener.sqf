@@ -36,13 +36,13 @@ _REBEL_SPAWN_listener = {
 if (!isMultiplayer) then {
 	_REBEL_SPAWN_listener spawn {
 		waitUntil {REBEL_SPAWN select 0 != 0};
-		[0, REBEL_SPAWN] call _this;
+		[0, REBEL_SPAWN] spawn _this;
 	};
 };
 
 if (isMultiplayer) then {
 	_REBEL_SPAWN_listener spawn {
 		waitUntil {REBEL_SPAWN select 0 != 0};
-		[0, REBEL_SPAWN] call _this;
+		[0, REBEL_SPAWN] spawn _this;
 	};
 };

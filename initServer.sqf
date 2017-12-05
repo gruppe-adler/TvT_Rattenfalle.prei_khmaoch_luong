@@ -1,5 +1,4 @@
-/*[] execVM "server\civPointedAtListener.sqf";*/ // todo remove after successful implementation of grad civ
-/* [] execVM "server\civQuestioning.sqf"; */
+/*
 [] execVM "rattrap_objectives\init.sqf";
 
 // description.ext parameters
@@ -22,3 +21,4 @@ setDate [2015, 2, 1, _timeOfDay, 1]; // set to 5:00 for perfect full moon
 [] call setCustomWeather;
 
 [] call grad_simpleWaveRespawn_fnc_serverLoop;
+*/

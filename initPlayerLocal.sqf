@@ -1,3 +1,4 @@
+ /*
  ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
 if (isMultiplayer) then {
@@ -32,3 +33,4 @@ player addEventhandler ["HandleRating", {
 0 = execVM "player\animations\addWavingInteraction.sqf";
 0 = execVM "player\addObjectiveListener.sqf";
 [] execVM "rattrap_objectives\init.sqf";
+*/

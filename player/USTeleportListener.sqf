@@ -36,13 +36,13 @@ _US_SPAWN_listener = {
 if (!isMultiplayer) then {
 	_US_SPAWN_listener spawn {
 		waitUntil {US_SPAWN select 0 != 0};
-		[0, US_SPAWN] call _this;
+		[0, US_SPAWN] spawn _this;
 	};
 };
 
 if (isMultiplayer) then {
 	_US_SPAWN_listener spawn {
 		waitUntil {US_SPAWN select 0 != 0};
-		[0, US_SPAWN] call _this;
+		[0, US_SPAWN] spawn _this;
 	};
 };

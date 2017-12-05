@@ -37,13 +37,13 @@ _CRASH_SITE_listener = {
 if (!isMultiplayer) then {
 	_CRASH_SITE_listener spawn {
 		waitUntil {CRASH_SITE select 0 != 0};
-		[0, CRASH_SITE] call _this;
+		[0, CRASH_SITE] spawn _this;
 	};
 };
 
 if (isMultiplayer) then {
 	_CRASH_SITE_listener spawn {
 		waitUntil {CRASH_SITE select 0 != 0};
-		[0, CRASH_SITE] call _this;
+		[0, CRASH_SITE] spawn _this;
 	};
 };

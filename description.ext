@@ -2,8 +2,6 @@
 #include "rscTitles\_dialogs.hpp"
 #include "node_modules\GRAD_leaveNotes\UI\leaveNotes_dialog.hpp"
 
-#include "gcam\gcam_component.hpp"
-
 OnLoadMission = "TvT_Rattrap";
 author = "Nomisum für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "Wettrennen um verschollene Piloten."; //appears in overview and loading screen
@@ -22,7 +20,6 @@ respawnDialog = 0;
 class cfgFunctions {
     #include "rattrap_objectives\cfgFunctions.hpp"
     #include "grad_simpleWaveRespawn\cfgFunctions.hpp"
-    #include "grad_civs\cfgFunctions.hpp"
     #include "grad_fx\cfgFunctions.hpp"
     #include "grad_pilotTracking\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"

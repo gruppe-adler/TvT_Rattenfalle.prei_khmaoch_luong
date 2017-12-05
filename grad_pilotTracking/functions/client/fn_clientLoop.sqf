@@ -4,8 +4,9 @@ private ["_marker", "_clientLoop"];
 
 _marker = call GRAD_pilotTracking_fnc_createPilotMarker;
 
+_unit setVariable ["GRAD_pilotTracking_isHunter", true]; // only for debug
 
-[_unit] remoteExec ["grad_pilotTracking_fnc_dropBlood", -2];
+[_unit] remoteExec ["grad_pilotTracking_fnc_dropBlood", [0,-2] select isDedicated];
 
 _unit addEventhandler ["killed", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];

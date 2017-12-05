@@ -37,26 +37,9 @@ jipTime = 60000;
 "mrk_antiair3" setMarkerAlphaLocal 1;
 
 
-call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
-call compile preprocessfile "helpers\setLoadoutRandomization.sqf";
-
-
-/*
-[] execVM "Engima\Traffic\Init.sqf";
-[] execVM "Engima\Civilians\Init.sqf";
-[] execVM "grad_civs\init.sqf";
-*/
-
-/*
-[] execVM "grad_sandstorm\init.sqf";
-[] execVM "grad_rotorwash\init.sqf";
-*/
 
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
-call compile preprocessfile "helpers\spf_createRelPos.sqf";
-[]execVM "helpers\findSpawnPos.sqf";
-[]execVM "helpers\addActionMP.sqf";
 
 [] spawn {
 	#define MAKEFIRE_TREERADIUS 40                                                //distance player-->trees in order to be able to start fire (this is not exact)
@@ -151,9 +134,10 @@ if (isServer) then {
 	CHANCE_TO_REVEAL_OPFOR = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
 	publicVariable "CHANCE_TO_REVEAL_OPFOR";
 
-
+	/*
 	[] execVM "server\serverTeleportListener.sqf";
 	[] execVM "server\selectSpawnPosition.sqf";
+	*/
 	[] execVM "grad_pilotTracking\initPilotTracking.sqf";
 
 	[] spawn {
