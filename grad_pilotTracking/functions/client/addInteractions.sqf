@@ -1,4 +1,4 @@
-_readBlood = ["readBlood", "Read Blood", "", {
+_readBlood = ["readBlood", "Sniff on Blood", "", {
 	[_player, _target] call GRAD_pilotTracking_fnc_readBlood;
 },
 {_player getVariable ["GRAD_pilotTracking_isHunter", false]}] call ace_interact_menu_fnc_createAction;

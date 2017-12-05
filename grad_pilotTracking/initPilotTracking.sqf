@@ -8,6 +8,7 @@ if (hasInterface) then {
 	sleep 5;
 
 	[player] call grad_pilotTracking_fnc_clientLoop;
+	player setVariable ["GRAD_pilotTracking_isBleeding", true];
 };
 
 
@@ -15,14 +16,14 @@ if (isServer) then {
 
 	GRAD_pilotTracking_trackingRange = 2000;
 	publicVariable "GRAD_pilotTracking_trackingRange";
-	
+
 	// for local test purposes
 	/*
 	if (!isMultiplayer) then {
 		{
 			if (side player != independent && _x getVariable ["GRAD_pilotTracking_isPilot", false]) then {
 				[_x] call grad_pilotTracking_fnc_clientLoop;
-				
+
 			};
 		} forEach allUnits;
 	};
