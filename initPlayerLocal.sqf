@@ -1,3 +1,5 @@
+execVM "grad_pilotTracking\initPilotTrackingClient.sqf";
+
  /*
  ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 

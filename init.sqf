@@ -105,7 +105,6 @@ if (isServer) then {
 	[] execVM "server\serverTeleportListener.sqf";
 	[] execVM "server\selectSpawnPosition.sqf";
 	*/
-	[] execVM "grad_pilotTracking\initPilotTracking.sqf";
 
 	[] spawn {
 		waitUntil {(REBEL_SPAWN select 0 != 0) && (US_SPAWN select 0 != 0)}; // wait until everything is neatly set up
@@ -229,9 +228,7 @@ if (hasInterface) then {
 
 		player setVariable ["player GRAD_pilotTracking_isPilot", true];
 		
-		[] execVM "grad_pilotTracking\initPilotTracking.sqf";
 		[] execVM "player\pilotTeleportListener.sqf";
-		[] execVM "player\addSignalPistolEH.sqf";
 		[] spawn checkJIP;
 		
 	};

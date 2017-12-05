@@ -18,13 +18,20 @@ _bloodTrailMoving = ["BloodTrail_01_New_F", "BloodTrail_01_Old_F"];
     private _nearObjects = _unit nearEntities 2; // 5m must be enough
     private _placeOccupied = false;
 
+    // TODO DOESNT WORK
     {
-        if (_bloodTrailMoving find _x > -1 || _bloodTrailStatic find _x > -1) exitWith {
+        if (  
+              _bloodTrailMoving find typeOf _x > -1 || 
+              (_bloodTrailStatic select 0) find typeOf _x > -1 || 
+              (_bloodTrailStatic select 1) find typeOf _x > -1 || 
+              (_bloodTrailStatic select 2) find typeOf _x > -1
+            ) exitWith {
             _placeOccupied = true;
+            hint "place occupied";
         };
     } forEach _nearObjects;
 
-   	if (_speed < 2) then {
+   	if (_speed < 1) then {
    		_type = selectRandom _bloodTrailStatic;
    	};
 
@@ -35,7 +42,7 @@ _bloodTrailMoving = ["BloodTrail_01_New_F", "BloodTrail_01_Old_F"];
         _type, getPosASL _unit,
         getDir _unit,
         _randomPosAroundPlayer,
-        selectRandom [true, false],
+        selectRandom [true, false, false, false, false],
         floor (random 360)
       ] remoteExec ["GRAD_pilotTracking_fnc_createBloodSplatter", [0,-2] select isDedicated, true]; // check performance for JIP
 	  };

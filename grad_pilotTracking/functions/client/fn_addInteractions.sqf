@@ -21,6 +21,7 @@ _readBlood = ["ACE_MainActions", "Sniff on Blood", "", {
 ["BloodSplatter_01_Small_New_F", 0, ["ACE_MainActions"], _readBlood] call ace_interact_menu_fnc_addActionToClass;
 ["BloodSplatter_01_Medium_New_F", 0, ["ACE_MainActions"], _readBlood] call ace_interact_menu_fnc_addActionToClass;
 
+
 ["BloodTrail_01_Old_F", 0, ["ACE_MainActions"], _readBlood] call ace_interact_menu_fnc_addActionToClass;
 ["BloodSpray_01_Old_F", 0, ["ACE_MainActions"], _readBlood] call ace_interact_menu_fnc_addActionToClass;
 ["BloodSplatter_01_Small_Old_F", 0, ["ACE_MainActions"], _readBlood] call ace_interact_menu_fnc_addActionToClass;
@@ -29,4 +30,4 @@ _readBlood = ["ACE_MainActions", "Sniff on Blood", "", {
 
 diag_log format ["adding interactions %1"];
 
-["Sign_Sphere10cm_F", 0, ["ACE_MainActions"], _readBlood] call ace_interact_menu_fnc_addActionToClass;
+// ["Sign_Sphere10cm_F", 0, ["ACE_MainActions"], _readBlood] call ace_interact_menu_fnc_addActionToClass;

@@ -1,3 +1,5 @@
+execVM "grad_pilotTracking\initPilotTrackingServer.sqf";
+
 /*
 [] execVM "rattrap_objectives\init.sqf";
 
