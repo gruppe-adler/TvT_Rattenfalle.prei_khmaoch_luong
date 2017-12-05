@@ -2,10 +2,10 @@
   "name": "TvT_Rattenfalle.prei_khmaoch_luong",
   "version": "0.3.5",
   "dependencies": {
-    "grad-factions": "^1.1.1",
-    "grad-gpstracker": "0.0.4",
-    "grad-leaveNotes": "^1.0.0",
-    "grad-makeFire": "^1.0.0",
+    "grad-factions": "^1.5.0",
+    "grad-gpstracker": "^0.2.0",
+    "grad-leaveNotes": "^2.2.0",
+    "grad-makeFire": "^2.0.0",
     "shk_pos": "github:gruppe-adler/shk_pos#master"
   }
 }
