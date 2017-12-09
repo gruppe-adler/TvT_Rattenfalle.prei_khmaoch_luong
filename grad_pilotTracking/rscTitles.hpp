@@ -1,3 +1,23 @@
+class pilotTracking_RscPicture
+{
+    access = 0;
+    idc = -1;
+    type = CT_STATIC;
+    style = ST_PICTURE;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1,1,1,1};
+    font = "PuristaLight";
+    sizeEx = 0;
+    lineSpacing = 0;
+    text = "";
+    fixedWidth = 0;
+    shadow = 0;
+    x = 0;
+    y = 0;
+    w = 0.2;
+    h = 0.15;
+};
+
 class gui_pilot_gps_0
 	{
 		idd = -1;
@@ -6,7 +26,7 @@ class gui_pilot_gps_0
 		onLoad = "uiNamespace setVariable ['gui_pilot_gps_0', (_this select 0)];";
 
 	 	class controls {
-			class gui_pilot_gps_0_pic: RscPicture
+			class gui_pilot_gps_0_pic: pilotTracking_RscPicture
 			{
 				idc = 2396;
 				x = safeZoneX + (safeZoneW/2) - 0.025;
@@ -25,7 +45,7 @@ class gui_pilot_gps_1
 		name = "gui_pilot_gps_1";
 
 	 	class controls {
-			class gui_pilot_gps_1_pic: RscPicture
+			class gui_pilot_gps_1_pic: pilotTracking_RscPicture
 			{
 				idc = -1;
 				x = safeZoneX + safeZoneW - 0.2;
@@ -44,7 +64,7 @@ class gui_pilot_gps_2
 		name = "gui_pilot_gps_2";
 
 	 	class controls {
-			class gui_pilot_gps_2_pic: RscPicture
+			class gui_pilot_gps_2_pic: pilotTracking_RscPicture
 			{
 				idc = -1;
 				x = safeZoneX + safeZoneW - 0.2;
@@ -57,7 +77,7 @@ class gui_pilot_gps_2
 	};
 
 
-class RscProgress
+class pilotTracking_RscProgress
 	{
 		type = 8;
 		style = 0;
@@ -77,7 +97,7 @@ class GRAD_rattrap_bloodLevelBar
 
 	class Controls
 	{
-		class Progress: RscProgress 
+		class Progress: pilotTracking_RscProgress 
 		{
 			idc = 2399;
 			x = 0;

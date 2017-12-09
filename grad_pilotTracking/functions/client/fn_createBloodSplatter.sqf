@@ -1,5 +1,7 @@
 params ["_type", "_posASL", "_dir", "_bandagePosASL", "_bandageBool", "_bandageDir"];
 
+// local, but on every client
+
 private _blood = objNull;
 
 _posASL set [2,0];

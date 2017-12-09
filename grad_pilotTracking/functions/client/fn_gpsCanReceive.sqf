@@ -1,6 +1,10 @@
-params ["_unit", "_gpsStatus"];
+params ["_unit"];
 
-private ["_cooldown", "_skyBlocked"];
+private ["_cooldown", "_skyBlocked", "_gpsStatus"];
+
+if (isPlayer _unit) then {
+	_gpsStatus = uiNamespace getVariable ['gui_pilot_gps_0',controlNull] displayCtrl 2396;
+};
 
 _skyBlocked = false;
 _onFoot = (vehicle _unit == _unit);
@@ -19,9 +23,11 @@ if ((count lineIntersectsSurfaces [
 
 	_skyBlocked = true;
 	
-	disableSerialization;
-	_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_0.paa");
-	_gpsStatus ctrlCommit 0;
+	if (isPlayer _unit) then {
+		disableSerialization;
+		_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_0.paa");
+		_gpsStatus ctrlCommit 0;
+	};
 		
 	/* hintSilent "GPS lost connection.";*/
 
@@ -42,23 +48,29 @@ if ((count lineIntersectsSurfaces [
 		_skyBlocked = true;
 		_unit setVariable ["GRAD_pilotTracking_gpsCooldown", _cooldown];
 
-		_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_1.paa");
-		_gpsStatus ctrlCommit 0;
+		if (isPlayer _unit) then {
+			_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_1.paa");
+			_gpsStatus ctrlCommit 0;
+		};
 		
 		// hintSilent "GPS is recalibrating...";
 	} else {
 		_skyBlocked = false;
 
 		if (_onFoot) then {
-			_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_2.paa");
-			_gpsStatus ctrlCommit 0;
+			if (isPlayer _unit) then {
+				_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_2.paa");
+				_gpsStatus ctrlCommit 0;
+			};
 			
 			/*hintSilent "GPS sending position.";
 			diag_log format ["GPS sending position."];*/
 			["GRAD_pilotTracking_trackingRange", 2000] call CBA_fnc_publicVariable;
 		} else {
-			_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_2.paa");
-			_gpsStatus ctrlCommit 0;
+			if (isPlayer _unit) then {
+				_gpsStatus ctrlSetText ("grad_pilotTracking\data\gpsicon_2.paa");
+				_gpsStatus ctrlCommit 0;
+			};
 			
 			/*hintSilent "GPS sending position from car.";
 			diag_log format ["GPS sending position from car."];*/
