@@ -3,7 +3,6 @@ class GRAD_pilotTracking {
 	class client {
 		file = grad_pilotTracking\functions\client;
 
-		class addBodyBagHandling;
 		class addAction;
 		class addInteractions;
 		class clientLoop;
@@ -20,6 +19,7 @@ class GRAD_pilotTracking {
 	class server {
 		file = grad_pilotTracking\functions\server;
 
+		class addBodyBagHandling;
 		class addTimeStamp;
 		class createFootStepDry;
 		class createFootStepWet;

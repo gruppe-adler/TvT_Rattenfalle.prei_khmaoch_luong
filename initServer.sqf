@@ -1,4 +1,5 @@
-execVM "grad_pilotTracking\initPilotTrackingServer.sqf";
+call grad_pilotTracking_fnc_initServer;
+
 
 /*
 [] execVM "rattrap_objectives\init.sqf";

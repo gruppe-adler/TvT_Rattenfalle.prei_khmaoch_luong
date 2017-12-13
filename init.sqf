@@ -32,9 +32,12 @@ jipTime = 60000;
 {_x setMarkerAlphaLocal 0;} forEach allMapMarkers;
 
 "mrk_antiair" setMarkerAlphaLocal 1;
-"mrk_antiair_1" setMarkerAlphaLocal 1;
-"mrk_antiair2" setMarkerAlphaLocal 1;
-"mrk_antiair3" setMarkerAlphaLocal 1;
+"mrk_endpoint_opfor" setMarkerAlphaLocal 1;
+"mrk_endpoint_blufor" setMarkerAlphaLocal 1;
+"mrk_base_rebels" setMarkerAlphaLocal 1;
+"mrk_base_rebels_text" setMarkerAlphaLocal 1;
+"mrk_base_US" setMarkerAlphaLocal 1;
+"mrk_base_US_text" setMarkerAlphaLocal 1;
 
 
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";

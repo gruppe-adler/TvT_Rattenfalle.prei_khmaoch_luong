@@ -3,6 +3,8 @@ by nomisum for tvt rattrap @ gruppe adler
 
 should only be called from SERVER!
 
+NOT USED CURRENTLY
+
 */
 
 if (!isServer) exitWith {}; // just to make sure!

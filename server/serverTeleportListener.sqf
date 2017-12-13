@@ -124,7 +124,6 @@ _CRASH_SITE_listener = {
 	// ["..."] call EFUNC(common,displayTextStructured);
 
 
-	// 0 = [_pos,6000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
 	[] spawn {
 		{
 			if ((!isPlayer _x) && side _x == independent) then {
