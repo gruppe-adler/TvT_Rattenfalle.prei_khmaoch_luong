@@ -3,26 +3,70 @@
         diag_log format ["placedInBodyBag eh %1", _this];
         params ["_deadGuy", "_bodyBag"];
 
-        private _dir = getDir _deadGuy;
-        private _position = position _bodyBag;
-        deleteVehicle _bodyBag;
-        _bodyBag = createVehicle ["Land_Bodybag_01_black_F", _position, [], 0, "CAN_COLLIDE"];
-        _bodyBag setDir _dir;
-
-        [_bodyBag, 1] call ace_cargo_fnc_setSize;
-        [_bodyBag, true, [0, 1.6, 0.26], 0] call ace_dragging_fnc_setDraggable;
-
-        /* private _name = [_deadGuy] call ace_common_fnc_getName; */
+        private _dir = getDir _bodyBag;
+        private _position = getPos _bodyBag;
         private _isPilot = _deadGuy getVariable ["GRAD_pilotTracking_isPilot", false];
         private _marker = _deadGuy getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
-        if (_isPilot) then {
-        	[_bodyBag, _marker] call GRAD_pilotTracking_fnc_serverLoopPilotDead;
-            missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_bodyBag];
-        	missionNamespace setVariable ["GRAD_pilotTracking_bodyBag", _bodyBag, true];
-        	[_bodyBag, true] call grad_gpsTracker_fnc_setTarget;
-        	diag_log format ["putting %1 into bodybag %2, its the pilot.", _deadGuy, _bodyBag];
-        } else {
-        	diag_log format ["putting %1 into bodybag %2, its NOT the pilot.", _deadGuy, _bodyBag];
-    	};
+        deleteVehicle _bodyBag;
+
+        [{
+            params ["_position", "_dir", "_isPilot", "_bodyBag", "_marker"];
+
+            _bodyBag = createVehicle ["Land_Bodybag_01_black_F", _position, [], 0, "NONE"];
+            _bodyBag setDir _dir;
+
+            [_bodyBag, 1] call ace_cargo_fnc_setSize;
+            [_bodyBag, true, [0, 1.6, 0.26], 0] call ace_dragging_fnc_setDraggable;
+
+
+
+            /* private _name = [_deadGuy] call ace_common_fnc_getName; */
+            
+
+            if (_isPilot) then {
+            	[_bodyBag, _marker] call GRAD_pilotTracking_fnc_serverLoopPilotDead;
+                missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_bodyBag];
+            	missionNamespace setVariable ["GRAD_pilotTracking_bodyBag", _bodyBag, true];
+            	[_bodyBag, true] call grad_gpsTracker_fnc_setTarget;
+            	diag_log format ["putting someone into bodybag %1, its the pilot.", _bodyBag];
+            } else {
+            	diag_log format ["putting someone into bodybag %1, its NOT the pilot.", _bodyBag];
+        	};
+
+        }, [_position, _dir, _isPilot, _bodyBag, _marker], 0.5] call CBA_fnc_waitAndExecute;
+
+}] call CBA_fnc_addEventHandler;
+
+
+["ace_cargoLoaded", {
+    params ["_item","_vehicle"];
+
+
+    private _bodybag = missionNamespace getVariable ["GRAD_pilotTracking_bodyBag", objNull];
+    diag_log format ["removed %1 cargo from %2", _item, _vehicle, _bodybag];
+
+    if (!isNull _bodybag && _bodybag isEqualTo _item) then {
+
+        diag_log format ["put %1 inside cargo of %2", _item, _vehicle];
+        _item setVariable ["GRAD_pilotTracking_isCargoOf", _vehicle, true];
+        missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", _vehicle, true];
+    
+    };
+
+}] call CBA_fnc_addEventHandler;
+
+["ace_cargoUnloaded", {
+    params ["_item","_vehicle"];
+
+    private _bodybag = missionNamespace getVariable ["GRAD_pilotTracking_bodyBag", objNull];
+    diag_log format ["removed %1 cargo from %2", _item, _vehicle, _bodybag];
+
+    if (!isNull _bodybag && _bodybag isEqualTo _item) then {
+
+        diag_log format ["put %1 inside cargo of %2", _item, _vehicle];
+        _item setVariable ["GRAD_pilotTracking_isCargoOf", objNull, true];
+        missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", objNull, true];
+    };
+
 }] call CBA_fnc_addEventHandler;

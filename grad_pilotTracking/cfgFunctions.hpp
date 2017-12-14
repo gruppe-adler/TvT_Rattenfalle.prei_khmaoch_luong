@@ -8,6 +8,7 @@ class GRAD_pilotTracking {
 		class clientLoop;
 		class createBloodSplatter;
 		class createPilotMarker;
+		class disableCollision;
 		class gpsCanReceive;
 		class initClient;
 		class initPilot;
