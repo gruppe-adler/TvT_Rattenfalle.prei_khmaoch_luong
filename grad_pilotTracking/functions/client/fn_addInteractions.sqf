@@ -29,3 +29,10 @@ _closeGPSTracker = ["ACE_SelfActions", "Close GPS Tracker", "",
  {!(player getVariable ["GRAD_pilotTracking_isPilot",false]) && GRAD_GPS_TRACKER_OPEN}] call ace_interact_menu_fnc_createAction;
 
 [typeOf player, 1, ["ACE_SelfActions"], _closeGPSTracker] call ace_interact_menu_fnc_addActionToClass;
+
+
+_pushBoat = ["PushBoatAction", "Push Boat", "",
+{ [_target, _player] call ace_interaction_fnc_push; },
+{true}] call ace_interact_menu_fnc_createAction;
+
+["I_C_Boat_Transport_02_F", 0, ["ACE_MainActions"], _pushBoat] call ace_interact_menu_fnc_addActionToClass;
