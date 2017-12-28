@@ -7,4 +7,19 @@ GRAD_pilotTracking_penaltyBrokenLegDelay = 299; // seconds
 // sleep 5;
 
 [_pilot] call grad_pilotTracking_fnc_clientLoop;
-_pilot setVariable ["GRAD_pilotTracking_isBleeding", true];
+_pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
+
+_pilot addEventHandler ["GetInMan", {
+	params ["_unit", "_position", "_vehicle", "_turret"];
+	if (_vehicle getVariable ["GRAD_rattrap_isMedicalVehicle",false] &&
+		(_unit getVariable ["GRAD_pilotTracking_isBleeding",false])) then {
+        	[_unit] call GRAD_pilotTracking_fnc_pilotStartHealing;
+	};
+}];
+
+_pilot addEventHandler ["GetOutMan", {
+	params ["_unit", "_position", "_vehicle", "_turret"];
+	if (_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false]) then {
+		_unit setVariable ["GRAD_rattrap_pilotHealingStarted", false, true];
+	};
+}];

@@ -8,7 +8,12 @@ private _pilot = objNull;
 } forEach allUnits;
 
 [] remoteExec ["GRAD_pilotTracking_fnc_initClient", [0,-2] select isDedicated];
-[_pilot] remoteExec ["GRAD_pilotTracking_fnc_initPilot", _pilot];
+
+if (isMultiplayer) then {
+	[_pilot] remoteExec ["GRAD_pilotTracking_fnc_initPilot", _pilot];
+} else {
+	[_pilot] call GRAD_pilotTracking_fnc_initPilot;
+};
 
 [_pilot] call GRAD_pilotTracking_fnc_dropBlood;
 [_pilot] call GRAD_pilotTracking_fnc_serverLoopPilotAlive;

@@ -7,12 +7,13 @@ class GRAD_pilotTracking {
 		class addInteractions;
 		class clientLoop;
 		class createBloodSplatter;
-		class createPilotMarker;
 		class disableCollision;
+		class getCardinalBearing;
 		class gpsCanReceive;
 		class initClient;
 		class initPilot;
 		class openGPS;
+		class pilotStartHealing;
 		class readTrace;
 		class setBloodBar;
 	};
@@ -24,6 +25,7 @@ class GRAD_pilotTracking {
 		class addTimeStamp;
 		class createFootStepDry;
 		class createFootStepWet;
+		class createPilotMarker;
 		class dropBlood;
 		class initServer;
 		class serverLoopPilotAlive;

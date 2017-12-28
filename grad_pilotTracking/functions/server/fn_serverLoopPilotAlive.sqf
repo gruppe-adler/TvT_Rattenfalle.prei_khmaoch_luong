@@ -20,12 +20,8 @@ _unit addEventhandler ["killed", {
             _unit action ["Eject", vehicle _unit];
         };
 
-
-
-    
-
-         // move body to nearest land position
-         if (surfaceIsWater _position) then {
+        // move body to nearest land position
+        if (surfaceIsWater _position) then {
             _unit setPos ([
               position _unit,
               0,
@@ -37,7 +33,7 @@ _unit addEventhandler ["killed", {
               [],
               []
             ] call BIS_fnc_findSafePos);
-         } else {
+        } else {
             _unit setpos _position;
        };
     };
@@ -87,8 +83,14 @@ GRAD_pilotTracking_progress = 0;
     if (!alive _unit) then {
         [_handle] call CBA_fnc_removePerFrameHandler;
         _marker setMarkerPos _currentPosition;
+        _marker setMarkerAlpha 1;
         diag_log format ["server: pilot died at %1", _currentPosition];
         _unit setVariable ["grad_pilotTracking_markerObj", _marker, true];
+    };
+
+    // HEALING
+    if ((_unit getVariable ["GRAD_pilotTracking_isBleeding",false]) && !_notInVehicle) then {
+        // todo ? or getinman
     };
 
     // BROKEN LEG
@@ -98,7 +100,7 @@ GRAD_pilotTracking_progress = 0;
     };
 
     // MISSION END
-    if (GRAD_pilotTracking_progress > GRAD_pilotTracking_missionTime) then {
+    if (GRAD_pilotTracking_progress > GRAD_pilotTracking_missionTime && !(_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false])) then {
     	[_handle] call CBA_fnc_removePerFrameHandler;
 
     	_unit setHit ["head", 1];

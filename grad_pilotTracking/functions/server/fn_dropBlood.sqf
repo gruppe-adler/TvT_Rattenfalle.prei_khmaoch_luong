@@ -75,4 +75,4 @@ _bloodTrailMoving = [
    		[_handle] call CBA_fnc_removePerFrameHandler;
    	};
 
-},2,[_unit, _bloodTrailStatic, _bloodTrailMoving]] call CBA_fnc_addPerFrameHandler;
+},1,[_unit, _bloodTrailStatic, _bloodTrailMoving]] call CBA_fnc_addPerFrameHandler;

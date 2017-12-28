@@ -11,11 +11,15 @@ _gpsStatus = uiNamespace getVariable ['gui_pilot_gps_0',controlNull] displayCtrl
     params ["_args", "_handle"];
     _args params ["_bar", "_unit", "_gpsStatus"];
 
-    GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;
+    if (!(_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false])) then {
+	    GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;
+	    _var = GRAD_pilotTracking_progress/GRAD_pilotTracking_missionTime;
+	    [_bar, _var] call GRAD_pilotTracking_fnc_setBloodBar;
+	};
 
-    _var = GRAD_pilotTracking_progress/GRAD_pilotTracking_missionTime;
-    [_bar, _var] call GRAD_pilotTracking_fnc_setBloodBar;
-
-    // _unit setVariable ["ace_advanced_fatigue_muscleDamage",_var];
+	if (!(_unit getVariable ["GRAD_pilotTracking_isBleeding", false])) then {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		"GRAD_rattrap_bloodLevelBar" cutRsc ["Default", "PLAIN"];
+	};
 
 },1,[_bar, _unit, _gpsStatus]] call CBA_fnc_addPerFrameHandler;

@@ -38,6 +38,7 @@ jipTime = 60000;
 "mrk_base_rebels_text" setMarkerAlphaLocal 1;
 "mrk_base_US" setMarkerAlphaLocal 1;
 "mrk_base_US_text" setMarkerAlphaLocal 1;
+"mrk_noFlyZone" setMarkerAlphaLocal 1;
 
 
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";

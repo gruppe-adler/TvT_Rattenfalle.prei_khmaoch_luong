@@ -25,6 +25,7 @@ _blood setDir (selectRandom [_dir, _dir-180]);
 _blood setVectorUp (surfaceNormal _posASL);
 
 _blood setVariable ["GRAD_pilotTracking_bloodDropTimestamp", CBA_missionTime];
+_blood setVariable ["GRAD_pilotTracking_bloodDropDirection", _dir];
 
 if (_bandageBool) then {
 	private _bandage = "MedicalGarbage_01_Bandage_F" createVehicleLocal _bandagePosASL;
