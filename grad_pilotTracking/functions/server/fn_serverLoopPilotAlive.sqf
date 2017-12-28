@@ -9,6 +9,9 @@ _unit setVariable ["GRAD_pilotTracking_isHunter", true]; // only for debug
 
 _unit addEventhandler ["killed", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
+
+    ["The pilot was killed, check your map."] remoteExec ["hint", 0];
+
     if (!(isNull objectParent _unit)) then {
         // push out of vehicle
         _pX = floor random -5; 

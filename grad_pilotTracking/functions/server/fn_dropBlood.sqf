@@ -41,7 +41,7 @@ _bloodTrailMoving = [
 
     private _isBleeding = (_unit getVariable ["ace_medical_isBleeding", false] || _unit getVariable ["GRAD_pilotTracking_isBleeding", false]);
 
-    diag_log format ["%1, %2", _nearObjects, _placeOccupied];
+    // diag_log format ["%1, %2", _nearObjects, _placeOccupied];
 
     // WET AND DRY FOOTSTEPS
       private _wetness = _unit getVariable ["GRAD_pilotTracking_wetFeet", 0];

@@ -22,6 +22,7 @@ class cfgFunctions {
     #include "grad_simpleWaveRespawn\cfgFunctions.hpp"
     #include "grad_fx\cfgFunctions.hpp"
     #include "grad_pilotTracking\cfgFunctions.hpp"
+    #include "grad_pilotCam\cfgFunctions.hpp"
     #include "mission_helpers\cfgFunctions.hpp"
 
     #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"

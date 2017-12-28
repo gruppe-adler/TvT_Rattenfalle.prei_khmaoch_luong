@@ -19,7 +19,7 @@ params ["_bodybag", "_marker"];
 
     if (!isNull _cargoVehicle) then {
 
-        	diag_log format ["is inside cargo of %1", _cargoVehicle];
+        	// diag_log format ["is inside cargo of %1", _cargoVehicle];
 
         	if (!alive _cargoVehicle) then {
 
