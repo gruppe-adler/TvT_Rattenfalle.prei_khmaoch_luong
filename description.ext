@@ -93,3 +93,22 @@ class CfgSounds {
   sounds[] = {};
   #include "node_modules\grad-leaveNotes\cfgSounds.hpp"
 };
+
+class CfgDebriefing
+{  
+  class OpforWinsByFilming
+  {
+    title = "Opfor wins";
+    subtitle = "by filming the pilot";
+    description = "Blufor could not rescue their guy.";
+    picture = "pic\gruppe-adler.paa";
+  };
+
+  class BluforWinsByFilming
+  {
+    title = "Blufor wins";
+    subtitle = "by filming the pilot";
+    description = "Opfor could not get their hands on the pilot.";
+    picture = "pic\gruppe-adler.paa";
+  };
+};

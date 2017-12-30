@@ -56,6 +56,6 @@ params ["_bodybag", "_marker"];
 
         _marker setMarkerPos (getPos _cargoVehicle);
       } else {
-        _marker setMarkerPos (getPos _bodybag);
+        // _marker setMarkerPos (getPos _bodybag);
   };
 },1,[_bodybag, _marker]] call CBA_fnc_addPerFrameHandler;

@@ -23,9 +23,9 @@
 class UsDownedPilot {
     class AllUnits {
         uniform = "rhs_uniform_g3_rgr";
-        vest = "V_PlateCarrier1_rgr_noflag_F";
+        vest = "V_Rangemaster_belt";
         backpack = "";
-        headgear = "rhsusf_hgu56p";
+        headgear = "H_HeadBandage_bloody_F";
         primaryWeapon = "";
         primaryWeaponMagazine = "";
         primaryWeaponMuzzle = SUPPRESSORITEM;
@@ -39,7 +39,8 @@ class UsDownedPilot {
         watch = "ItemWatch";
         gps = "";
         radio = "tf_rf7800str";
-        nvgoggles = NVITEM;
+        nvgoggles = "";
+        goggles = "NeckTight_OD";
     };
     class Type {
         //everyone inherits from soldier_f
@@ -53,7 +54,6 @@ class UsDownedPilot {
                 "ACE_SpraypaintRed"
             };
             addItemsToVest[] = {
-                LIST_3("rhsusf_mag_15Rnd_9x19_JHP"),
                 LIST_2("rhs_mag_m18_yellow"),
                 LIST_2("ACE_HandFlare_Yellow")
             };

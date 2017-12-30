@@ -24,5 +24,22 @@
             <Spanish> </Spanish>
             <Italian> </Italian>
         </Key>
+        <Key ID="str_rattrap_task_blufor_filmpilot_description">
+            <English>The Pilot must be found, brought to the camera on the southern island and filmed for 7 minutes. Dead or alive.</English>
+            <German>Der Pilot muss gefunden werden, zur Kamera auf der südlichen Insel gebracht und für 7 Minuten gefilmt werden. Tot oder lebendig.</German>
+        </Key>
+        <Key ID="str_rattrap_task_blufor_filmpilot_title">
+            <English>Find and film the pilot.</English>
+            <German>Pilot finden und filmen.</German>
+        </Key>
+        <Key ID="str_rattrap_task_opfor_filmpilot_description">
+             <English>The Pilot must be found, brought to the camera in the northern village and filmed for 7 minutes. Dead or alive.</English>
+            <German>Der Pilot muss gefunden werden, zur Kamera im nördlichen Dorf gebracht und für 7 Minuten gefilmt werden. Tot oder lebendig.</German>
+        </Key>
+        <Key ID="str_rattrap_task_opfor_filmpilot_title">
+            <English>str_rattrap_task_opfor_filmpilot_title</English>
+            <German>str_rattrap_task_opfor_filmpilot_title</German>
+        </Key>
     </Package>
 </Project>
+

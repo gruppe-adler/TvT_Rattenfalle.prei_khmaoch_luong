@@ -1,14 +1,14 @@
 class US_Rattrap: SOGBLACK {
     class AllUnits:AllUnits {
         uniform = "rhs_uniform_g3_blk";
-        vest = "V_PlateCarrier2_blk";
-        backpack = "";
+        vest = "";
+        backpack = "B_ViperLightHarness_blk_F";
         headgear = "rhsusf_opscore_bk_pelt";
-        primaryWeapon = "rhs_weap_mk18_KAC";
-        primaryWeaponMagazine = "rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer";
+        primaryWeapon = "rhs_weap_hk416d10";
+        primaryWeaponMagazine = "30Rnd_556x45_Stanag_Tracer_Red";
         primaryWeaponMuzzle = SUPPRESSORITEM;
-        primaryWeaponPointer = LLITEM;
-        primaryWeaponOptics = "rhsusf_acc_ACOG_RMR";
+        primaryWeaponPointer = "grad_flashlight_1";
+        primaryWeaponOptics = "rhsusf_acc_compm4";
 		primaryWeaponUnderbarrel = "rhsusf_acc_grip3";
         handgunWeapon = "rhsusf_weap_glock17g4";
 		handgunWeaponMuzzle = "rhsusf_acc_omega9k";
@@ -19,7 +19,8 @@ class US_Rattrap: SOGBLACK {
         watch = "ACE_Altimeter";
         gps = "ItemGPS";
         radio = "tf_anprc152";
-        nvgoggles = NVITEM;
+        nvgoggles = "ACE_NVG_Gen4";
+        goggles = "";
     };
     class Type: Type {
         //Rifleman
@@ -29,24 +30,25 @@ class US_Rattrap: SOGBLACK {
                 "ACE_DefusalKit",
                 LIST_2("ACE_CableTie"),
                 LIST_10("ACE_fieldDressing"),
-                LIST_6("ACE_quikclot"),
                 LIST_4("ACE_morphine"),
 				LIST_1("ACE_key_lockpick"),
                 "ACE_epinephrine",
                 "ACE_Flashlight_MX991",
-                LIST_2("ACE_bodyBag")
+                LIST_1("ACE_bodyBag"),
+                LIST_2("ACE_Chemlight_HiRed"),
+                "ACE_acc_pointer_green"
             };
-            addItemsToVest[] = {
+            addItemsToBackpack[] = {
                 LIST_2("HandGrenade"),
                 LIST_2("SmokeShell"),
                 LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
-                LIST_10("rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer")
+                LIST_10("30Rnd_556x45_Stanag_Tracer_Red"),
+                "ACE_IR_Strobe_Item"
             };
         };
         //Asst. Autorifleman
         class soldier_AAR_F: Soldier_F {
-			vest = "V_PlateCarrier1_blk";
-            backpack = "ga_kitbag_black";
+           
             addItemsToBackpack[] = {
                 LIST_2("rhs_200rnd_556x45_M_SAW"),
                 "rhsusf_100Rnd_556x45_soft_pouch"
@@ -54,8 +56,7 @@ class US_Rattrap: SOGBLACK {
         };
         //Asst. Gunner (HMG/GMG)
         class support_AMG_F: Soldier_F {
-			vest = "V_PlateCarrier1_blk";
-            backpack = "ga_kitbag_black";
+           
             addItemsToBackpack[] = {
                 LIST_4("rhsusf_100Rnd_762x51_m62_tracer"),
                 "rhsusf_100Rnd_762x51"
@@ -63,7 +64,6 @@ class US_Rattrap: SOGBLACK {
         };
         //Asst. Missile Specialist (AA)
         class soldier_AAA_F: Soldier_F {
-			vest = "V_PlateCarrier1_blk";
             backpack = "B_ViperHarness_blk_F";
             addItemsToBackpack[] = {
                 "rhs_fim92_mag"
@@ -71,7 +71,6 @@ class US_Rattrap: SOGBLACK {
         };
         //Asst. Missile Specialist (AT)
         class soldier_AAT_F: Soldier_F {
-			vest = "V_PlateCarrier1_blk";
             backpack = "B_ViperHarness_blk_F";
             addItemsToBackpack[] = {
                 "rhs_fgm148_magazine_AT"
@@ -84,7 +83,7 @@ class US_Rattrap: SOGBLACK {
             primaryWeaponPointer = LLITEM_MG;
             handgunWeapon = "";
             handgunWeaponMagazine = "";
-            addItemsToVest[] = {
+            addItemsBackpack[] = {
                 LIST_2("HandGrenade"),
                 LIST_2("SmokeShell"),
 				LIST_2("rhs_200rnd_556x45_M_SAW"),
@@ -93,33 +92,22 @@ class US_Rattrap: SOGBLACK {
         };
         //Combat Life Saver
         class medic_F: Soldier_F {
-			vest = "V_TacVestIR_blk";
-            backpack = "ga_kitbag_lite_black_medic";
-            addItemsToUniform[] = {
-                "ACE_MapTools",
-                "ACE_Flashlight_MX991"
-            };
-            addItemsToVest[] = {
-                LIST_2("HandGrenade"),
-                LIST_2("SmokeShellPurple"),
-                LIST_8("SmokeShell"),
-                LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
-                LIST_7("rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer")
-            };
             
             addItemsToBackpack[] = {
-                LIST_5("ACE_bloodIV"),
-                LIST_15("ACE_epinephrine"),
-                LIST_20("ACE_morphine"),
-                LIST_20("ACE_fieldDressing"),
-                LIST_20("ACE_fieldDressing"),
-                LIST_6("rhs_mag_rdg2_white")
+                LIST_1("HandGrenade"),
+                LIST_2("SmokeShellPurple"),
+                LIST_2("SmokeShell"),
+                LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
+                LIST_6("30Rnd_556x45_Stanag_Tracer_Red"),
+                LIST_2("ACE_bloodIV"),
+                LIST_10("ACE_epinephrine"),
+                LIST_10("ACE_morphine"),
+                LIST_10("ACE_fieldDressing")
             };
         };
         //Explosive Specialist
         class soldier_exp_F: Soldier_F {
-			vest = "V_PlateCarrier1_blk";
-            backpack = "ga_kitbag_black";
+           
             addItemsToBackpack[] = {
                 "ACE_Clacker",
                 "ACE_M26_Clacker",
@@ -130,11 +118,11 @@ class US_Rattrap: SOGBLACK {
         //Grenadier
         class Soldier_GL_F: Soldier_F {
             primaryWeapon = "rhs_weap_mk18_m320";
-            addItemsToVest[] = {
+            addItemsBackpack[] = {
                 LIST_2("HandGrenade"),
                 LIST_2("SmokeShell"),
                 LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
-                LIST_8("rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer"),
+                LIST_8("30Rnd_556x45_Stanag_Tracer_Red"),
                 LIST_6("rhs_mag_M441_HE"),
                 LIST_2("rhs_mag_m713_Red")
             };
@@ -145,12 +133,8 @@ class US_Rattrap: SOGBLACK {
             primaryWeaponMagazine = "rhsusf_100Rnd_762x51";
             handgunWeapon = "";
             handgunWeaponMagazine = "";
-            backpack = "ga_kitbag_black";
-            addItemsToBackpack[] = {
-                LIST_2("rhsusf_100Rnd_762x51_m62_tracer"),
-                "rhsusf_100Rnd_762x51"
-            };
-            addItemsToVest[] = {
+           
+            addItemsBackpack[] = {
                 LIST_2("HandGrenade"),
                 LIST_2("SmokeShell"),
 				LIST_2("rhsusf_100Rnd_762x51_m62_tracer"),
@@ -165,7 +149,7 @@ class US_Rattrap: SOGBLACK {
             primaryWeaponPointer = LLITEM;
             primaryWeaponOptics = "optic_DMS";
             primaryWeaponUnderbarrel = "bipod_01_F_blk";
-            addItemsToVest[] = {
+            addItemsBackpack[] = {
                 LIST_2("HandGrenade"),
                 LIST_2("SmokeShell"),
                 LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
@@ -176,7 +160,6 @@ class US_Rattrap: SOGBLACK {
         class soldier_AA_F: Soldier_F {
             secondaryWeapon = "rhs_weap_fim92";
             secondaryWeaponMagazine = "rhs_fim92_mag";
-			vest = "V_PlateCarrier1_blk";
             backpack = "B_ViperHarness_blk_F";
             addItemsToBackpack[] = {
                 "rhs_fim92_mag"
@@ -186,7 +169,6 @@ class US_Rattrap: SOGBLACK {
         class soldier_AT_F: Soldier_F {
             secondaryWeapon = "rhs_weap_fgm148";
             secondaryWeaponMagazine = "rhs_fgm148_magazine_AT";
-			vest = "V_PlateCarrier1_blk";
             backpack = "B_ViperHarness_blk_F";
             addItemsToBackpack[] = {
                 "rhs_fgm148_magazine_AT"
@@ -194,8 +176,7 @@ class US_Rattrap: SOGBLACK {
         };
         //Repair Specialist
         class soldier_repair_F: Soldier_F {
-			vest = "V_PlateCarrier1_blk";
-            backpack = "ga_kitbag_black";
+           
             addItemsToBackpack[] = {
                 "ToolKit",
                 "ACE_wirecutter"
@@ -207,7 +188,6 @@ class US_Rattrap: SOGBLACK {
         };
         //Squad Leader
         class Soldier_SL_F: Soldier_F {
-			vest = "V_PlateCarrier1_blk";
             backpack = "tf_rt1523g_black";
             addItemsToBackpack[] = {
                 LIST_2("SmokeShellBlue"),
@@ -218,14 +198,15 @@ class US_Rattrap: SOGBLACK {
                 LIST_2("SmokeShell")
             };
         };
+
         //Team Leader
         class Soldier_TL_F: Soldier_F {
             primaryWeapon = "rhs_weap_mk18_m320";
-            addItemsToVest[] = {
+            addItemsBackpack[] = {
                 LIST_2("HandGrenade"),
                 LIST_2("SmokeShell"),
                 LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
-                LIST_8("rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer"),
+                LIST_8("30Rnd_556x45_Stanag_Tracer_Red"),
                 LIST_2("1Rnd_SmokeRed_Grenade_shell"),
                 LIST_2("1Rnd_Smoke_Grenade_shell"),
                 LIST_2("1Rnd_SmokeBlue_Grenade_shell"),

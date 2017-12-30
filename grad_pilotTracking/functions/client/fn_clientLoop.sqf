@@ -12,7 +12,6 @@ _gpsStatus = uiNamespace getVariable ['gui_pilot_gps_0',controlNull] displayCtrl
     _args params ["_bar", "_unit", "_gpsStatus"];
 
     if (!(_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false])) then {
-	    GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;
 	    _var = GRAD_pilotTracking_progress/GRAD_pilotTracking_missionTime;
 	    [_bar, _var] call GRAD_pilotTracking_fnc_setBloodBar;
 	};

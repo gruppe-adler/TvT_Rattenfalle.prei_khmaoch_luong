@@ -57,6 +57,8 @@ _targetObject setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
       _winner = _area getVariable ["GRAD_pilotCam_winningSide", civilian];
       diag_log format ["server: successfully recorded pilot inside %1, winner is %2", _area, _winner];
       [format ["winner is %1", _winner]] remoteExec ["hint", 0];
+
+      [_winner] call rattrap_objectives_fnc_endGame;
     } else {
       diag_log format ["server: aborting filming, no pilot inside %1", _area];
       GRAD_pilotCam_RECORDING_DONE = 0;

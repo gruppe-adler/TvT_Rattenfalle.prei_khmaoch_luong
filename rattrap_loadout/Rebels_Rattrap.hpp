@@ -17,7 +17,7 @@ class Rebels_Rattrap: ModerateRebels {
         watch = "ItemWatch";
         gps = "ItemGPS";
         radio = "tf_fadak";
-        nvgoggles = NVITEM;
+        nvgoggles = "ACE_NVG_Gen2";
     };
     class Type: Type {
         //Rifleman

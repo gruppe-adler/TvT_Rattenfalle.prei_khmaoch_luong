@@ -11,6 +11,7 @@ _unit addEventhandler ["killed", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
 
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
+    missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle", _unit, true];
 
     if (!(isNull objectParent _unit)) then {
         // push out of vehicle
@@ -74,7 +75,6 @@ _unit addMPEventHandler ["MPHit", {
 
 GRAD_pilotTracking_progress = 0;
 
-
 [{
     params ["_args", "_handle"];
     _args params ["_marker", "_unit"];
@@ -91,23 +91,22 @@ GRAD_pilotTracking_progress = 0;
         _unit setVariable ["grad_pilotTracking_markerObj", _marker, true];
     };
 
-    // HEALING
-    if ((_unit getVariable ["GRAD_pilotTracking_isBleeding",false]) && !_notInVehicle) then {
-        // todo ? or getinman
-    };
-
     // BROKEN LEG
-    if (GRAD_pilotTracking_progress isEqualTo GRAD_pilotTracking_penaltyBrokenLegDelay) then {
+    if (GRAD_pilotTracking_progress isEqualTo GRAD_pilotTracking_penaltyBrokenLegDelay &&
+        _unit getVariable ["GRAD_pilotTracking_isBleeding",false]) then {
         _unit setHit ["legs", 0.5];
         ["Ouch, my leg is broken."] remoteExec ["sideChat", _unit];
     };
 
-    // MISSION END
-    if (GRAD_pilotTracking_progress > GRAD_pilotTracking_missionTime && !(_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false])) then {
-    	[_handle] call CBA_fnc_removePerFrameHandler;
+    // KILL PILOT
+    if (GRAD_pilotTracking_progress > GRAD_pilotTracking_missionTime && 
+        !(_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false]) &&
+        _unit getVariable ["GRAD_pilotTracking_isBleeding",false]) then {
+    	
+        [_handle] call CBA_fnc_removePerFrameHandler;
 
     	_unit setHit ["head", 1];
-      ["Its over. I see the light.."] remoteExec ["sideChat", _unit];
+        ["Its over. I see the light.."] remoteExec ["sideChat", _unit];
     };
 
     
@@ -116,8 +115,8 @@ GRAD_pilotTracking_progress = 0;
             _marker setMarkerPos _currentPosition;
         };
     };
-    
 
     GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;
+    publicVariable "GRAD_pilotTracking_progress";
 
 },1,[_marker, _unit]] call CBA_fnc_addPerFrameHandler;

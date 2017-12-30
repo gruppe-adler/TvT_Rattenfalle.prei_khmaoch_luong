@@ -7,7 +7,7 @@ if (isPlayer _unit) then {
 };
 
 _skyBlocked = false;
-_onFoot = (vehicle _unit == _unit);
+_onFoot = (isNull objectParent _unit);
 
 // diag_log format ["onfoot %1", _onFoot];
 
