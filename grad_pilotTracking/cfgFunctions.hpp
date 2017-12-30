@@ -15,6 +15,7 @@ class GRAD_pilotTracking {
 		class openGPS;
 		class pilotStartHealing;
 		class readTrace;
+		class reOpenGPS;
 		class setBloodBar;
 	};
 

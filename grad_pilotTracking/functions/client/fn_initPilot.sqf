@@ -23,6 +23,8 @@ _pilot addEventHandler ["GetInMan", {
 	missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle", _unit, true];
 	["The pilot got in a vehicle, check your GPS Tracker."] remoteExec ["hint", 0];
 
+	[] remoteExec ["GRAD_pilotTracking_fnc_reOpenGPS", allPlayers];
+
 	if (_vehicle getVariable ["GRAD_rattrap_isMedicalVehicle",false] &&
 		(_unit getVariable ["GRAD_pilotTracking_isBleeding",false])) then {
         	[_unit] call GRAD_pilotTracking_fnc_pilotStartHealing;
