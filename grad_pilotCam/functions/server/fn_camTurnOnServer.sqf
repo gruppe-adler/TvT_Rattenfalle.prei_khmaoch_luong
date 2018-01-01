@@ -30,11 +30,11 @@ _targetObject setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
 	_args params ["_camObj", "_targetObject", "_area"];
 
   // check if pilot is available
-  private _entities = (position _area) nearEntities 7; // 5m must be enough
+  private _entities = (position _area) nearObjects 7; // 5m must be enough
   private _pilotInside = false;
 
   // exit if no pilot is inside
-  { if (_x getVariable ["GRAD_pilotTracking_isPilot", false]) exitWith {  _pilotInside = true; }; } forEach _entities;
+  { if (_x isEqualTo (missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj",objNull])) exitWith {  _pilotInside = true; }; } forEach _entities;
 
   if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false])) exitWith {
       [_handle] call CBA_fnc_removePerFrameHandler;

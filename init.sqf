@@ -34,6 +34,8 @@ jipTime = 60000;
 "mrk_antiair" setMarkerAlphaLocal 1;
 "mrk_endpoint_opfor" setMarkerAlphaLocal 1;
 "mrk_endpoint_blufor" setMarkerAlphaLocal 1;
+"mrk_endpoint_opfor_2" setMarkerAlphaLocal 1;
+"mrk_endpoint_blufor_2" setMarkerAlphaLocal 1;
 "mrk_base_rebels" setMarkerAlphaLocal 1;
 "mrk_base_rebels_text" setMarkerAlphaLocal 1;
 "mrk_base_US" setMarkerAlphaLocal 1;

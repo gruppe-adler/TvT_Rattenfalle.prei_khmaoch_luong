@@ -43,36 +43,8 @@ createCrashSite=  {
 
 createRebelsSpawn = {
 
-
-	// those must exist
-	_opforSpawnPositions = [
-		trg_base_opfor_1
-	];
-
-	_opforSpawnSelect = selectRandom _opforSpawnPositions;
-	
-	_opforSpawnPositions = _opforSpawnPositions - [_opforSpawnSelect];
-
-	[_opforSpawnPositions] spawn {
-		params ["_triggers"];
-		
-		{
-			{
-				diag_log format ["deleting %1", _x];
-				deleteVehicle _x;
-				sleep 0.5;
-			} forEach list _x;
-
-		} forEach _triggers;
-	};
-
-
-	REBEL_SPAWN = getPos _opforSpawnSelect;
+	REBEL_SPAWN = getMarkerPos "mrk_spawn_opfor_1";
 	publicVariable "REBEL_SPAWN";
-
-	/* "respawn_east" setMarkerPos [REBEL_SPAWN select 0, REBEL_SPAWN select 1, 0]; */
-
-	[{0 = [REBEL_SPAWN,"REBEL_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
 	[] spawn {
 			{
@@ -85,17 +57,8 @@ createRebelsSpawn = {
 
 createUSSpawn = {
 
-	US_SPAWN = getMarkerPos (selectRandom [
-		"mrk_spawn_blufor_1"
-	]);
+	US_SPAWN = getMarkerPos "mrk_spawn_blufor_1";
 	publicVariable "US_SPAWN";
-
-	// trigger for pilot rescue area moved to right position
-	trg_pilots_rescued setPos US_SPAWN;
-	
-	/* "respawn_west" setMarkerPos [US_SPAWN select 0, US_SPAWN select 1, 0]; */
-
-	[{0 = [US_SPAWN,"US_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
 	[] spawn {
 		{
