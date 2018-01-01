@@ -5,10 +5,11 @@ class Rebels_Rattrap: ModerateRebels {
         vest = "V_TacChestrig_oli_F";
         backpack = "";
         headgear = "";
-        primaryWeapon = "rhs_weap_ak74m_2mag";
-        primaryWeaponMagazine = "rhs_30Rnd_545x39_AK";
-        primaryWeaponMuzzle = SUPPRESSORITEM;
-        primaryWeaponPointer = LLITEM;
+        primaryWeapon = "arifle_AK12_F";
+        primaryWeaponMagazine = "30Rnd_762x39_Mag_Tracer_Green_F";
+        primaryWeaponMuzzle = "";
+        primaryWeaponPointer = "grad_flashlight_1";
+        primaryWeaponOptics = "rhs_acc_1p87";
         handgunWeapon = "rhs_weap_makarov_pm";
         handgunWeaponMagazine = "rhs_mag_9x18_8_57N181S";
         binoculars = "Binocular";
@@ -36,7 +37,7 @@ class Rebels_Rattrap: ModerateRebels {
             addItemsToVest[] = {
                 "rhs_mag_rgd5",
                 "rhs_mag_rdg2_white",
-                LIST_7("rhs_30Rnd_545x39_AK")
+                LIST_7("30Rnd_762x39_Mag_Tracer_Green_F")
             };
         };
         //Asst. Autorifleman
@@ -89,10 +90,10 @@ class Rebels_Rattrap: ModerateRebels {
             vest = "V_BandollierB_khk";
             backpack = "B_Kitbag_cbr";
             headgear = "H_Cap_blk";
-            primaryWeapon = "rhs_weap_ak74m";
+            
             addItemsToVest[] = {
                 LIST_2("rhs_mag_rdg2_white"),
-                LIST_6("rhs_30Rnd_545x39_AK")
+                LIST_6("30Rnd_762x39_Mag_Tracer_Green_F")
             };
             addItemsToBackpack[] = {
                 LIST_5("ACE_bloodIV"),
@@ -108,7 +109,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_C_HunterBody_grn";
             vest = "V_TacChestrig_cbr_F";
             backpack = "B_FieldPack_khk";
-            primaryWeapon = "rhs_weap_ak74m";
+            
             addItemsToBackpack[] = {
                 LIST_2("IEDLandSmall_Remote_Mag"),
                 "IEDLandBig_Remote_Mag",
@@ -121,7 +122,7 @@ class Rebels_Rattrap: ModerateRebels {
             vest = "V_TacChestrig_cbr_F";
             backpack = "B_FieldPack_khk";
             headgear = "H_Bandanna_khk";
-            primaryWeapon = "rhs_weap_ak74m_fullplum_gp25";
+            primaryWeapon = "arifle_AK12_F_fullplum_gp25";
             addItemsToBackpack[] = {
                 LIST_2("rhs_mag_rgd5"),
                 LIST_2("rhs_mag_rdg2_white"),
@@ -150,7 +151,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_BG_Guerilla1_1";
             vest = "V_TacChestrig_cbr_F";
             backpack = "rhs_rpg_empty";
-            primaryWeapon = "rhs_weap_ak74m_desert";
+            
             secondaryWeapon = "rhs_weap_igla";
             secondaryWeaponMagazine = "rhs_mag_9k38_rocket";
             addItemsToBackpack[] = {
@@ -162,7 +163,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_BG_Guerilla1_1";
             vest = "V_TacChestrig_cbr_F";
             backpack = "rhs_rpg_empty";
-            primaryWeapon = "rhs_weap_ak74m_desert";
+            
             secondaryWeapon = "rhs_weap_rpg7";
             secondaryWeaponMagazine = "rhs_rpg7_PG7VL_mag";
             addItemsToBackpack[] = {
@@ -175,7 +176,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_BG_Guerilla2_2";
             vest = "V_TacChestrig_oli_F";
             backpack = "rhs_sidor";
-            primaryWeapon = "rhs_weap_ak74m_camo";
+            
             addItemsToBackpack[] = {
                 "ToolKit",
                 "ACE_wirecutter"
@@ -186,22 +187,34 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_I_C_Soldier_Bandit_3_F";
             vest = "V_TacChestrig_oli_F";
             goggles = "G_Bandanna_oli";
-            primaryWeapon = "rhs_weap_ak74m_2mag_camo";
+            
             secondaryWeapon = "rhs_weap_rpg26";
         };
         //Squad Leader
         class Soldier_SL_F: Soldier_F {
             uniform = "U_I_C_Soldier_Para_2_F";
             vest = "V_TacVest_camo";
-            primaryWeapon = "rhs_weap_ak74m";
-            primaryWeaponOptics = "rhs_acc_1p63";
+            primaryWeapon = "arifle_AK12_GL_F";
+            backpack = "TFAR_mr3000_rhs";
+
+             addItemsToBackpack[] = {
+                LIST_8("UGL_FlareGreen_F"),
+                LIST_2("1Rnd_SmokeGreen_Grenade_shell"),
+                LIST_2("1Rnd_Smoke_Grenade_shell")
+            };
         };
         //Team Leader
         class Soldier_TL_F: Soldier_F {
             uniform = "U_BG_leader";
             vest = "V_TacVest_brn";
-            primaryWeapon = "rhs_weap_ak74m";
-            primaryWeaponOptics = "rhs_acc_1p63";
+            primaryWeapon = "arifle_AK12_GL_F";
+            backpack = "TFAR_mr3000_rhs";
+
+            addItemsToBackpack[] = {
+                LIST_8("UGL_FlareGreen_F"),
+                LIST_2("1Rnd_SmokeGreen_Grenade_shell"),
+                LIST_2("1Rnd_Smoke_Grenade_shell")
+            };
         };
     };
 };

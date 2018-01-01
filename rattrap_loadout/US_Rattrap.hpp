@@ -188,29 +188,25 @@ class US_Rattrap: SOGBLACK {
         };
         //Squad Leader
         class Soldier_SL_F: Soldier_F {
-            backpack = "tf_rt1523g_black";
+            backpack = "TFAR_rt1523g_bwmod";
+            primaryWeapon = "rhs_weap_hk416d10_m320";
+
             addItemsToBackpack[] = {
-                LIST_2("SmokeShellBlue"),
-                LIST_2("SmokeShellGreen"),
-                LIST_2("SmokeShellOrange"),
-                LIST_2("SmokeShellPurple"),
-                LIST_2("SmokeShellRed"),
-                LIST_2("SmokeShell")
+                LIST_8("UGL_FlareRed_F"),
+                LIST_2("1Rnd_SmokeRed_Grenade_shell"),
+                LIST_2("1Rnd_Smoke_Grenade_shell")
             };
         };
 
         //Team Leader
         class Soldier_TL_F: Soldier_F {
-            primaryWeapon = "rhs_weap_mk18_m320";
+            backpack = "TFAR_rt1523g_bwmod";
+            primaryWeapon = "rhs_weap_hk416d10_m320";
+
             addItemsBackpack[] = {
-                LIST_2("HandGrenade"),
-                LIST_2("SmokeShell"),
-                LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
-                LIST_8("30Rnd_556x45_Stanag_Tracer_Red"),
+                LIST_8("UGL_FlareRed_F"),
                 LIST_2("1Rnd_SmokeRed_Grenade_shell"),
-                LIST_2("1Rnd_Smoke_Grenade_shell"),
-                LIST_2("1Rnd_SmokeBlue_Grenade_shell"),
-                LIST_2("1Rnd_HE_Grenade_shell")
+                LIST_2("1Rnd_Smoke_Grenade_shell")
             };
         };
     };
