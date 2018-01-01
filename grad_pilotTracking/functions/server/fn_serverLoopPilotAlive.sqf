@@ -111,8 +111,8 @@ GRAD_pilotTracking_progress = 0;
         ["Its over. I see the light.."] remoteExec ["sideChat", _unit];
     };
 
-    
-    if ([_unit] call GRAD_pilotTracking_fnc_gpsCanReceive) then {
+    // 2 is gps visible
+    if (([_unit] call GRAD_pilotTracking_fnc_gpsReceivingSetter) isEqualTo 2) then {
         if (!_notInVehicle) then {
             _marker setMarkerPos _currentPosition;
         };

@@ -9,7 +9,7 @@ class GRAD_pilotTracking {
 		class createBloodSplatter;
 		class disableCollision;
 		class getCardinalBearing;
-		class gpsCanReceive;
+		class gpsSetReceivingIndicator;
 		class initClient;
 		class initPilot;
 		class openGPS;
@@ -28,6 +28,7 @@ class GRAD_pilotTracking {
 		class createFootStepWet;
 		class createPilotMarker;
 		class dropBlood;
+		class gpsReceivingSetter;
 		class initServer;
 		class serverLoopPilotAlive;
 		class serverLoopPilotDead;

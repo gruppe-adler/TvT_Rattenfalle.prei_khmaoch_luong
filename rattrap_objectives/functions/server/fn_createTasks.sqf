@@ -3,7 +3,7 @@ params ["_tasks"];
 {
 	diag_log format ["%1", _x];
 
-	_x params ["_side", "_taskName", "_taskDescription", "_taskTitle", "_areaMarkerName", "_areaMarkerName2", "_icon"];
+	_x params ["_side", "_taskName", "_taskDescription", "_taskTitle", "_areaMarkerName", "_icon"];
 
 	[
 		_side,
@@ -13,7 +13,7 @@ params ["_tasks"];
 			_taskTitle,
 			_areaMarkerName
 		],
-		[_areaMarkerName, _areaMarkerName2],
+		[_areaMarkerName select 0, _areaMarkerName select 1],
 		"AUTOASSIGNED",
 		2,
 		true,

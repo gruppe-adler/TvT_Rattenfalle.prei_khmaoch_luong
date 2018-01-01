@@ -2159,7 +2159,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7069.7891,2.6797662,92.439056};
+						position[]={6425.6704,13.790118,2021.3289};
 					};
 					side="Independent";
 					flags=2;
@@ -2237,7 +2237,7 @@ class Mission
 					};
 					id=198;
 					type="I_crew_F";
-					atlOffset=0.79832673;
+					atlOffset=2.6783895;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2343,7 +2343,7 @@ class Mission
 			{
 			};
 			id=197;
-			atlOffset=0.79832673;
+			atlOffset=2.6783895;
 		};
 		class Item10
 		{
@@ -4910,10 +4910,10 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7078.4297,1.8814394,88.853821};
+						position[]={6418.3833,13.567719,2039.2126};
 					};
 					side="West";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						init="call{this setVariable [""GRAD_pilotTracking_isHunter"", true];}";
@@ -5036,7 +5036,7 @@ class Mission
 					};
 					id=253;
 					type="B_Soldier_F";
-					atlOffset=2.3841858e-007;
+					atlOffset=1.8800297;
 					class CustomAttributes
 					{
 						class Attribute0

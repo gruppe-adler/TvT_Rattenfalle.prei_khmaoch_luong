@@ -1,5 +1,6 @@
 params ["_camObj", "_relPosASL", "_targetObject", "_area"];
 
+disableSerialization;
 private _cam = "camera" camCreate _relPosASL;
 _cam setPosASL _relPosASL;
 

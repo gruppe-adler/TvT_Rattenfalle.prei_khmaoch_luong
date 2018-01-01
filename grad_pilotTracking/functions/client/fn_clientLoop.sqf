@@ -21,4 +21,6 @@ _gpsStatus = uiNamespace getVariable ['gui_pilot_gps_0',controlNull] displayCtrl
 		"GRAD_rattrap_bloodLevelBar" cutRsc ["Default", "PLAIN"];
 	};
 
+	[_unit] call GRAD_pilotTracking_fnc_gpsSetReceivingIndicator;
+
 },1,[_bar, _unit, _gpsStatus]] call CBA_fnc_addPerFrameHandler;

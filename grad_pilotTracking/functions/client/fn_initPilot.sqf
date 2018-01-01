@@ -36,6 +36,8 @@ _pilot addEventHandler ["GetOutMan", {
 
 	["The pilot exited a vehicle."] remoteExec ["hint", 0];
 
+	[] remoteExec ["GRAD_pilotTracking_fnc_reOpenGPS", allPlayers];
+
 	if (_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false]) then {
 		_unit setVariable ["GRAD_rattrap_pilotHealingStarted", false, true];
 	};
