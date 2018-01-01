@@ -13,7 +13,7 @@ params ["_tasks"];
 			_taskTitle,
 			_areaMarkerName
 		],
-		[_areaMarkerName select 0, _areaMarkerName select 1],
+		objNull,
 		"AUTOASSIGNED",
 		2,
 		true,

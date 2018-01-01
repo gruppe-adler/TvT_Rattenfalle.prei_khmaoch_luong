@@ -190,6 +190,26 @@ class Rebels_Rattrap: ModerateRebels {
             
             secondaryWeapon = "rhs_weap_rpg26";
         };
+
+
+        // Scout (Special Role Rattrap)
+        class Survivor_F: Soldier_F {
+            uniform = "U_I_C_Soldier_Bandit_1_F";
+            vest = "V_BandollierB_cbr";
+            backpack = "B_LegStrapBag_coyote_F";
+            headgear = "H_Hat_Safari_sand_F";
+            goggles = "rhsusf_shemagh_tan";
+        };
+
+        class Survivor_F2: Soldier_F {
+            uniform = "U_I_C_Soldier_Bandit_5_F";
+            vest = "V_BandollierB_blk";
+            backpack = "B_LegStrapBag_black_F";
+            headgear = "H_Hat_Safari_olive_F";
+            goggles = "rhsusf_shemagh2_grn";
+        };
+
+
         //Squad Leader
         class Soldier_SL_F: Soldier_F {
             uniform = "U_I_C_Soldier_Para_2_F";

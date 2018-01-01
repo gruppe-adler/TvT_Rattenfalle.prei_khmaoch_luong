@@ -7,7 +7,7 @@
 		"tsk_blufor_filmpilot",
 		localize "str_rattrap_task_blufor_filmpilot_description",
 		localize "str_rattrap_task_blufor_filmpilot_title",
-		["mrk_endpoint_blufor", "mrk_endpoint_blufor_2"],
+		"mrk_endpoint_blufor",
 		"kill"
 	]]
 ] call rattrap_objectives_fnc_createTasks;
@@ -19,7 +19,7 @@
 		"tsk_opfor_filmpilot",
 		localize "str_rattrap_task_opfor_filmpilot_description",
 		localize "str_rattrap_task_opfor_filmpilot_title",
-		["mrk_endpoint_opfor", "mrk_endpoint_opfor_2"],
+		"mrk_endpoint_blufor",
 		"kill"
 	]]
 ] call rattrap_objectives_fnc_createTasks;
