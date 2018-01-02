@@ -21,7 +21,7 @@ if (hasInterface) then {
 ["IND_F", "UsDownedPilot"] call GRAD_Loadout_fnc_FactionSetLoadout;
 
 disableRemoteSensors true;
-setViewDistance 1500;
+setViewDistance 1200;
 enableSentences false;
 enableRadio false;
 // 0 fadeRadio 0;
@@ -84,20 +84,10 @@ if (isServer) then {
 	CRASH_SITE_VEHICLE_POS = [0,0];
 	publicVariable "CRASH_SITE_VEHICLE_POS";
 
-	REBEL_SPAWN = [0,0];
-	publicVariable "REBEL_SPAWN";
-
-	US_SPAWN = [0,0];
-	publicVariable "US_SPAWN";
-
 	BLUFOR_WINS = false;
 	publicVariable "BLUFOR_WINS";
 	OPFOR_WINS = false;
 	publicVariable "OPFOR_WINS";
-
-
-	SETUP_DONE = false;
-	publicVariable "SETUP_DONE";
 
 	SIGHTING_DELAY = 60;
 	
@@ -107,38 +97,14 @@ if (isServer) then {
 	CHANCE_TO_REVEAL_OPFOR = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
 	publicVariable "CHANCE_TO_REVEAL_OPFOR";
 
-	/*
+	
 	[] execVM "server\serverTeleportListener.sqf";
 	[] execVM "server\selectSpawnPosition.sqf";
-	*/
+	
 
-	[] spawn {
-		waitUntil {(REBEL_SPAWN select 0 != 0) && (US_SPAWN select 0 != 0)}; // wait until everything is neatly set up
-
-		SETUP_DONE = true;
-		publicVariable "SETUP_DONE";
-	};
-
-
-	// loadout for AI units
-	/*
-	if (!isMultiplayer) then {
-	 	[] spawn {
-			sleep 10; // dont equip player multiple times
- 			{if (!isPlayer _x) then {0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
- 		};
-	} else {
-			{if (!isPlayer _x) then {sleep 0.5; 0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
-	};*/
 
 	if (isMultiplayer) then {
 		{
-			_loadout = _x getVariable ["GRAD_loadout","none"];
-			if (_loadout != "none") then {
-				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
-				_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
-			};
-
 			_x addMPEventHandler ["MPKilled", {
 					//Only on the server
 					if (isServer) then {
@@ -150,17 +116,6 @@ if (isServer) then {
 					};
 				}];
 		} forEach playableUnits;
-
-
-
-	} else {
-		{
-			_loadout = _x getVariable ["GRAD_loadout","none"];
-			if (_loadout != "none") then {
-				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
-				_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
-			};
-		} forEach switchableUnits;
 	};
 
 
@@ -185,22 +140,13 @@ if (hasInterface) then {
 		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
 			player setDamage 1;
 		} else {
-			// [] spawn callIntro;
-			_loadout = player getVariable ["GRAD_loadout","none"];
-			if (_loadout != "none") then {
-				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
-				diag_log format ["calling loadout %1",_stringLoadout];
-				player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
-			};
+			[] spawn callIntro;
 		};
 	};
 
 
 	callIntro = {
 		waitUntil {CRASH_SITE_VEHICLE_POS select 0 != 0};
-		if (!isMultiplayer) then {
-			waitUntil { !isNil "ENGIMA_TRAFFIC_functionsInitialized" };
-		};
 		0 = [
 				CRASH_SITE_VEHICLE_POS,
 				15,
@@ -216,28 +162,11 @@ if (hasInterface) then {
 
 	sleep 1;
 
-	// WEST is US
-	if (playerSide == west) then {
-		[] execVM "player\USTeleportListener.sqf";
-		[] spawn checkJIP;
-		// [] execVM "player\createPilotVehicleTracker.sqf";
-	};
-
-	// EAST is rebels
-	if (playerSide == east) then {
-		[] execVM "player\rebelsTeleportListener.sqf";
-		[] spawn checkJIP;
-		[] execVM "player\createPilotVehicleTracker.sqf";
-	};
-
 	if (playerSide == independent) then {
-
-		player setVariable ["player GRAD_pilotTracking_isPilot", true];
-		
 		[] execVM "player\pilotTeleportListener.sqf";
-		[] spawn checkJIP;
-		
 	};
+
+	[] spawn checkJIP;
 
 	1 fadesound 1;
 

@@ -1,4 +1,4 @@
-GRAD_SIMPLEWAVERESPAWN_DURATION = 300;
+GRAD_SIMPLEWAVERESPAWN_DURATION = 15;
 publicVariable "GRAD_SIMPLEWAVERESPAWN_DURATION";
 
 [{
@@ -7,11 +7,17 @@ publicVariable "GRAD_SIMPLEWAVERESPAWN_DURATION";
     GRAD_SIMPLEWAVERESPAWN_STARTTIME = CBA_missionTime + 1; // prevent dividing through zero
 	publicVariable "GRAD_SIMPLEWAVERESPAWN_STARTTIME";
 
-	_allPlayersExceptPilot = allPlayers;
-	if (_x getVariable ["GRAD_pilotTracking_isPilot", false]) then {
-		_allPlayersExceptPilot = _allPlayersExceptPilot - [_x];
-	};
+
+	private _allDeadPlayersExceptPilot = [];
+	{
+		if (!(_x getVariable ["GRAD_pilotTracking_isPilot", false]) && (side _x isEqualTo civilian)) then {
+			_allDeadPlayersExceptPilot append [_x];
+		};
+	} forEach allPlayers;
 	
-    [5] remoteExec ["setPlayerRespawnTime", _allPlayersExceptPilot, false];
+	if (count _allDeadPlayersExceptPilot > 0) then {
+    	[] remoteExec ["GRAD_simpleWaveRespawn_fnc_forceRespawn", _allDeadPlayersExceptPilot, false];
+    	diag_log format ["_allDeadPlayersExceptPilot %1", _allDeadPlayersExceptPilot];
+    };
 
 },GRAD_SIMPLEWAVERESPAWN_DURATION,[]] call CBA_fnc_addPerFrameHandler;

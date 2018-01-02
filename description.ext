@@ -12,7 +12,7 @@ loadScreen = "pic\loading_pic.jpg";
 respawn = 3;
 respawnDelay = 9999;
 respawnTemplates[] = {"Base"};
-respawnOnStart = 0;//Dont respawn on start.
+respawnOnStart = -1;//Dont respawn on start.
 respawnDialog = 0;
 
 #define GUNLIGHTS

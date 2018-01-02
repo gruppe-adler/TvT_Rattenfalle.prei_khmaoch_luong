@@ -1,8 +1,6 @@
 // TODO : calculate and show next respawn timestamp
 // hintsilent format ["%1", GRAD_SIMPLEWAVERESPAWN_DURATION];
 
-
-
 [{
     params ["_args", "_handle"];
 

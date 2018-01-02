@@ -9,7 +9,7 @@ _this spawn {
 
     [
         [
-            ["CRASH SITE","<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><t align = 'center'  color='#59ffffff' shadow = '0' size = '1.5' font='EtelkaNarrowMediumPro'>%1</t><br/>",25],
+            ["CRASH SITE","<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><t align = 'center'  color='#59ffffff' shadow = '0' size = '1.5' font='EtelkaNarrowMediumPro'>%1</t><br/><br/>",25],
             ["before dawn","<t align = 'center' color='#33ffffff' shadow = '0' size = '0.5'>%1</t>",50]
         ]
     ] spawn BIS_fnc_typeText;
@@ -54,7 +54,7 @@ _this spawn {
 
     [
         [
-            ["YOUR BASE","<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><t align = 'center'  color='#59ffffff' shadow = '0' size = '1.5' font='EtelkaNarrowMediumPro'>%1</t><br/>",25],
+            ["YOUR BASE","<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><t align = 'center'  color='#59ffffff' shadow = '0' size = '1.5' font='EtelkaNarrowMediumPro'>%1</t><br/><br/>",25],
             ["setup and go","<t align = 'center' color='#33ffffff' shadow = '0' size = '0.5'>%1</t>",50]
         ]
     ] spawn BIS_fnc_typeText;

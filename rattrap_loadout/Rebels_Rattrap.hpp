@@ -8,7 +8,7 @@ class Rebels_Rattrap: ModerateRebels {
         primaryWeapon = "arifle_AK12_F";
         primaryWeaponMagazine = "30Rnd_762x39_Mag_Tracer_Green_F";
         primaryWeaponMuzzle = "";
-        primaryWeaponPointer = "grad_flashlight_1";
+        primaryWeaponPointer = "";
         primaryWeaponOptics = "rhs_acc_1p87";
         handgunWeapon = "rhs_weap_makarov_pm";
         handgunWeaponMagazine = "rhs_mag_9x18_8_57N181S";
