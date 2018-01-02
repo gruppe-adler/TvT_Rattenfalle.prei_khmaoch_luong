@@ -4,13 +4,13 @@ publicVariable "GRAD_SIMPLEWAVERESPAWN_DURATION";
 [{
     params ["_args", "_handle"];
 
-    GRAD_SIMPLEWAVERESPAWN_STARTTIME = CBA_missionTime + 1; // prevent dividing through zero
-	publicVariable "GRAD_SIMPLEWAVERESPAWN_STARTTIME";
+    GRAD_SIMPLEWAVERESPAWN_ENDTIME = CBA_missionTime + GRAD_SIMPLEWAVERESPAWN_DURATION; // prevent dividing through zero
+	publicVariable "GRAD_SIMPLEWAVERESPAWN_ENDTIME";
 
 
 	private _allDeadPlayersExceptPilot = [];
 	{
-		if (!(_x getVariable ["GRAD_pilotTracking_isPilot", false]) && (side _x isEqualTo civilian)) then {
+		if (_x getVariable ["GRAD_pilotTracking_isWaitingForRespawn", false]) then {
 			_allDeadPlayersExceptPilot append [_x];
 		};
 	} forEach allPlayers;

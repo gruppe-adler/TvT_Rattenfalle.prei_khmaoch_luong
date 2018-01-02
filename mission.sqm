@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7229.1802,63.966225,2439.9375};
-		dir[]={0.67291516,-0.55963153,0.48374283};
-		up[]={0.45440349,0.82873994,0.32665974};
-		aside[]={0.58370543,-2.500019e-008,-0.81197089};
+		pos[]={4141.042,75.528076,4966.937};
+		dir[]={-0.95593536,-0.25082719,-0.15269864};
+		up[]={-0.24769264,0.96802878,-0.039566129};
+		aside[]={-0.15774302,-3.9197039e-007,0.98750013};
 	};
 };
 binarizationWanted=0;
@@ -1990,7 +1990,7 @@ class Mission
 	class Intel
 	{
 		resistanceEast=1;
-		timeOfChanges=1800.0002;
+		timeOfChanges=4800;
 		startWeather=0;
 		startFog=1;
 		startWind=0;
@@ -2008,7 +2008,7 @@ class Mission
 		hour=5;
 		minute=-29;
 		startFogBase=-5;
-		forecastFogBase=-5;
+		forecastFogBase=-25;
 		startFogDecay=0.1;
 		forecastFogDecay=0.1;
 	};
@@ -2316,24 +2316,22 @@ class Mission
 		class Item10
 		{
 			dataType="Marker";
-			position[]={6951.7593,393.28348,1991.687};
+			position[]={7235.1646,393.28485,2475.0308};
 			name="respawn_west";
 			type="respawn_unknown";
 			colorName="ColorWEST";
-			alpha=0;
 			id=220;
-			atlOffset=314.67798;
+			atlOffset=355.02252;
 		};
 		class Item11
 		{
 			dataType="Marker";
-			position[]={7013.4185,388.5191,1990.833};
-			name="respawn_independent";
+			position[]={3899.3499,316.6893,4940.1816};
+			name="respawn_east";
 			type="respawn_unknown";
-			colorName="ColorGUER";
-			alpha=0;
+			colorName="ColorEAST";
 			id=222;
-			atlOffset=311.99884;
+			atlOffset=314.74643;
 		};
 		class Item12
 		{

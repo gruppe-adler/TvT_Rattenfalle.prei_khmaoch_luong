@@ -1,12 +1,7 @@
 params ["_player", "_killer"];
 
 // dont start shit if not necessary
-if (_player getVariable ["GRAD_simpleWaveRespawn_respawning", false]) exitWith {
-	[false] call ace_spectator_fnc_setSpectator;
-	[_player, false] call TFAR_fnc_forceSpectator;
-	setPlayerRespawnTime 999999;
-	_player setVariable ["GRAD_simpleWaveRespawn_respawning", false];
-};
+if (_player getVariable ["GRAD_simpleWaveRespawn_respawning", false]) exitWith {};
 
 "grad_gpsTracker_layer" cutFadeout 0.5;
 
@@ -40,5 +35,6 @@ if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
 [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
 [1, objNull] call ace_spectator_fnc_setCameraAttributes;
 [player, true] call TFAR_fnc_forceSpectator;
+player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true];
 
 call grad_simpleWaveRespawn_fnc_showRemainingTime;
