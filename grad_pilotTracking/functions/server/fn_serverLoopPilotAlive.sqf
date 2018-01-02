@@ -5,7 +5,9 @@ private ["_marker"];
 _marker = [_pilot] call GRAD_pilotTracking_fnc_createPilotMarker;
 _pilot setVariable ["GRAD_pilotTracking_markerObj", _marker];
 
-_unit setVariable ["GRAD_pilotTracking_isHunter", true]; // only for debug
+if (!isMultiplayer) then {
+    _unit setVariable ["GRAD_pilotTracking_isScout", true]; // only for debug
+};
 
 _unit addEventhandler ["killed", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];

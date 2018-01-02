@@ -27,12 +27,12 @@ class US_Rattrap: SOGBLACK {
         class Soldier_F: Soldier_F {
             addItemsToUniform[] = {
                 "ACE_MapTools",
-                "ACE_DefusalKit",
                 LIST_2("ACE_CableTie"),
+                LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
                 LIST_10("ACE_fieldDressing"),
                 LIST_4("ACE_morphine"),
-				LIST_1("ACE_key_lockpick"),
-                "ACE_epinephrine",
+				LIST_1("ACE_epinephrine"),
+                LIST_1("ACE_key_west"),
                 "ACE_Flashlight_MX991",
                 LIST_1("ACE_bodyBag"),
                 LIST_2("ACE_Chemlight_HiRed"),
@@ -41,7 +41,6 @@ class US_Rattrap: SOGBLACK {
             addItemsToBackpack[] = {
                 LIST_2("HandGrenade"),
                 LIST_2("SmokeShell"),
-                LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
                 LIST_10("30Rnd_556x45_Stanag_Tracer_Red"),
                 "ACE_IR_Strobe_Item"
             };

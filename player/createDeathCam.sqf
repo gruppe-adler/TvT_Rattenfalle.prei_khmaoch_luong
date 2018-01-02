@@ -84,7 +84,7 @@ _shooter = _unit getVariable ["ACE_medical_lastDamageSource",_unit];
 
 showCinemaBorder true;
 
-playMusic "DEATH_MUSIC";
+// playMusic "DEATH_MUSIC";
 _filmgrain = ppEffectCreate ["FilmGrain",2000];
 _filmgrain ppEffectEnable true;
 _filmgrain ppEffectAdjust [0.3,0.3,0.12,0.12,0.12,true];

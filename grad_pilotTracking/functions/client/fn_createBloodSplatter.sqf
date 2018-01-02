@@ -7,7 +7,7 @@ private _blood = objNull;
 _posASL set [2,0];
 _bandagePosASL set [2,0];
 
-if (player getVariable ["GRAD_pilotTracking_isHunter", false]) then {
+if (player getVariable ["GRAD_pilotTracking_isScout", false]) then {
 	_blood = (_type select 0) createVehicleLocal _posASL;
 	_blood setPos _posASL;
 } else {

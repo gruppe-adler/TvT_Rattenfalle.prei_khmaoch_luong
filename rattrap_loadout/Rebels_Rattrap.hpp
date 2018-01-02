@@ -25,14 +25,15 @@ class Rebels_Rattrap: ModerateRebels {
         class Soldier_F :Soldier_F {
             addItemsToUniform[] = {
                 "ACE_MapTools",
-                "ACE_EarPlugs",
-                LIST_2("rhs_mag_9x18_8_57N181S"),
                 LIST_2("ACE_CableTie"),
+                LIST_1("rhs_mag_9x18_8_57N181S"),
                 LIST_8("ACE_fieldDressing"),
                 LIST_4("ACE_morphine"),
-                "ACE_epinephrine",
+                LIST_1("ACE_epinephrine"),
+                LIST_1("ACE_key_east"),
                 "ACE_Flashlight_KSF1",
-                LIST_2("ACE_bodyBag")
+                LIST_2("ACE_bodyBag"),
+                LIST_2("ACE_Chemlight_HiGreen")
             };
             addItemsToVest[] = {
                 "rhs_mag_rgd5",
@@ -201,7 +202,7 @@ class Rebels_Rattrap: ModerateRebels {
             goggles = "rhsusf_shemagh_tan";
         };
 
-        class Survivor_F2: Soldier_F {
+        class Soldier_Unarmed_F: Soldier_F {
             uniform = "U_I_C_Soldier_Bandit_5_F";
             vest = "V_BandollierB_blk";
             backpack = "B_LegStrapBag_black_F";
