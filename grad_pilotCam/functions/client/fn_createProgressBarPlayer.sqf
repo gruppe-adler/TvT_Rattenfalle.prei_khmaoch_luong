@@ -8,7 +8,7 @@ private _contentH = getnumber (_contentConfig >> "h");
 
 // progressBar in PiP
 private _progressBar = findDisplay 46 ctrlCreate ["RscProgress",-1];
-_progressBar ctrlSetPosition [_contentX+_contentW/40,_contentY + _contentH-_contentH/15,_contentW/40*38,_contentH/30];
+_progressBar ctrlSetPosition [_contentX+_contentW/40,_contentY + _contentH-_contentH/15,_contentW/40*37,_contentH/30];
 _progressBar ctrlSetTextColor [1,0,0,1];
 _progressBar progressSetPosition 0;
 _progressBar ctrlCommit 0;

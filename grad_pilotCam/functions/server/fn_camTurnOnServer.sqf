@@ -1,7 +1,7 @@
 params ["_player", "_camObj"];
 
 private _area = _camObj getVariable ["GRAD_pilotCam_area", objNull];
-private _relPos = _camObj getRelPos [0.3, _camObj getDir _area];
+private _relPos = _camObj modelToWorld [0.05, -0.25, 1.07];
 private _heightAboveGround = (getPosASL _camObj select 2) + 1.1;
 _relPos set [2,_heightAboveGround];
 

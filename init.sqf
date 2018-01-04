@@ -140,7 +140,7 @@ if (hasInterface) then {
 		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
 			player setDamage 1;
 		} else {
-			[] spawn callIntro;
+			// [] spawn callIntro;
 		};
 	};
 

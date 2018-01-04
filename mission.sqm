@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
 		nextID=1417;
@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={7071.854,9.7417889,69.352097};
-		dir[]={0.208977,-0.49431038,0.84380031};
-		up[]={0.11883321,0.86928129,0.47982168};
-		aside[]={0.97068107,-7.4302079e-008,-0.24040124};
+		dir[]={0.12033055,-0.4209536,0.89907271};
+		up[]={0.055842787,0.90707767,0.41724187};
+		aside[]={0.99116886,-1.33703e-007,-0.13265739};
 	};
 };
 binarizationWanted=0;
@@ -5802,10 +5802,10 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7077.8433,2.2345695,87.249268};
+						position[]={4341.4282,8.7059135,6699.7705};
 					};
 					side="West";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						description="Rifleman";
@@ -5927,7 +5927,7 @@ class Mission
 					};
 					id=253;
 					type="B_Soldier_F";
-					atlOffset=1.9311905e-005;
+					atlOffset=2.2330966;
 					class CustomAttributes
 					{
 						class Attribute0

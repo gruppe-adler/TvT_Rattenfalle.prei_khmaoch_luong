@@ -18,15 +18,8 @@ private _progressBar = call GRAD_pilotCam_fnc_createProgressBarPilot;
 	params ["_args", "_handle"];
 	_args params ["_camObj", "_cam", "_effectsArray", "_progressBar"];
 
-	private _position = missionNamespace getVariable ["GRAD_pilotCam_pilotCamProgressPosition", [
-		safezoneX,
-		(safezoneX+safezoneW/40),
-		safezoneY + safezoneH-(safezoneH/15),
-		safezoneW/40*38,safezoneH/30]
-	];
-	
 	_progressBar progressSetPosition (linearConversion [0, GRAD_pilotCam_RECORDING_DURATION, GRAD_pilotCam_RECORDING_DONE, 0, 1, true]);
-	_progressBar ctrlSetPosition _position;
+	
 
 	if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false])) then {
 			[_handle] call CBA_fnc_removePerFrameHandler;
