@@ -2,10 +2,10 @@
 
 params ["_pos", 
 	["_obj", objNull], 
-	["_brightness", 0.5], 
+	["_brightness", 0.9], 
 	["_color", [255,70,0]], 
 	["_ambient",[255,70,0]], 
-	["_intensity",0.5],
+	["_intensity",10],
 	["_condition", {false}]
 ];
 
@@ -25,7 +25,7 @@ _light setlightintensity _intensity;
 	params ["_args", "_handle"];
     _args params ["_light", "_intensity"];
 	_light setlightintensity (_intensity + (random (_intensity/5)));
-}, 0.25, [_light, _intensity]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_light, _intensity]] call CBA_fnc_addPerFrameHandler;
 
 [{_condition}, {
 

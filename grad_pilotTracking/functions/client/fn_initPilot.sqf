@@ -6,14 +6,28 @@ params ["_pilot"];
 [_pilot] call grad_pilotTracking_fnc_clientLoop;
 _pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
 
-// radio nerfing
 
-["waitForInit", "OnRadiosReceived", {
-    [call TFAR_fnc_activeSwRadio, "50.0"] call TFAR_fnc_setSwFrequency;
-	player setVariable ["tf_receivingDistanceMultiplicator", 0.1];
-	player setVariable ["tf_sendingDistanceMultiplicator", 0.1];
-    ["waitForInit","OnRadiosReceived"] call TFAR_fnc_removeEventHandler;
-}, player] call TFAR_fnc_addEventHandler;
+_loadoutHandler = ["GRAD_loadout_loadoutApplied", {
+	
+	if (!(player getVariable ["GRAD_pilotTracking_isPilot", false])) exitWith {};
+
+	["GRAD_loadout_loadoutApplied",0] call CBA_fnc_removeEventHandler;
+
+	[{
+		player addItem "hgun_Pistol_Signal_F";
+	}, 5] call CBA_fnc_waitAndExecute;
+	
+	// radio nerfing
+	["waitForInit", "OnRadiosReceived", {
+	    [call TFAR_fnc_activeSwRadio, "50.0"] call TFAR_fnc_setSwFrequency;
+		player setVariable ["tf_receivingDistanceMultiplicator", 0.1];
+		player setVariable ["tf_sendingDistanceMultiplicator", 0.1];
+	    ["waitForInit","OnRadiosReceived"] call TFAR_fnc_removeEventHandler;
+	}, player] call TFAR_fnc_addEventHandler;
+}] call CBA_fnc_addEventHandler;
+
+
+
 
 
 // eventhandler to catch healing
