@@ -2,11 +2,12 @@ params ["_unit"];
 
 _unit setVariable ["GRAD_rattrap_pilotHealingStarted", true, true];
 
+private _duration = ["PilotHealingTime", 300] call BIS_fnc_getParamValue;
 
-[20, [], 
+[_duration, [], 
 	{
 
-			hint format ["healing success %1", _this];
+		hint format ["healing success %1", _this];
 		player setVariable ["GRAD_pilotTracking_isBleeding",false, true];
 		player setVariable ["GRAD_rattrap_pilotHealingStarted", false, true];
 	}, 
@@ -26,11 +27,4 @@ _unit setVariable ["GRAD_rattrap_pilotHealingStarted", true, true];
 		"isNotDead",
 		"isNotInZeus"
 	]
-] call ace_common_fnc_progressBar;	
-
-/*
-{
-		!((_this select 0) getVariable ["GRAD_rattrap_pilotHealingStarted", false])
-	}
-
-	*/
+] call ace_common_fnc_progressBar;

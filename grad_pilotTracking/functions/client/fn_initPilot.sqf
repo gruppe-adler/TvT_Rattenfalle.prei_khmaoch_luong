@@ -19,9 +19,9 @@ _loadoutHandler = ["GRAD_loadout_loadoutApplied", {
 	
 	// radio nerfing
 	["waitForInit", "OnRadiosReceived", {
-	    [call TFAR_fnc_activeSwRadio, "50.0"] call TFAR_fnc_setSwFrequency;
-		player setVariable ["tf_receivingDistanceMultiplicator", 0.1];
-		player setVariable ["tf_sendingDistanceMultiplicator", 0.1];
+	    [call TFAR_fnc_activeSwRadio, "33.3"] call TFAR_fnc_setSwFrequency;
+		player setVariable ["tf_receivingDistanceMultiplicator", 0.01];
+		player setVariable ["tf_sendingDistanceMultiplicator", 0.01];
 	    ["waitForInit","OnRadiosReceived"] call TFAR_fnc_removeEventHandler;
 	}, player] call TFAR_fnc_addEventHandler;
 }] call CBA_fnc_addEventHandler;

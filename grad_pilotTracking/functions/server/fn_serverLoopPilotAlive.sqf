@@ -3,7 +3,7 @@ params ["_unit"];
 private ["_marker"];
 
 _marker = [_pilot] call GRAD_pilotTracking_fnc_createPilotMarker;
-_pilot setVariable ["GRAD_pilotTracking_markerObj", _marker];
+missionNamespace setVariable ["GRAD_pilotTracking_markerObj", _marker, true];
 
 if (!isMultiplayer) then {
     _unit setVariable ["GRAD_pilotTracking_isScout", true]; // only for debug
@@ -16,6 +16,13 @@ _unit addEventhandler ["killed", {
     
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle", _unit, true];
+
+    private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", ""];
+    
+    if (!(_marker isEqualTo "")) then {
+        _marker setMarkerPos position _unit;
+        _marker setMarkerAlpha 1;
+    };
 
     if (!(isNull objectParent _unit)) then {
         // push out of vehicle
@@ -92,7 +99,6 @@ GRAD_pilotTracking_progress = 0;
         _marker setMarkerPos _currentPosition;
         _marker setMarkerAlpha 1;
         diag_log format ["server: pilot died at %1", _currentPosition];
-        _unit setVariable ["grad_pilotTracking_markerObj", _marker, true];
     };
 
     // BROKEN LEG

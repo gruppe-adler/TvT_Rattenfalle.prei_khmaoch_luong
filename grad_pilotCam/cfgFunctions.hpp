@@ -2,8 +2,7 @@ class GRAD_pilotCam {
 
 	class client {
 		file = grad_pilotCam\functions\client;
-
-		class addInteractionToCams;
+		
 		class camTurnOffPilot;
 		class camTurnOffPlayer;
 		class camTurnOnPilot;
@@ -16,6 +15,7 @@ class GRAD_pilotCam {
 	class server {
 		file = grad_pilotCam\functions\server;
 
+		class addInteractionToCams;
 		class initServer { preInit = 1; };
 		class camTurnOnServer;
 	};

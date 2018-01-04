@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1410;
+		nextID=1417;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7243.5015,44.828705,2469.3047};
-		dir[]={-0.79155064,-0.59709352,-0.13011527};
-		up[]={-0.5891878,0.80217069,-0.096850686};
-		aside[]={-0.16220304,1.0090298e-007,0.98675936};
+		pos[]={7071.854,9.7417889,69.352097};
+		dir[]={0.208977,-0.49431038,0.84380031};
+		up[]={0.11883321,0.86928129,0.47982168};
+		aside[]={0.97068107,-7.4302079e-008,-0.24040124};
 	};
 };
 binarizationWanted=0;
@@ -2153,10 +2153,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6425.6699,13.789725,2021.3291};
+						position[]={6423.8486,11.096356,2026.5332};
+						angles[]={6.2519131,0,0.038994718};
 					};
 					side="Independent";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2231,7 +2232,6 @@ class Mission
 					};
 					id=198;
 					type="I_crew_F";
-					atlOffset=2.6779995;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2337,7 +2337,6 @@ class Mission
 			{
 			};
 			id=197;
-			atlOffset=2.6779995;
 		};
 		class Item10
 		{
@@ -5803,10 +5802,10 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6420.8999,13.193358,2035.078};
+						position[]={7077.8433,2.2345695,87.249268};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						description="Rifleman";
@@ -5928,7 +5927,7 @@ class Mission
 					};
 					id=253;
 					type="B_Soldier_F";
-					atlOffset=1.8800001;
+					atlOffset=1.9311905e-005;
 					class CustomAttributes
 					{
 						class Attribute0

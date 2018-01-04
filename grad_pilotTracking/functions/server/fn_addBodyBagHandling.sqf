@@ -6,7 +6,7 @@
         private _dir = getDir _bodyBag;
         private _position = getPos _bodyBag;
         private _isPilot = _deadGuy getVariable ["GRAD_pilotTracking_isPilot", false];
-        private _marker = _deadGuy getVariable ["GRAD_pilotTracking_markerObj", objNull];
+        private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
         deleteVehicle _bodyBag;
 

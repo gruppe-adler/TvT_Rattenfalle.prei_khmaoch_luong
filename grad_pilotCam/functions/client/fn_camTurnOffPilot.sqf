@@ -13,4 +13,9 @@ if (!isNull _cam) then {
 "camOverlayStatic" cutRsc ["RscStatic", "PLAIN" , 1];
 "cameraOverlay" cutRsc ["Default", "PLAIN"];
 
-hint "cam turned off for pilot";
+switch (missionNamespace getVariable ["GRAD_pilotCam_reasonForShutOff", "none"]) do {
+	case "shutter": { hint "Camera switched off by someone."; };
+	case "end": { hint "Video recorded successfully."; };
+	case "left": { hint "Pilot not in Camera View. Aborting filming."; };
+	default {hint "Camera failed due to unknown reason.";};
+};

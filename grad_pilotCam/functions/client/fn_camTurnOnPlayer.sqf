@@ -1,7 +1,7 @@
 params ["_camObj", "_relPosASL", "_targetObject", "_area"];
 
 
-private _pipcamVehicle = createVehicle ["Sign_Sphere10cm_F", [0,0,0], [], 0, "CAN_COLLIDE"];
+private _pipcamVehicle = createVehicle ["Sign_Pointer_Yellow_F", [0,0,0], [], 0, "CAN_COLLIDE"];
 _pipcamVehicle setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
 _pipcamVehicle setPosASL _relPosASL;
 _pipcamVehicle attachTo [_targetObject];
