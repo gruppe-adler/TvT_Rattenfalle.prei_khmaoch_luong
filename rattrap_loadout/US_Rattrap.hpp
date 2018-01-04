@@ -7,7 +7,7 @@ class US_Rattrap: SOGBLACK {
         primaryWeapon = "rhs_weap_hk416d10";
         primaryWeaponMagazine = "30Rnd_556x45_Stanag_Tracer_Red";
         primaryWeaponMuzzle = "";
-        primaryWeaponPointer = "";
+        primaryWeaponPointer = "grad_flashlight_1";
         primaryWeaponOptics = "rhsusf_acc_compm4";
 		primaryWeaponUnderbarrel = "rhsusf_acc_grip3";
         handgunWeapon = "rhsusf_weap_glock17g4";
