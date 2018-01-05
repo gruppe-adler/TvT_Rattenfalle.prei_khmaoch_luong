@@ -1,7 +1,7 @@
 params ["_player", "_camObj"];
 
-if (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false])) exitWith {
-    ["There is already an active cam."] remoteExec ["hint", _player];
+if (missionNamespace getVariable ["GRAD_pilotCam_camRunning", false]) exitWith {
+    ["There is already an active cam."] remoteExec ["hintSilent", _player];
 };
 
 // block server from accepting more camOnSwitches
@@ -14,7 +14,7 @@ private _relPos = _camObj modelToWorld [0.05, -0.25, 1.07];
 private _heightAboveGround = (getPosASL _camObj select 2) + 1.1;
 _relPos set [2,_heightAboveGround];
 
-private _aimPos = [getPos _area select 0, getPos _area select 1, _heightAboveGround]; // getRelPos [3000, _camObj getDir _area];
+private _aimPos = [getPosASL _area select 0, getPosASL _area select 1, _heightAboveGround]; // getRelPos [3000, _camObj getDir _area];
 private _targetObject = "Sign_Pointer_Yellow_F" createVehicle [0,0,0];
 _targetObject setPosASL [_aimPos select 0, _aimPos select 1, _heightAboveGround];
 
