@@ -1,5 +1,14 @@
 params ["_player", "_camObj"];
 
+if (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false])) exitWith {
+    ["There is already an active cam."] remoteExec ["hint", _player];
+};
+
+// block server from accepting more camOnSwitches
+missionNamespace setVariable ["GRAD_pilotCam_camRunning", true];
+_camObj setVariable ["GRAD_pilotCam_camIsOn", true, true];
+
+
 private _area = _camObj getVariable ["GRAD_pilotCam_area", objNull];
 private _relPos = _camObj modelToWorld [0.05, -0.25, 1.07];
 private _heightAboveGround = (getPosASL _camObj select 2) + 1.1;
@@ -24,8 +33,7 @@ _targetObject setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
 } forEach allPlayers;
 
 
-
-[{
+_handle = [{
 	params ["_args", "_handle"];
 	_args params ["_camObj", "_targetObject", "_area"];
 
@@ -33,48 +41,28 @@ _targetObject setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
   private _entities = (position _area) nearObjects 7; // 5m must be enough
   private _pilotInside = false;
 
-  // diag_log format ["found in camArea: %1", _entities];
-
   // exit if no pilot is inside
   { if (_x isEqualTo (missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj",objNull])) exitWith {  _pilotInside = true; }; } forEach _entities;
 
-  if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false])) exitWith {
-      [_handle] call CBA_fnc_removePerFrameHandler;
+	if (!_pilotInside) then {
+      ["_camObj", "pilotleft"] call GRAD_pilotCam_fnc_camTurnOffServer;
+      diag_log format ["server: aborting filming, no pilot inside %1", _area];
+	};
 
-      missionNamespace setVariable ["GRAD_pilotCam_reasonForShutOff", "shutter", true];
-
-      _camObj setVariable ["GRAD_pilotCam_camIsOn", false, true];
-      deleteVehicle _targetObject;
-
-      diag_log format ["server: aborting filming, camera shut off"];
-      GRAD_pilotCam_RECORDING_DONE = 0;
-  };
-
-	if (!_pilotInside || GRAD_pilotCam_RECORDING_DONE > GRAD_pilotCam_RECORDING_DURATION) exitWith {
-
-    [_handle] call CBA_fnc_removePerFrameHandler;
-
-    _camObj setVariable ["GRAD_pilotCam_camIsOn", false, true];
-    deleteVehicle _targetObject;
-
-    if (_pilotInside) then {
+  if (GRAD_pilotCam_RECORDING_DONE > GRAD_pilotCam_RECORDING_DURATION) then {
       _winner = _area getVariable ["GRAD_pilotCam_winningSide", civilian];
-      diag_log format ["server: successfully recorded pilot inside %1, winner is %2", _area, _winner];
-      [format ["winner is %1", _winner]] remoteExec ["hint", 0];
-
       [_winner] call rattrap_objectives_fnc_endGame;
 
-      missionNamespace setVariable ["GRAD_pilotCam_reasonForShutOff", "end", true];
-    } else {
-      diag_log format ["server: aborting filming, no pilot inside %1", _area];
+      ["_camObj", "end"] call GRAD_pilotCam_fnc_camTurnOffServer;
 
-      missionNamespace setVariable ["GRAD_pilotCam_reasonForShutOff", "left", true];
-      GRAD_pilotCam_RECORDING_DONE = 0;
-    };
-	};
+      diag_log format ["server: successfully recorded pilot inside %1, winner is %2", _area, _winner];      
+  };
 
   // increment
 	GRAD_pilotCam_RECORDING_DONE = GRAD_pilotCam_RECORDING_DONE + 1;
   publicVariable "GRAD_pilotCam_RECORDING_DONE";
 
 }, 1, [_camObj, _targetObject, _area]] call CBA_fnc_addPerFrameHandler;
+
+missionNamespace setVariable ["GRAD_pilotCam_targetObject", _targetObject];
+missionNamespace setVariable ["GRAD_pilotCam_serverFrameHandler", _handle];
