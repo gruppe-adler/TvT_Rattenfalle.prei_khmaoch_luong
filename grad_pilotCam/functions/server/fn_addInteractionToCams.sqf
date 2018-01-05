@@ -7,7 +7,7 @@ _turnOn = ["CameraOn", "Turn Cam On", "", {
 
 
 _turnOff = ["CameraOff", "Turn Cam Off", "", {
-	[_player, _target, "shutter"] remoteExec ["GRAD_pilotCam_camTurnOffServer", [0,2] select isDedicated];
+	[_target, "shutter"] remoteExec ["GRAD_pilotCam_fnc_camTurnOffServer", [0,2] select isDedicated];
 },
 {(_target getVariable ["GRAD_pilotCam_camIsOn", false])}] call ace_interact_menu_fnc_createAction;
 

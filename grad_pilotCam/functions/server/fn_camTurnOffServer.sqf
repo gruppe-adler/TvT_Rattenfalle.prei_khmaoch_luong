@@ -1,11 +1,16 @@
 params ["_camObj", "_reason"];
 
 // disable server loop
-private _handle = missionNamespace getVariable ["GRAD_pilotCam_serverFrameHandler", _handle];
-private _targetObject = missionNamespace getVariable ["GRAD_pilotCam_targetObject", _targetObject];
+private _handle = missionNamespace getVariable ["GRAD_pilotCam_serverFrameHandler", -1];
+private _targetObject = missionNamespace getVariable ["GRAD_pilotCam_targetObject", objNull];
 
-deleteVehicle _targetObject;
-[_handle] call CBA_fnc_removePerFrameHandler;
+if (!isNull _targetObject) then {
+	deleteVehicle _targetObject;
+};
+
+if (_handle > -1) then {
+	[_handle] call CBA_fnc_removePerFrameHandler;
+};
 
 
 // inform clients about reason for switchoff
