@@ -18,5 +18,6 @@ class GRAD_pilotCam {
 		class addInteractionToCams;
 		class initServer { preInit = 1; };
 		class camTurnOnServer;
+		class camTurnOffServer;
 	};
 };
