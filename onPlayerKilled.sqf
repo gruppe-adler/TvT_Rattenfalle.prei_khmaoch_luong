@@ -20,8 +20,6 @@ _handle = execVM "player\createDeathCam.sqf";
 waitUntil {scriptdone _handle};
 cutText ["", "BLACK IN", 1];
  
-[true] call ace_spectator_fnc_setSpectator;
-
 private _enemySides = [west,east,independent,civilian] - [playerSide];
 [[playerSide], _enemySides] call ace_spectator_fnc_updateSides;
 
@@ -34,7 +32,9 @@ if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
 
 [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
 [1, objNull] call ace_spectator_fnc_setCameraAttributes;
+
+[true] call ace_spectator_fnc_setSpectator;
 [player, true] call TFAR_fnc_forceSpectator;
-player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true];
+player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 
 call grad_simpleWaveRespawn_fnc_showRemainingTime;
