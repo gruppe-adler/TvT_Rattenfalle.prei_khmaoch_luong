@@ -11,5 +11,5 @@ setPlayerRespawnTime 0;
 }, {
 	setPlayerRespawnTime 999999;
 	player setVariable ["GRAD_simpleWaveRespawn_respawning", false];
-	player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", false];
+	player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", false, true];
 }, []] call CBA_fnc_waitUntilAndExecute;
