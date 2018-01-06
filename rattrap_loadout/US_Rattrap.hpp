@@ -115,7 +115,7 @@ class US_Rattrap: SOGBLACK {
                 LIST_2("ACE_bloodIV"),
                 LIST_10("ACE_epinephrine"),
                 LIST_10("ACE_morphine"),
-                LIST_10("ACE_fieldDressing")
+                LIST_20("ACE_fieldDressing")
             };
         };
         //Explosive Specialist

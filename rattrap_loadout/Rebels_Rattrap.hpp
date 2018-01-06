@@ -37,7 +37,7 @@ class Rebels_Rattrap: ModerateRebels {
             };
             addItemsToVest[] = {
                 "rhs_mag_rgd5",
-                "rhs_mag_rdg2_white",
+                LIST_2("rhs_mag_rdg2_white"),
                 LIST_7("30Rnd_762x39_Mag_Tracer_Green_F")
             };
         };
@@ -93,16 +93,15 @@ class Rebels_Rattrap: ModerateRebels {
             headgear = "rhsgref_helmet_M1_painted";
             
             addItemsToVest[] = {
-                LIST_2("rhs_mag_rdg2_white"),
+                LIST_2("rhs_mag_rgd5"),
                 LIST_6("30Rnd_762x39_Mag_Tracer_Green_F")
             };
             addItemsToBackpack[] = {
-                LIST_5("ACE_bloodIV"),
-                LIST_15("ACE_epinephrine"),
-                LIST_20("ACE_morphine"),
+                LIST_2("ACE_bloodIV"),
+                LIST_10("ACE_epinephrine"),
+                LIST_10("ACE_morphine"),
                 LIST_20("ACE_fieldDressing"),
-                LIST_20("ACE_fieldDressing"),
-                LIST_6("rhs_mag_rdg2_white")
+                LIST_2("rhs_mag_rdg2_white")
             };
         };
         //Explosive Specialist
@@ -168,6 +167,8 @@ class Rebels_Rattrap: ModerateRebels {
             secondaryWeapon = "rhs_weap_rpg7";
             secondaryWeaponMagazine = "rhs_rpg7_PG7VL_mag";
             addItemsToBackpack[] = {
+                LIST_2("rhs_mag_rgd5"),
+                LIST_2("rhs_mag_rdg2_white"),
                 LIST_2("rhs_rpg7_PG7VL_mag"),
                 "rhs_rpg7_OG7V_mag"
             };
@@ -188,6 +189,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_I_C_Soldier_Para_5_F";
             vest = "V_TacChestrig_oli_F";
             goggles = "G_Bandanna_oli";
+            headgear = "rhsgref_helmet_M1_painted";
             
             secondaryWeapon = "rhs_weap_rpg26";
         };
