@@ -44,16 +44,14 @@ _handle = [{
   // exit if no pilot is inside
   { if (_x isEqualTo (missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj",objNull])) exitWith {  _pilotInside = true; }; } forEach _entities;
 
-	if (!_pilotInside) then {
+	if (!_pilotInside) exitWith {
       [_camObj, "pilotleft"] call GRAD_pilotCam_fnc_camTurnOffServer;
       diag_log format ["server: aborting filming, no pilot inside %1", _area];
 	};
 
-  if (GRAD_pilotCam_RECORDING_DONE > GRAD_pilotCam_RECORDING_DURATION) then {
+  if (GRAD_pilotCam_RECORDING_DONE > GRAD_pilotCam_RECORDING_DURATION) exitWith {
       _winner = _area getVariable ["GRAD_pilotCam_winningSide", civilian];
-      [_camObj, "end"] call GRAD_pilotCam_fnc_camTurnOffServer;
-      [_winner] call rattrap_objectives_fnc_endGame;
-
+      [_camObj, "end", "_winner"] call GRAD_pilotCam_fnc_camTurnOffServer;
       diag_log format ["server: successfully recorded pilot inside %1, winner is %2", _area, _winner];      
   };
 

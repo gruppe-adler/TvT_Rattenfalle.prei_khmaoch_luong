@@ -22,9 +22,8 @@
             };
 
             [_bodyBag, 1] call ace_cargo_fnc_setSize;
-            [_bodyBag, true, [0, 1.6, 0.26], 0] call ace_dragging_fnc_setDraggable;
-
-
+            // todo remoteexec
+            [_bodyBag, true, [0, 1.6, 0.26], 0] remoteExec ["ace_dragging_fnc_setDraggable", 0];
 
             /* private _name = [_deadGuy] call ace_common_fnc_getName; */
             

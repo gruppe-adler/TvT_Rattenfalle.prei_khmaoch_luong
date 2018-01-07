@@ -37,8 +37,8 @@
             <German>Der Pilot muss gefunden werden, zur Kamera im nördlichen Dorf gebracht und für 7 Minuten gefilmt werden. Tot oder lebendig.</German>
         </Key>
         <Key ID="str_rattrap_task_opfor_filmpilot_title">
-            <English>str_rattrap_task_opfor_filmpilot_title</English>
-            <German>str_rattrap_task_opfor_filmpilot_title</German>
+            <English>Find and film the pilot.</English>
+            <German>Pilot finden und filmen.</German>
         </Key>
     </Package>
 </Project>
