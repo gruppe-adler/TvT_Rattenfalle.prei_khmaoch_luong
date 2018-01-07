@@ -1,7 +1,7 @@
 /* by mcdiod */
 
 _this spawn {
-    params ["_target",["_timeout",10],["_radius",50],["_angle",180],["_altitude",15],["_dir",0],["_commitTime",0.1],["_showCinemaBorder",false]];
+    params ["_target",["_timeout",15],["_radius",50],["_angle",180],["_altitude",15],["_dir",0],["_commitTime",0.1],["_showCinemaBorder",false]];
  
     cutText ["", "PLAIN", 3];
 

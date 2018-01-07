@@ -7,6 +7,8 @@ if (_isDebug == 0) then {
 	DEBUG = true;
 };
 
+RHSDecalsOff = true;
+
 //
 // customizable variables
 //
@@ -27,7 +29,6 @@ enableRadio false;
 // 0 fadeRadio 0;
 showChat false;
 
-jipTime = 60000;
 
 {_x setMarkerAlphaLocal 0;} forEach allMapMarkers;
 
@@ -135,16 +136,6 @@ if (isServer) then {
 
 if (hasInterface) then {
 
-	// JIP handling
-	checkJIP = {
-		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
-			player setDamage 1;
-		} else {
-			// [] spawn callIntro;
-		};
-	};
-
-
 	callIntro = {
 		waitUntil {CRASH_SITE_VEHICLE_POS select 0 != 0};
 		0 = [
@@ -160,13 +151,13 @@ if (hasInterface) then {
 			// ["_target",["_timeout",10],["_radius",50],["_angle",180],["_altitude",15],["_dir",0],["_commitTime",0.1],["_showCinemaBorder",false]];
 	};
 
+	[] spawn callIntro;
+
 	sleep 1;
 
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
 	};
-
-	[] spawn checkJIP;
 
 	1 fadesound 1;
 

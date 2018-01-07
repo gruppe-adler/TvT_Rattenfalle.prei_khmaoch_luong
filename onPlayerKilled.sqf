@@ -37,4 +37,6 @@ if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
 [player, true] call TFAR_fnc_forceSpectator;
 player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 
-call grad_simpleWaveRespawn_fnc_showRemainingTime;
+if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
+	call grad_simpleWaveRespawn_fnc_showRemainingTime;
+};
