@@ -22,7 +22,7 @@ _targetObject setPosASL [_aimPos select 0, _aimPos select 1, _heightAboveGround]
 // _targetObject setPosASL [(getPosASL _targetObject) select 0, (getPosASL _targetObject) select 1, _ASLz];
 _targetObject setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
 
-
+sleep 0.5;
 // start pip cams for players and fullscreen for pilot
 {
   if (_x getVariable ["GRAD_pilotTracking_isPilot",false]) then {

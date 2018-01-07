@@ -1,9 +1,11 @@
 params ["_camObj", "_relPosASL", "_targetObject", "_area"];
 
+if (!alive player) exitWith {};
+
 disableSerialization;
 private _cam = "camera" camCreate _relPosASL;
 _cam setPosASL _relPosASL;
-
+sleep 0.1;
 _cam camSetTarget _targetObject;
 _cam cameraEffect ["INTERNAL", "BACK"];
 _cam camSetFocus [5, 1];
@@ -21,7 +23,7 @@ private _progressBar = call GRAD_pilotCam_fnc_createProgressBarPilot;
 	_progressBar progressSetPosition (linearConversion [0, GRAD_pilotCam_RECORDING_DURATION, GRAD_pilotCam_RECORDING_DONE, 0, 1, true]);
 	
 
-	if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false])) then {
+	if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false]) || !alive player) then {
 			[_handle] call CBA_fnc_removePerFrameHandler;
 			[_cam, _effectsArray, _progressBar] call GRAD_pilotCam_fnc_camTurnOffPilot;
 	};

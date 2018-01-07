@@ -4,8 +4,10 @@ params ["_camObj", "_relPosASL", "_targetObject", "_area"];
 private _pipcamVehicle = "Sign_Pointer_Yellow_F" createVehicleLocal [0,0,0]; //Sign_Pointer_Yellow_F
 _pipcamVehicle setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
 _pipcamVehicle setPosASL _relPosASL;
-_pipcamVehicle attachTo [_targetObject];
 
+sleep 0.1;
+_pipcamVehicle attachTo [_targetObject];
+sleep 0.5;
 private _camPos = ([0,0,0]);
 
 
