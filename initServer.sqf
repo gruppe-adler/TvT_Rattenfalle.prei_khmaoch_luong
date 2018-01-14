@@ -4,13 +4,16 @@ call grad_simpleWaveRespawn_fnc_serverLoop;
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 // catch if pilot disconnects, server should make ai out of unit [true]
-["rattrap_handlePilotDisconnect", "HandleDisconnect", {
+
+// TODO cant stack this EH?
+addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
 
 	if (_unit getVariable ["grad_pilotTracking_isPilot", false]) then {
 		true
 	};
-}] call BIS_fnc_addStackedEventHandler;
+}];
+
 
 /*
 

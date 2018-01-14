@@ -220,7 +220,7 @@ class Rebels_Rattrap: ModerateRebels {
             headgear = "rhs_fieldcap_khk";
 
             primaryWeapon = "arifle_AK12_GL_F";
-            backpack = "TFAR_mr3000_rhs";
+            backpack = "tf_mr3000_rhs";
 
              addItemsToBackpack[] = {
                 LIST_10("UGL_FlareGreen_F"),
@@ -235,7 +235,7 @@ class Rebels_Rattrap: ModerateRebels {
             headgear = "H_Booniehat_oli";
 
             primaryWeapon = "arifle_AK12_GL_F";
-            backpack = "TFAR_mr3000_rhs";
+            backpack = "tf_mr3000_rhs";
 
             addItemsToBackpack[] = {
                 LIST_10("UGL_FlareGreen_F"),

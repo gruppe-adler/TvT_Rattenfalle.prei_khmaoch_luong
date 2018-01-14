@@ -17,10 +17,10 @@ publicVariable "GRAD_pilotTracking_penaltyBrokenLegDelay";
 
 [_pilot, true] call grad_gpsTracker_fnc_setTarget;
 
-[] remoteExec ["GRAD_pilotTracking_fnc_initClient", [0,-2] select isDedicated];
+[_pilot] remoteExec ["GRAD_pilotTracking_fnc_initClient", [0,-2] select isDedicated, true];
 
 if (isMultiplayer) then {
-	[_pilot] remoteExec ["GRAD_pilotTracking_fnc_initPilot", _pilot];
+	[_pilot] remoteExec ["GRAD_pilotTracking_fnc_initPilot", _pilot, true];
 } else {
 	[_pilot] call GRAD_pilotTracking_fnc_initPilot;
 };

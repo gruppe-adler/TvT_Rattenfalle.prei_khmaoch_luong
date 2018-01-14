@@ -5,15 +5,17 @@ class GRAD_pilotTracking {
 
 		class addAction;
 		class addInteractions;
-		class clientLoop;
 		class createBloodSplatter;
 		class disableCollision;
+		class dropBlood;
 		class getCardinalBearing;
 		class gpsSetReceivingIndicator;
 		class initClient;
 		class initPilot;
 		class openGPS;
+		class pilotLoop;
 		class pilotStartHealing;
+		class playerLoop;
 		class readTrace;
 		class reOpenGPS;
 		class setBloodBar;
@@ -27,7 +29,6 @@ class GRAD_pilotTracking {
 		class createFootStepDry;
 		class createFootStepWet;
 		class createPilotMarker;
-		class dropBlood;
 		class gpsReceivingSetter;
 		class initServer;
 		class serverLoopPilotAlive;

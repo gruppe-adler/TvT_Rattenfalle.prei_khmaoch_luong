@@ -3,9 +3,9 @@ params ["_pilot"];
 // initial delay
 // sleep 5;
 
-[_pilot] call grad_pilotTracking_fnc_clientLoop;
 _pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
 
+[_pilot] call grad_pilotTracking_fnc_pilotLoop;
 
 _loadoutHandler = ["GRAD_loadout_loadoutApplied", {
 	

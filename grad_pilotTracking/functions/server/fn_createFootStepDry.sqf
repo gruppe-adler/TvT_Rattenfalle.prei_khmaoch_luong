@@ -1,3 +1,10 @@
+/*
+
+	NOT IN USE [performance]
+
+*/
+
+
 params ["_unit"];
 
 private _select = selectRandom [0,1];
@@ -16,4 +23,3 @@ _helper setPos (_step modelToWorldVisual [0,0,-0.11]);
 _helper setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
 
 [_helper, _direction] call GRAD_pilotTracking_fnc_addTimeStamp;
-

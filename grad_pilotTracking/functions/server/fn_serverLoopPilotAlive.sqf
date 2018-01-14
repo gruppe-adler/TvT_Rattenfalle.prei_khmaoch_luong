@@ -54,37 +54,12 @@ _unit addEventhandler ["killed", {
     };
 }];
 
-/*
-_unit addMPEventHandler ["MPHit", {
-    _unit = _this select 0;
-    _source = _this select 3;
-    _damageDone = _unit getVariable ["grad_pilotTracking_pilotIsHit", 0];
-    // not self inflicted damage
-    if (!(_source isEqualTo _unit)) then {
-        switch (_damageDone) do {
-            case 0: {
-                        _unit setHitPointDamage  ["hitLegs", 0.5];
-                        _unit setVariable ["grad_pilotTracking_pilotIsHit", 1];
-                    };
-            case 1: {
-                        _unit setHitPointDamage  ["hitHands", 0.5];
-                        _unit setVariable ["grad_pilotTracking_pilotIsHit", 2];
-                    };
-            case 2: {
-                        _unit setHitPointDamage  ["hitBody", 0.5];
-                        _unit setVariable ["grad_pilotTracking_pilotIsHit", 3];
-                    };
-            case 3: {
-                        _unit setHitPointDamage  ["hitHead", 1];
-                    };
-            default {};
 
-        };
-    };
-}];
-*/
 
 GRAD_pilotTracking_progress = 0;
+
+
+
 
 [{
     params ["_args", "_handle"];
@@ -124,6 +99,10 @@ GRAD_pilotTracking_progress = 0;
         if (!_notInVehicle) then {
             _marker setMarkerPos _currentPosition;
         };
+    };
+
+    if (_notInVehicle) then {
+
     };
 
     GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;

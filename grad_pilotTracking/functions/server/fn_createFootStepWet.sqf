@@ -1,3 +1,10 @@
+/*
+
+	NOT IN USE [performance]
+
+*/
+
+
 params ["_unit"];
 
 private _position = AGLtoASL (_unit modelToWorldVisual (selectRandom [[0,0.2,0],[0.2,0,0]]));

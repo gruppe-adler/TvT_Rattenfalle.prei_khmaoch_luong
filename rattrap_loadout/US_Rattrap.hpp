@@ -201,7 +201,7 @@ class US_Rattrap: SOGBLACK {
         };
         //Squad Leader
         class Soldier_SL_F: Soldier_F {
-            backpack = "TFAR_rt1523g_bwmod";
+            backpack = "tf_rt1523g_bwmod";
             primaryWeapon = "rhs_weap_hk416d10_m320";
 
             addItemsToBackpack[] = {
@@ -213,7 +213,7 @@ class US_Rattrap: SOGBLACK {
 
         //Team Leader
         class Soldier_TL_F: Soldier_F {
-            backpack = "TFAR_rt1523g_bwmod";
+            backpack = "tf_rt1523g_bwmod";
             primaryWeapon = "rhs_weap_hk416d10_m320";
 
             addItemsToBackpack[] = {
