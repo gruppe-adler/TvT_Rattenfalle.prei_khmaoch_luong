@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3915.532,11.46054,4941.7134};
-		dir[]={0.72911632,-0.65004003,-0.21411885};
-		up[]={0.62370306,0.75989825,-0.18316232};
-		aside[]={-0.28177169,-4.7846697e-008,-0.95948732};
+		pos[]={3968.3408,29.835546,4946.9048};
+		dir[]={-0.6029402,-0.34697142,-0.71840274};
+		up[]={-0.2230612,0.937868,-0.26577714};
+		aside[]={-0.7659865,-1.0395888e-007,0.64287525};
 	};
 };
 binarizationWanted=0;
@@ -553,7 +553,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=24;
+									items=27;
 									class Item0
 									{
 										class data
@@ -890,6 +890,48 @@ class CustomAttributes
 											value="ace_parachute_hidealtimeter";
 										};
 									};
+									class Item24
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_nightvision_fogscaling";
+										};
+									};
+									class Item25
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_nightvision_effectscaling";
+										};
+									};
+									class Item26
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_nightvision_aimdownsightsblur";
+										};
+									};
 								};
 							};
 						};
@@ -906,7 +948,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=24;
+									items=27;
 									class Item0
 									{
 										class data
@@ -1987,6 +2029,141 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item24
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item25
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0.75;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item26
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0.40000001;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -2021,7 +2198,7 @@ class Mission
 		startFog=1;
 		startWind=0;
 		forecastWeather=0;
-		forecastFog=1;
+		forecastFog=0.19606546;
 		forecastWind=0;
 		forecastWaves=0;
 		rainForced=1;

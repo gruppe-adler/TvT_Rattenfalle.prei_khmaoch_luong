@@ -14,8 +14,6 @@ _gpsStatus = uiNamespace getVariable ['gui_pilot_gps_0',controlNull] displayCtrl
 
     private _notInVehicle = isNull objectParent _unit;
 
-    of
-
     if (!(_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false])) then {
 	    _var = GRAD_pilotTracking_progress/GRAD_pilotTracking_missionTime;
 	    [_bar, _var] call GRAD_pilotTracking_fnc_setBloodBar;

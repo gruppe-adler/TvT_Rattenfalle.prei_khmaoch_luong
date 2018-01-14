@@ -23,6 +23,7 @@ _readTrace = ["ACE_MainActions", "Spur einschätzen", "", {
 
 
 GRAD_GPS_TRACKER_OPEN = false;
+publicVariable "GRAD_GPS_TRACKER_OPEN";
  
 _openGPSTracker = ["ACE_SelfActions", "Open GPS Tracker", "",
 {[] call grad_pilotTracking_fnc_openGPS; GRAD_GPS_TRACKER_OPEN = true;},
