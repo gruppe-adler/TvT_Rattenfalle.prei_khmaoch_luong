@@ -15,6 +15,13 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 
+0 setFog [1, 0.1, 5];
+forceWeatherChange;
+
+[{
+	(60*60) setFog [0.1, 0.1, 5];
+}, 2] call CBA_fnc_waitAndExecute;
+
 /*
 
 // description.ext parameters
