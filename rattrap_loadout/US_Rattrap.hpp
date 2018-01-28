@@ -187,13 +187,10 @@ class US_Rattrap: SOGBLACK {
                 "rhs_fgm148_magazine_AT"
             };
         };
-        //Repair Specialist
+        // pilot (well yeah)
         class soldier_repair_F: Soldier_F {
-           
-            addItemsToBackpack[] = {
-                "ToolKit",
-                "ACE_wirecutter"
-            };
+           nvgoggles = "ACE_NVG_Wide";
+           headgear = "rhsusf_hgu56p_black";
         };
         //Rifleman (AT)
         class soldier_LAT_F: Soldier_F {
@@ -207,7 +204,8 @@ class US_Rattrap: SOGBLACK {
             addItemsToBackpack[] = {
                 LIST_10("UGL_FlareRed_F"),
                 LIST_2("1Rnd_SmokeRed_Grenade_shell"),
-                LIST_2("1Rnd_Smoke_Grenade_shell")
+                LIST_2("1Rnd_Smoke_Grenade_shell"),
+                LIST_6("30Rnd_556x45_Stanag_Tracer_Red")
             };
         };
 
@@ -217,10 +215,12 @@ class US_Rattrap: SOGBLACK {
             primaryWeapon = "rhs_weap_hk416d10_m320";
 
             addItemsToBackpack[] = {
-                LIST_10("UGL_FlareRed_F"),
+                LIST_6("UGL_FlareRed_F"),
                 LIST_2("1Rnd_SmokeRed_Grenade_shell"),
-                LIST_2("1Rnd_Smoke_Grenade_shell")
+                LIST_2("1Rnd_Smoke_Grenade_shell"),
+                LIST_10("30Rnd_556x45_Stanag_Tracer_Red")
             };
         };
+
     };
 };

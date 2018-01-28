@@ -15,8 +15,6 @@ respawnTemplates[] = {"Base"};
 respawnOnStart = -1;//Dont respawn on start.
 respawnDialog = 0;
 
-#define GUNLIGHTS
-
 class cfgFunctions {
     #include "rattrap_objectives\cfgFunctions.hpp"
     #include "grad_simpleWaveRespawn\cfgFunctions.hpp"
