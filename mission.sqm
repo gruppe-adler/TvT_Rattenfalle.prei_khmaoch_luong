@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1599;
+		nextID=1600;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7233.9487,41.254715,2479.5122};
-		dir[]={-0.45253021,-0.33108127,-0.82802117};
-		up[]={-0.15878256,0.9435991,-0.29053351};
-		aside[]={-0.8775084,-4.8056245e-007,0.47957733};
+		pos[]={7233.8076,42.470654,2479.0752};
+		dir[]={-0.37009537,-0.64984787,-0.66390139};
+		up[]={-0.31642106,0.76005709,-0.56761748};
+		aside[]={-0.87346363,-3.2382377e-007,0.48691875};
 	};
 };
 binarizationWanted=0;
@@ -14017,10 +14017,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7232.4092,38.074501,2475.3062};
+						position[]={7232.166,38.199516,2475.0129};
+						angles[]={0.018570304,0,0.022340214};
 					};
 					side="West";
-					flags=4;
+					flags=6;
 					class Attributes
 					{
 						rank="CORPORAL";
@@ -14029,7 +14030,6 @@ class Mission
 					};
 					id=1597;
 					type="B_soldier_repair_F";
-					atlOffset=-0.125;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14135,11 +14135,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7231.3691,38.177319,2475.708};
-						angles[]={0.018570304,0,0.008831366};
+						position[]={7231.2329,38.183014,2475.3369};
+						angles[]={0.018574219,0,0.0088296877};
 					};
 					side="West";
-					flags=6;
+					flags=4;
 					class Attributes
 					{
 						description="CoPilot";
@@ -14147,7 +14147,6 @@ class Mission
 					};
 					id=1598;
 					type="B_soldier_repair_F";
-					atlOffset=-3.8146973e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14253,10 +14252,28 @@ class Mission
 			{
 			};
 			id=1593;
-			atlOffset=-3.8146973e-006;
 			class CustomAttributes
 			{
 				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Piloten";
+						};
+					};
+				};
+				class Attribute1
 				{
 					property="acex_headless_blacklist";
 					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
@@ -14275,7 +14292,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 	};

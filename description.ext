@@ -50,7 +50,7 @@ class Header
 {
   gameType = Seize;
   minPlayers = 3;
-  maxPlayers = 26;
+  maxPlayers = 35;
 };
 
 class Params
