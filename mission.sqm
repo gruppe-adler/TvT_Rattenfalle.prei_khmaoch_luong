@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7233.8076,42.470654,2479.0752};
-		dir[]={-0.37009537,-0.64984787,-0.66390139};
-		up[]={-0.31642106,0.76005709,-0.56761748};
-		aside[]={-0.87346363,-3.2382377e-007,0.48691875};
+		pos[]={7236.9204,42.470654,2473.5503};
+		dir[]={-0.82191348,-0.55812222,0.11401431};
+		up[]={-0.55284053,0.82974988,0.07668899};
+		aside[]={0.13740689,-6.0850289e-007,0.99053049};
 	};
 };
 binarizationWanted=0;
@@ -498,10 +498,15 @@ class AddonsMetaData
 		};
 	};
 };
+class DynamicSimulation
+{
+	enable=0;
+};
 randomSeed=11246822;
 class ScenarioData
 {
 	author="nomisum";
+	wreckRemovalMaxTime=3600;
 };
 class CustomAttributes
 {
