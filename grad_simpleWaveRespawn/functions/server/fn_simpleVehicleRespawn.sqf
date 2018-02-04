@@ -71,12 +71,7 @@ if ( ( alive _veh ) && { ( canMove _veh ) && { { ( alive _x ) } count ( crew _ve
 		_veh setPos [ ( _vehPos select 0 ), ( _vehPos select 1 ), 0 ];
 		_veh setDir _vehDir;
 		[_veh] call GRAD_simpleWaveRespawn_fnc_setupVehicleAfterRespawn;
-		/*
-		if (_vehName != "") then {
-			missionNamespace setVariable [_vehName, _veh];
-			publicVariable _vehName;
-		};
-		*/	
+		
 	};
 };
 
@@ -99,17 +94,12 @@ if ( !( alive _veh ) || { !( canMove _veh ) } ) then {
 
 		// deleteVehicle _veh;
 		sleep 1;
+		
 		_veh = createVehicle [ _vehtype, [0,0,0], [], 0, "NONE" ];
 		_veh setVariable ["RHS_Decal_Enabled", false, true];
 		_veh setPos [ ( _vehPos select 0 ), (_vehPos select 1 ), 0 ];
 		_veh setDir _vehDir;
-		[_veh] call GRAD_simpleWaveRespawn_fnc_setupVehicleAfterRespawn;
-		/*
-		if (_vehName != "") then {
-			missionNamespace setVariable [_vehName, _veh];
-			publicVariable _vehName;
-		};
-		*/				
+		[_veh] call GRAD_simpleWaveRespawn_fnc_setupVehicleAfterRespawn;			
 	};
 };
 };

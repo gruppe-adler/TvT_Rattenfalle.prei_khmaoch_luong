@@ -13,5 +13,7 @@ class GRAD_simpleWaveRespawn {
 		class serverLoop;
 		class setupVehicleAfterRespawn;
 		class simpleVehicleRespawn;
+		class spawnVehicle;
+		class vehicleRespawn;
 	};
 };
