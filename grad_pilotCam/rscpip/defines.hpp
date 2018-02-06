@@ -13,3 +13,19 @@
 #define PIP_H           (MAIN_H - 0.5 * FRAME_TB_H)
 #define PIP_X           (MAIN_X + (MAIN_W - PIP_W)/2)
 #define PIP_Y           (MAIN_Y + (MAIN_H - PIP_H)/2)
+
+class pilotCam_RscPicture
+{
+    access = 0;
+    type = CT_STATIC;
+    idc = -1;
+    style = ST_PICTURE;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1,1,1,1};
+    font = "TahomaB";
+    sizeEx = 0;
+    lineSpacing = 0;
+    text = "";
+    fixedWidth = 0;
+    shadow = 0;
+};

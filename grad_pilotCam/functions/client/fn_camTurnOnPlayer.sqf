@@ -33,7 +33,7 @@ _background ctrlCommit 0;
 
 
 // store those things global, needed to restart cam to workaround bugs
-missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", [_camObj, _relPosASL, _targetObject, _area, _progressBar, _pipcamObject, _pipcamVehicle]];
+missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", [_camObj, _relPosASL, _targetObject, _area, _progressBar, _pipcamObject]];
 
 // loop progress and abort if necessary
 [{

@@ -1,6 +1,6 @@
 #include "defines.hpp"
 
-class uo_RscPIP {
+class rscPilotCamPip {
     duration = 1e+011;
     fadein = 0;
     idd = -1;
@@ -8,7 +8,7 @@ class uo_RscPIP {
     onUnload = "uinamespace setvariable ['rscPilotCamPip',nil];";
 
     class Controls {
-        class B: uo_RscPicture {
+        class B: pilotCam_RscPicture {
             access = 0;
             colorBackground[] = {0,0,0,0};
             colorText[] = {1,1,1,1};
@@ -61,7 +61,7 @@ class uo_RscPIP {
             text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_R_ca.paa";
         };
 
-        class Static_00: uo_RscPicture {
+        class Static_00: pilotCam_RscPicture {
             access = 0;
             colorBackground[] = {0,0,0,0};
             colorText[] = {1,1,1,1};
@@ -159,7 +159,7 @@ class uo_RscPIP {
     };
 
     class ControlsBackground {
-        class PIP: uo_RscPicture {
+        class PIP: pilotCam_RscPicture {
             w = PIP_W;
             h = PIP_H;
             x = PIP_X;

@@ -1,5 +1,5 @@
 // ["renderPIPtarget0",[[_pipcamVehicle,_camPos],_targetObject],_pipcamVehicle]
-params ["_rendertarget", "_camPos", "_targetObject";
+params ["_rendertarget", "_camPos", "_targetObject"];
 
 private ["_cam"];
 
