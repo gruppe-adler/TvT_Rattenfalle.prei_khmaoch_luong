@@ -1,12 +1,9 @@
-params ["_pipCam", "_pipcamVehicle", "_progressBar"];
+params ["_pipCam", "_progressBar"];
 
 ctrlDelete _progressBar;
 _pipCam cameraEffect ["terminate","back"];
 camDestroy _pipCam;
 call GRAD_pilotCam_fnc_pipEnd;
-detach _pipcamVehicle;
-deleteVehicle _pipcamVehicle;
-
 "cameraOverlay" cutRsc ["Default", "PLAIN"];
 
 switch (missionNamespace getVariable ["GRAD_pilotCam_reasonForShutOff", "none"]) do {
