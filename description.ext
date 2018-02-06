@@ -30,9 +30,10 @@ class cfgFunctions {
 
 };
 
-class rscTitles {  
+class rscTitles {
     #include "grad_pilotTracking\rscTitles.hpp"
     #include "rscTitles\rscTitles.hpp"
+    #include "grad_pilotCam\rscpip\title.hpp"
 };
 
 class Loadouts {
@@ -69,7 +70,7 @@ class Params
     values[] = {60,120,300,1800,2700,3600,4500,5400,7200};
     texts[] = {"60s", "120s", "5min", "30min", "45min", "60min", "75min", "90min", "120min"};
     default = 3600;
-  }; 
+  };
 
   class PilotHealingTime
   {
@@ -117,7 +118,7 @@ class CfgSounds {
 };
 
 class CfgDebriefing
-{  
+{
   class OpforWinsByFilming
   {
     title = "Opfor wins";

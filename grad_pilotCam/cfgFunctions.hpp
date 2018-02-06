@@ -2,7 +2,7 @@ class GRAD_pilotCam {
 
 	class client {
 		file = grad_pilotCam\functions\client;
-		
+
 		class camTurnOffPilot;
 		class camTurnOffPlayer;
 		class camTurnOnPilot;
@@ -10,6 +10,8 @@ class GRAD_pilotCam {
 		class createCameraEffectsPilot;
 		class createProgressBarPilot;
 		class createProgressBarPlayer;
+		class pipEnd;
+		class pipStart;
 	};
 
 	class server {

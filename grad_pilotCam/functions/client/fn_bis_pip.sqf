@@ -5,6 +5,7 @@
 	Displays Picture in Picture
 	When empty array [] is passed as argument, current camera is terminated
 
+	["renderPIPtarget0",[[_pipcamVehicle,_camPos],_targetObject],_pipcamVehicle]
 	Parameter(s):
 	_this select 0: STRING - render target
 	_this select 1: OBJECT or ARRAY - camera or camera params in format [position,target]
@@ -75,7 +76,7 @@ if (typename _actionParams == typename []) then {
 			_heli = _params select 0;
 			_camera = _params select 1;
 			_actions = _params select 2;
-			
+
 			removeMissionEventHandler ["Loaded", _actions select 2];
 
 			_camera cameraeffect ["terminate","back"];

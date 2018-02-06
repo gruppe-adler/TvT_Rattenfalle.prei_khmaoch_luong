@@ -3,7 +3,7 @@ params ["_pipCam", "_pipcamVehicle", "_progressBar"];
 ctrlDelete _progressBar;
 _pipCam cameraEffect ["terminate","back"];
 camDestroy _pipCam;
-["renderPIPtarget0"] call BIS_fnc_PIP;
+call GRAD_pilotCam_fnc_pipEnd;
 detach _pipcamVehicle;
 deleteVehicle _pipcamVehicle;
 
