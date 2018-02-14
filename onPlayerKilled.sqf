@@ -19,7 +19,7 @@ private _items = items _player;
 _handle = execVM "player\createDeathCam.sqf";
 waitUntil {scriptdone _handle};
 cutText ["", "BLACK IN", 1];
- 
+
 private _enemySides = [west,east,independent,civilian] - [playerSide];
 [[playerSide], _enemySides] call ace_spectator_fnc_updateSides;
 
@@ -36,7 +36,22 @@ if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
 [true] call ace_spectator_fnc_setSpectator;
 [player, true] call TFAR_fnc_forceSpectator;
 
+// everyone respawns now
+player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
+
 if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
-	player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 	call grad_simpleWaveRespawn_fnc_showRemainingTime;
+} else {
+	player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 999999];
+
+	_shooter = player getVariable ["ACE_medical_lastDamageSource",player];
+	if (side _shooter isEqualTo west) then {
+			[{
+					player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
+			}, (GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (5 * 60))] call CBA_fnc_waitAndExecute;
+	} else {
+			[{
+					player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
+			}, GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY] call CBA_fnc_waitAndExecute;
+	};
 };

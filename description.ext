@@ -14,6 +14,7 @@ respawnDelay = 9999;
 respawnTemplates[] = {"Base"};
 respawnOnStart = -1;//Dont respawn on start.
 respawnDialog = 0;
+respawnButton = 0;
 
 class cfgFunctions {
     #include "rattrap_objectives\cfgFunctions.hpp"
@@ -62,6 +63,22 @@ class Params
     values[] = {60,120,180,300,420,600};
     texts[] = {"60s", "120s", "3min", "5min", "7min", "10min"};
     default = 420;
+  };
+
+  class RespawnCountMax
+  {
+    title = "Maximum of available respawns for each player.";
+    values[] = {0,1,2,3,4,5,99999};
+    texts[] = {"zero", "1", "2", "3", "4", "5", "unlimited"};
+    default = 3;
+  };
+
+  class RespawnPenaltyPilot
+  {
+    title = "Respawn penalty delay the pilot faces after dying. Will respawn on opposite killer side.";
+    values[] = {5*60,10*60,20*60,30*60,45*60,99999};
+    texts[] = {"5min", "10min", "20min", "30min", "45min", "unlimited"};
+    default = 20*60;
   };
 
   class PilotLifeSpan
