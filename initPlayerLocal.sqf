@@ -10,4 +10,3 @@ player addEventhandler ["HandleRating", {
 
 
 0 = execVM "player\animations\addWavingInteraction.sqf";
-

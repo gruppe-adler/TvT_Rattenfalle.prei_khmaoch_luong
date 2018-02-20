@@ -4,6 +4,8 @@ class GRAD_pilotTracking {
 		file = grad_pilotTracking\functions\client;
 
 		class addAction;
+		class addInteractions;
+		class breakBones;
 		class createBloodSplatter;
 		class disableCollision;
 		class dropBlood;
@@ -25,7 +27,6 @@ class GRAD_pilotTracking {
 
 		class addBodyBagHandling;
 		class addTimeStamp;
-		class addInteractions;
 		class createFootStepDry;
 		class createFootStepWet;
 		class createPilotMarker;
