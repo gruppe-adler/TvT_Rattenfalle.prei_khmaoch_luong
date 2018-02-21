@@ -9,6 +9,7 @@ class GRAD_pilotTracking {
 		class createBloodSplatter;
 		class disableCollision;
 		class dropBlood;
+		class estimateBleedout;
 		class getCardinalBearing;
 		class gpsSetReceivingIndicator;
 		class initClient;

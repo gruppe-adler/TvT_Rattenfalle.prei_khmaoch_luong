@@ -1,3 +1,5 @@
+// BLOOD TRAIL
+
 _readTrace = ["ACE_MainActions", "Spur einschätzen", "", {
 	[_player, _target] call GRAD_pilotTracking_fnc_readTrace;
 },
@@ -20,7 +22,9 @@ _readTrace = ["ACE_MainActions", "Spur einschätzen", "", {
 
 ["Sign_Sphere10cm_F", 0, ["ACE_MainActions"], _readTrace] call ace_interact_menu_fnc_addActionToClass;
 
-// todo
+
+
+// BONE BREAKING
 _breakBones = ["breakBones", "Break Bones", "", {
 	[_player, _target] remoteExec ["GRAD_pilotTracking_fnc_breakBones", _target];
 },
@@ -29,9 +33,20 @@ _breakBones = ["breakBones", "Break Bones", "", {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
+_estimateBleedout = ["bloodStatus", "Estimate Bleedout", "", {
+		[_target] call GRAD_pilotTracking_fnc_estimateBleedout;
+},
+{
+	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
+}] call ace_interact_menu_fnc_createAction;
+
 [typeOf player, 0, ["ACE_MainActions"], _breakBones, true] call ace_interact_menu_fnc_addActionToClass;
+[typeOf player, 0, ["ACE_MainActions"], _estimateBleedout, true] call ace_interact_menu_fnc_addActionToClass;
 
 
+
+
+// GPS STUFF
 GRAD_GPS_TRACKER_OPEN = false;
 
 _openGPSTracker = ["ACE_SelfActions", "Open GPS Tracker", "",
