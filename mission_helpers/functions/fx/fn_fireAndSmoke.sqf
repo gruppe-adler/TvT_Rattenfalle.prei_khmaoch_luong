@@ -7,7 +7,7 @@
 // Inputs: object to attach effect too.
 //   effect "FIRE_SMALL", "FIRE_MEDIUM", "FIRE_BIG", "SMOKE_SMALL","SMOKE_MEDIUM","SMOKE_BIG",
 //
-// [_veh] execVM "Effects.sqf";
+// [_veh] call GRAD_mission_helpers_fnc_fireAndSmoke;
 
 /* cleanup: {
      detach _x;
