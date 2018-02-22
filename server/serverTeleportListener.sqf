@@ -31,10 +31,10 @@ createCrashSite=  {
 	clearWeaponCargoGlobal _veh1;
 	sleep 0.1;
 	_veh2 = createVehicle ["CraterLong", [getPosATL _veh1 select 0, getPosATL _veh1 select 1, -0.3], [], 0, "CAN_COLLIDE"];
-	_smoke = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
-	_smoke2 = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
+	_smoke = [_veh1, "SMOKE_BIG"] call GRAD_mission_helpers_fnc_fireAndSmoke;
+	_smoke2 = [_veh1, "SMOKE_BIG"] call GRAD_mission_helpers_fnc_fireAndSmoke;
 
-	null = [{[CRASH_SITE] execVM "helpers\createMarkerForSides.sqf";},
+	null = [{[CRASH_SITE] call GRAD_mission_helpers_fnc_createMarkerForSides;},
 	"BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
 
 };

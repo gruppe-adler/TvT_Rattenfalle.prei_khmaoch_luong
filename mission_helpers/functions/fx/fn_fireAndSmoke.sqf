@@ -2,11 +2,11 @@
 //Effects.sqf
 // Horbin
 // 4/20/15
-// based upon coding example from : 
+// based upon coding example from :
 // http://forums.bistudio.com/showthread.php?149032-Spawning-fire&p=2344816&viewfull=1#post2344816
 // Inputs: object to attach effect too.
 //   effect "FIRE_SMALL", "FIRE_MEDIUM", "FIRE_BIG", "SMOKE_SMALL","SMOKE_MEDIUM","SMOKE_BIG",
-//   
+//
 // [_veh] execVM "Effects.sqf";
 
 /* cleanup: {
@@ -70,7 +70,7 @@ private["_light","_brightness","_color","_ambient","_intensity","_attenuation"];
         };
 
       //  diag_log format ["<FuMS> Effects: Creating Effect :%1 %2 on %3",_fire, _smoke, _object];
-        
+
         if (_fire != "") then
         {
             _eFire = "#particlesource" createVehicle (position _object) ;
@@ -102,4 +102,3 @@ private["_light","_brightness","_color","_ambient","_intensity","_attenuation"];
             _light setLightAttenuation _attenuation;
             _light setLightDayLight false;
         };
-
