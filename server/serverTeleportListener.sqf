@@ -34,7 +34,7 @@ createCrashSite=  {
 	_smoke = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 	_smoke2 = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 
-	null = [{[CRASH_SITE] execVM "helpers\createMarkerForSides.sqf";}, 
+	null = [{[CRASH_SITE] execVM "helpers\createMarkerForSides.sqf";},
 	"BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
 
 };
@@ -103,15 +103,6 @@ _CRASH_SITE_listener = {
 
 "CRASH_SITE" addPublicVariableEventHandler _CRASH_SITE_listener;
 
-
-[] spawn {
-		checkingObjectives = true;
-		while {checkingObjectives} do {
-				if (PILOTS_RESCUED) exitWith {checkingObjectives=false; BLUFOR_WINS = true; publicVariable "BLUFOR_WINS";};
-				if (PILOTS_CAPTURED) exitWith {checkingObjectives=false; OPFOR_WINS = true; publicVariable "OPFOR_WINS";};
-			sleep 5;
-		};
-};
 
 
 // runs in SP to emulate addPublicVariableEventHandler (which doesnt work in SP)

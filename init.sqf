@@ -85,23 +85,12 @@ if (isServer) then {
 	CRASH_SITE_VEHICLE_POS = [0,0];
 	publicVariable "CRASH_SITE_VEHICLE_POS";
 
-	BLUFOR_WINS = false;
-	publicVariable "BLUFOR_WINS";
-	OPFOR_WINS = false;
-	publicVariable "OPFOR_WINS";
-
 	SIGHTING_DELAY = 60;
-	
-	CHANCE_TO_REVEAL_BLUFOR = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
-	publicVariable "CHANCE_TO_REVEAL_BLUFOR";
 
-	CHANCE_TO_REVEAL_OPFOR = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
-	publicVariable "CHANCE_TO_REVEAL_OPFOR";
 
-	
 	[] execVM "server\serverTeleportListener.sqf";
 	[] execVM "server\selectSpawnPosition.sqf";
-	
+
 
 
 	if (isMultiplayer) then {
