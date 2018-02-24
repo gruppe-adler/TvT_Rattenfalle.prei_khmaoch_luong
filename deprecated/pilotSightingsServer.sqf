@@ -9,7 +9,7 @@ NOT USED CURRENTLY
 
 if (!isServer) exitWith {}; // just to make sure!
 
-waitUntil {count CRASH_PILOTS > 0};
+// waitUntil {count CRASH_PILOTS > 0};
 
 _crashSitePos = _this select 0; // Helicopter crashSite Position
 _maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted

@@ -1,4 +1,6 @@
-_quotes = [
+#include "\z\ace\addons\main\script_component.hpp"
+
+private _quotes = [
 ["Der Tod eines Mannes ist eine Tragödie, aber der Tod von Millionen nur eine Statistik.","Joseph Stalin"],
 ["Ich bin überzeugt, dass Menschen heute am Leben wären, wenn es die Todesstrafe gäbe.","Nancy Reagan"],
 ["Am schnellsten beendet man einen Krieg, indem man ihn verliert.","George Orwell"],
@@ -49,71 +51,81 @@ _quotes = [
 ];
 
 
-
-_title = "<t color='#8f110a' size='3' align='center' shadow='0'>Du bist tot.</t>";
-_selectedQuote = selectRandom _quotes;
-_quote = "<t color='#f9f9f9' size='1.5' align='center' shadow='0'>" + (_selectedQuote select 0) + "</t>";
-_author = "<t color='#f9f9f9' size='1' align='right' shadow='0'>" + (_selectedQuote select 1) + "</t>";
+// CONFIGURE TEXTS
+private _title = "<t color='#8f110a' size='3' align='center' shadow='0'>Du bist tot.</t>";
+private _selectedQuote = selectRandom _quotes;
+private _quote = "<t color='#f9f9f9' size='1.5' align='center' shadow='0'>" + (_selectedQuote select 0) + "</t>";
+private _author = "<t color='#f9f9f9' size='1' align='right' shadow='0'>" + (_selectedQuote select 1) + "</t>";
 
 // diag_log format ["death message is %1 from %2", _quote, _author];
 
-0 = createDialog "GRAD_DeathCamDisplay";
+// CREATE DISPLAYS FOR TEXT
+createDialog "GRAD_DeathCamDisplay";
 disableSerialization;
 _display = uiNamespace getVariable ['GRAD_DeathCamDisplay',0];
 waitUntil {!isNull _display};
 cutRsc ["RscStatic", "PLAIN" , 3];
-_ctrlHeadline = _display displayCtrl 7001;
+
+private _ctrlHeadline = _display displayCtrl 7001;
 _ctrlHeadline ctrlSetStructuredText parseText _title;
 _ctrlHeadline ctrlSetFont "EtelkaNarrowMediumPro";
 _ctrlHeadline ctrlCommit 0;
 
-_ctrlQuote = _display displayCtrl 7002;
+private _ctrlQuote = _display displayCtrl 7002;
 _ctrlQuote ctrlSetStructuredText parseText _quote;
 _ctrlQuote ctrlSetFont "EtelkaNarrowMediumPro";
 _ctrlQuote ctrlCommit 0;
 
-_ctrlAuthor = _display displayCtrl 7003;
+private _ctrlAuthor = _display displayCtrl 7003;
 _ctrlAuthor ctrlSetStructuredText parseText _author;
 _ctrlAuthor ctrlSetFont "EtelkaNarrowMediumPro";
 _ctrlAuthor ctrlCommit 0;
 
+
+// KILL MSG
+private _unit = player;
+private _shooter = _unit getVariable ["ACE_medical_lastDamageSource",_unit];
+
+private _killedBy = format ["Killed by: %1", name _shooter];
+systemChat _killedBy;
+[_killedBy] call EFUNC(common,displayTextStructured);
+
+
 // CAM STUFF
-
-_unit = player;
-_shooter = _unit getVariable ["ACE_medical_lastDamageSource",_unit];
-
-systemChat format ["killed by: %1", name _shooter];
-
 showCinemaBorder true;
-
 playMusic "EventTrack03_F_Curator";
-_filmgrain = ppEffectCreate ["FilmGrain",2000];
+
+// GRAIN FX
+private _filmgrain = ppEffectCreate ["FilmGrain",2000];
 _filmgrain ppEffectEnable true;
 _filmgrain ppEffectAdjust [0.3,0.3,0.12,0.12,0.12,true];
 _filmgrain ppEffectCommit 0;
 
+// CREATE CAM
 _camera = "camera" camCreate (position _unit);
-// _camera camSetTarget _unit;
 _camera cameraEffect ["internal","back"];
 _camera camSetFov 0.4;
 _camera camCommit 1;
-_camera camSetTarget _unit;
+_camera camSetTarget _unit; // target dead player
 sleep 1;
+
 _camera camSetPos [getpos _unit select 0, getpos _unit select 1,3];
 _camera camSetFov 0.6;
 _camera camCommit 1;
 sleep 1;
-_camera camSetTarget _shooter;
+_camera camSetTarget _shooter; // target killer
 _camera camSetFov 0.2;
 _camera camCommit 3;
 sleep 5;
 cutRsc ["RscStatic", "PLAIN" , 3];
 sleep 1;
+
+// END ALL EFFECTS
 cutText ["", "BLACK OUT", 1];
 _filmgrain ppEffectEnable false;
 ppEffectDestroy _filmgrain;
 _camera cameraEffect ["terminate","back"];
 camDestroy _camera;
 showCinemaBorder false;
-sleep 0.5;
-true
+
+GRAD_DEATHCAM_RUNNING = false;

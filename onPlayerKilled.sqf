@@ -6,6 +6,7 @@ if (_player getVariable ["GRAD_simpleWaveRespawn_respawning", false]) exitWith {
 "grad_gpsTracker_layer" cutFadeout 0.5;
 
 // remove radio to prevent taking an enemys radio
+// todo: does this work actually?
 private _items = items _player;
 {
 	_isHandheld = _x isKindOf ["ItemRadio", configFile >> "CfgWeapons"];
@@ -16,8 +17,11 @@ private _items = items _player;
 	};
 } forEach _items;
 
-_handle = execVM "player\createDeathCam.sqf";
-waitUntil {scriptdone _handle};
+// DEATH CAM
+GRAD_DEATHCAM_RUNNING = true;
+[] spawn GRAD_mission_helpers_fnc_deathCam;
+waitUntil {!GRAD_DEATHCAM_RUNNING};
+
 cutText ["", "BLACK IN", 1];
 
 private _enemySides = [west,east,independent,civilian] - [playerSide];
@@ -33,25 +37,28 @@ if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
 [[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
 [1, objNull] call ace_spectator_fnc_setCameraAttributes;
 
+// ENGAGE SPECTATOR
 [true] call ace_spectator_fnc_setSpectator;
 [player, true] call TFAR_fnc_forceSpectator;
 
-// everyone respawns now
+// queuing up for respawn
 player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 
 if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	call grad_simpleWaveRespawn_fnc_showRemainingTime;
 } else {
+	// SET PENALTY DELAY FOR PILOT
 	player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 999999];
 
 	_shooter = player getVariable ["ACE_medical_lastDamageSource",player];
 	if (side _shooter isEqualTo west) then {
+			// EXTRA PENALTY IF TEAMKILL
 			[{
 					player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
-			}, (GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (5 * 60))] call CBA_fnc_waitAndExecute;
+			}, (GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (15 * 60))] call CBA_fnc_waitAndExecute;
 	} else {
 			[{
 					player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
-			}, GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY] call CBA_fnc_waitAndExecute;
+			}, GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (5 * 60)] call CBA_fnc_waitAndExecute;
 	};
 };
