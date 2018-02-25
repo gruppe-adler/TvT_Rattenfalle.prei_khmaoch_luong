@@ -1,3 +1,11 @@
+/*
+
+    GRAD_DEATHCAM_RUNNING = true;
+    [] spawn GRAD_deathcam_fnc_deathCam;
+    waitUntil {!GRAD_DEATHCAM_RUNNING};
+
+*/
+
 #include "\z\ace\addons\main\script_component.hpp"
 
 private _quotes = [

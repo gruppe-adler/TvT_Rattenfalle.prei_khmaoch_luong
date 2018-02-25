@@ -14,12 +14,6 @@ class mission_helpers {
 		class waveAddAction;
 	};
 
-	class deathcam {
-		file = mission_helpers\functions\deathcam;
-
-		class deathCam;
-	};
-
 	class marker {
 		file = mission_helpers\functions\marker;
 

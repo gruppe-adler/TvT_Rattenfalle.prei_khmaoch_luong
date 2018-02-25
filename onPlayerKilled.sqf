@@ -19,7 +19,7 @@ private _items = items _player;
 
 // DEATH CAM
 GRAD_DEATHCAM_RUNNING = true;
-[] spawn GRAD_mission_helpers_fnc_deathCam;
+[] spawn GRAD_deathcam_fnc_deathCam;
 waitUntil {!GRAD_DEATHCAM_RUNNING};
 
 cutText ["", "BLACK IN", 1];
