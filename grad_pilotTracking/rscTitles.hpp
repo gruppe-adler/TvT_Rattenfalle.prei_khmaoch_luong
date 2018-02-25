@@ -1,5 +1,5 @@
 
-class Default 
+class Default
 {
 	idd = -1;
 	fadein = 0;
@@ -12,8 +12,8 @@ class pilotTracking_RscPicture
 {
     access = 0;
     idc = -1;
-    type = CT_STATIC;
-    style = ST_PICTURE;
+    type = pilotTracking_CT_STATIC;
+    style = pilotTracking_ST_PICTURE;
     colorBackground[] = {0,0,0,0};
     colorText[] = {1,1,1,1};
     font = "PuristaLight";
@@ -107,7 +107,7 @@ class GRAD_rattrap_bloodLevelBar
 
 	class Controls
 	{
-		class Progress: pilotTracking_RscProgress 
+		class Progress: pilotTracking_RscProgress
 		{
 			idc = 2399;
 			x = 0;

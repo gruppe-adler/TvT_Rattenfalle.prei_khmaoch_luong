@@ -11,7 +11,7 @@ class GRAD_DeathCamDisplay
 
 		class controlsBackground
 				{
-						class GRAD_DeathCam_bg : RscStructuredText
+						class GRAD_DeathCam_bg : deathCam_RscStructuredText
 						{
 									idc = -1;
 									x = SafeZoneX;
@@ -24,7 +24,7 @@ class GRAD_DeathCamDisplay
 						};
 				};
 		class controls {
-			class RscText_DeathCam_headline : RscStructuredText {
+			class RscText_DeathCam_headline : deathCam_RscStructuredText {
 				idc = 7001;
 				text = "<t size='4' shadow='0' align='center'>Du bist tot.</t>";
 				color[] = {1,1,1,0};
@@ -34,7 +34,7 @@ class GRAD_DeathCamDisplay
 				h = safeZoneH/9;
 				colorBackground[] = {0,0,0,0};
 			};
-			class RscText_DeathCam_quote : RscStructuredText {
+			class RscText_DeathCam_quote : deathCam_RscStructuredText {
 				idc = 7002;
 				text = "quote";
 				color[] = {1,1,1,0.8};
@@ -44,7 +44,7 @@ class GRAD_DeathCamDisplay
 				h = safeZoneH/10;
 				colorBackground[] = {0,0,0,0};
 			};
-			class RscText_DeathCam_author : RscStructuredText {
+			class RscText_DeathCam_author : deathCam_RscStructuredText {
 				idc = 7003;
 				text = "author";
 				color[] = {1,1,1,0.4};

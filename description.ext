@@ -1,5 +1,6 @@
-#include "rscTitles\_defines.hpp"
-#include "rscTitles\_dialogs.hpp"
+#include "grad_deathCam\rscDefines.hpp"
+#include "grad_deathCam\rscDialogs.hpp"
+#include "grad_pilotTracking\rscDefines.hpp"
 #include "node_modules\grad-replay\ui\defines.hpp"
 #include "node_modules\grad-replay\ui\dialog.hpp"
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
@@ -38,7 +39,6 @@ class cfgFunctions {
 class rscTitles {
     #include "grad_pilotTracking\rscTitles.hpp"
     #include "grad_pilotCam\rscpip\title.hpp"
-    #include "rscTitles\rscTitles.hpp"
 };
 
 class Loadouts {
