@@ -31,8 +31,8 @@ clearMagazineCargoGlobal _veh1;
 clearWeaponCargoGlobal _veh1;
 sleep 0.1;
 _veh2 = createVehicle ["CraterLong", [getPosATL _veh1 select 0, getPosATL _veh1 select 1, -0.3], [], 0, "CAN_COLLIDE"];
-_smoke = [_veh1, "SMOKE_BIG"] call GRAD_mission_helpers_fnc_fireAndSmoke;
-_smoke2 = [_veh1, "SMOKE_BIG"] call GRAD_mission_helpers_fnc_fireAndSmoke;
+_smoke = [_veh1, "SMOKE_BIG"] call GRAD_fx_fnc_fireAndSmoke;
+_smoke2 = [_veh1, "SMOKE_BIG"] call GRAD_fx_fnc_fireAndSmoke;
 
 [_position] remoteExec ["GRAD_mission_helpers_fnc_createMarkerForSides", [0,-2] select isDedicated, true];
 

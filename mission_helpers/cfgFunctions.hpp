@@ -20,13 +20,6 @@ class mission_helpers {
 		class deathCam;
 	};
 
-	class fx {
-		file = mission_helpers\functions\fx;
-
-		class fireAndSmoke;
-	};
-
-
 	class marker {
 		file = mission_helpers\functions\marker;
 
