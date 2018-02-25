@@ -10,6 +10,8 @@ class GRAD_pilotTracking {
 		class disableCollision;
 		class dropBlood;
 		class estimateBleedout;
+		class forceCloseWound;
+		class getACEFatigue;
 		class getCardinalBearing;
 		class gpsSetReceivingIndicator;
 		class initClient;

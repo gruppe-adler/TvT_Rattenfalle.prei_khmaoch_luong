@@ -68,3 +68,21 @@ _pushBoat = ["PushBoatAction", "Push Boat", "",
 {true}] call ace_interact_menu_fnc_createAction;
 
 ["I_C_Boat_Transport_02_F", 0, ["ACE_MainActions"], _pushBoat] call ace_interact_menu_fnc_addActionToClass;
+
+
+// FORCE CLOSE WOUND FOR PILOT
+GRAD_WOUND_FORCE_CLOSE = false;
+// todo finalize force close wounds
+_forceCloseWound = ["ACE_SelfActions", "Temporary force close wound", "",
+{[] call grad_pilotTracking_fnc_forceCloseWound; GRAD_WOUND_FORCE_CLOSE = true; publicVariable "GRAD_WOUND_FORCE_CLOSE";},
+{
+player getVariable ["GRAD_pilotTracking_isPilot", false] &&
+!GRAD_WOUND_FORCE_CLOSE &&
+call GRAD_pilotTracking_fnc_getACEFatigue > 80}] call ace_interact_menu_fnc_createAction;
+
+_endForceCloseWound = ["ACE_SelfActions", "End force close wound", "",
+{GRAD_WOUND_FORCE_CLOSE = true;},
+{player getVariable ["GRAD_pilotTracking_isPilot", false] && GRAD_WOUND_FORCE_CLOSE}] call ace_interact_menu_fnc_createAction;
+
+[typeOf player, 1, ["ACE_SelfActions"], _forceCloseWound] call ace_interact_menu_fnc_addActionToClass;
+[typeOf player, 1, ["ACE_SelfActions"], _endForceCloseWound] call ace_interact_menu_fnc_addActionToClass;

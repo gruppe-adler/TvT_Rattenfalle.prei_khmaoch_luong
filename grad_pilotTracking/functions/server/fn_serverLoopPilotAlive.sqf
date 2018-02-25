@@ -13,12 +13,12 @@ _unit addEventhandler ["killed", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
 
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
-    
+
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle", _unit, true];
 
     private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", ""];
-    
+
     if (!(_marker isEqualTo "")) then {
         _marker setMarkerPos position _unit;
         _marker setMarkerAlpha 1;
@@ -26,12 +26,12 @@ _unit addEventhandler ["killed", {
 
     if (!(isNull objectParent _unit)) then {
         // push out of vehicle
-        _pX = floor random -5; 
-        _pY = floor random -5; 
-        _position = vehicle _unit modelToWorld [_pX,_pY,0]; 
+        _pX = floor random -5;
+        _pY = floor random -5;
+        _position = vehicle _unit modelToWorld [_pX,_pY,0];
 
         if (alive vehicle _unit) then {
-            _unit action ["GetOut", vehicle _unit]; 
+            _unit action ["GetOut", vehicle _unit];
             _unit action ["Eject", vehicle _unit];
         };
 
@@ -84,10 +84,10 @@ GRAD_pilotTracking_progress = 0;
     };
 
     // KILL PILOT
-    if (GRAD_pilotTracking_progress > GRAD_pilotTracking_missionTime && 
+    if (GRAD_pilotTracking_progress > GRAD_pilotTracking_missionTime &&
         !(_unit getVariable ["GRAD_rattrap_pilotHealingStarted", false]) &&
         _unit getVariable ["GRAD_pilotTracking_isBleeding",false]) then {
-    	
+
         [_handle] call CBA_fnc_removePerFrameHandler;
 
     	_unit setHit ["head", 1];

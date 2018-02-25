@@ -8,7 +8,7 @@ publicVariable "GRAD_pilotTracking_missionTime";
 publicVariable "GRAD_pilotTracking_penaltyBrokenLegDelay";
 
 
-{  
+{
     if (_x getVariable ["GRAD_pilotTracking_isPilot", false]) exitWith {
         _pilot = _x;
         missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_x,true];
@@ -28,7 +28,7 @@ if (isMultiplayer) then {
 [_pilot] call GRAD_pilotTracking_fnc_dropBlood;
 [_pilot] call GRAD_pilotTracking_fnc_serverLoopPilotAlive;
 
-GRAD_pilotTracking_trackingRange = 2000;
+GRAD_pilotTracking_trackingRange = 500;
 publicVariable "GRAD_pilotTracking_trackingRange";
 
 call GRAD_pilotTracking_fnc_addBodyBagHandling;

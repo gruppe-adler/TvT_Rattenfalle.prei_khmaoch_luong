@@ -17,20 +17,20 @@ _cooldown = _unit getVariable ["GRAD_pilotTracking_gpsCooldown", 10];
 
 // check for gps obstacles and outside of car
 if ((count lineIntersectsSurfaces [
-        getPosWorld _unit, 
-        getPosWorld _unit vectorAdd [0, 0, 50], 
+        getPosWorld _unit,
+        getPosWorld _unit vectorAdd [0, 0, 50],
         _unit, objNull, true, 1, "VIEW", "NONE"
     ] > 0) && (_onFoot)) then {
 
 	_skyBlocked = true;
 	_gpsStatusCode = 0;
-		
+
 	/* hintSilent "GPS lost connection.";*/
 
 	// setting to zero causes error in reception script
 	["GRAD_pilotTracking_trackingRange", 0.1] call CBA_fnc_publicVariable;
 	_unit setVariable ["GRAD_pilotTracking_gpsCooldown", ceil(5 + random 5)];
-	
+
 } else {
 	if (_cooldown > 0 && (_onFoot)) then {
 
@@ -44,14 +44,14 @@ if ((count lineIntersectsSurfaces [
 		_skyBlocked = true;
 		_unit setVariable ["GRAD_pilotTracking_gpsCooldown", _cooldown];
 		_gpsStatusCode = 1;
-		
+
 		// hintSilent "GPS is recalibrating...";
 	} else {
 		_skyBlocked = false;
 		_gpsStatusCode = 2;
 
 		if (_onFoot) then {
-			["GRAD_pilotTracking_trackingRange", 2000] call CBA_fnc_publicVariable;
+			["GRAD_pilotTracking_trackingRange", 500] call CBA_fnc_publicVariable;
 		} else {
 			["GRAD_pilotTracking_trackingRange", 10000] call CBA_fnc_publicVariable;
 		};
