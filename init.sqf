@@ -1,5 +1,7 @@
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 
+[5] call GRAD_replay_fnc_init; // number is precision of replay, 2 means every 2 seconds one snapshot
+
 _isDebug = "debugMode" call BIS_fnc_getParamValue;
 
 

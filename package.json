@@ -1,10 +1,11 @@
 {
   "name": "TvT_Rattenfalle.prei_khmaoch_luong",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "dependencies": {
     "grad-gpstracker": "^0.2.0",
     "grad-leaveNotes": "^2.2.0",
     "grad-makeFire": "^2.0.0",
+    "grad-replay": "github:gruppe-adler/grad-replay#master",
     "shk_pos": "github:gruppe-adler/shk_pos#master"
   }
 }

@@ -1,5 +1,7 @@
 #include "rscTitles\_defines.hpp"
 #include "rscTitles\_dialogs.hpp"
+#include "node_modules\grad-replay\ui\defines.hpp"
+#include "node_modules\grad-replay\ui\dialog.hpp"
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
 
 OnLoadMission = "TvT_Rattrap";
@@ -29,6 +31,7 @@ class cfgFunctions {
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-gpsTracker\cfgFunctions.hpp"
     #include "node_modules\grad-makeFire\cfgFunctions.hpp"
+    #include "node_modules\grad-replay\cfgFunctions.hpp"
 
 };
 
