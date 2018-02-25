@@ -11,9 +11,5 @@ class GRAD_simpleWaveRespawn {
 		file = grad_simpleWaveRespawn\functions\server;
 
 		class serverLoop;
-		class simpleVehicleRespawnAdd;
-		class simpleVehicleRespawnConfigure;
-		class simpleVehicleRespawnSpawn;
-		class simpleVehicleRespawnCheck;
 	};
 };

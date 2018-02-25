@@ -24,4 +24,4 @@ if (_type isEqualTo "RHS_UH1Y_UNARMED_d") then {
 
 
 // add new respawn loop
-[_veh] call GRAD_simpleWaveRespawn_fnc_simpleVehicleRespawnAdd;
+[_veh] call GRAD_simpleVehicleRespawn_fnc_add;

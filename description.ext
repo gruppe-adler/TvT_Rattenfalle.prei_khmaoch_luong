@@ -18,6 +18,7 @@ respawnButton = 0;
 
 class cfgFunctions {
     #include "rattrap_objectives\cfgFunctions.hpp"
+    #include "grad_simpleVehicleRespawn\cfgFunctions.hpp"
     #include "grad_simpleWaveRespawn\cfgFunctions.hpp"
     #include "grad_fx\cfgFunctions.hpp"
     #include "grad_pilotTracking\cfgFunctions.hpp"
@@ -33,8 +34,8 @@ class cfgFunctions {
 
 class rscTitles {
     #include "grad_pilotTracking\rscTitles.hpp"
-    #include "rscTitles\rscTitles.hpp"
     #include "grad_pilotCam\rscpip\title.hpp"
+    #include "rscTitles\rscTitles.hpp"
 };
 
 class Loadouts {
