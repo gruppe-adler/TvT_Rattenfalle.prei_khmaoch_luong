@@ -59,6 +59,6 @@ if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	} else {
 			[{
 					player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
-			}, GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (5 * 60)] call CBA_fnc_waitAndExecute;
+			}, (GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (5 * 60))] call CBA_fnc_waitAndExecute;
 	};
 };

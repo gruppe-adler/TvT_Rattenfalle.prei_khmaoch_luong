@@ -6561,7 +6561,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="call{this setVariable [""RHS_Decal_Enabled"", false, true]; _nul = [ this, 300, 5] spawn GRAD_simpleWaveRespawn_fnc_simpleVehicleRespawn;}";
+				init="call{this setVariable ['ace_vehiclelock_lockSide', east]; this setVariable [""RHS_Decal_Enabled"", false, true]; _nul = [ this, 300, 5] spawn GRAD_simpleWaveRespawn_fnc_simpleVehicleRespawn;}";
 			};
 			id=1279;
 			type="I_C_Boat_Transport_02_F";
@@ -6758,7 +6758,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="call{this setVariable [""RHS_Decal_Enabled"", false, true]; _nul = [ this, 300, 5] spawn GRAD_simpleWaveRespawn_fnc_simpleVehicleRespawn;}";
+				init="call{this setVariable ['ace_vehiclelock_lockSide', east]; this setVariable [""RHS_Decal_Enabled"", false, true]; _nul = [ this, 300, 5] spawn GRAD_simpleWaveRespawn_fnc_simpleVehicleRespawn;}";
 			};
 			id=1290;
 			type="I_C_Boat_Transport_02_F";
@@ -8790,6 +8790,7 @@ class Mission
 			class Attributes
 			{
 				lock="UNLOCKED";
+				init="call{this setVariable ['ace_vehiclelock_lockSide', east];};";
 			};
 			id=1398;
 			type="rhsusf_mkvsoc_nerf";
@@ -14245,7 +14246,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="call{this setVariable [""RHS_Decal_Enabled"", false, true]; _nul = [ this, 300, 5] spawn GRAD_simpleWaveRespawn_fnc_simpleVehicleRespawn;}";
+				init="call{this setVariable ['ace_vehiclelock_lockSide', east]; this setVariable [""RHS_Decal_Enabled"", false, true]; _nul = [ this, 300, 5] spawn GRAD_simpleWaveRespawn_fnc_simpleVehicleRespawn;}";
 			};
 			id=1623;
 			type="I_C_Boat_Transport_02_F";

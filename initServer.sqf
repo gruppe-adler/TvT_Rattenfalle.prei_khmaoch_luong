@@ -1,5 +1,3 @@
-
-
 // CRASH POSIS
 [
 	"mrk_crash_site_01",
@@ -18,22 +16,28 @@ call grad_simpleWaveRespawn_fnc_serverLoop;
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 // catch if pilot disconnects, server should make ai out of unit [true]
+// delete dead player units if disconnecting on join
 // TODO cant stack this EH?
-addMissionEventHandler ["HandleDisconnect", {
-	params ["_unit", "_id", "_uid", "_name"];
+addMissionEventHandler ["HandleDisconnect",{
+    params [["_unit",objNull]];
 
-	if (_unit getVariable ["grad_pilotTracking_isPilot", false]) then {
-		true
-	};
+		if (_unit getVariable ["grad_pilotTracking_isPilot", false]) exitWith {
+			true
+		};
+
+    if (_unit getVariable ["GRAD_loadout_applicationCount",0] < 1) then {
+        deleteVehicle _unit;
+    };
+    false
 }];
 
 
-// WEATHER
+// SET FOG AND REDUCE OVER 90 mins
 0 setFog [1, 0.1, 5];
 forceWeatherChange;
 
 [{
-	(60*60) setFog [0.1, 0.1, 5];
+	(90*60) setFog [0.1, 0.1, 5];
 }, 2] call CBA_fnc_waitAndExecute;
 
 

@@ -9,9 +9,9 @@ class US_Rattrap: SOGBLACK {
         primaryWeaponMuzzle = "";
         primaryWeaponPointer = "grad_flashlight_1";
         primaryWeaponOptics = "rhsusf_acc_compm4";
-		primaryWeaponUnderbarrel = "rhsusf_acc_grip3";
+		    primaryWeaponUnderbarrel = "rhsusf_acc_grip3";
         handgunWeapon = "rhsusf_weap_glock17g4";
-		handgunWeaponMuzzle = "rhsusf_acc_omega9k";
+		    handgunWeaponMuzzle = "rhsusf_acc_omega9k";
         handgunWeaponMagazine = "rhsusf_mag_17Rnd_9x19_FMJ";
         binoculars = "ACE_Vector";
         map = "ItemMap";
@@ -47,7 +47,7 @@ class US_Rattrap: SOGBLACK {
                 };
                 //Asst. Autorifleman
                 class soldier_AAR_F: Soldier_F {
-                   
+
                     addItemsToBackpack[] = {
                         LIST_2("rhs_200rnd_556x45_M_SAW"),
                         "rhsusf_100Rnd_556x45_soft_pouch"
@@ -55,7 +55,7 @@ class US_Rattrap: SOGBLACK {
                 };
                 //Asst. Gunner (HMG/GMG)
                 class support_AMG_F: Soldier_F {
-                   
+
                     addItemsToBackpack[] = {
                         LIST_4("rhsusf_100Rnd_762x51_m62_tracer"),
                         "rhsusf_100Rnd_762x51"
@@ -105,7 +105,7 @@ class US_Rattrap: SOGBLACK {
                 };
                 //Combat Life Saver
                 class medic_F: Soldier_F {
-                    
+
                     addItemsToBackpack[] = {
                         LIST_1("HandGrenade"),
                         LIST_2("SmokeShellPurple"),
@@ -120,7 +120,7 @@ class US_Rattrap: SOGBLACK {
                 };
                 //Explosive Specialist
                 class soldier_exp_F: Soldier_F {
-                   
+
                     addItemsToBackpack[] = {
                         "ACE_Clacker",
                         "ACE_M26_Clacker",
@@ -146,7 +146,7 @@ class US_Rattrap: SOGBLACK {
                     primaryWeaponMagazine = "rhsusf_100Rnd_762x51";
                     handgunWeapon = "";
                     handgunWeaponMagazine = "";
-                   
+
                     addItemsToBackpack[] = {
                         LIST_2("HandGrenade"),
                         LIST_2("SmokeShell"),
