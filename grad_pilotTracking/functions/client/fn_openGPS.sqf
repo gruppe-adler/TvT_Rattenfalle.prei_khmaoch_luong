@@ -1,9 +1,9 @@
 // TODO make pilot accessible here
 
 /*
-private _pilot = missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle",objNull];
+private _pilot = missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj",objNull];
 
-if (isNull (missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle", objNull])) then {
+if (isNull (missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj", objNull])) then {
 
 
 		[_pilot,0, 1, 1, 1, {
@@ -18,7 +18,8 @@ if (isNull (missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj_v
 } else {
 
 */
-
+private _pilot = missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj", objNull];
+if (objNull _pilot) exitWith { hint "error: no pilot found"; };
 
 [_pilot,0, 1, 1, 1, {
 

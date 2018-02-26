@@ -22,15 +22,12 @@
             };
 
             [_bodyBag, 1] call ace_cargo_fnc_setSize;
-            // todo remoteexec
             [_bodyBag, true, [0, 1.6, 0.26], 0] remoteExec ["ace_dragging_fnc_setDraggable", 0];
 
-            /* private _name = [_deadGuy] call ace_common_fnc_getName; */
-            
 
             if (_isPilot) then {
             	[_bodyBag, _marker] call GRAD_pilotTracking_fnc_serverLoopPilotDead;
-                missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_bodyBag, true];
+              missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_bodyBag, true];
             	missionNamespace setVariable ["GRAD_pilotTracking_bodyBag", _bodyBag, true];
             	[_bodyBag, true] call grad_gpsTracker_fnc_setTarget;
             	diag_log format ["putting someone into bodybag %1, its the pilot.", _bodyBag];
@@ -55,7 +52,7 @@
         diag_log format ["put %1 inside cargo of %2", _item, _vehicle];
         _item setVariable ["GRAD_pilotTracking_isCargoOf", _vehicle, true];
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", _vehicle, true];
-    
+
     };
 
 }] call CBA_fnc_addEventHandler;

@@ -8,7 +8,7 @@ _pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
 [_pilot] call grad_pilotTracking_fnc_pilotLoop;
 
 _loadoutHandler = ["GRAD_loadout_loadoutApplied", {
-	
+
 	if (!(player getVariable ["GRAD_pilotTracking_isPilot", false])) exitWith {};
 
 	["GRAD_loadout_loadoutApplied",0] call CBA_fnc_removeEventHandler;
@@ -16,7 +16,7 @@ _loadoutHandler = ["GRAD_loadout_loadoutApplied", {
 	[{
 		player addItem "hgun_Pistol_Signal_F";
 	}, 5] call CBA_fnc_waitAndExecute;
-	
+
 	// radio nerfing
 	["waitForInit", "OnRadiosReceived", {
 	    [call TFAR_fnc_activeSwRadio, "33.3"] call TFAR_fnc_setSwFrequency;
@@ -34,7 +34,6 @@ _loadoutHandler = ["GRAD_loadout_loadoutApplied", {
 _pilot addEventHandler ["GetInMan", {
 	params ["_unit", "_position", "_vehicle", "_turret"];
 
-	missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle", _unit, true];
 	["The pilot got in a vehicle, check your GPS Tracker."] remoteExec ["hint", 0];
 
 	[] remoteExec ["GRAD_pilotTracking_fnc_reOpenGPS", allPlayers];

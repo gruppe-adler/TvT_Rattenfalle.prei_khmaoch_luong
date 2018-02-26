@@ -15,8 +15,7 @@ _unit addEventhandler ["killed", {
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
 
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
-    missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj_vehicle", _unit, true];
-
+    
     private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", ""];
 
     if (!(_marker isEqualTo "")) then {
