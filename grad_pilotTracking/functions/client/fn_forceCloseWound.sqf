@@ -1,8 +1,9 @@
-// todo: implement force close wound
+#include "\z\ace\addons\main\script_component.hpp"
 
 OXYGEN = 0.2; // reduce original OXYGEN level from ace, default 0.9
-diag_log format ["putting pressure on wound, oxygen is %1", OXYGEN];
 
+private _hint = format ["Putting pressure on wound. Bleeding temporarily stopped."];
+[_hint] call EFUNC(common,displayTextStructured);
 
 [{
     params ["_args", "_handle"];
@@ -15,6 +16,11 @@ diag_log format ["putting pressure on wound, oxygen is %1", OXYGEN];
           GRAD_WOUND_FORCE_CLOSE = false;
           publicVariable "GRAD_WOUND_FORCE_CLOSE";
           OXYGEN = 0.9;
+
+          private _hint = format ["Releasing pressure on wound."];
+          [_hint] call EFUNC(common,displayTextStructured);
     };
+
+
 
 }, 1, []] call CBA_fnc_addPerFrameHandler;
