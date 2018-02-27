@@ -2,17 +2,10 @@ params ["_camObj", "_reason", ["_winner", civilian]];
 
 // disable server loop
 private _handle = missionNamespace getVariable ["GRAD_pilotCam_serverFrameHandler", -1];
-private _targetObject = missionNamespace getVariable ["GRAD_pilotCam_targetObject", objNull];
-
-if (!isNull _targetObject) then {
-	// give clients room to switch off cams beforehand
-	[{deleteVehicle _this;}, _targetObject, 3] call CBA_fnc_waitAndExecute;
-};
 
 if (_handle > -1) then {
 	[_handle] call CBA_fnc_removePerFrameHandler;
 };
-
 
 // inform clients about reason for switchoff
 missionNamespace setVariable ["GRAD_pilotCam_reasonForShutOff", _reason, true];

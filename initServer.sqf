@@ -1,5 +1,6 @@
 // CRASH POSIS
 [
+	[
 	"mrk_crash_site_01",
 	"mrk_crash_site_02",
 	"mrk_crash_site_03",
@@ -7,6 +8,7 @@
 	"mrk_crash_site_05",
 	"mrk_crash_site_06",
 	"mrk_crash_site_07"
+	]
 ] call GRAD_mission_helpers_fnc_selectCrashSite;
 
 call grad_pilotTracking_fnc_initServer;

@@ -19,15 +19,15 @@ player addEventHandler ["GetInMan", {
 	_cameraRunningParams = missionNamespace getVariable ["GRAD_pilotCam_cameraRunningParams", []];
 
 	if (count _cameraRunningParams > 0) then {
-		_cameraRunningParams params ["_camObj", "_relPos", "_targetObject", "_area", "_progressBar", "_pipcamObject", "_pipcamVehicle"];
+		_cameraRunningParams params ["_camObj", "_relPos", "_area", "_progressBar", "_pipcamObject", "_pipcamVehicle"];
 		missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", []];
 
 		[{
-				params ["_camObj", "_relPos", "_targetObject", "_area"];	
+				params ["_camObj", "_relPos", "_area"];	
 
-				[_camObj, _relPos, _targetObject, _area] call GRAD_pilotCam_fnc_camTurnOnPlayer;
+				[_camObj, _relPos, _area] call GRAD_pilotCam_fnc_camTurnOnPlayer;
 
-		}, [_camObj, _relPos, _targetObject, _area], 2] call CBA_fnc_waitAndExecute;
+		}, [_camObj, _relPos, _area], 2] call CBA_fnc_waitAndExecute;
 	};		
 }];
 
@@ -36,14 +36,14 @@ player addEventHandler ["GetOutMan", {
 	_cameraRunningParams = missionNamespace getVariable ["GRAD_pilotCam_cameraRunningParams", []];
 
 	if (count _cameraRunningParams > 0) then {
-		_cameraRunningParams params ["_camObj", "_relPos", "_targetObject", "_area", "_progressBar", "_pipcamObject", "_pipcamVehicle"];
+		_cameraRunningParams params ["_camObj", "_relPos", "_area", "_progressBar", "_pipcamObject", "_pipcamVehicle"];
 		missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", []];
 
 		[{
-				params ["_camObj", "_relPos", "_targetObject", "_area"];	
+				params ["_camObj", "_relPos", "_area"];	
 
-				[_camObj, _relPos, _targetObject, _area] call GRAD_pilotCam_fnc_camTurnOnPlayer;
+				[_camObj, _relPos, _area] call GRAD_pilotCam_fnc_camTurnOnPlayer;
 
-		}, [_camObj, _relPos, _targetObject, _area], 2] call CBA_fnc_waitAndExecute;
+		}, [_camObj, _relPos, _area], 2] call CBA_fnc_waitAndExecute;
 	};		
 }];

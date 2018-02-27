@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7243.9775,54.835529,2470.3315};
-		dir[]={-0.52564889,-0.53579181,0.66080034};
-		up[]={-0.33355835,0.84433514,0.41932073};
-		aside[]={0.78260767,-3.6443816e-007,0.6225419};
+		pos[]={6424.9243,19.384392,2014.7939};
+		dir[]={0.13248885,-0.70233053,0.69941598};
+		up[]={0.13071676,0.71184975,0.69006073};
+		aside[]={0.98252761,-8.9261448e-008,-0.18611762};
 	};
 };
 binarizationWanted=0;
@@ -88,7 +88,7 @@ addons[]=
 	"A3_Structures_F_System",
 	"A3_Modules_F_Curator_Curator",
 	"RHS_US_A2_AirImport",
-	"GRAD_markV_nerf",
+	"rhsusf_c_markvsoc",
 	"rhsusf_c_weapons",
 	"A3_Weapons_F_Acc",
 	"ace_laserpointer",
@@ -407,10 +407,10 @@ class AddonsMetaData
 		};
 		class Item44
 		{
-			className="GRAD_markV_nerf";
-			name="RHS Mark V Searchlight";
-			author="nomisum";
-			url="http://www.gruppe-adler.de";
+			className="rhsusf_c_markvsoc";
+			name="Mark V SOC";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
 		};
 		class Item45
 		{
@@ -3996,7 +3996,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7207.1128,44.687027,2502.24};
-				angles[]={-0,0.13458234,0};
+				angles[]={0,0.13458234,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5737,7 +5737,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7218.5781,43.447906,2514.6138};
-				angles[]={-0,3.0596845,0};
+				angles[]={0,3.0596845,0};
 			};
 			side="Empty";
 			flags=4;
@@ -5748,6 +5748,7 @@ class Mission
 			};
 			id=1217;
 			type="rhsusf_mrzr4_d";
+			atlOffset=-0.049705505;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6056,7 +6057,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7212.7939,43.86005,2514.3396};
-				angles[]={-0,3.131592,0};
+				angles[]={0,3.131592,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6066,6 +6067,7 @@ class Mission
 			};
 			id=1234;
 			type="rhsusf_m998_w_2dr";
+			atlOffset=-0.097892761;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7652,8 +7654,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6422.7959,11.661511,2022.9684};
-				angles[]={0.012539502,5.4137321,0.01719437};
+				position[]={6422.7959,11.66151,2022.9685};
+				angles[]={0.012531464,5.4137321,0.017191494};
 			};
 			side="Empty";
 			flags=4;
@@ -7671,7 +7673,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6427.2461,11.096258,2019.6411};
+				position[]={6427.6807,11.089481,2019.385};
 				angles[]={6.2535515,5.3405328,0.0018593199};
 			};
 			side="Empty";
@@ -8793,7 +8795,7 @@ class Mission
 				init="call{this setVariable ['ace_vehiclelock_lockSide', east];};";
 			};
 			id=1398;
-			type="rhsusf_mkvsoc_nerf";
+			type="rhsusf_mkvsoc";
 			atlOffset=1.1350002;
 			class CustomAttributes
 			{

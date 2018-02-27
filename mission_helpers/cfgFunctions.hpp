@@ -1,4 +1,4 @@
-class mission_helpers {
+class GRAD_mission_helpers {
 
 	class ambient {
 		file = mission_helpers\functions\ambient;
@@ -27,6 +27,5 @@ class mission_helpers {
 		class selectCrashSite;
 		class teleportPlayer;
 	};
-
 
 };

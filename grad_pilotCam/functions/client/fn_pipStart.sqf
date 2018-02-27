@@ -1,5 +1,5 @@
 // ["renderPIPtarget0",[[_pipcamVehicle,_camPos],_targetObject],_pipcamVehicle]
-params ["_rendertarget", "_camPos", "_targetObject"];
+params ["_rendertarget", "_camPos", "_area"];
 
 private ["_cam"];
 
@@ -14,15 +14,23 @@ if (isNull _pipPIPCtrl) exitWith {
 };
 
 private _cam = "camera" camCreate _camPos;
-_cam cameraEffect ["Fixed", "FRONT", _rendertarget];
-_cam camSetTarget _targetObject;
+_cam cameraEffect ["Fixed", "FRONT", _rendertarget]; // FRONT
+
+private _targetPos = getPos _area;
+_targetPos set [2, ((_targetPos select 2) + 1.1)];
+
+_cam camSetTarget _targetPos;
 // zoom pip object to same levels as original cam
 _cam camSetFocus [5, 1];
 _cam camSetFov 0.5;
-_cam camPreload 0;
+//_cam camPreload 0;
 _cam camCommit 0;
 _rendertarget setPiPEffect [3,1,1,0.4,0,[0,0,0,0],[1,1,1,0],[1,1,1,1]];
 
 _pipPIPCtrl ctrlsettext format ["#(argb,256,256,1)r2t(%1,1.0)",_rendertarget];
+
+// DEBUG
+private _targetObject = "Sign_Pointer_Yellow_F" createVehicle [0,0,0];
+_targetObject setPos _targetPos;
 
 _cam

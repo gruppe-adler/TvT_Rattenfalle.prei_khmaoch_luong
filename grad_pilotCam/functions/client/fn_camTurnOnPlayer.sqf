@@ -1,16 +1,6 @@
-params ["_camObj", "_relPosASL", "_targetObject", "_area"];
+params ["_camObj", "_relPos", "_area"];
 
-/*
-private _pipcamVehicle = "Sign_Pointer_Yellow_F" createVehicleLocal [0,0,0]; //Sign_Pointer_Yellow_F
-_pipcamVehicle setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
-_pipcamVehicle setPosASL _relPosASL;
-sleep 0.1;
-_pipcamVehicle attachTo [_targetObject];
-sleep 0.5;
-*/
-
-private _pipcamObject = ["renderPIPtarget0", _relPosASL, _targetObject] call GRAD_pilotCam_fnc_pipStart;
-// private _pipcamObject = ["renderPIPtarget0",[[_pipcamVehicle,_camPos],_targetObject],_pipcamVehicle] call BIS_fnc_PIP;
+private _pipcamObject = ["renderPIPtarget0", _relPos, _area] call GRAD_pilotCam_fnc_pipStart;
 
 private _progressBar = call GRAD_pilotCam_fnc_createProgressBarPlayer;
 
@@ -33,12 +23,12 @@ _background ctrlCommit 0;
 
 
 // store those things global, needed to restart cam to workaround bugs
-missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", [_camObj, _relPosASL, _targetObject, _area, _progressBar, _pipcamObject]];
+missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", [_camObj, _relPos, _area, _progressBar, _pipcamObject]];
 
 // loop progress and abort if necessary
 [{
 	params ["_args", "_handle"];
-	_args params ["_camObj", "_pipcamObject", "_progressBar", "_targetObject"];
+	_args params ["_camObj", "_pipcamObject", "_progressBar"];
 
 	if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false])) exitWith {
 			[_handle] call CBA_fnc_removePerFrameHandler;
@@ -52,4 +42,4 @@ missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", [_camObj, _re
 
 	_progressBar progressSetPosition (linearConversion [0, GRAD_pilotCam_RECORDING_DURATION, GRAD_pilotCam_RECORDING_DONE, 0, 1, true]);
 
-}, 1, [_camObj, _pipcamObject, _progressBar, _targetObject]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_camObj, _pipcamObject, _progressBar]] call CBA_fnc_addPerFrameHandler;

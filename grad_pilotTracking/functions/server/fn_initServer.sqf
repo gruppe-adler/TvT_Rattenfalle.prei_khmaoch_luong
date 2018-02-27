@@ -11,7 +11,7 @@ publicVariable "GRAD_pilotTracking_penaltyBrokenLegDelay";
 {
     if (_x getVariable ["GRAD_pilotTracking_isPilot", false]) exitWith {
         _pilot = _x;
-        missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_x,true];
+        missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _x, true];
     };
 } forEach allUnits;
 

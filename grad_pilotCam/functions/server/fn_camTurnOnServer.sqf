@@ -11,31 +11,22 @@ _camObj setVariable ["GRAD_pilotCam_camIsOn", true, true];
 
 private _area = _camObj getVariable ["GRAD_pilotCam_area", objNull];
 private _relPos = _camObj modelToWorld [0.05, -0.25, 1.07];
-private _heightAboveGround = (getPosASL _camObj select 2) + 1.1;
+private _heightAboveGround = ((getPos _camObj) select 2) + 1.1;
 _relPos set [2,_heightAboveGround];
 
-private _aimPos = [getPosASL _area select 0, getPosASL _area select 1, _heightAboveGround]; // getRelPos [3000, _camObj getDir _area];
-private _targetObject = "Sign_Pointer_Yellow_F" createVehicle [0,0,0];
-_targetObject setPosASL [_aimPos select 0, _aimPos select 1, _heightAboveGround];
-
-// private _ASLz = (getPosASL _camObj) select 2;
-// _targetObject setPosASL [(getPosASL _targetObject) select 0, (getPosASL _targetObject) select 1, _ASLz];
-_targetObject setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0)"];
-
-sleep 0.5;
 // start pip cams for players and fullscreen for pilot
 {
   if (_x getVariable ["GRAD_pilotTracking_isPilot",false]) then {
-      [_camObj, _relPos, _targetObject, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPilot", _x, true];
+      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPilot", _x, true];
   } else {
-      [_camObj, _relPos, _targetObject, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPlayer", _x, true];
+      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPlayer", _x, true];
   };
 } forEach allPlayers;
 
 
 _handle = [{
 	params ["_args", "_handle"];
-	_args params ["_camObj", "_targetObject", "_area"];
+	_args params ["_camObj", "_area"];
 
   // check if pilot is available
   private _entities = (position _area) nearObjects 7; // 5m must be enough
@@ -59,7 +50,6 @@ _handle = [{
 	GRAD_pilotCam_RECORDING_DONE = GRAD_pilotCam_RECORDING_DONE + 1;
   publicVariable "GRAD_pilotCam_RECORDING_DONE";
 
-}, 1, [_camObj, _targetObject, _area]] call CBA_fnc_addPerFrameHandler;
+}, 1, [_camObj, _area]] call CBA_fnc_addPerFrameHandler;
 
-missionNamespace setVariable ["GRAD_pilotCam_targetObject", _targetObject];
 missionNamespace setVariable ["GRAD_pilotCam_serverFrameHandler", _handle];

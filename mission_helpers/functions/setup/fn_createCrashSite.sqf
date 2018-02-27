@@ -5,7 +5,7 @@
 params ["_position"];
 
 // find a random position in circle
-CRASH_SITE_VEHICLE_POS = [_position,[20,70], random 360] call SHK_pos;
+CRASH_SITE_VEHICLE_POS = [_position, [20,70], random 360] call SHK_pos;
 
 // find a spawn pos on given position
 _veh1 = createVehicle ["RHS_AH1Z_GS", [CRASH_SITE_VEHICLE_POS select 0, CRASH_SITE_VEHICLE_POS select 1, .75], [], 0, "CAN_COLLIDE"];
