@@ -14,7 +14,7 @@ if (isNull _pipPIPCtrl) exitWith {
 };
 
 private _cam = "camera" camCreate _camPos;
-_cam cameraEffect ["Fixed", "FRONT", _rendertarget]; // FRONT
+_cam cameraEffect ["Internal", "back", _rendertarget]; // FRONT
 
 private _targetPos = getPos _area;
 _targetPos set [2, ((_targetPos select 2) + 1.1)];
@@ -30,7 +30,9 @@ _rendertarget setPiPEffect [3,1,1,0.4,0,[0,0,0,0],[1,1,1,0],[1,1,1,1]];
 _pipPIPCtrl ctrlsettext format ["#(argb,256,256,1)r2t(%1,1.0)",_rendertarget];
 
 // DEBUG
-private _targetObject = "Sign_Pointer_Yellow_F" createVehicle [0,0,0];
-_targetObject setPos _targetPos;
+if (!isMultiplayer) then {
+    private _targetObject = "Sign_Pointer_Yellow_F" createVehicle [0,0,0];
+    _targetObject setPos _targetPos;
+};
 
 _cam
