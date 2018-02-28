@@ -27,6 +27,7 @@ _readTrace = ["ACE_MainActions", "Spur einschätzen", "", {
 // BONE BREAKING
 _breakBones = ["ACE_MainActions", "Break Bones", "", {
 	[_target] remoteExec ["GRAD_pilotTracking_fnc_breakBones", _target];
+	_player playMoveNow "Acts_Executioner_Backhand";
 },
 {
 	!(_target getVariable ["GRAD_pilotTracking_bonesBroken", false]) &&

@@ -12,15 +12,15 @@ _unit sideChat "Ouch, my leg is broken.";
 _unit playmovenow "amovppnemstpsnonwnondnon";
 
 _unit addEventHandler ["AnimDone", {
-	(_this select 0) switchMove "Acts_CivilInjuredLegs_1";
+	[(_this select 0), "Acts_CivilInjuredLegs_1"] remoteExec ["switchmove", [0, -2] select isDedicated];
 	(_this select 0) removeAllEventHandlers "AnimDone";
 
 	(_this select 0) addEventHandler ["AnimDone", {
-		(_this select 0) switchmove "ApanPpneMstpSnonWnonDnon_ApanPercMstpSnonWnonDnon";
+		[(_this select 0), "ApanPpneMstpSnonWnonDnon_ApanPercMstpSnonWnonDnon"] remoteExec ["switchmove", [0, -2] select isDedicated];
 		(_this select 0) removeAllEventHandlers "AnimDone";
 
 		(_this select 0) addEventHandler ["AnimDone", {
-			(_this select 0) switchmove "";
+			[(_this select 0), ""] remoteExec ["switchmove", [0, -2] select isDedicated];
 			(_this select 0) removeAllEventHandlers "AnimDone";
 		}];
 	}];
