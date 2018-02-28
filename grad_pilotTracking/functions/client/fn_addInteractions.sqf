@@ -25,23 +25,23 @@ _readTrace = ["ACE_MainActions", "Spur einschätzen", "", {
 
 
 // BONE BREAKING
-_breakBones = ["breakBones", "Break Bones", "", {
-	[_player, _target] remoteExec ["GRAD_pilotTracking_fnc_breakBones", _target];
+_breakBones = ["ACE_MainActions", "Break Bones", "", {
+	[_target] remoteExec ["GRAD_pilotTracking_fnc_breakBones", _target];
 },
 {
 	!(_target getVariable ["GRAD_pilotTracking_bonesBroken", false]) &&
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
-_estimateBleedout = ["bloodStatus", "Estimate Bleedout", "", {
+_estimateBleedout = ["ACE_MainActions", "Estimate Bleedout", "", {
 		[_target] call GRAD_pilotTracking_fnc_estimateBleedout;
 },
 {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
-[typeOf player, 0, ["ACE_MainActions"], _breakBones, true] call ace_interact_menu_fnc_addActionToClass;
-[typeOf player, 0, ["ACE_MainActions"], _estimateBleedout, true] call ace_interact_menu_fnc_addActionToClass;
+["Man", 0, ["ACE_MainActions"], _breakBones, true] call ace_interact_menu_fnc_addActionToClass;
+["Man", 0, ["ACE_MainActions"], _estimateBleedout, true] call ace_interact_menu_fnc_addActionToClass;
 
 
 

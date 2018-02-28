@@ -11,7 +11,7 @@ if (_boneBroken) then {
     _legStatus = "broken";
 };
 
-if (_estimatedBleedout > 0 && _boneBroken) then {
+if (_estimatedBleedout > 0 || _boneBroken) then {
     _bleedoutStatus = format ["Will bleed out in %1 min.", floor (_estimatedBleedout/60)];
 };
 

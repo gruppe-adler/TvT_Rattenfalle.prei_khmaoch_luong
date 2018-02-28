@@ -7,27 +7,42 @@ _pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
 
 [_pilot] call grad_pilotTracking_fnc_pilotLoop;
 
-_loadoutHandler = ["GRAD_loadout_loadoutApplied", {
+[{
+	player getVariable ["GRAD_loadout_applicationCount",0] > 0
+}, {
 
 	if (!(player getVariable ["GRAD_pilotTracking_isPilot", false])) exitWith {};
 
-	["GRAD_loadout_loadoutApplied",0] call CBA_fnc_removeEventHandler;
-
 	[{
 		player addItem "hgun_Pistol_Signal_F";
-	}, 5] call CBA_fnc_waitAndExecute;
+	}, 3] call CBA_fnc_waitAndExecute;
 
 	// radio nerfing
 	["waitForInit", "OnRadiosReceived", {
 	    [call TFAR_fnc_activeSwRadio, "33.3"] call TFAR_fnc_setSwFrequency;
 		player setVariable ["tf_receivingDistanceMultiplicator", 0.01];
 		player setVariable ["tf_sendingDistanceMultiplicator", 0.01];
-	    ["waitForInit","OnRadiosReceived"] call TFAR_fnc_removeEventHandler;
+	    ["waitForInit","OnRadiosReceived", player] call TFAR_fnc_removeEventHandler;
 	}, player] call TFAR_fnc_addEventHandler;
-}] call CBA_fnc_addEventHandler;
+
+}] call CBA_fnc_waitUntilAndExecute;
 
 
+// exchange flares of pilot for yellow ones because reasons
+_pilot addEventHandler ["Fired",
+{
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
 
+	if (_weapon isEqualTo "hgun_Pistol_Signal_F") then {
+
+		private _velocity = velocity _projectile;
+		private _position = getPos _projectile;
+		deleteVehicle _projectile;
+
+		private _flare = "F_40mm_Yellow" createVehicle _position;
+		_flare setVelocity _velocity;
+	};
+}];
 
 
 // eventhandler to catch healing

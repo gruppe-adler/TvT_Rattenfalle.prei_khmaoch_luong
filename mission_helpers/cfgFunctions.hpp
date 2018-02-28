@@ -7,6 +7,14 @@ class GRAD_mission_helpers {
 	};
 
 
+	class boat_mkv {
+		file = mission_helpers\functions\boat_mkv;
+
+		class decorateOpforBoat;
+		class lockTurret;
+	};
+
+
 	class customAnimations {
 		file = mission_helpers\functions\customAnimations;
 
@@ -14,11 +22,13 @@ class GRAD_mission_helpers {
 		class waveAddAction;
 	};
 
+
 	class marker {
 		file = mission_helpers\functions\marker;
 
 		class createMarkerForSides;
 	};
+
 
 	class setup {
 		file = mission_helpers\functions\setup;
@@ -27,5 +37,4 @@ class GRAD_mission_helpers {
 		class selectCrashSite;
 		class teleportPlayer;
 	};
-
 };

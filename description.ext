@@ -136,6 +136,7 @@ class ace_map_BFT_HideAiGroups {
 class CfgSounds {
   sounds[] = {};
   #include "node_modules\grad-leaveNotes\cfgSounds.hpp"
+  #include "grad_pilotTracking\cfgSounds.hpp"
 };
 
 class CfgDebriefing

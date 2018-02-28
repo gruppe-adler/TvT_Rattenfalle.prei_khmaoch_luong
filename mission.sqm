@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1660;
+		nextID=1672;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6424.9243,19.384392,2014.7939};
-		dir[]={0.14222172,-0.65815914,0.73932821};
-		up[]={0.12432843,0.75287664,0.64631176};
-		aside[]={0.98199648,-5.8775186e-008,-0.18890227};
+		pos[]={4009.9888,11.21564,4953.0356};
+		dir[]={-0.047386624,-0.33761287,0.94010782};
+		up[]={-0.016996264,0.94128406,0.33719233};
+		aside[]={0.99874669,-1.2849341e-007,0.050340895};
 	};
 };
 binarizationWanted=0;
@@ -8793,7 +8793,7 @@ class Mission
 			class Attributes
 			{
 				lock="UNLOCKED";
-				init="call{this setVariable ['ace_vehiclelock_lockSide', east];};";
+				init="call{this setVariable ['ace_vehiclelock_lockSide', east]; [this] call GRAD_mission_helpers_fnc_decorateOpforBoat; [this] call GRAD_mission_helpers_fnc_lockTurret;}";
 			};
 			id=1398;
 			type="rhsusf_mkvsoc";
