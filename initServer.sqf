@@ -1,3 +1,5 @@
+call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
+
 // CRASH POSIS
 [
 	[
