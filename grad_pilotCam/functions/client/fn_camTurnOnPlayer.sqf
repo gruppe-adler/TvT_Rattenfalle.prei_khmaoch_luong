@@ -2,7 +2,9 @@ params ["_camObj", "_relPos", "_area"];
 
 private _pipcamObject = ["renderPIPtarget0", _relPos, _area] call GRAD_pilotCam_fnc_pipStart;
 
-private _progressBar = call GRAD_pilotCam_fnc_createProgressBarPlayer;
+// private _progressBar = call GRAD_pilotCam_fnc_createProgressBarPlayer;
+private _pipDisplay = uinamespace getVariable "rscPilotCamPip";
+private _progressBar = _pipDisplay displayCtrl 2301;
 
 // camera recording UI in PiP
 // get size of pip display
@@ -23,7 +25,7 @@ _background ctrlCommit 0;
 
 
 // store those things global, needed to restart cam to workaround bugs
-missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", [_camObj, _relPos, _area, _progressBar, _pipcamObject]];
+missionNamespace setVariable ["GRAD_pilotCam_cameraRunningParams", [_camObj, _relPos, _area, _pipcamObject]];
 
 // loop progress and abort if necessary
 [{

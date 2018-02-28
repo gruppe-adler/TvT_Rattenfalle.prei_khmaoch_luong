@@ -3,11 +3,12 @@ params ["_camObj", "_relPosASL", "_area"];
 if (!alive player) exitWith {};
 
 disableSerialization;
+
+private _areaPos = getPos _area;
 private _cam = "camera" camCreate _relPosASL;
-_cam setPosASL _relPosASL;
-sleep 0.1;
-_cam camSetTarget [(getPos _area) select 0, (getPos _area) select 1, (getPos _area) select 2 + 1.1];
 _cam cameraEffect ["INTERNAL", "BACK"];
+_cam setPosASL _relPosASL;
+_cam camSetTarget [_areaPos select 0, _areaPos select 1, (_areaPos select 2) + 1.1];
 _cam camSetFocus [5, 1];
 _cam camSetFov 0.5;
 _cam camCommit 0;

@@ -19,7 +19,7 @@ if (isNull (missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj",
 
 */
 private _pilot = missionNamespace getVariable ["GRAD_pilotTracking_pilotTrackingObj", objNull];
-if (objNull _pilot) exitWith { hint "error: no pilot found"; };
+if (isNull _pilot) exitWith { hint "error: no pilot found"; };
 
 [_pilot,0, 1, 1, 1, {
 

@@ -85,6 +85,27 @@ class rscPilotCamPip {
             IDC = 2400;
             text = "a3\ui_f\data\igui\rsctitles\static\feedstatic_00_ca.paa";
         };
+
+        /*
+        class CamCrosshair: pilotCam_RscPicture {
+            w = PIP_W;
+            h = PIP_H;
+            x = PIP_X;
+            y = PIP_Y;
+            text = "GRAD_pilotCam\data\campic6.paa";
+        };
+        */
+        
+        class CamProgressBar: pilotCam_RscProgress {
+            x = PIP_X+PIP_W/40;
+            y = PIP_Y + PIP_H-PIP_H/15;
+            w = PIP_W/40*37;
+            h = PIP_H/30;
+            idc = 2301;
+            colorBar[] = {1,0,0,1};
+        };
+
+
         class Static_01: Static_00 {
             IDC = 2401;
             text = "a3\ui_f\data\igui\rsctitles\static\feedstatic_01_ca.paa";
