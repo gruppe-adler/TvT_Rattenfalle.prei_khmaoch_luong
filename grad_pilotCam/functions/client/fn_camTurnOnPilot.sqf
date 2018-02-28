@@ -1,14 +1,17 @@
-params ["_camObj", "_relPosASL", "_area"];
+params ["_camObj", "_camPos", "_area"];
 
 if (!alive player) exitWith {};
 
 disableSerialization;
 
+// raise cam above target area
 private _areaPos = getPos _area;
-private _cam = "camera" camCreate _relPosASL;
+_areaPos set [2, (_areaPos select 2) + 1.1];
+
+private _cam = "camera" camCreate _camPos;
 _cam cameraEffect ["INTERNAL", "BACK"];
-_cam setPosASL _relPosASL;
-_cam camSetTarget [_areaPos select 0, _areaPos select 1, (_areaPos select 2) + 1.1];
+_cam setPos _camPos;
+_cam camSetTarget _areaPos;
 _cam camSetFocus [5, 1];
 _cam camSetFov 0.5;
 _cam camCommit 0;
@@ -22,7 +25,7 @@ private _progressBar = call GRAD_pilotCam_fnc_createProgressBarPilot;
 	_args params ["_camObj", "_cam", "_effectsArray", "_progressBar"];
 
 	_progressBar progressSetPosition (linearConversion [0, GRAD_pilotCam_RECORDING_DURATION, GRAD_pilotCam_RECORDING_DONE, 0, 1, true]);
-	
+
 
 	if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false]) || !alive player) then {
 			[_handle] call CBA_fnc_removePerFrameHandler;

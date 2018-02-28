@@ -1,6 +1,6 @@
 params ["_camObj", "_relPos", "_area"];
 
-private _pipcamObject = ["renderPIPtarget0", _relPos, _area] call GRAD_pilotCam_fnc_pipStart;
+private _pipcamObject = [_relPos, _area] call GRAD_pilotCam_fnc_pipStart;
 
 // private _progressBar = call GRAD_pilotCam_fnc_createProgressBarPlayer;
 private _pipDisplay = uinamespace getVariable "rscPilotCamPip";
