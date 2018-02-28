@@ -18,6 +18,11 @@ _unit addEventhandler ["killed", {
     
     private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", ""];
 
+    // define position
+    _pX = floor random -5;
+    _pY = floor random -5;
+    _position = vehicle _unit modelToWorld [_pX,_pY,0];
+
     if (!(_marker isEqualTo "")) then {
         _marker setMarkerPos position _unit;
         _marker setMarkerAlpha 1;
@@ -25,31 +30,26 @@ _unit addEventhandler ["killed", {
 
     if (!(isNull objectParent _unit)) then {
         // push out of vehicle
-        _pX = floor random -5;
-        _pY = floor random -5;
-        _position = vehicle _unit modelToWorld [_pX,_pY,0];
+        
+        _unit action ["GetOut", vehicle _unit];
+        _unit action ["Eject", vehicle _unit];
 
-        if (alive vehicle _unit) then {
-            _unit action ["GetOut", vehicle _unit];
-            _unit action ["Eject", vehicle _unit];
-        };
+        _unit setPos _position;
+    };
 
-        // move body to nearest land position
-        if (surfaceIsWater _position) then {
-            _unit setPos ([
-              position _unit,
-              0,
-              40,
-              0.25,
-              0,
-              1,
-              1,
-              [],
-              []
-            ] call BIS_fnc_findSafePos);
-        } else {
-            _unit setpos _position;
-       };
+    // move body to nearest land position
+    if (surfaceIsWater (position _unit)) then {
+        _unit setPos ([
+          position _unit,
+          0,
+          40,
+          0.25,
+          0,
+          1,
+          1,
+          [],
+          []
+        ] call BIS_fnc_findSafePos);
     };
 }];
 

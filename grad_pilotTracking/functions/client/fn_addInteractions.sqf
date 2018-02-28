@@ -82,8 +82,10 @@ player getVariable ["GRAD_pilotTracking_isBleeding", false] &&
 call GRAD_pilotTracking_fnc_getFatigue > 80}] call ace_interact_menu_fnc_createAction;
 
 _endForceCloseWound = ["ACE_SelfActions", "End force close wound", "",
-{GRAD_WOUND_FORCE_CLOSE = true;},
-{player getVariable ["GRAD_pilotTracking_isPilot", false] && GRAD_WOUND_FORCE_CLOSE}] call ace_interact_menu_fnc_createAction;
+{GRAD_WOUND_FORCE_CLOSE = false;},
+{player getVariable ["GRAD_pilotTracking_isPilot", false] && 
+GRAD_WOUND_FORCE_CLOSE &&
+player getVariable ["GRAD_pilotTracking_isBleeding", false]}] call ace_interact_menu_fnc_createAction;
 
 [typeOf player, 1, ["ACE_SelfActions"], _forceCloseWound] call ace_interact_menu_fnc_addActionToClass;
 [typeOf player, 1, ["ACE_SelfActions"], _endForceCloseWound] call ace_interact_menu_fnc_addActionToClass;
