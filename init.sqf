@@ -18,7 +18,7 @@ RHSDecalsOff = true;
 ["IND_F", "UsDownedPilot"] call GRAD_Loadout_fnc_FactionSetLoadout;
 
 // PVP settings
-disableRemoteSensors true; // save bandwidth
+// disableRemoteSensors true; // save bandwidth, but probably shitty for AI AA
 setViewDistance 1200; // sync max view distance
 // disable auto spotting and similar shit
 enableSentences false;
