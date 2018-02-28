@@ -26,7 +26,7 @@ _cam camSetFocus [5, 1];
 _cam camSetFov 0.5;
 _cam camPreload 0;
 _cam camCommit 0;
-_rendertarget setPiPEffect [3,1,1,0.4,0,[0,0,0,0],[1,1,1,0],[1,1,1,1]];
+_r2t setPiPEffect [3,1,1,0.4,0,[0,0,0,0],[1,1,1,0],[1,1,1,1]];
 
 _pipPIPCtrl ctrlsettext format ["#(argb,256,256,1)r2t(%1,1.0)",_r2t];
 

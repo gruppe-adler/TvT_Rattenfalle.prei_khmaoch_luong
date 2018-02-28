@@ -86,7 +86,7 @@ class rscPilotCamPip {
             text = "a3\ui_f\data\igui\rsctitles\static\feedstatic_00_ca.paa";
         };
 
-        /*
+        
         class CamCrosshair: pilotCam_RscPicture {
             w = PIP_W;
             h = PIP_H;
@@ -94,7 +94,7 @@ class rscPilotCamPip {
             y = PIP_Y;
             text = "GRAD_pilotCam\data\campic6.paa";
         };
-        */
+        
         
         class CamProgressBar: pilotCam_RscProgress {
             x = PIP_X+PIP_W/40;

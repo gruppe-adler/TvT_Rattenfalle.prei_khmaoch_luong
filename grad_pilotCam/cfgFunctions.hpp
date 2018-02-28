@@ -9,7 +9,6 @@ class GRAD_pilotCam {
 		class camTurnOnPlayer;
 		class createCameraEffectsPilot;
 		class createProgressBarPilot;
-		class createProgressBarPlayer;
 		class pipEnd;
 		class pipStart;
 	};
