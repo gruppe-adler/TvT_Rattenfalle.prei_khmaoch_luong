@@ -79,8 +79,8 @@ _forceCloseWound = ["ACE_SelfActions", "Temporary force close wound", "",
 {
 player getVariable ["GRAD_pilotTracking_isPilot", false] &&
 !GRAD_WOUND_FORCE_CLOSE &&
-player getVariable ["GRAD_pilotTracking_isBleeding", false] &&
-call GRAD_pilotTracking_fnc_getFatigue > 80}] call ace_interact_menu_fnc_createAction;
+player getVariable ["GRAD_pilotTracking_isBleeding", false]
+}] call ace_interact_menu_fnc_createAction;
 
 _endForceCloseWound = ["ACE_SelfActions", "End force close wound", "",
 {GRAD_WOUND_FORCE_CLOSE = false;},

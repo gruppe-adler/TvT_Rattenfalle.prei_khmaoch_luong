@@ -1,0 +1,64 @@
+<match>
+  <company side="opfor" natosymbol="hq" callsign="OPFOR">
+  	<slot shortcode="Cmd" description="Commander"></slot>
+    <platoon natosymbol="inf" callsign="Alpha" vehicletype="Infantry">
+      <slot shortcode="SQL" description="Squadlead"></slot>
+      <squad natosymbol="inf" callsign="Alpha-1" vehicletype="Infantry">
+        	<slot shortcode="FTL" description="Fireteam Lead"></slot>
+	        <slot shortcode="MG" description="MG Gunner"></slot>
+	        <slot shortcode="Med" description="Medic"></slot>
+	        <slot shortcode="AT" description="Anti Tank"></slot>
+	        <slot shortcode="Sco" description="Scout"></slot>
+      </squad>
+      <squad natosymbol="inf" callsign="Alpha-2" vehicletype="Infantry">
+        	<slot shortcode="FTL" description="Fireteam Lead"></slot>
+	        <slot shortcode="MG" description="MG Gunner"></slot>
+	        <slot shortcode="Med" description="Medic"></slot>
+	        <slot shortcode="AT" description="Anti Tank"></slot>
+	        <slot shortcode="Sco" description="Scout"></slot>
+      </squad>
+      <squad natosymbol="inf" callsign="Alpha-3" vehicletype="Infantry">
+        	<slot shortcode="FTL" description="Fireteam Lead"></slot>
+	        <slot shortcode="MG" description="MG Gunner"></slot>
+	        <slot shortcode="Med" description="Medic"></slot>
+	        <slot shortcode="AT" description="Anti Tank"></slot>
+	        <slot shortcode="Sco" description="Scout"></slot>
+      </squad>
+    </platoon>
+  </company>
+  <company side="blufor" natosymbol="hq" callsign="BLUFOR">
+  	<slot shortcode="Cmd" description="Commander"></slot>
+    <platoon natosymbol="inf" callsign="Alpha" vehicletype="Infantry">
+      <slot shortcode="SQL" description="Squadlead">
+      </slot>
+      <squad natosymbol="inf" callsign="Alpha-1" vehicletype="Infantry">
+        <slot shortcode="FTL" description="Fireteam Lead"></slot>
+        <slot shortcode="MG" description="MG Gunner"></slot>
+        <slot shortcode="Med" description="Medic"></slot>
+        <slot shortcode="AT" description="Anti Tank"></slot>
+        <slot shortcode="RF" description="Rifleman"></slot>
+      </squad>
+      <squad natosymbol="inf" callsign="Alpha-2" vehicletype="Infantry">
+        <slot shortcode="FTL" description="Fireteam Lead"></slot>
+        <slot shortcode="MG" description="MG Gunner"></slot>
+        <slot shortcode="Med" description="Medic"></slot>
+        <slot shortcode="AT" description="Anti Tank"></slot>
+        <slot shortcode="RF" description="Rifleman"></slot>
+      </squad>
+      <squad natosymbol="inf" callsign="Alpha-3" vehicletype="Infantry">
+        <slot shortcode="FTL" description="Fireteam Lead"></slot>
+        <slot shortcode="MG" description="MG Gunner"></slot>
+        <slot shortcode="Med" description="Medic"></slot>
+        <slot shortcode="AT" description="Anti Tank"></slot>
+        <slot shortcode="RF" description="Rifleman"></slot>
+      </squad>
+      <squad natosymbol="air" callsign="Pilot" vehicletype="UH-1Y (Unarmed)">
+        <slot shortcode="PIL" description="Pilot"></slot>
+        <slot shortcode="COP" description="CoPilot"></slot>
+      </squad>
+      <squad natosymbol="air" callsign="Crashed Pilot" vehicletype="UH-1Z (destroyed)">
+        <slot shortcode="CPI" description="Crashed Pilot"></slot>
+      </squad>
+    </platoon>
+  </company>
+</match>

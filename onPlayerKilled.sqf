@@ -24,25 +24,39 @@ waitUntil {!GRAD_DEATHCAM_RUNNING};
 
 cutText ["", "BLACK IN", 1];
 
+
+// SPECTATOR SETTINGS
 private _enemySides = [west,east,independent,civilian] - [playerSide];
 [[playerSide], _enemySides] call ace_spectator_fnc_updateSides;
 
 // give pilot free cam
+/*
 if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
 	[[0,1,2],[]] call ace_spectator_fnc_updateCameraModes;
 } else {
 	[[1,2], [0]] call ace_spectator_fnc_updateCameraModes;
 };
+*/
 
-[[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes;
+[[1,2], [0]] call ace_spectator_fnc_updateCameraModes; // no free cam
+[[-2,-1], [0,1,2,3,4,5,6,7]] call ace_spectator_fnc_updateVisionModes; // no thermal
 [1, objNull] call ace_spectator_fnc_setCameraAttributes;
+
+// disable respawn if max respawns reached
+if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEWAVERESPAWN_COUNT_MAX) exitWith {
+		player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", false, true];
+		[[0,1,2],[]] call ace_spectator_fnc_updateCameraModes; // allow free cam
+		[player, true] call TFAR_fnc_forceSpectator; // set to real spec channel
+		60 call TFAR_fnc_setVoiceVolume; // just to be sure voice is allowed
+		[[west,east,independent,civilian], []] call ace_spectator_fnc_updateSides; // allow all sides
+};
 
 // ENGAGE SPECTATOR
 [true] call ace_spectator_fnc_setSpectator;
-[player, true] call TFAR_fnc_forceSpectator;
 
-// queuing up for respawn
-player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
+
+// set voice level to zero, so specs cant talk to each other if not in free cam, default is 60
+0 call TFAR_fnc_setVoiceVolume;
 
 if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	call grad_simpleWaveRespawn_fnc_showRemainingTime;
