@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7238.479,93.038658,2426.9619};
-		dir[]={0.022657471,-0.8324331,0.55367833};
-		up[]={0.034036383,0.55410892,0.8317464};
-		aside[]={0.99916989,-3.7607606e-008,-0.040887699};
+		pos[]={6421.8188,14.587161,2030.629};
+		dir[]={0.42583469,-0.41200063,-0.80556136};
+		up[]={0.19254743,0.91118205,-0.36424723};
+		aside[]={-0.88408321,-1.9557774e-008,-0.46734187};
 	};
 };
 binarizationWanted=0;
@@ -103,6 +103,7 @@ addons[]=
 	"ace_overpressure",
 	"ace_realisticweights",
 	"ace_reloadlaunchers",
+	"DynaSound_DS_w_Alamut",
 	"ace_laserpointer",
 	"A3_Weapons_F_Pistols_P07",
 	"ace_goggles",
@@ -112,7 +113,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=56;
+		items=57;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -476,12 +477,18 @@ class AddonsMetaData
 		};
 		class Item54
 		{
+			className="DynaSound_DS_w_Alamut";
+			name="DynaSound_DS_w_Alamut";
+			author="LAxemann";
+		};
+		class Item55
+		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item55
+		class Item56
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";

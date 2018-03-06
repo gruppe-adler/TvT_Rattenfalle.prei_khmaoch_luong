@@ -40,29 +40,67 @@ class gui_pilot_gps_0
 			{
 				idc = 2396;
 				x = safeZoneX + (safeZoneW/2) - 0.025;
-				y = safeZoneY + safeZoneH - 0.04;
-				w = 0.05;
+				y = safeZoneY + safeZoneH - 0.12;
+				w = 0.05 * 3 / 4;
 				h = 0.05;
 				text = "grad_pilotTracking\data\gpsicon_0.paa";
 			};
 		};
 	};
 
-class gui_pilot_gps_1
+class gui_pilot_gps_1_1
 	{
 		idd = -1;
 		duration = 10e10;
-		name = "gui_pilot_gps_1";
+		name = "gui_pilot_gps_1_1";
 
 	 	class controls {
-			class gui_pilot_gps_1_pic: pilotTracking_RscPicture
+			class gui_pilot_gps_1_1_pic: pilotTracking_RscPicture
 			{
 				idc = -1;
-				x = safeZoneX + safeZoneW - 0.2;
-				y = safeZoneY + safeZoneH - 1;
-				w = 0.2;
-				h = 0.2;
-				text = "grad_pilotTracking\data\gpsicon_1.paa";
+				x = safeZoneX + (safeZoneW/2) - 0.025;
+				y = safeZoneY + safeZoneH - 0.12;
+				w = 0.05 * 3 / 4;
+				h = 0.05;
+				text = "grad_pilotTracking\data\gpsicon_1_1.paa";
+			};
+		};
+	};
+
+class gui_pilot_gps_1_2
+	{
+		idd = -1;
+		duration = 10e10;
+		name = "gui_pilot_gps_1_2";
+
+	 	class controls {
+			class gui_pilot_gps_1_2_pic: pilotTracking_RscPicture
+			{
+				idc = -1;
+				x = safeZoneX + (safeZoneW/2) - 0.025;
+				y = safeZoneY + safeZoneH - 0.12;
+				w = 0.05 * 3 / 4;
+				h = 0.05;
+				text = "grad_pilotTracking\data\gpsicon_1_2.paa";
+			};
+		};
+	};
+
+class gui_pilot_gps_1_3
+	{
+		idd = -1;
+		duration = 10e10;
+		name = "gui_pilot_gps_1_3";
+
+	 	class controls {
+			class gui_pilot_gps_1_3_pic: pilotTracking_RscPicture
+			{
+				idc = -1;
+				x = safeZoneX + (safeZoneW/2) - 0.025;
+				y = safeZoneY + safeZoneH - 0.12;
+				w = 0.05 * 3 / 4;
+				h = 0.05;
+				text = "grad_pilotTracking\data\gpsicon_1_3.paa";
 			};
 		};
 	};
@@ -77,15 +115,14 @@ class gui_pilot_gps_2
 			class gui_pilot_gps_2_pic: pilotTracking_RscPicture
 			{
 				idc = -1;
-				x = safeZoneX + safeZoneW - 0.2;
-				y = safeZoneY + safeZoneH - 1;
-				w = 0.2;
-				h = 0.2;
+				x = safeZoneX + (safeZoneW/2) - 0.025;
+				y = safeZoneY + safeZoneH - 0.12;
+				w = 0.05 * 3 / 4;
+				h = 0.05;
 				text = "grad_pilotTracking\data\gpsicon_2.paa";
 			};
 		};
 	};
-
 
 class pilotTracking_RscProgress
 	{
