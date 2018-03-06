@@ -70,7 +70,7 @@ private _author = "<t color='#f9f9f9' size='1' align='right' shadow='0'>" + (_se
 // CREATE DISPLAYS FOR TEXT
 createDialog "GRAD_DeathCamDisplay";
 disableSerialization;
-_display = uiNamespace getVariable ['GRAD_DeathCamDisplay',0];
+_display = uiNamespace getVariable ['GRAD_DeathCamDisplay', displayNull];
 waitUntil {!isNull _display};
 cutRsc ["RscStatic", "PLAIN" , 3];
 
