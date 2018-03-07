@@ -8,7 +8,7 @@ setPlayerRespawnTime 0;
 
 [false] call ace_spectator_fnc_setSpectator;
 [player, false] call TFAR_fnc_forceSpectator;
-60 call TFAR_fnc_setVoiceVolume; // reset voice volume
+// 60 call TFAR_fnc_setVoiceVolume; // reset voice volume
 
 [{
 	alive player

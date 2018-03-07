@@ -1,9 +1,9 @@
 class GRAD_deathcam {
 
-    class deathcam {
+    class core {
       file = grad_deathCam\functions;
 
-      class deathCam;
+      class start;
     };
     
 };

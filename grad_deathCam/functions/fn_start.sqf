@@ -125,7 +125,7 @@ _camera camSetTarget _shooter; // target killer
 _camera camSetFov 0.2;
 _camera camCommit 3;
 sleep 5;
-cutRsc ["RscStatic", "PLAIN" , 3];
+cutRsc ["RscStatic", "PLAIN" , 1];
 sleep 1;
 
 // END ALL EFFECTS
@@ -137,3 +137,7 @@ camDestroy _camera;
 showCinemaBorder false;
 
 GRAD_DEATHCAM_RUNNING = false;
+
+// fade back in
+sleep 1;
+cutText ["", "BLACK IN", 1];

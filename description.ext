@@ -20,6 +20,7 @@ respawnDialog = 0;
 respawnButton = 0;
 
 class cfgFunctions {
+    #include "grad_deathCam\cfgFunctions.hpp"
     #include "rattrap_objectives\cfgFunctions.hpp"
     #include "grad_simpleVehicleRespawn\cfgFunctions.hpp"
     #include "grad_simpleWaveRespawn\cfgFunctions.hpp"

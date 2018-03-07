@@ -1,3 +1,5 @@
+#include "\z\ace\addons\main\script_component.hpp"
+
 params ["_player", "_killer"];
 
 // dont start shit if not necessary
@@ -19,11 +21,8 @@ private _items = items _player;
 
 // DEATH CAM
 GRAD_DEATHCAM_RUNNING = true;
-[] spawn GRAD_deathcam_fnc_deathCam;
+[] spawn GRAD_deathcam_fnc_start;
 waitUntil {!GRAD_DEATHCAM_RUNNING};
-
-cutText ["", "BLACK IN", 1];
-
 
 // SPECTATOR SETTINGS
 private _enemySides = [west,east,independent,civilian] - [playerSide];
@@ -49,6 +48,9 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 		[player, true] call TFAR_fnc_forceSpectator; // set to real spec channel
 		60 call TFAR_fnc_setVoiceVolume; // just to be sure voice is allowed
 		[[west,east,independent,civilian], []] call ace_spectator_fnc_updateSides; // allow all sides
+
+		private _hintMsg = "You ended your last life and have free spectator now.";
+		[_hintMsg] call EFUNC(common,displayTextStructured);
 };
 
 // ENGAGE SPECTATOR
@@ -56,7 +58,7 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 
 
 // set voice level to zero, so specs cant talk to each other if not in free cam, default is 60
-0 call TFAR_fnc_setVoiceVolume;
+// 0 call TFAR_fnc_setVoiceVolume;
 
 if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	call grad_simpleWaveRespawn_fnc_showRemainingTime;

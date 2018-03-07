@@ -40,7 +40,7 @@ class gui_pilot_gps_0
 			{
 				idc = 2396;
 				x = safeZoneX + (safeZoneW/2) - 0.025;
-				y = safeZoneY + safeZoneH - 0.12;
+				y = safeZoneY + safeZoneH - 0.10;
 				w = 0.05 * 3 / 4;
 				h = 0.05;
 				text = "grad_pilotTracking\data\gpsicon_0.paa";
@@ -59,7 +59,7 @@ class gui_pilot_gps_1_1
 			{
 				idc = -1;
 				x = safeZoneX + (safeZoneW/2) - 0.025;
-				y = safeZoneY + safeZoneH - 0.12;
+				y = safeZoneY + safeZoneH - 0.10;
 				w = 0.05 * 3 / 4;
 				h = 0.05;
 				text = "grad_pilotTracking\data\gpsicon_1_1.paa";
@@ -78,7 +78,7 @@ class gui_pilot_gps_1_2
 			{
 				idc = -1;
 				x = safeZoneX + (safeZoneW/2) - 0.025;
-				y = safeZoneY + safeZoneH - 0.12;
+				y = safeZoneY + safeZoneH - 0.10;
 				w = 0.05 * 3 / 4;
 				h = 0.05;
 				text = "grad_pilotTracking\data\gpsicon_1_2.paa";
@@ -97,7 +97,7 @@ class gui_pilot_gps_1_3
 			{
 				idc = -1;
 				x = safeZoneX + (safeZoneW/2) - 0.025;
-				y = safeZoneY + safeZoneH - 0.12;
+				y = safeZoneY + safeZoneH - 0.10;
 				w = 0.05 * 3 / 4;
 				h = 0.05;
 				text = "grad_pilotTracking\data\gpsicon_1_3.paa";
@@ -116,7 +116,7 @@ class gui_pilot_gps_2
 			{
 				idc = -1;
 				x = safeZoneX + (safeZoneW/2) - 0.025;
-				y = safeZoneY + safeZoneH - 0.12;
+				y = safeZoneY + safeZoneH - 0.10;
 				w = 0.05 * 3 / 4;
 				h = 0.05;
 				text = "grad_pilotTracking\data\gpsicon_2.paa";
