@@ -6,7 +6,7 @@ private ["_cam", "_r2t"];
 disableSerialization;
 "rscPilotCam" cutRsc ["rscPilotCamPip","PLAIN",0,true];
 
-private _targetPos = getPos _area;
+private _targetPos = getPosASL _area;
 _targetPos set [2, ((_targetPos select 2) + 1.1)];
 
 private _pipDisplay = uinamespace getVariable "rscPilotCamPip";
@@ -16,11 +16,11 @@ if (isNull _pipPIPCtrl) exitWith {
   diag_log format ["error: no pip ctrl %1 found", _pipPIPCtrl];
 };
 
-_cam = "camera" camCreate _camPos;
+_cam = "camera" camCreate (ASLToAGL _camPos);
 _r2t = "renderTargetPiP"; // just an identifier, no magic
 _cam cameraEffect ["INTERNAL", "BACK", _r2t]; // FRONT
 
-_cam camSetTarget _targetPos;
+_cam camSetTarget (ASLToAGL _targetPos);
 // zoom pip object to same levels as original cam
 _cam camSetFocus [5, 1];
 _cam camSetFov 0.5;

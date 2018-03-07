@@ -11,7 +11,7 @@ _camObj setVariable ["GRAD_pilotCam_camIsOn", true, true];
 
 private _area = _camObj getVariable ["GRAD_pilotCam_area", objNull];
 private _relPos = _camObj modelToWorld [0.05, -0.25, 1.07];
-private _heightAboveGround = ((getPos _camObj) select 2) + 1.1;
+private _heightAboveGround = ((getPosASL _camObj) select 2) + 1.1;
 _relPos set [2,_heightAboveGround];
 
 // start pip cams for players and fullscreen for pilot

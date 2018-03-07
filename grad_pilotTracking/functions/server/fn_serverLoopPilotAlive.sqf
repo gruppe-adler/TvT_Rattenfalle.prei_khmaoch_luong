@@ -38,7 +38,14 @@ _unit addEventhandler ["killed", {
     };
 
     // move body to nearest land position
-    if (surfaceIsWater (position _unit)) then {
+    /*
+    private _positionUnit = getPosASL _unit;
+    private _positionAboveUnit = _positionUnit;
+    _positionAboveUnit set [2, 500];
+    private _checkArray = lineIntersectsSurfaces [_positionAboveUnit, _positionUnit];
+    */
+
+    if (surfaceType (position _unit) isEqualTo "#water") then {
         _unit setPos ([
           position _unit,
           0,
