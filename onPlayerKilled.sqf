@@ -53,6 +53,10 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 		[_hintMsg] call EFUNC(common,displayTextStructured);
 };
 
+// lives left hint
+private _hintMsg = format ["Adding to respawn queue. You have %1 lives left.", player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0]];
+[_hintMsg] call EFUNC(common,displayTextStructured);
+
 // ENGAGE SPECTATOR
 [true] call ace_spectator_fnc_setSpectator;
 
@@ -62,6 +66,7 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 
 if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	call grad_simpleWaveRespawn_fnc_showRemainingTime;
+	player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 } else {
 	// SET PENALTY DELAY FOR PILOT
 	player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 999999];

@@ -26,10 +26,12 @@ enableEnvironment false;
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
 // DISABLE TEAMKILL PENALTIES
-// todo make this a cba setting interaction
+// is now a cba setting interaction
+/*
 player addEventhandler ["HandleRating", {
 		0
 }];
+*/
 
 // ADD ACTION TO WAVE ARMS
 call GRAD_mission_helpers_fnc_waveAddAction;

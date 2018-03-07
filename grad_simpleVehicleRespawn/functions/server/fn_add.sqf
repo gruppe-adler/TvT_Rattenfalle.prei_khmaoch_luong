@@ -19,7 +19,7 @@ private _displayName = 	 getText(configFile >> "CfgVehicles" >> _vehType >> "dis
 	};
 
 
-	diag_log format ["checking %1 for respawn", _displayName];
+	// diag_log format ["checking %1 for respawn", _displayName];
 
 
 	if ( _respawnWhenNotDead && { ( alive _vehObj ) } && { ( canMove _vehObj ) && { { ( alive _x ) } count ( crew _vehObj ) == 0 }} ) exitWith {
@@ -29,7 +29,7 @@ private _displayName = 	 getText(configFile >> "CfgVehicles" >> _vehType >> "dis
 	};
 
 
-	if ( !( alive _veh ) || { !( canMove _veh ) } ) exitWith {
+	if ( !( alive _vehObj ) || { !( canMove _vehObj ) } ) exitWith {
 
 			diag_log format ["vehicle %1 dead", _vehObj];
 			[_vehType, _vehDir, _vehPos, _handle] call GRAD_simpleVehicleRespawn_fnc_check;
