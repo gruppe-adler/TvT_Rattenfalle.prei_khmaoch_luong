@@ -20,6 +20,12 @@ if (_type isEqualTo "RHS_UH1Y_UNARMED_d") then {
 	_veh setHitPointDamage ["HitGlass1", 1];
 	_veh setHitPointDamage ["HitGlass2", 1];
 	_veh disableTIEquipment true;
+
+	[_veh, ["<t color='#66aa66'>Searchlight On", "player action ['LightOn', vehicle player];", 
+	"", 1, false, false, "", "_this in _target && _target turretLocal [0] && !(isLightOn _target)"]] remoteExec ["addAction", [0,-2] select isDedicated, true];
+
+	[_veh, ["<t color='#8f1167'>Searchlight Off", "player action ['LightOff', vehicle player];", 
+	"", 1, false, false, "", "_this in _target && _target turretLocal [0] && (isLightOn _target)"]] remoteExec ["addAction", [0,-2] select isDedicated, true];
 };
 
 

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7071.7622,57.301746,118.28316};
-		dir[]={0.10301766,-0.71304381,-0.69354391};
-		up[]={0.10476694,0.70110905,-0.70531863};
-		aside[]={-0.98917186,-3.2177195e-007,-0.14693055};
+		pos[]={7243.0903,67.503983,2490.5161};
+		dir[]={-0.36268905,-0.69732934,0.61821443};
+		up[]={-0.35286134,0.71675116,0.60146284};
+		aside[]={0.86252409,-1.2340024e-008,0.50601852};
 	};
 };
 binarizationWanted=0;
@@ -7439,7 +7439,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{this disableTIEquipment true; this setVariable [""RHS_Decal_Enabled"", false, true]; [this,false] call GRAD_simpleVehicleRespawn_fnc_add; [this] call ace_fastroping_fnc_equipFRIES; this setHitPointDamage [""HitGlass1"", 1]; this setHitPointDamage [""HitGlass2"", 1];}";
+				init="call{[this,false] call GRAD_simpleVehicleRespawn_fnc_add; [this] call GRAD_simpleVehicleRespawn_fnc_config;}";
 			};
 			id=1330;
 			type="RHS_UH1Y_UNARMED_d";
