@@ -8,7 +8,7 @@ params ["_possibleCrashPositions"];
 
 private _crashSite = getMarkerPos (selectRandom _possibleCrashPositions);
 CRASH_SITE_VEHICLE_POS = [_crashSite] call GRAD_mission_helpers_fnc_createCrashSite;
-publicVariable "_CRASH_SITE_VEHICLE_POS";
+publicVariable "CRASH_SITE_VEHICLE_POS";
 debugLog("server published crash site");
 
 
