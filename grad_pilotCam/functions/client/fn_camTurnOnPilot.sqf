@@ -10,7 +10,7 @@ _areaPos set [2, (_areaPos select 2) + 1.1];
 
 private _cam = "camera" camCreate _camPos;
 _cam cameraEffect ["INTERNAL", "BACK"];
-_cam setPos _camPos;
+_cam setPosASL _camPos;
 _cam camSetTarget _areaPos;
 _cam camSetFocus [5, 1];
 _cam camSetFov 0.5;
