@@ -20,7 +20,6 @@ call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 // FADE TO BLACK
 cutText ["", "BLACK",1000];
 enableEnvironment false;
-0 fadesound 0;
 
 // DYN GROUPS
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
@@ -43,7 +42,6 @@ call GRAD_mission_helpers_fnc_waveAddAction;
 },{
 		
 	[{
-		0 fadesound 1;
 		cutRsc ["RscStatic", "PLAIN" , 3];
 
 		[

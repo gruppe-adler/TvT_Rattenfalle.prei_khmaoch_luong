@@ -28,6 +28,10 @@ waitUntil {!GRAD_DEATHCAM_RUNNING};
 private _enemySides = [west,east,independent,civilian] - [playerSide];
 [[playerSide], _enemySides] call ace_spectator_fnc_updateSides;
 
+if (player getVariable ["GRAD_pilotTracking_isPilot", false]) then {
+	[[west, independent], [east,civilian]] call ace_spectator_fnc_updateSides;
+};
+
 // give pilot free cam
 /*
 if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
@@ -54,7 +58,7 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 };
 
 // lives left hint
-private _hintMsg = format ["Adding to respawn queue. You have %1 lives left.", player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0]];
+private _hintMsg = format ["Adding to respawn queue. You have %1 lives left.", GRAD_SIMPLEWAVERESPAWN_COUNT_MAX - (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0])];
 [_hintMsg] call EFUNC(common,displayTextStructured);
 
 // ENGAGE SPECTATOR
@@ -72,14 +76,10 @@ if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 999999];
 
 	_shooter = player getVariable ["ACE_medical_lastDamageSource",player];
-	if (side _shooter isEqualTo west) then {
-			// EXTRA PENALTY IF TEAMKILL
-			[{
-					player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
-			}, (GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (15 * 60))] call CBA_fnc_waitAndExecute;
-	} else {
-			[{
-					player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
-			}, (GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY + (5 * 60))] call CBA_fnc_waitAndExecute;
-	};
+	
+	[{
+			player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
+			player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
+			call grad_simpleWaveRespawn_fnc_showRemainingTime;
+	}, GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY] call CBA_fnc_waitAndExecute;
 };

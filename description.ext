@@ -81,8 +81,8 @@ class Params
   class RespawnPenaltyPilot
   {
     title = "Respawn penalty delay the pilot faces after dying. Will respawn on opposite killer side.";
-    values[] = {5*60,10*60,20*60,30*60,45*60,99999};
-    texts[] = {"5min", "10min", "20min", "30min", "45min", "unlimited"};
+    values[] = {60, 5*60,10*60,20*60,30*60,45*60,99999};
+    texts[] = {"1min", "5min", "10min", "20min", "30min", "45min", "unlimited"};
     default = 20*60;
   };
 
