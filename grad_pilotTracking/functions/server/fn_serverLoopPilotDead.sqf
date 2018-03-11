@@ -56,8 +56,13 @@ params ["_bodybag", "_marker"];
               [_bodyBagReplacement, _marker] spawn GRAD_pilotTracking_fnc_serverLoopPilotDead;
         };
 
-        _marker setMarkerPos (getPos _cargoVehicle);
+          if (random 10 > 3) then {
+              _marker setMarkerPos (getPos _cargoVehicle);
+          };
       } else {
-        // _marker setMarkerPos (getPos _bodybag);
+        
+          if (random 10 > 9.5) then {
+              _marker setMarkerPos (getPos _bodybag);
+          };
   };
 },1,[_bodybag, _marker]] call CBA_fnc_addPerFrameHandler;
