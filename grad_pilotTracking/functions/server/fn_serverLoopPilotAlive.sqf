@@ -47,6 +47,8 @@ _unit addEventhandler ["killed", {
 
     // move dead body to shore after delay
     [{
+        params ["_unit"];
+        
         if (!(isAbleToBreathe _unit) || eyePos _unit select 2 < 0) then {
             _unit setPos ([
               position _unit,
@@ -60,7 +62,7 @@ _unit addEventhandler ["killed", {
               []
             ] call BIS_fnc_findSafePos);
         };
-    }, [], 5] call CBA_fnc_waitAndExecute;
+    }, [_unit], 5] call CBA_fnc_waitAndExecute;
 }];
 
 
