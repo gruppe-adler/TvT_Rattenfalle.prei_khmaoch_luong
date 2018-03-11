@@ -45,12 +45,6 @@ forceWeatherChange;
 }, [], 2] call CBA_fnc_waitAndExecute;
 
 
-CRASH_SITE = [0,0];
-publicVariable "CRASH_SITE";
-
-CRASH_SITE_VEHICLE_POS = [0,0];
-publicVariable "CRASH_SITE_VEHICLE_POS";
-
 // DMG SOURCE FOR KILLED MSG
 if (isMultiplayer) then {
 	{
