@@ -40,8 +40,6 @@ call GRAD_mission_helpers_fnc_waveAddAction;
 [{
 		CRASH_SITE_VEHICLE_POS select 0 != 0
 },{
-		
-	[{
 		cutRsc ["RscStatic", "PLAIN" , 3];
 
 		[
@@ -54,6 +52,5 @@ call GRAD_mission_helpers_fnc_waveAddAction;
 				0.1,
 				false
 			] call grad_fx_fnc_rotatingCam;
-	}, [], 3] call CBA_fnc_waitAndExecute;
 },
 []] call CBA_fnc_waitUntilAndExecute;
