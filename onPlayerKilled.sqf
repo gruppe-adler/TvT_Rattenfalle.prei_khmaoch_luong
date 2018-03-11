@@ -64,7 +64,7 @@ private _hintMsg = format ["Adding to respawn queue. You have %1 lives left.", G
 player setVariable ["GRAD_simpleWaveRespawn_hintShown", true];
 [{
 	player setVariable ["GRAD_simpleWaveRespawn_hintShown", false];
-}, 10] call CBA_fnc_waitAndExecute;
+}, 25] call CBA_fnc_waitAndExecute;
 
 
 // ENGAGE SPECTATOR

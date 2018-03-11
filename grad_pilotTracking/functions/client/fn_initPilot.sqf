@@ -17,14 +17,6 @@ _pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
 		player addItem "hgun_Pistol_Signal_F";
 	}, 3] call CBA_fnc_waitAndExecute;
 
-	// radio nerfing
-	["waitForInit", "OnRadiosReceived", {
-	    [call TFAR_fnc_activeSwRadio, "33.3"] call TFAR_fnc_setSwFrequency;
-		player setVariable ["tf_receivingDistanceMultiplicator", 0.01];
-		player setVariable ["tf_sendingDistanceMultiplicator", 0.01];
-	    ["waitForInit","OnRadiosReceived", player] call TFAR_fnc_removeEventHandler;
-	}, player] call TFAR_fnc_addEventHandler;
-
 }] call CBA_fnc_waitUntilAndExecute;
 
 

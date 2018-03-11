@@ -16,7 +16,7 @@ class UsDownedPilot {
         compass = "";
         watch = "ItemWatch";
         gps = "";
-        radio = "tf_anprc152";
+        radio = "";
         nvgoggles = "";
         goggles = "NeckTight_OD";
 
