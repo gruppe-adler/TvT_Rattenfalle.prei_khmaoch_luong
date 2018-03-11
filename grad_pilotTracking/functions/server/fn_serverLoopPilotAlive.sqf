@@ -45,19 +45,22 @@ _unit addEventhandler ["killed", {
     private _checkArray = lineIntersectsSurfaces [_positionAboveUnit, _positionUnit];
     */
 
-    if (!(isAbleToBreathe _unit) || eyePos _unit select 2 < 0) then {
-        _unit setPos ([
-          position _unit,
-          0,
-          40,
-          0.25,
-          0,
-          1,
-          1,
-          [],
-          []
-        ] call BIS_fnc_findSafePos);
-    };
+    // move dead body to shore after delay
+    [{
+        if (!(isAbleToBreathe _unit) || eyePos _unit select 2 < 0) then {
+            _unit setPos ([
+              position _unit,
+              0,
+              40,
+              0.25,
+              0,
+              1,
+              1,
+              [],
+              []
+            ] call BIS_fnc_findSafePos);
+        };
+    }, 5] call CBA_fnc_waitAndExecute;
 }];
 
 
