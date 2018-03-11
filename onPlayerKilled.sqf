@@ -64,7 +64,7 @@ private _hintMsg = format ["Adding to respawn queue. You have %1 lives left.", G
 player setVariable ["GRAD_simpleWaveRespawn_hintShown", true];
 [{
 	player setVariable ["GRAD_simpleWaveRespawn_hintShown", false];
-}, 25] call CBA_fnc_waitAndExecute;
+}, [], 25] call CBA_fnc_waitAndExecute;
 
 
 // ENGAGE SPECTATOR
@@ -88,5 +88,5 @@ if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 			player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
 			player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 			call grad_simpleWaveRespawn_fnc_showRemainingTime;
-	}, GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY] call CBA_fnc_waitAndExecute;
+	}, [], GRAD_SIMPLEWAVERESPAWN_PILOT_PENALTY] call CBA_fnc_waitAndExecute;
 };

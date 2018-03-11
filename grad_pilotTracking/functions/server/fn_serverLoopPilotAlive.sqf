@@ -60,7 +60,7 @@ _unit addEventhandler ["killed", {
               []
             ] call BIS_fnc_findSafePos);
         };
-    }, 5] call CBA_fnc_waitAndExecute;
+    }, [], 5] call CBA_fnc_waitAndExecute;
 }];
 
 

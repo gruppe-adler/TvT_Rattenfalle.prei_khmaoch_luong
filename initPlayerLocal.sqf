@@ -54,6 +54,6 @@ call GRAD_mission_helpers_fnc_waveAddAction;
 				0.1,
 				false
 			] call grad_fx_fnc_rotatingCam;
-	}, 3] call CBA_fnc_waitAndExecute;
+	}, [], 3] call CBA_fnc_waitAndExecute;
 },
 []] call CBA_fnc_waitUntilAndExecute;

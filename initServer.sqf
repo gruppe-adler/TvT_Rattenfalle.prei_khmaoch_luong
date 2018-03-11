@@ -42,7 +42,7 @@ forceWeatherChange;
 
 [{
 	(90*60) setFog [0.1, 0.1, 5];
-}, 2] call CBA_fnc_waitAndExecute;
+}, [], 2] call CBA_fnc_waitAndExecute;
 
 
 CRASH_SITE = [0,0];
