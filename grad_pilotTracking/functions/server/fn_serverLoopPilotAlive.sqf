@@ -45,7 +45,7 @@ _unit addEventhandler ["killed", {
     private _checkArray = lineIntersectsSurfaces [_positionAboveUnit, _positionUnit];
     */
 
-    if (surfaceType (position _unit) isEqualTo "#water") then {
+    if (!(isAbleToBreathe _unit) || eyePos _unit select 2 < 0) then {
         _unit setPos ([
           position _unit,
           0,
