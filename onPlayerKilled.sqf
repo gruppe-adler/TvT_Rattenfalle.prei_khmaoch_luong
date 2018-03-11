@@ -83,6 +83,7 @@ if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	_shooter = player getVariable ["ACE_medical_lastDamageSource",player];
 	
 	[{
+			player setVariable ["GRAD_pilotTracking_isPilot",false, true];
 			player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
 			player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 			call grad_simpleWaveRespawn_fnc_showRemainingTime;
