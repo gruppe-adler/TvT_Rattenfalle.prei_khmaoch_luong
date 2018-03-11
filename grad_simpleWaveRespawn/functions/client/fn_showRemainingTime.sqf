@@ -12,7 +12,10 @@
         private _timeLeft = format ["%1 s",
         	floor (GRAD_SIMPLEWAVERESPAWN_ENDTIME - CBA_missionTime)
         ];
-        [_timeLeft] call EFUNC(common,displayTextStructured);
+
+        if (!(player getVariable ["GRAD_simpleWaveRespawn_hintShown", false])) then {
+            [_timeLeft] call EFUNC(common,displayTextStructured);
+        };
 
         /*
         diag_log format ["

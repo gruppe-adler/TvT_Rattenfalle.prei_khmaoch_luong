@@ -57,19 +57,24 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 		[_hintMsg] call EFUNC(common,displayTextStructured);
 };
 
-// lives left hint
+// lives left hint for 10 s
 private _hintMsg = format ["Adding to respawn queue. You have %1 lives left.", GRAD_SIMPLEWAVERESPAWN_COUNT_MAX - (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0])];
 [_hintMsg] call EFUNC(common,displayTextStructured);
+player setVariable ["GRAD_simpleWaveRespawn_hintShown", true];
+[{
+	player setVariable ["GRAD_simpleWaveRespawn_hintShown", false];
+}, 10] call CBA_fnc_waitAndExecute;
+
 
 // ENGAGE SPECTATOR
 [true] call ace_spectator_fnc_setSpectator;
-
 
 // set voice level to zero, so specs cant talk to each other if not in free cam, default is 60
 // 0 call TFAR_fnc_setVoiceVolume;
 
 if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	call grad_simpleWaveRespawn_fnc_showRemainingTime;
+
 	player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 } else {
 	// SET PENALTY DELAY FOR PILOT
