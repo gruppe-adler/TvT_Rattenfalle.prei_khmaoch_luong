@@ -21,6 +21,7 @@ private _spawnBlufor = getMarkerPos "mrk_spawn_blufor_1";
       [_crashSite, 50, _x] remoteExec ["GRAD_mission_helpers_fnc_teleportPlayer", _x, true];
   };
 
+  /*
   if (side _x == east) then {
       [_spawnOpfor, 50, _x] remoteExec ["GRAD_mission_helpers_fnc_teleportPlayer", _x, true];
   };
@@ -28,5 +29,6 @@ private _spawnBlufor = getMarkerPos "mrk_spawn_blufor_1";
   if (side _x == west) then {
       [_spawnBlufor, 50, _x] remoteExec ["GRAD_mission_helpers_fnc_teleportPlayer", _x, true];
   };
+  */
 
 } forEach (playableUnits + switchableUnits);
