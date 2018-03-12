@@ -17,9 +17,9 @@ _relPos set [2,_heightAboveGround];
 // start pip cams for players and fullscreen for pilot
 {
   if (_x getVariable ["GRAD_pilotTracking_isPilot",false]) then {
-      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPilot", _x, true];
+      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPilot", _x];
   } else {
-      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPlayer", _x, true];
+      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPlayer", _x];
   };
 } forEach allPlayers;
 
