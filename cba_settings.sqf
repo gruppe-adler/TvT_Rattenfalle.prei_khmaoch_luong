@@ -10,7 +10,7 @@ ace_advanced_ballistics_simulationInterval = 0.05;
 force ace_advanced_fatigue_enabled = true;
 force ace_advanced_fatigue_enableStaminaBar = true;
 force ace_advanced_fatigue_loadFactor = 1;
-force ace_advanced_fatigue_performanceFactor = 1;
+force ace_advanced_fatigue_performanceFactor = 0.2;
 force ace_advanced_fatigue_recoveryFactor = 1;
 force ace_advanced_fatigue_terrainGradientFactor = 1;
 
@@ -123,8 +123,8 @@ ace_magazinerepack_timePerBeltLink = 8;
 ace_magazinerepack_timePerMagazine = 2;
 
 // ACE Map
-ace_map_BFT_Enabled = false;
-ace_map_BFT_HideAiGroups = false;
+ace_map_BFT_Enabled = true;
+ace_map_BFT_HideAiGroups = true;
 ace_map_BFT_Interval = 1;
 ace_map_BFT_ShowPlayerNames = false;
 ace_map_defaultChannel = -1;
@@ -376,7 +376,7 @@ acex_headless_endMission = 0;
 acex_headless_log = false;
 
 // ACEX Sitting
-acex_sitting_enable = false;
+acex_sitting_enable = true;
 
 // ACEX View Restriction
 acex_viewrestriction_mode = 0;

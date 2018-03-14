@@ -6,7 +6,7 @@ private _hint = format ["Putting pressure on wound. Bleeding temporarily stopped
 
 // pressing wound drains ACE fatigue
 ["GRAD_pilotTracking_pressingWound", { 
-            4
+            2
 }] call ace_advanced_fatigue_fnc_addDutyFactor;
 
 

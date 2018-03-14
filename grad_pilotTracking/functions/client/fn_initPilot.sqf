@@ -62,3 +62,11 @@ _pilot addEventHandler ["GetOutMan", {
 		_unit setVariable ["GRAD_rattrap_pilotHealingStarted", false, true];
 	};
 }];
+
+
+// general fatigue nerf for pilot
+if (isPlayer _pilot) then {
+	["GRAD_pilotTracking_generalFatigueNerf", { 
+            4
+	}] call ace_advanced_fatigue_fnc_addDutyFactor;
+};
