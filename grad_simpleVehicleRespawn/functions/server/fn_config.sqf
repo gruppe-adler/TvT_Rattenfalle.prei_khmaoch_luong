@@ -1,3 +1,5 @@
+if (!(isServer)) exitWith {};
+
 params ["_veh"];
 
 private _type = typeOf _veh;
@@ -21,13 +23,12 @@ if (_type isEqualTo "RHS_UH1Y_UNARMED_d") then {
 	_veh setHitPointDamage ["HitGlass2", 1];
 	_veh disableTIEquipment true;
 
-	[_veh, ["<t color='#66aa66'>Searchlight On", "player action ['LightOn', vehicle player];", 
+	[_veh, ["<t color='#66aa66'>Searchlight On", "[_target, _this, true] remoteExec ['grad_mission_helpers_fnc_toggleHeliLight', _target];", 
 	"", 1, false, false, "", "_this in _target && _target turretLocal [0] && !(isLightOn _target)"]] remoteExec ["addAction", [0,-2] select isDedicated, true];
 
-	[_veh, ["<t color='#8f1167'>Searchlight Off", "player action ['LightOff', vehicle player];", 
+	[_veh, ["<t color='#8f1167'>Searchlight Off", "[_target, _this, false] remoteExec ['grad_mission_helpers_fnc_toggleHeliLight', _target];", 
 	"", 1, false, false, "", "_this in _target && _target turretLocal [0] && (isLightOn _target)"]] remoteExec ["addAction", [0,-2] select isDedicated, true];
 };
-
 
 // add new respawn loop
 [_veh] call GRAD_simpleVehicleRespawn_fnc_add;

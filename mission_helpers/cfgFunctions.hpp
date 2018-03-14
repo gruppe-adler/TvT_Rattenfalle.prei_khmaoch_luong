@@ -4,6 +4,7 @@ class GRAD_mission_helpers {
 		file = mission_helpers\functions\ambient;
 
 		class heliLightImprovement { postInit = 1; };
+		class toggleHeliLight;
 	};
 
 
