@@ -4,13 +4,16 @@ disableSerialization;
 "GRAD_rattrap_bloodLevelBar" cutRsc ["GRAD_rattrap_bloodLevelBar", "PLAIN"];
 _bar = uiNamespace getVariable ['GRAD_rattrap_bloodLevelBar',controlNull] displayCtrl 2399;
 
+
+/*
 "gui_pilot_gps_0" cutRsc ["gui_pilot_gps_0", "PLAIN"];
 _gpsStatus = uiNamespace getVariable ['gui_pilot_gps_0',controlNull] displayCtrl 2396;
+*/
 
 
 [{
     params ["_args", "_handle"];
-    _args params ["_bar", "_unit", "_gpsStatus"];
+    _args params ["_bar", "_unit"];
 
     private _notInVehicle = isNull objectParent _unit;
 
@@ -24,7 +27,7 @@ _gpsStatus = uiNamespace getVariable ['gui_pilot_gps_0',controlNull] displayCtrl
 		"GRAD_rattrap_bloodLevelBar" cutRsc ["Default", "PLAIN"];
 	};
 
-	[_unit] call GRAD_pilotTracking_fnc_gpsSetReceivingIndicator;
+	// [_unit] call GRAD_pilotTracking_fnc_gpsSetReceivingIndicator;
 
-},1,[_bar, _unit, _gpsStatus]] call CBA_fnc_addPerFrameHandler;
+},1,[_bar, _unit]] call CBA_fnc_addPerFrameHandler;
 
