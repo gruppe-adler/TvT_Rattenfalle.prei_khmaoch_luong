@@ -16,11 +16,8 @@ _relPos set [2,_heightAboveGround];
 
 // start pip cams for players and fullscreen for pilot
 {
-  if (_x getVariable ["GRAD_pilotTracking_isPilot",false]) then {
-      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPilot", _x];
-  } else {
-      [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPlayer", _x];
-  };
+    [_camObj, _relPos, _area] remoteExec ["GRAD_pilotCam_fnc_camTurnOnPlayer", _x];
+
 } forEach allPlayers;
 
 
@@ -29,7 +26,7 @@ _handle = [{
 	_args params ["_camObj", "_area"];
 
   // check if pilot is available
-  private _entities = (position _area) nearObjects 7; // 5m must be enough
+  private _entities = (position _area) nearObjects 5; // 5m must be enough
   private _pilotInside = false;
 
   // exit if no pilot is inside

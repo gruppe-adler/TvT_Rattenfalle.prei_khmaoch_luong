@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3034.5027,11.311857,6085.5361};
-		dir[]={-0.595415,-0.33508062,0.73027068};
-		up[]={-0.21176368,0.94217604,0.25972602};
-		aside[]={0.77506775,-5.2002724e-007,0.63193834};
+		pos[]={7070.1626,17.231968,87.309486};
+		dir[]={0.35515785,-0.8259744,-0.43776941};
+		up[]={0.52038902,0.56369609,-0.64143431};
+		aside[]={-0.77657872,2.0349398e-007,-0.63002938};
 	};
 };
 binarizationWanted=0;
@@ -3133,8 +3133,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4341.7104,6.9779224,6696.8013};
-				angles[]={6.246202,3.7197678,6.2196903};
+				position[]={4340.665,6.9740305,6694.8521};
+				angles[]={6.2410216,3.7197678,6.2219353};
 			};
 			side="Empty";
 			flags=4;
@@ -4704,6 +4704,7 @@ class Mission
 			};
 			id=976;
 			type="Land_Fire_barrel_burning";
+			atlOffset=0.029644251;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6538,14 +6539,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4342.6235,6.4804544,6699.9155};
-				angles[]={0.003797939,0,6.1560602};
+				position[]={4343.7437,6.3506179,6699.6626};
+				angles[]={0.0074051688,0,6.1193514};
 			};
 			areaSize[]={5,-1,5};
 			flags=1;
 			id=1291;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=0.13857603;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7090,8 +7090,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6422.7959,11.66151,2022.9685};
-				angles[]={0.012531464,5.4137321,0.017191494};
+				position[]={6422.7051,11.643742,2025.1593};
+				angles[]={0.0032572437,5.5543137,0.018000545};
 			};
 			side="Empty";
 			flags=4;
@@ -7103,7 +7103,6 @@ class Mission
 			};
 			id=1350;
 			type="Camera1";
-			atlOffset=9.5367432e-007;
 		};
 		class Item176
 		{
@@ -7291,8 +7290,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={6427.7129,11.119234,2020.885};
-				angles[]={6.2673726,0,0.010733775};
+				position[]={6428.2549,11.081221,2019.1174};
+				angles[]={6.2535515,0,6.2795477};
 			};
 			areaSize[]={7,0,7};
 			flags=1;
@@ -7418,8 +7417,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3797.1973,124.04153,6529.1118};
-				angles[]={0.048956487,3.7197678,6.2477374};
+				position[]={3797.0796,124.25503,6526.5815};
+				angles[]={0.1137118,3.4461498,6.2791443};
 			};
 			side="Empty";
 			flags=4;
@@ -7432,7 +7431,6 @@ class Mission
 			};
 			id=1366;
 			type="Camera1";
-			atlOffset=-1.5258789e-005;
 		};
 		class Item192
 		{
@@ -8095,8 +8093,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3804.3074,124.72867,6523.7222};
-				angles[]={0.049351621,2.6617873,0.0037822125};
+				position[]={3807.1182,124.98293,6536.4365};
+				angles[]={6.2449269,0.94222659,6.2166862};
 			};
 			side="Empty";
 			flags=4;
@@ -8106,7 +8104,6 @@ class Mission
 			};
 			id=1394;
 			type="Land_PortableLight_single_F";
-			atlOffset=0.00022125244;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8136,14 +8133,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3798.1106,123.60889,6532.2261};
+				position[]={3799.1296,123.37382,6531.9678};
 				angles[]={0.0056522717,0,0.015575487};
 			};
 			areaSize[]={5,-1,5};
 			flags=1;
 			id=1395;
 			type="ModuleHideTerrainObjects_F";
-			atlOffset=0.11592102;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23259,7 +23255,7 @@ class Mission
 			};
 			id=2150;
 			type="I_C_Offroad_02_LMG_F";
-			atlOffset=2.3841858e-007;
+			atlOffset=-0.024330854;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23300,7 +23296,7 @@ class Mission
 			};
 			id=2152;
 			type="I_C_Offroad_02_unarmed_F";
-			atlOffset=2.3841858e-007;
+			atlOffset=-0.02124238;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23342,6 +23338,7 @@ class Mission
 			};
 			id=2160;
 			type="C_Van_02_transport_F";
+			atlOffset=-0.00068163872;
 			class CustomAttributes
 			{
 				class Attribute0

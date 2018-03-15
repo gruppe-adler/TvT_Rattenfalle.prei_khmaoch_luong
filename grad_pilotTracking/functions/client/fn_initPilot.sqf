@@ -67,6 +67,6 @@ _pilot addEventHandler ["GetOutMan", {
 // general fatigue nerf for pilot
 if (isPlayer _pilot) then {
 	["GRAD_pilotTracking_generalFatigueNerf", { 
-            4
+            2
 	}] call ace_advanced_fatigue_fnc_addDutyFactor;
 };

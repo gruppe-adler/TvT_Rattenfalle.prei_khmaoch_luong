@@ -3,14 +3,14 @@ class GRAD_pilotCam {
 	class client {
 		file = grad_pilotCam\functions\client;
 
-		class camTurnOffPilot;
 		class camTurnOffPlayer;
-		class camTurnOnPilot;
 		class camTurnOnPlayer;
 		class createCameraEffectsPilot;
-		class createProgressBarPilot;
+		class createAreaBarPilot;
+		class getColorForDistance;
 		class pipEnd;
 		class pipStart;
+		class showCamAreaBar;
 	};
 
 	class server {
