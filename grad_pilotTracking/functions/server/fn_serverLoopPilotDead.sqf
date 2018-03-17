@@ -6,14 +6,14 @@ tracks dead pilot
 
 */
 
-params ["_bodybag", "_marker"];
+params ["_bodybag"];
 
 
 // diag_log format ["added cargo loaded events"];
 
 [{
     params ["_args", "_handle"];
-    _args params ["_bodybag", "_marker"];
+    _args params ["_bodybag"];
 
     _cargoVehicle = missionNamespace getVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", objNull];
 
@@ -53,16 +53,9 @@ params ["_bodybag", "_marker"];
 
               [_bodyBagReplacement, true] call grad_gpsTracker_fnc_setTarget;
               [_handle] call CBA_fnc_removePerFrameHandler;
-              [_bodyBagReplacement, _marker] spawn GRAD_pilotTracking_fnc_serverLoopPilotDead;
+              [_bodyBagReplacement] spawn GRAD_pilotTracking_fnc_serverLoopPilotDead;
         };
 
-          if (random 10 > 3) then {
-              _marker setMarkerPos (getPos _cargoVehicle);
-          };
-      } else {
-        
-          if (random 10 > 9.5) then {
-              _marker setMarkerPos (getPos _bodybag);
-          };
-  };
-},1,[_bodybag, _marker]] call CBA_fnc_addPerFrameHandler;
+          
+      };
+},1,[_bodybag]] call CBA_fnc_addPerFrameHandler;

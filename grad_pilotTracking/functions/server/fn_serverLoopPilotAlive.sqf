@@ -2,8 +2,10 @@ params ["_unit"];
 
 private ["_marker"];
 
-_marker = [_pilot] call GRAD_pilotTracking_fnc_createPilotMarker;
-missionNamespace setVariable ["GRAD_pilotTracking_markerObj", _marker, true];
+/*
+    _marker = [_pilot] call GRAD_pilotTracking_fnc_createPilotMarker;
+    missionNamespace setVariable ["GRAD_pilotTracking_markerObj", _marker, true];
+*/
 
 if (!isMultiplayer) then {
     _unit setVariable ["GRAD_pilotTracking_isScout", true]; // only for debug
@@ -16,17 +18,11 @@ _unit addEventhandler ["killed", {
 
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
     
-    private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", ""];
-
     // define position
     _pX = floor random -5;
     _pY = floor random -5;
     _position = vehicle _unit modelToWorld [_pX,_pY,0];
 
-    if (!(_marker isEqualTo "")) then {
-        _marker setMarkerPos position _unit;
-        _marker setMarkerAlpha 1;
-    };
 
     if (!(isNull objectParent _unit)) then {
         // push out of vehicle
@@ -49,8 +45,7 @@ _unit addEventhandler ["killed", {
     [{
         params ["_unit"];
         
-        if (!(isAbleToBreathe _unit) || eyePos _unit select 2 < 0) then {
-            _unit setPos ([
+        private _positionOnShore = ([
               position _unit,
               0,
               40,
@@ -61,7 +56,12 @@ _unit addEventhandler ["killed", {
               [],
               []
             ] call BIS_fnc_findSafePos);
+
+        if (!(isAbleToBreathe _unit) || eyePos _unit select 2 < 0) then {
+            _unit setPos _positionOnShore;
         };
+
+        ["Crowe", position _unit, 50, 50, 50] call GRAD_crows_fnc_crowCreate;
     }, [_unit], 5] call CBA_fnc_waitAndExecute;
 }];
 
@@ -74,7 +74,7 @@ GRAD_pilotTracking_progress = 0;
 
 [{
     params ["_args", "_handle"];
-    _args params ["_marker", "_unit"];
+    _args params ["_unit"];
 
     private _currentPosition = getPos _unit;
     private _notInVehicle = isNull objectParent _unit;
@@ -82,8 +82,6 @@ GRAD_pilotTracking_progress = 0;
     // DEAD
     if (!alive _unit) then {
         [_handle] call CBA_fnc_removePerFrameHandler;
-        _marker setMarkerPos _currentPosition;
-        _marker setMarkerAlpha 1;
         diag_log format ["server: pilot died at %1", _currentPosition];
     };
 
@@ -108,15 +106,11 @@ GRAD_pilotTracking_progress = 0;
     // 2 is gps visible
     if (([_unit] call GRAD_pilotTracking_fnc_gpsReceivingSetter) isEqualTo 2) then {
         if (!_notInVehicle) then {
-            _marker setMarkerPos _currentPosition;
+            // _marker setMarkerPos _currentPosition;
         };
-    };
-
-    if (_notInVehicle) then {
-
     };
 
     GRAD_pilotTracking_progress = GRAD_pilotTracking_progress + 1;
     publicVariable "GRAD_pilotTracking_progress";
 
-},1,[_marker, _unit]] call CBA_fnc_addPerFrameHandler;
+},1,[_unit]] call CBA_fnc_addPerFrameHandler;

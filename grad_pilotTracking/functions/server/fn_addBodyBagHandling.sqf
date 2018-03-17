@@ -6,12 +6,12 @@
         private _dir = getDir _bodyBag;
         private _position = getPos _bodyBag;
         private _isPilot = _deadGuy getVariable ["GRAD_pilotTracking_isPilot", false];
-        private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
+        // private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
         deleteVehicle _bodyBag;
 
         [{
-            params ["_position", "_dir", "_isPilot", "_bodyBag", "_marker"];
+            params ["_position", "_dir", "_isPilot", "_bodyBag"];
 
             _bodyBag = createVehicle ["Land_Bodybag_01_black_F", [0,0,0], [], 0, "NONE"];
             _bodyBag setDir _dir;
@@ -26,7 +26,7 @@
 
 
             if (_isPilot) then {
-            	[_bodyBag, _marker] call GRAD_pilotTracking_fnc_serverLoopPilotDead;
+            	[_bodyBag] call GRAD_pilotTracking_fnc_serverLoopPilotDead;
                 missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_bodyBag, true];
             	missionNamespace setVariable ["GRAD_pilotTracking_bodyBag", _bodyBag, true];
             	[_bodyBag, true] call grad_gpsTracker_fnc_setTarget;
@@ -35,7 +35,7 @@
             	diag_log format ["putting someone into bodybag %1, its NOT the pilot.", _bodyBag];
         	};
 
-        }, [_position, _dir, _isPilot, _bodyBag, _marker], 0.5] call CBA_fnc_waitAndExecute;
+        }, [_position, _dir, _isPilot, _bodyBag], 0.5] call CBA_fnc_waitAndExecute;
 
 }] call CBA_fnc_addEventHandler;
 

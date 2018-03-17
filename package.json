@@ -2,6 +2,7 @@
   "name": "TvT_Rattenfalle.prei_khmaoch_luong",
   "version": "0.3.6",
   "dependencies": {
+    "grad-crows": "0.0.1",
     "grad-gpstracker": "^0.2.0",
     "grad-leaveNotes": "^2.2.0",
     "grad-loadout": "^4.7.2",

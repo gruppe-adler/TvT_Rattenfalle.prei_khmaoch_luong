@@ -1,3 +1,5 @@
+// deprecated
+
 params ["_unit"];
 
 _string = format ["mrk_pilot_%1", name _unit];
