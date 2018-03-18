@@ -29,6 +29,7 @@ class cfgFunctions {
     #include "grad_pilotCam\cfgFunctions.hpp"
     #include "mission_helpers\cfgFunctions.hpp"
 
+    #include "node_modules\grad-crows\cfgFunctions.hpp"
     #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-gpsTracker\cfgFunctions.hpp"
@@ -137,6 +138,7 @@ class ace_map_BFT_HideAiGroups {
 class CfgSounds {
   sounds[] = {};
   #include "node_modules\grad-leaveNotes\cfgSounds.hpp"
+  #include "node_modules\grad-crows\cfgSounds.hpp"
   #include "grad_pilotTracking\cfgSounds.hpp"
 };
 
