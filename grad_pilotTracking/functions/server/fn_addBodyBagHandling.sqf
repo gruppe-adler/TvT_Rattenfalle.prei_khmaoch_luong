@@ -53,6 +53,12 @@
         _item setVariable ["GRAD_pilotTracking_isCargoOf", _vehicle, true];
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", _vehicle, true];
 
+        _handle = _bodybag getVariable ["GRAD_flies_handle", -1];
+
+        if (_handle >= 0) then {
+            [_handle] call CBA_fnc_removePerFrameHandler;
+        };
+
     };
 
 }] call CBA_fnc_addEventHandler;
@@ -68,6 +74,9 @@
         diag_log format ["put %1 inside cargo of %2", _item, _vehicle];
         _item setVariable ["GRAD_pilotTracking_isCargoOf", objNull, true];
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", objNull, true];
+
+        _handle = [_bodybag] call GRAD_flies_fnc_flies;
+        _bodybag setVariable ["GRAD_flies_handle", _handle];
     };
 
 }] call CBA_fnc_addEventHandler;

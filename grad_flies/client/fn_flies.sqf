@@ -1,5 +1,6 @@
 /*
 	Author: Karel Moricky & Tomas Pavlis
+	pimped by nomisum
 
 	Description:
 	Spawns flies around position.
@@ -10,7 +11,7 @@
 	_this select 2 (Optional): NUMBER - size
 
 	Returns:
-	ARRAY - spawned particle and sound source
+	ARRAY - spawned particle and PFH handle
 */
 
 private ["_pos", "_source", "_sounds"];
