@@ -17,7 +17,13 @@ _unit addEventhandler ["killed", {
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
 
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
-    
+
+    // todo reduce for east probably
+    if (side _killer isEqualTo west) then {
+          GRAD_pilotCam_RECORDING_DURATION = GRAD_pilotCam_RECORDING_DURATION + (60*15);
+          [format ["Pilot filming time set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION]] remoteExec ["hint"];
+    };
+
     // define position
     _pX = floor random -5;
     _pY = floor random -5;
@@ -26,7 +32,7 @@ _unit addEventhandler ["killed", {
 
     if (!(isNull objectParent _unit)) then {
         // push out of vehicle
-        
+
         _unit action ["GetOut", vehicle _unit];
         _unit action ["Eject", vehicle _unit];
 
@@ -44,7 +50,7 @@ _unit addEventhandler ["killed", {
     // move dead body to shore after delay
     [{
         params ["_unit"];
-        
+
         private _positionOnShore = ([
               position _unit,
               0,
@@ -61,6 +67,8 @@ _unit addEventhandler ["killed", {
             _unit setPos _positionOnShore;
         };
 
+        // todo clean up
+        [_unit] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
         ["Crowe", position _unit, 50, 50, 50] call GRAD_crows_fnc_crowCreate;
     }, [_unit], 5] call CBA_fnc_waitAndExecute;
 }];
