@@ -26,11 +26,17 @@
 
 
             if (_isPilot) then {
-            	[_bodyBag] call GRAD_pilotTracking_fnc_serverLoopPilotDead;
+                // start loop to track bodybag status from now on
+                [_bodyBag] call GRAD_pilotTracking_fnc_serverLoopPilotDead;
+                // set tracking object needed for identifying pilot in front of cams (former pilot itself)
                 missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_bodyBag, true];
-            	missionNamespace setVariable ["GRAD_pilotTracking_bodyBag", _bodyBag, true];
-            	[_bodyBag, true] call grad_gpsTracker_fnc_setTarget;
-            	diag_log format ["putting someone into bodybag %1, its the pilot.", _bodyBag];
+                // give bodybag unique identifier
+                missionNamespace setVariable ["GRAD_pilotTracking_bodyBag", _bodyBag, true];
+                // set target for gps tracker to bodybag
+                [_bodyBag, true] call grad_gpsTracker_fnc_setTarget;
+                // add hints to bodybag position like flies
+                [_bodyBag] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
+                diag_log format ["putting someone into bodybag %1, its the pilot.", _bodyBag];
             } else {
             	diag_log format ["putting someone into bodybag %1, its NOT the pilot.", _bodyBag];
         	};
@@ -53,11 +59,7 @@
         _item setVariable ["GRAD_pilotTracking_isCargoOf", _vehicle, true];
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", _vehicle, true];
 
-        _handle = _bodybag getVariable ["GRAD_flies_handle", -1];
-
-        if (_handle >= 0) then {
-            [_handle] call CBA_fnc_removePerFrameHandler;
-        };
+        [_bodybag] call GRAD_pilotTracking_fnc_bodyBagHintRemove;
 
     };
 
@@ -75,8 +77,7 @@
         _item setVariable ["GRAD_pilotTracking_isCargoOf", objNull, true];
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", objNull, true];
 
-        _handle = [_bodybag] call GRAD_flies_fnc_flies;
-        _bodybag setVariable ["GRAD_flies_handle", _handle];
+        [_bodybag] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
     };
 
 }] call CBA_fnc_addEventHandler;
