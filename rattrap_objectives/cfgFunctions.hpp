@@ -2,6 +2,8 @@ class rattrap_objectives {
 
 	class client {
 		file = rattrap_objectives\functions\client;
+
+		class preparationTimeCountdown;
 	};
 
 	class server {
@@ -10,5 +12,6 @@ class rattrap_objectives {
 		class createTasks;
 		class endGame;
 		class initTasks { postInit = 1; };
+		class startPreparationTime;
 	};
 };
