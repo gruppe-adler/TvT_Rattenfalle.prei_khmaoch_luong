@@ -1,25 +1,25 @@
-params ["_unit"];
-
-_unit setVariable ["GRAD_rattrap_pilotHealingStarted", true, true];
+params ["_medic", "_pilot"];
 
 private _duration = ["PilotHealingTime", 300] call BIS_fnc_getParamValue;
 
-[_duration, [], 
+[_duration, [_medic, _pilot],
 	{
-
-		hint format ["healing success %1", _this];
-		player setVariable ["GRAD_pilotTracking_isBleeding",false, true];
-		player setVariable ["GRAD_rattrap_pilotHealingStarted", false, true];
-	}, 
+		params ["_medic", "_pilot"];
+		hint format ["healing success"];
+	},
 	{
+		params ["_medic", "_pilot"];
+		if (_pilot getVariable ["GRAD_pilotTracking_isBleeding",false]) then {
+				hint format ["healing aborted"];
+		} else {
+				hint format ["healing success"];
+		};
 
-		hint format ["aborted healing %1", _this];
-		player setVariable ["GRAD_pilotTracking_isBleeding",true, true];
-		player setVariable ["GRAD_rattrap_pilotHealingStarted", false, true];
-	}, 
+	},
 		"Healing in progress",
 	{
-		(player getVariable ["GRAD_rattrap_pilotHealingStarted", false])
+		params ["_medic", "_pilot"];
+		(player getVariable ["GRAD_rattrap_pilotHealingInProgress", false])
 	},
 	[
 		"isNotInside",
@@ -28,3 +28,5 @@ private _duration = ["PilotHealingTime", 300] call BIS_fnc_getParamValue;
 		"isNotInZeus"
 	]
 ] call ace_common_fnc_progressBar;
+
+// todo do animations

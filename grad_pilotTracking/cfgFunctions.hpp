@@ -16,6 +16,7 @@ class GRAD_pilotTracking {
 		class gpsSetReceivingIndicator;
 		class initClient;
 		class initPilot;
+		class medicStartHealing;
 		class openGPS;
 		class pilotLoop;
 		class pilotStartHealing;
