@@ -37,10 +37,21 @@ _handle = [{
       diag_log format ["server: aborting filming, no pilot inside %1", _area];
 	};
 
-  if (GRAD_pilotCam_RECORDING_DONE > GRAD_pilotCam_RECORDING_DURATION) exitWith {
-      _winner = _area getVariable ["GRAD_pilotCam_winningSide", civilian];
-      [_camObj, "end", _winner] call GRAD_pilotCam_fnc_camTurnOffServer;
-      diag_log format ["server: successfully recorded pilot inside %1, winner is %2", _area, _winner];      
+
+  private _winner = _area getVariable ["GRAD_pilotCam_winningSide", civilian];
+
+  if (_winner isEqualTo west) then {
+      if (GRAD_pilotCam_RECORDING_DONE > GRAD_pilotCam_RECORDING_DURATION_BLUFOR) exitWith {
+
+          [_camObj, "end", _winner] call GRAD_pilotCam_fnc_camTurnOffServer;
+          diag_log format ["server: successfully recorded pilot inside %1, winner is %2", _area, _winner];
+      };
+  } else {
+      if (GRAD_pilotCam_RECORDING_DONE > GRAD_pilotCam_RECORDING_DURATION_OPFOR) exitWith {
+
+          [_camObj, "end", _winner] call GRAD_pilotCam_fnc_camTurnOffServer;
+          diag_log format ["server: successfully recorded pilot inside %1, winner is %2", _area, _winner];
+      };
   };
 
   // increment

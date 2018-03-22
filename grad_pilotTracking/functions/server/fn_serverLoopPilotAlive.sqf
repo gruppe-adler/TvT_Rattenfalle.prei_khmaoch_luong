@@ -20,8 +20,8 @@ _unit addEventhandler ["killed", {
 
     // todo reduce for east probably
     if (side _killer isEqualTo west) then {
-          GRAD_pilotCam_RECORDING_DURATION = GRAD_pilotCam_RECORDING_DURATION + (60*15);
-          [format ["Pilot filming time set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION]] remoteExec ["hint"];
+          GRAD_pilotCam_RECORDING_DURATION_BLUFOR = GRAD_pilotCam_RECORDING_DURATION_BLUFOR + (60*15);
+          [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_BLUFOR]] remoteExec ["hint"];
     };
 
     // define position
