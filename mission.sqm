@@ -111,7 +111,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=55;
+		items=54;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -448,32 +448,26 @@ class AddonsMetaData
 		};
 		class Item50
 		{
-			className="DynaSound_DS_w_Alamut";
-			name="DynaSound_DS_w_Alamut";
-			author="LAxemann";
-		};
-		class Item51
-		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item52
+		class Item51
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item53
+		class Item52
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item54
+		class Item53
 		{
 			className="A3_Soft_F_Orange";
 			name="Arma 3 Orange - Unarmored Land Vehicles";
@@ -3146,6 +3140,7 @@ class Mission
 			};
 			id=688;
 			type="Camera1";
+			atlOffset=-2.5272369e-005;
 		};
 		class Item17
 		{
@@ -7102,6 +7097,7 @@ class Mission
 			};
 			id=1350;
 			type="Camera1";
+			atlOffset=-2.5749207e-005;
 		};
 		class Item176
 		{
@@ -7430,6 +7426,7 @@ class Mission
 			};
 			id=1366;
 			type="Camera1";
+			atlOffset=-0.0015182495;
 		};
 		class Item192
 		{
@@ -8103,6 +8100,7 @@ class Mission
 			};
 			id=1394;
 			type="Land_PortableLight_single_F";
+			atlOffset=7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0

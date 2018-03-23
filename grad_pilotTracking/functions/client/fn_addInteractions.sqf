@@ -26,7 +26,7 @@ _readTrace = ["ACE_MainActions", "Spur einschätzen", "", {
 //todo add icons
 
 // BONE BREAKING
-_breakBones = ["ACE_MainActions", "Break Bones", "grad_pilotTracking\data\ico_breakBones.png", {
+_breakBones = ["ACE_MainActions", "Break Bones", "grad_pilotTracking\data\ico_breakBones.paa", {
 	[_target] remoteExec ["GRAD_pilotTracking_fnc_breakBones", _target];
 	_player playMoveNow "Acts_Executioner_Backhand";
 	_player addEventHandler ["AnimDone", {
@@ -39,24 +39,25 @@ _breakBones = ["ACE_MainActions", "Break Bones", "grad_pilotTracking\data\ico_br
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
-_estimateBleedout = ["ACE_MainActions", "Estimate Bleedout", "grad_pilotTracking\data\ico_bleedout.png", {
+_estimateBleedout = ["ACE_MainActions", "Estimate Bleedout", "grad_pilotTracking\data\ico_bleedout.paa", {
 		[_target] call GRAD_pilotTracking_fnc_estimateBleedout;
 },
 {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
-_stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "grad_pilotTracking\data\ico_stabilize.png", {
+_stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "grad_pilotTracking\data\ico_stabilize.paa", {
 		[_player, _target] call GRAD_pilotTracking_fnc_medicStartHealing;
 },
 {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false]) &&
 	(_target getVariable ["GRAD_pilotTracking_isBleeding", false]) &&
-	([_player] call call ace_medical_fnc_isMedic)
+	((typeOf _player isEqualTo "B_medic_F") || (typeOf _player isEqualTo "O_medic_F"))
 }] call ace_interact_menu_fnc_createAction;
 
 ["Man", 0, ["ACE_MainActions"], _breakBones, true] call ace_interact_menu_fnc_addActionToClass;
 ["Man", 0, ["ACE_MainActions"], _estimateBleedout, true] call ace_interact_menu_fnc_addActionToClass;
+["Man", 0, ["ACE_MainActions"], _stabilizePilot, true] call ace_interact_menu_fnc_addActionToClass;
 
 // By Gregor Cresnar
 // Bandage by pictohaven from the Noun Project
@@ -68,21 +69,21 @@ _stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "grad_pilotTracking\dat
 // GPS STUFF
 GRAD_GPS_TRACKER_OPEN = false;
 
-_openGPSTracker = ["ACE_SelfActions", "Open GPS Tracker", "grad_pilotTracking\data\ico_openTracker.png",
+_openGPSTracker = ["ACE_SelfActions", "Open GPS Tracker", "grad_pilotTracking\data\ico_openTracker.paa",
 {[] call grad_pilotTracking_fnc_openGPS; GRAD_GPS_TRACKER_OPEN = true;},
 {player getVariable ["GRAD_pilotTracking_isScout", false] && !GRAD_GPS_TRACKER_OPEN}] call ace_interact_menu_fnc_createAction;
 
 [typeOf player, 1, ["ACE_SelfActions"], _openGPSTracker] call ace_interact_menu_fnc_addActionToClass;
 
 
-_closeGPSTracker = ["ACE_SelfActions", "Close GPS Tracker", "grad_pilotTracking\data\ico_closeTracker.png",
+_closeGPSTracker = ["ACE_SelfActions", "Close GPS Tracker", "grad_pilotTracking\data\ico_closeTracker.paa",
 {call grad_gpsTracker_fnc_closeTitle; GRAD_GPS_TRACKER_OPEN = false;},
  {player getVariable ["GRAD_pilotTracking_isScout", false] && GRAD_GPS_TRACKER_OPEN}] call ace_interact_menu_fnc_createAction;
 
 [typeOf player, 1, ["ACE_SelfActions"], _closeGPSTracker] call ace_interact_menu_fnc_addActionToClass;
 
 
-_pushBoat = ["PushBoatAction", "Push Boat", "grad_pilotTracking\data\ico_pushBoat.png",
+_pushBoat = ["PushBoatAction", "Push Boat", "grad_pilotTracking\data\ico_push.paa",
 { [_target, _player] call ace_interaction_fnc_push; },
 {true}] call ace_interact_menu_fnc_createAction;
 
