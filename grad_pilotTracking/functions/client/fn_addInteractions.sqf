@@ -58,8 +58,12 @@ _stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "grad_pilotTracking\dat
 ["Man", 0, ["ACE_MainActions"], _breakBones, true] call ace_interact_menu_fnc_addActionToClass;
 ["Man", 0, ["ACE_MainActions"], _estimateBleedout, true] call ace_interact_menu_fnc_addActionToClass;
 
-
-
+// By Gregor Cresnar
+// Bandage by pictohaven from the Noun Project
+// Heart by romzicon from the Noun Project
+// GPS by Hea Poh Lin from the Noun Project
+// blood by SlideGenius from the Noun Project
+// push by Luis Prado from the Noun Project
 
 // GPS STUFF
 GRAD_GPS_TRACKER_OPEN = false;
