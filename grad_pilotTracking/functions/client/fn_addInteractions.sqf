@@ -23,9 +23,10 @@ _readTrace = ["ACE_MainActions", "Spur einschätzen", "", {
 ["Sign_Sphere10cm_F", 0, ["ACE_MainActions"], _readTrace] call ace_interact_menu_fnc_addActionToClass;
 
 
+//todo add icons
 
 // BONE BREAKING
-_breakBones = ["ACE_MainActions", "Break Bones", "", {
+_breakBones = ["ACE_MainActions", "Break Bones", "grad_pilotTracking\data\ico_breakBones.png", {
 	[_target] remoteExec ["GRAD_pilotTracking_fnc_breakBones", _target];
 	_player playMoveNow "Acts_Executioner_Backhand";
 	_player addEventHandler ["AnimDone", {
@@ -38,14 +39,14 @@ _breakBones = ["ACE_MainActions", "Break Bones", "", {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
-_estimateBleedout = ["ACE_MainActions", "Estimate Bleedout", "", {
+_estimateBleedout = ["ACE_MainActions", "Estimate Bleedout", "grad_pilotTracking\data\ico_bleedout.png", {
 		[_target] call GRAD_pilotTracking_fnc_estimateBleedout;
 },
 {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
-_stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "", {
+_stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "grad_pilotTracking\data\ico_stabilize.png", {
 		[_player, _target] call GRAD_pilotTracking_fnc_medicStartHealing;
 },
 {
@@ -63,21 +64,21 @@ _stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "", {
 // GPS STUFF
 GRAD_GPS_TRACKER_OPEN = false;
 
-_openGPSTracker = ["ACE_SelfActions", "Open GPS Tracker", "",
+_openGPSTracker = ["ACE_SelfActions", "Open GPS Tracker", "grad_pilotTracking\data\ico_openTracker.png",
 {[] call grad_pilotTracking_fnc_openGPS; GRAD_GPS_TRACKER_OPEN = true;},
 {player getVariable ["GRAD_pilotTracking_isScout", false] && !GRAD_GPS_TRACKER_OPEN}] call ace_interact_menu_fnc_createAction;
 
 [typeOf player, 1, ["ACE_SelfActions"], _openGPSTracker] call ace_interact_menu_fnc_addActionToClass;
 
 
-_closeGPSTracker = ["ACE_SelfActions", "Close GPS Tracker", "",
+_closeGPSTracker = ["ACE_SelfActions", "Close GPS Tracker", "grad_pilotTracking\data\ico_closeTracker.png",
 {call grad_gpsTracker_fnc_closeTitle; GRAD_GPS_TRACKER_OPEN = false;},
  {player getVariable ["GRAD_pilotTracking_isScout", false] && GRAD_GPS_TRACKER_OPEN}] call ace_interact_menu_fnc_createAction;
 
 [typeOf player, 1, ["ACE_SelfActions"], _closeGPSTracker] call ace_interact_menu_fnc_addActionToClass;
 
 
-_pushBoat = ["PushBoatAction", "Push Boat", "",
+_pushBoat = ["PushBoatAction", "Push Boat", "grad_pilotTracking\data\ico_pushBoat.png",
 { [_target, _player] call ace_interaction_fnc_push; },
 {true}] call ace_interact_menu_fnc_createAction;
 
