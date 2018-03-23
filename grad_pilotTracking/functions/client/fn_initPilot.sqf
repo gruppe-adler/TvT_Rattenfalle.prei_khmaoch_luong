@@ -55,7 +55,9 @@ _pilot addEventHandler ["GetInMan", {
 _pilot addEventHandler ["GetOutMan", {
 	params ["_unit", "_position", "_vehicle", "_turret"];
 
-	["The pilot exited a vehicle."] remoteExec ["hintsilent", 0];
+	if (!(_vehicle getVariable ["GRAD_rattrap_isRestrictedVehicle",false])) then {
+			["The pilot exited a vehicle."] remoteExec ["hintsilent", 0];
+	};
 
 	[] remoteExec ["GRAD_pilotTracking_fnc_reOpenGPS", allPlayers];
 }];

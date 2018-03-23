@@ -45,6 +45,15 @@ _estimateBleedout = ["ACE_MainActions", "Estimate Bleedout", "", {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
 }] call ace_interact_menu_fnc_createAction;
 
+_stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "", {
+		[_player, _target] call GRAD_pilotTracking_fnc_medicStartHealing;
+},
+{
+	(_target getVariable ["GRAD_pilotTracking_isPilot", false]) &&
+	(_target getVariable ["GRAD_pilotTracking_isBleeding", false]) &&
+	([_player] call call ace_medical_fnc_isMedic)
+}] call ace_interact_menu_fnc_createAction;
+
 ["Man", 0, ["ACE_MainActions"], _breakBones, true] call ace_interact_menu_fnc_addActionToClass;
 ["Man", 0, ["ACE_MainActions"], _estimateBleedout, true] call ace_interact_menu_fnc_addActionToClass;
 
@@ -88,7 +97,7 @@ player getVariable ["GRAD_pilotTracking_isBleeding", false]
 
 _endForceCloseWound = ["ACE_SelfActions", "End force close wound", "",
 {GRAD_WOUND_FORCE_CLOSE = false;},
-{player getVariable ["GRAD_pilotTracking_isPilot", false] && 
+{player getVariable ["GRAD_pilotTracking_isPilot", false] &&
 GRAD_WOUND_FORCE_CLOSE &&
 player getVariable ["GRAD_pilotTracking_isBleeding", false]}] call ace_interact_menu_fnc_createAction;
 

@@ -1,5 +1,7 @@
 params ["_medic", "_pilot"];
 
+missionNameSpace setVariable ["GRAD_rattrap_gettingHealedAnimations", ["GET HEALED ANIM"]];
+
 private _duration = ["PilotHealingTime", 300] call BIS_fnc_getParamValue;
 
 [_duration, [_medic, _pilot],
@@ -30,3 +32,17 @@ private _duration = ["PilotHealingTime", 300] call BIS_fnc_getParamValue;
 ] call ace_common_fnc_progressBar;
 
 // todo do animations
+_pilot playMoveNow "GET HEALED ANIM START"; // todo insert right animation
+
+// todo do animations
+_pilot addEventhandler ["AnimDone", {
+		params ["_unit", "_anim"];
+
+		if (!(_unit getVariable ["GRAD_rattrap_pilotHealingInProgress", false])) then {
+				_unit removeEventhandler ["AnimDone", _thisEventHandler];
+				_unit playMoveNow "ABORT HEALING ANIM"; // todo insert right animation
+		} else {
+				private _animationsPossible = missionNameSpace getVariable ["GRAD_rattrap_gettingHealedAnimations", ["GET HEALED  ANIM"]];
+				_unit playMoveNow (selectRandom _animationsPossible);
+		};
+}];
