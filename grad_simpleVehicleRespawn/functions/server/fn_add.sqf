@@ -9,6 +9,8 @@ private _vehPos = 		 getPos _vehObj;
 private _vehType = 		 typeOf _vehObj;
 private _displayName = 	 getText(configFile >> "CfgVehicles" >> _vehType >> "displayName");
 
+diag_log format ["GRAD_simpleVehicleRespawn: adding %1 to respawn, respawns when not dead: %2", _displayName, _respawnWhenNotDead];
+
 // 5
 [{
 	params ["_args", "_handle"];
@@ -22,9 +24,12 @@ private _displayName = 	 getText(configFile >> "CfgVehicles" >> _vehType >> "dis
 	// diag_log format ["checking %1 for respawn", _displayName];
 
 
-	if ( _respawnWhenNotDead && { ( alive _vehObj ) } && { ( canMove _vehObj ) && { { ( alive _x ) } count ( crew _vehObj ) == 0 }} ) exitWith {
+	if ( 
+			_respawnWhenNotDead && 
+			{ ( alive _vehObj ) }
+		) exitWith {
 
-			diag_log format ["vehicle %1 abandoned", _vehObj];
+			diag_log format ["checking vehicle %1 for respawn", _vehObj];
 			[_vehType, _vehDir, _vehPos, _handle] call GRAD_simpleVehicleRespawn_fnc_check;
 	};
 

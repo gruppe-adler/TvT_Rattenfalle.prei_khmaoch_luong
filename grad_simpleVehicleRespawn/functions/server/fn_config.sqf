@@ -19,6 +19,8 @@ if (_type isEqualTo "rhsgref_BRDM2UM_vmf") then {
 
 if (_type isEqualTo "RHS_UH1Y_UNARMED_d") then {
 	[_veh] call ace_fastroping_fnc_equipFRIES;
+
+	_veh setVariable ["GRAD_rattrap_isRestrictedVehicle", true, true];
 	_veh setHitPointDamage ["HitGlass1", 1];
 	_veh setHitPointDamage ["HitGlass2", 1];
 	_veh disableTIEquipment true;
@@ -28,7 +30,9 @@ if (_type isEqualTo "RHS_UH1Y_UNARMED_d") then {
 
 	[_veh, ["<t color='#8f1167'>Searchlight Off", "[_target, _this, false] remoteExec ['grad_mission_helpers_fnc_toggleHeliLight', _target];", 
 	"", 1, false, false, "", "_this in _target && _target turretLocal [0] && (isLightOn _target)"]] remoteExec ["addAction", [0,-2] select isDedicated, true];
-};
 
-// add new respawn loop
-[_veh] call GRAD_simpleVehicleRespawn_fnc_add;
+	[_veh, false] call GRAD_simpleVehicleRespawn_fnc_add;
+} else {
+	// add new respawn loop
+	[_veh] call GRAD_simpleVehicleRespawn_fnc_add;
+};
