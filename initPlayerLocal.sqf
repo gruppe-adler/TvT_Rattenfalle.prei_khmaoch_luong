@@ -35,22 +35,26 @@ player addEventhandler ["HandleRating", {
 // ADD ACTION TO WAVE ARMS
 call GRAD_mission_helpers_fnc_waveAddAction;
 
+// quicker testing in SP
+if (isMultiplayer) then {
 
-// START INTRO WHEN CRASH SITE IS PUBLISHED
-[{
-		CRASH_SITE_VEHICLE_POS select 0 != 0
-},{
-		cutRsc ["RscStatic", "PLAIN" , 3];
+	// START INTRO WHEN CRASH SITE IS PUBLISHED
+	[{
+			CRASH_SITE_VEHICLE_POS select 0 != 0
+	},{
+			cutRsc ["RscStatic", "PLAIN" , 3];
 
-		[
-				CRASH_SITE_VEHICLE_POS,
-				15,
-				30,
-				45,
-				30,
-				0,
-				0.1,
-				false
-			] call grad_fx_fnc_rotatingCam;
-},
-[]] call CBA_fnc_waitUntilAndExecute;
+			[
+					CRASH_SITE_VEHICLE_POS,
+					15,
+					30,
+					45,
+					30,
+					0,
+					0.1,
+					false
+				] call grad_fx_fnc_rotatingCam;
+	},
+	[]] call CBA_fnc_waitUntilAndExecute;
+
+};

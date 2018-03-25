@@ -28,6 +28,7 @@ class cfgFunctions {
     #include "grad_pilotTracking\cfgFunctions.hpp"
     #include "grad_pilotCam\cfgFunctions.hpp"
     #include "mission_helpers\cfgFunctions.hpp"
+    #include "grad_antiAirArea\cfgFunctions.hpp"
 
     #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"

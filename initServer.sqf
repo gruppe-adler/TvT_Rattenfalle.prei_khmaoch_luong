@@ -16,6 +16,17 @@ call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 call grad_pilotTracking_fnc_initServer;
 call grad_simpleWaveRespawn_fnc_serverLoop;
 
+[3, "mrk_noFlyZone", 2500, [
+		antiAir_01, 
+		antiAir_02,
+		antiAir_03,
+		antiAir_04,
+		antiAir_05,
+		antiAir_06,
+		antiAir_07,
+		antiAir_08
+], "Air"] call grad_antiAirArea_fnc_create;
+
 // DYN GROUPS
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
