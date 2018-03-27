@@ -51,11 +51,15 @@ params ["_bodybag"];
               missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj",_bodyBagReplacement, true];
               missionNamespace setVariable ["GRAD_pilotTracking_bodyBag", _bodyBagReplacement, true];
 
+              [position _bodyBagReplacement, 25, 0] call GRAD_crows_fnc_setCirclePoint; // move bird on position of bodybag
+
               [_bodyBagReplacement, true] call grad_gpsTracker_fnc_setTarget;
               [_handle] call CBA_fnc_removePerFrameHandler;
               [_bodyBagReplacement] spawn GRAD_pilotTracking_fnc_serverLoopPilotDead;
         };
 
           
-      };
+      } else {
+          [position _bodybag, 25, 0] call GRAD_crows_fnc_setCirclePoint;
+    };
 },1,[_bodybag]] call CBA_fnc_addPerFrameHandler;

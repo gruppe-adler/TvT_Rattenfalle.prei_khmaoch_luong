@@ -35,12 +35,15 @@ class cfgFunctions {
     #include "node_modules\grad-gpsTracker\cfgFunctions.hpp"
     #include "node_modules\grad-makeFire\cfgFunctions.hpp"
     #include "node_modules\grad-replay\cfgFunctions.hpp"
+    #include "node_modules\grad-crows\cfgFunctions.hpp"
+    #include "grad_flies\cfgFunctions.hpp"
 
 };
 
 class rscTitles {
     #include "grad_pilotTracking\rscTitles.hpp"
     #include "grad_pilotCam\rscpip\title.hpp"
+    #include "rattrap_objectives\rscTitles.hpp"
 };
 
 class Loadouts {
@@ -139,6 +142,8 @@ class CfgSounds {
   sounds[] = {};
   #include "node_modules\grad-leaveNotes\cfgSounds.hpp"
   #include "grad_pilotTracking\cfgSounds.hpp"
+  #include "node_modules\grad-crows\cfgSounds.hpp"
+  #include "grad_flies\cfgSounds.hpp"
 };
 
 class CfgDebriefing

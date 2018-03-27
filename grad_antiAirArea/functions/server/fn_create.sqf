@@ -37,14 +37,13 @@ private _position = getMarkerPos _marker;
 		params ["_unit", "_killer"];
 		private _marker = _unit getVariable ["grad_antiAirArea_marker", objNull];
 		private _pos = getMarkerPos _marker;
-		
-		deleteMarker _marker;
 
 		["AntiAir destroyed."] remoteExec ["hintSilent"];
 
 		private _antiAirMarkerDestroyed = createMarker [format["antiAirMarkerDestroyed_%1",_pos],_pos];
 		_antiAirMarkerDestroyed setMarkerShape "ICON";
-		_antiAirMarkerDestroyed setMarkerType "loc_SafetyZone";
+		_antiAirMarkerDestroyed setMarkerType "hd_destroy";
+		_antiAirMarkerDestroyed setMarkerColor "ColorOpfor";
 		_antiAirMarkerDestroyed setMarkerText " AA destroyed";
 	}];
 

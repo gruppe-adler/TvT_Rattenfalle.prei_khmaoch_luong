@@ -5,6 +5,8 @@ class GRAD_pilotTracking {
 
 		class addAction;
 		class addInteractions;
+		class bodyBagHintAdd;
+		class bodyBagHintRemove;
 		class breakBones;
 		class createBloodSplatter;
 		class disableCollision;

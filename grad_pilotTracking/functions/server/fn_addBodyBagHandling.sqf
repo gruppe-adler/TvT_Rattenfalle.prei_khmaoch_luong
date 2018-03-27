@@ -61,6 +61,7 @@
 
         [_bodybag] call GRAD_pilotTracking_fnc_bodyBagHintRemove;
 
+        [[worldSize/2,worldSize/2,400], 100, 0] call GRAD_crows_fnc_setCirclePoint; // move bird on position of bodybag
     };
 
 }] call CBA_fnc_addEventHandler;
@@ -78,6 +79,8 @@
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", objNull, true];
 
         [_bodybag] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
+
+        [position _bodybag, 25, 0] call GRAD_crows_fnc_setCirclePoint; // move bird on position of bodybag
     };
 
 }] call CBA_fnc_addEventHandler;

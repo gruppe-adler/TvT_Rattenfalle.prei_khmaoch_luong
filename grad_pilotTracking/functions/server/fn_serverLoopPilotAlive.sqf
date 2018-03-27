@@ -69,7 +69,9 @@ _unit addEventhandler ["killed", {
 
         // todo clean up
         [_unit] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
-        ["Crowe", position _unit, 50, 50, 50] call GRAD_crows_fnc_crowCreate;
+
+        ["Crowe", position _unit, 10, 10, 25, 0] remoteExec ["GRAD_crows_fnc_crowSingleCreate", [0,-2] select isDedicated, true];
+        [position _unit, 25, 0] call GRAD_crows_fnc_setCirclePoint;
     }, [_unit], 5] call CBA_fnc_waitAndExecute;
 }];
 
