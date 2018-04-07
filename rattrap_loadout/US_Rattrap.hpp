@@ -27,7 +27,6 @@ class US_Rattrap: SOGBLACK {
                 class Soldier_F: Soldier_F {
                     addItemsToUniform[] = {
                         "ACE_MapTools",
-                        LIST_2("ACE_CableTie"),
                         LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
                         LIST_10("ACE_fieldDressing"),
                         LIST_4("ACE_morphine"),
@@ -85,7 +84,6 @@ class US_Rattrap: SOGBLACK {
                     handgunWeaponMagazine = "";
                     addItemsToUniform[] = {
                         "ACE_MapTools",
-                        LIST_2("ACE_CableTie"),
                         LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
                         LIST_10("ACE_fieldDressing"),
                         LIST_4("ACE_morphine"),

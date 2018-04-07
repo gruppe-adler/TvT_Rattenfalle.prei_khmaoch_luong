@@ -25,7 +25,6 @@ class Rebels_Rattrap: ModerateRebels {
         class Soldier_F :Soldier_F {
             addItemsToUniform[] = {
                 "ACE_MapTools",
-                LIST_2("ACE_CableTie"),
                 LIST_1("rhs_mag_9x18_8_57N181S"),
                 LIST_8("ACE_fieldDressing"),
                 LIST_4("ACE_morphine"),
@@ -91,7 +90,7 @@ class Rebels_Rattrap: ModerateRebels {
             vest = "V_BandollierB_khk";
             backpack = "B_Kitbag_cbr";
             headgear = "rhsgref_helmet_M1_painted";
-            
+
             addItemsToVest[] = {
                 LIST_2("rhs_mag_rgd5"),
                 LIST_6("30Rnd_762x39_Mag_Tracer_Green_F")
@@ -109,7 +108,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_C_HunterBody_grn";
             vest = "V_TacChestrig_cbr_F";
             backpack = "B_FieldPack_khk";
-            
+
             addItemsToBackpack[] = {
                 LIST_2("IEDLandSmall_Remote_Mag"),
                 "IEDLandBig_Remote_Mag",
@@ -151,7 +150,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_BG_Guerilla1_1";
             vest = "V_TacChestrig_cbr_F";
             backpack = "rhs_rpg_empty";
-            
+
             secondaryWeapon = "rhs_weap_igla";
             secondaryWeaponMagazine = "rhs_mag_9k38_rocket";
             addItemsToBackpack[] = {
@@ -163,7 +162,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_I_C_Soldier_Para_5_F";
             vest = "V_TacChestrig_cbr_F";
             backpack = "rhs_rpg_empty";
-            
+
             secondaryWeapon = "rhs_weap_rpg7";
             secondaryWeaponMagazine = "rhs_rpg7_PG7VL_mag";
             addItemsToBackpack[] = {
@@ -178,7 +177,7 @@ class Rebels_Rattrap: ModerateRebels {
             uniform = "U_BG_Guerilla2_2";
             vest = "V_TacChestrig_oli_F";
             backpack = "rhs_sidor";
-            
+
             addItemsToBackpack[] = {
                 "ToolKit",
                 "ACE_wirecutter"
@@ -190,7 +189,7 @@ class Rebels_Rattrap: ModerateRebels {
             vest = "V_TacChestrig_oli_F";
             goggles = "G_Bandanna_oli";
             headgear = "rhsgref_helmet_M1_painted";
-            
+
             secondaryWeapon = "rhs_weap_rpg26";
         };
 
