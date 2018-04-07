@@ -8,3 +8,4 @@ _bodybag setVariable ["GRAD_flies_handle", _handle];
 
 private _chemlight = "Chemlight_yellow" createVehicleLocal (position _bodybag);
 _chemlight attachTo [_bodybag,[0,0,0]];
+_bodyBag setVariable ["GRAD_chemlight_handle", _chemlight];
