@@ -8,6 +8,7 @@
         private _isPilot = _deadGuy getVariable ["GRAD_pilotTracking_isPilot", false];
         // private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
+        [_deadGuy] call GRAD_pilotTracking_fnc_bodyBagHintRemove;
         deleteVehicle _bodyBag;
 
         [{
@@ -41,7 +42,7 @@
             	diag_log format ["putting someone into bodybag %1, its NOT the pilot.", _bodyBag];
         	};
 
-        }, [_position, _dir, _isPilot, _bodyBag], 0.5] call CBA_fnc_waitAndExecute;
+        }, [_position, _dir, _isPilot, _bodyBag], 0.1] call CBA_fnc_waitAndExecute;
 
 }] call CBA_fnc_addEventHandler;
 
