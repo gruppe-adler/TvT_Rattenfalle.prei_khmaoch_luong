@@ -24,9 +24,9 @@ _unit addEventhandler ["killed", {
           [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_BLUFOR]] remoteExec ["hint"];
     };
 
-    if (side _killer isEqualTo east) then {
+    if (side _killer isEqualTo east + (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false]))) then {
           GRAD_pilotCam_RECORDING_DURATION_OPFOR = GRAD_pilotCam_RECORDING_DURATION_OPFOR + (60*5);
-          [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_OPFOR]] remoteExec ["hint"];
+          [format ["Pilot filming time for Opfor set to %1 for killing the pilot early.", GRAD_pilotCam_RECORDING_DURATION_OPFOR]] remoteExec ["hint"];
     };
 
     // define position
