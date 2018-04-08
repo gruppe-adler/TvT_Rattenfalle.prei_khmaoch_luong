@@ -24,15 +24,15 @@ _unit addEventhandler ["killed", {
           [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_BLUFOR]] remoteExec ["hint"];
     };
 
-    if (side _killer isEqualTo east + (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false]))) then {
+    if ((side _killer isEqualTo east) + (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false]))) then {
           GRAD_pilotCam_RECORDING_DURATION_OPFOR = GRAD_pilotCam_RECORDING_DURATION_OPFOR + (60*5);
           [format ["Pilot filming time for Opfor set to %1 for killing the pilot early.", GRAD_pilotCam_RECORDING_DURATION_OPFOR]] remoteExec ["hint"];
     };
 
     // define position
-    _pX = floor random -5;
-    _pY = floor random -5;
-    _position = vehicle _unit modelToWorld [_pX,_pY,0];
+    private _pX = floor random -5;
+    private _pY = floor random -5;
+    private _position = (vehicle _unit) modelToWorld [_pX,_pY,0];
 
 
     if (!(isNull objectParent _unit)) then {
@@ -43,14 +43,6 @@ _unit addEventhandler ["killed", {
 
         _unit setPos _position;
     };
-
-    // move body to nearest land position
-    /*
-    private _positionUnit = getPosASL _unit;
-    private _positionAboveUnit = _positionUnit;
-    _positionAboveUnit set [2, 500];
-    private _checkArray = lineIntersectsSurfaces [_positionAboveUnit, _positionUnit];
-    */
 
     // move dead body to shore after delay
     [{
@@ -75,6 +67,7 @@ _unit addEventhandler ["killed", {
         // todo clean up
         [_unit] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
 
+        // initial bird spawn
         ["Crowe", position _unit, 10, 10, 25, 0] remoteExec ["GRAD_crows_fnc_crowSingleCreate", [0,-2] select isDedicated, true];
         [position _unit, 25, 0] call GRAD_crows_fnc_setCirclePoint;
     }, [_unit], 5] call CBA_fnc_waitAndExecute;
