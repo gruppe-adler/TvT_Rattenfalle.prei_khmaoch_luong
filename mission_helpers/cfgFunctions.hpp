@@ -37,5 +37,6 @@ class GRAD_mission_helpers {
 		class createCrashSite;
 		class selectCrashSite;
 		class teleportPlayer;
+    class TFARsettings { preInit = 1; };
 	};
 };
