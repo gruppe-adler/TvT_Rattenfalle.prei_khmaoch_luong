@@ -6,8 +6,8 @@
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
 
 OnLoadMission = "TvT_Rattrap";
-author = "Nomisum für Gruppe Adler";  //appears as author in overview and loading screen
-overviewText = "Wettrennen um verschollene Piloten."; //appears in overview and loading screen
+author = "Nomisum for Gruppe Adler";  //appears as author in overview and loading screen
+overviewText = "Hunt for the lost pilot."; //appears in overview and loading screen
 onLoadName = "TvT_Rattrap"; //mission name for loading screen only
 enableDebugConsole = 1;
 loadScreen = "pic\loading_pic.jpg";
@@ -61,7 +61,7 @@ class Header
 {
   gameType = Seize;
   minPlayers = 3;
-  maxPlayers = 35;
+  maxPlayers = 101;
 };
 
 class Params
