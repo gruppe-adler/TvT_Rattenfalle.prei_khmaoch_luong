@@ -1,4 +1,4 @@
-// tfarSettings.sqf
+// tfarSettings.sqf 0.9.12
 
 tf_give_microdagr_to_soldier = false;
 tf_same_lr_frequencies_for_side = true;
