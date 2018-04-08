@@ -24,6 +24,11 @@ _unit addEventhandler ["killed", {
           [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_BLUFOR]] remoteExec ["hint"];
     };
 
+    if (side _killer isEqualTo east) then {
+          GRAD_pilotCam_RECORDING_DURATION_OPFOR = GRAD_pilotCam_RECORDING_DURATION_OPFOR + (60*5);
+          [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_OPFOR]] remoteExec ["hint"];
+    };
+
     // define position
     _pX = floor random -5;
     _pY = floor random -5;
