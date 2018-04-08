@@ -1,0 +1,25 @@
+
+### Das Setting
+Rattenfalle. Ein US Pilot wurde von den Rebellen über dem Dschungel abgeschossen. Er kam zwar mit dem Leben davon, ist aber verletzt und verblutet nach 75min ohne Behandlung durch einen Medic. Sowohl Rebellen als auch Amerikaner wollen ihn finden und zu einem von 3 Abgabepunkten pro Seite bringen, wo er für Propagandazwecke gefilmt werden soll. Hat ein Team die Aufnahme im Kasten, ist das Spiel vorbei. Wichtig: Der Pilot kann auch im Leichensack vor die Kamera – das dauert dann aber länger zu Filmen. Opfor darf ihn allerdings ohne Penalty vor laufender Kamera erschießen.
+
+### Die Jagd
+Der Clou dabei ist, dass der Pilot weder Funkgerät, noch Nachtsichtgeräte noch Karte und Kompass aus dem Helikopter retten konnte. Einzig durch Signalraketen, Taschenlampenblinker und selbst gebaute Feuerstellen oder hinterlassene Notizzettel kann er auf sich aufmerksam machen. Außerdem hinterlässt er, solang er nicht behandelt wurde, eine Blutspur. Diese kann von den Scouts der Opfor-Seite auf Alter und Richtung untersucht werden. Zuguterletzt können die Scouts die Richtung zum Piloten auf 1000m über ein GPS Gerät bestimmen, sofern dieser sich unter freiem Himmel befindet. Blufor dagegen muss sich voll auf die Aufklärung aus der Luft verlassen, dazu haben sie einen unbewaffneten UH-1Y. Um diesen voll einsetzen zu können, sollte Blufor allerdings auf der Karte eingezeichnete AA-Stellungen ausschalten, die von KI gesteuert werden – der Flug in die Absturzzone ist sonst zwar möglich, aber riskant. Außerdem muss der Pilot vor dem Besteigen des Helikopters vom Medic stabilisert werden, eine schnelle Extraction ist somit ohnehin nicht möglich.
+
+### Equipment und Fahrzeuge
+Blufor fährt neben dem UH-1Y, 1 M1220 mit M2, 1 unbewaffneten M1220 sowie einige HMMWVs auf. Opfor kann neben Booten – einem MK-V ohne Granatwerfer sowie 2 RHIB – mit 1 Jeep mit SPG-9 sowie unbewaffneten Jeeps, Vans und Motorrädern aufwarten.
+
+Alle Fahrzeuge respawnen, sobald sie zerstört sind.
+
+Beide Teams haben Nachtsichtgeräte und Laser/Lights. Die Teamleads haben zusätzlich Flares. Die Farben von Tracern und Flares sind bei Blufor ROT, bei Opfor GRÜN und der Pilot meldet sich mit GELB.
+
+
+### Respawn
+Es gibt 3 Respawns pro Spieler mit eingeschränktem Spectator, danach einen freien Spectator. Der Pilot respawned nach einem Penalty Delay als normaler Blufor Spieler und kann versuchen, seine eigene Leiche zu bergen.
+
+
+### FAQ
+F: Was passiert, wenn das Fahrzeug mit dem Piloten oder dem Leichensack des Piloten im Fluss explodiert?
+A: Der Körper/Leichensack spawned am nächsten Ufer.
+
+F: Wie kann die Gegenseite die Aufnahme stoppen?
+A: Der Pilot muss den Kamerabereich verlassen ODER die Kamera muss per ACE Interact ausgeschaltet werden.

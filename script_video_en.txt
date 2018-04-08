@@ -1,0 +1,24 @@
+
+### The Setting
+Rattrap. An US Pilot was shot down over the jungle by Rebels. Although he could save his life, he is wounded and bleeds out after 75mins without treatment from a medic. Rebels as well as Americans want to find him and bring him to one of three points of each side where he should be filmed for propaganda purposes. As soon as one team has the recording in the box, the game is over. Important: The pilot can also be filmed in a bodybag – which takes longer to film. Although Opfor is allowed to kill him in front of the running cam without penalty.
+
+### Die Hunt
+The Clou: The pilot could rescue neither radio, nightvision, map nor compass out of the helicopter. Only through signal flares, flashlight blinks, selfmade fire places or notepads he can try to get attention. Furthermore he leaves behind a blood trail as long as he is not taken care of by a medic. This trail can be examined by Opfor Scouts for age and direction. Last but not least the Scouts can determine the direction to the pilot over 1000m with a special GPS device if the pilot is under unoccluded sky. Blufor for their part have to rely on their air recon abilities for which they have an unarmed UH-1Y. To take it to its full potential Blufor should eliminate AA-positions marked on them map and manned by AI units – going near the crash site would also be possible otherwise, but risky. Even more so as the pilot needs to be stabilized before entering the Helicopter, a fast extraction is impossible.
+
+### Equipment and Vehicles
+Blufor fields – besides the UH-1Y – 1 M1220 M2, 1 unarmed M1220 as well as some HMMWVs. Opfor can bring boats – 1 MK-V without grenade launcher, 2 RHIBs – and unarmed Jeeps, Vans, Motorbikes and 1 Jeep with SPG-9 to the table.
+
+All vehicles respawn if destroyed.
+
+Both teams have nightvision and laser/lights. Teamleads are equipped with flares too. Colors of tracers and flares are Blufor RED, Opfor GREEN and Pilot says hi with YELLOW.
+
+### Respawn
+
+There are 3 respawns per player with limited spectator, after that a free spec cam. The pilot respawns as a normal Blufor player after a penalty delay and can try to bring home his own body.
+
+### FAQ
+Q: What happens if the vehicle with the pilot or the bodybag of the pilot explodes in the river?
+A: The body/bodybag spawns at the nearest shore.
+
+Q: How can the opposing side stop the recording?
+A: The pilot has to leave the camera area OR the camera has to be turned of via ACE Interact.
