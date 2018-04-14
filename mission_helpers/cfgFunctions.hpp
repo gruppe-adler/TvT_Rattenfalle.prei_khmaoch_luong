@@ -34,9 +34,10 @@ class GRAD_mission_helpers {
 	class setup {
 		file = mission_helpers\functions\setup;
 
+		class nerfStamina;
 		class createCrashSite;
 		class selectCrashSite;
 		class teleportPlayer;
-    class TFARsettings { preInit = 1; };
+    	class TFARsettings { preInit = 1; };
 	};
 };

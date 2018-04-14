@@ -48,7 +48,7 @@ _pilot addEventHandler ["GetInMan", {
 			["You need to get treated by a medic first."] remoteExec ["hintsilent", _unit];
 	} else {
 			[] remoteExec ["GRAD_pilotTracking_fnc_reOpenGPS", allPlayers];
-			["The pilot got in a vehicle, check your GPS Tracker."] remoteExec ["hintsilent", (allPlayers - _unit)];
+			["The pilot got in a vehicle, check your GPS Tracker."] remoteExec ["hintsilent", (allPlayers - [_unit])];
 	};
 }];
 

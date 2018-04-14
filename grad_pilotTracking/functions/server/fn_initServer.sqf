@@ -15,6 +15,9 @@ publicVariable "GRAD_pilotTracking_penaltyBrokenLegDelay";
     };
 } forEach allUnits;
 
+[false] remoteExec ["GRAD_mission_helpers_fnc_nerfStamina", allPlayers - [_pilot]];
+[true] remoteExec ["GRAD_mission_helpers_fnc_nerfStamina", _pilot];
+
 [_pilot, true] call grad_gpsTracker_fnc_setTarget;
 
 [_pilot] remoteExec ["GRAD_pilotTracking_fnc_initClient", [0,-2] select isDedicated, true];

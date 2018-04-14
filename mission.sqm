@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3792.4678,153.75969,7580.4058};
-		dir[]={0.19072941,-0.29302326,-0.93689352};
-		up[]={0.058454216,0.9561038,-0.28713587};
-		aside[]={-0.97990578,2.0609878e-007,-0.19948623};
+		pos[]={6405.9629,17.003424,2026.4529};
+		dir[]={-0.69516939,-0.32110387,0.64314675};
+		up[]={-0.23570351,0.94704527,0.21806456};
+		aside[]={0.67910892,-2.5052577e-007,0.73404056};
 	};
 };
 binarizationWanted=0;
@@ -4995,6 +4995,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[this] call acex_sitting_fnc_addSitActions;}";
 			};
 			id=1028;
 			type="Land_CampingChair_V2_white_F";
@@ -5011,6 +5012,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[this] call acex_sitting_fnc_addSitActions;}";
 			};
 			id=1029;
 			type="Land_CampingChair_V2_white_F";
@@ -7031,13 +7033,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6428.5796,11.62848,2020.0977};
-				angles[]={6.2673669,1.6596036,0.020647217};
+				position[]={6428.5796,11.628484,2020.0979};
+				angles[]={6.2673726,1.6595986,0.020647245};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{[this] call acex_sitting_fnc_addSitActions;}";
 			};
 			id=1352;
 			type="Land_CampingChair_V2_white_F";
@@ -7048,12 +7051,13 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6427.2456,11.573592,2018.2788};
-				angles[]={6.2769041,3.0987847,6.2617064};
+				angles[]={6.2769022,3.0987797,6.2617006};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{[this] call acex_sitting_fnc_addSitActions;}";
 			};
 			id=1353;
 			type="Land_CampingChair_V2_white_F";

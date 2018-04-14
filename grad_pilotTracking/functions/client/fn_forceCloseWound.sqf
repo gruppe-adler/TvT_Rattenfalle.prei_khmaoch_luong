@@ -28,4 +28,7 @@ private _hint = format ["Putting pressure on wound. Bleeding temporarily stopped
           [_hint] call EFUNC(common,displayTextStructured);
     };
 
+    private _hint = format ["Putting pressure on wound. Bleeding temporarily stopped."];
+    [_hint] call EFUNC(common,displayTextStructured);
+
 }, 1, []] call CBA_fnc_addPerFrameHandler;

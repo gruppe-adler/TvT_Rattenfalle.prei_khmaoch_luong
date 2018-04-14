@@ -39,7 +39,7 @@ if [[ $version == "" ]]; then
 	exit 2
 fi
 
-npm install
+# npm install -- fucked up npm, dont use anymore but manually manage modules
 
 cwd=`pwd`
 
