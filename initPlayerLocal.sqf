@@ -9,6 +9,8 @@ call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 "mrk_endpoint_blufor" setMarkerAlphaLocal 1;
 "mrk_endpoint_opfor_2" setMarkerAlphaLocal 1;
 "mrk_endpoint_blufor_2" setMarkerAlphaLocal 1;
+"mrk_endpoint_opfor_3" setMarkerAlphaLocal 1;
+"mrk_endpoint_blufor_3" setMarkerAlphaLocal 1;
 "mrk_base_rebels" setMarkerAlphaLocal 1;
 "mrk_base_rebels_text" setMarkerAlphaLocal 1;
 "mrk_base_US" setMarkerAlphaLocal 1;
@@ -57,4 +59,33 @@ if (isMultiplayer) then {
 	},
 	[]] call CBA_fnc_waitUntilAndExecute;
 
+};
+
+
+if (!isNull (getAssignedCuratorLogic player) && {isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")}) then
+{
+  // Note that the line below has to be uncommented if your mission is a Zeus Game Master mission.
+  waitUntil {missionnamespace getvariable ["BIS_moduleMPTypeGameMaster_init", false] and {not isNil "ares_category_list"}};
+  ["Gruppe Adler", "Force follow Waypoints", 
+  {
+  	// Get all the passed parameters
+  	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+  	// Log the parameters
+  	systemChat str _position;
+  	systemChat str _objectUnderCursor;
+
+    private _waypoints = waypoints _objectUnderCursor;
+    private _positions = [];
+    {
+      _positions pushBack (waypointPosition _x);
+    } forEach _waypoints;
+
+    {
+        deleteWaypoint _x;      
+    } forEach _waypoints;
+
+    _objectUnderCursor setDriveOnPath _positions;
+
+  }] call Ares_fnc_RegisterCustomModule;
 };
