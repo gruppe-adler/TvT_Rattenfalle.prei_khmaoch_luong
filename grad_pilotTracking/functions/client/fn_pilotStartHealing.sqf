@@ -25,6 +25,8 @@ private _duration = ["PilotHealingTime", 300] call BIS_fnc_getParamValue;
 
 		if (_pilot getVariable ["GRAD_pilotTracking_isBleeding",false]) then {
 				hint format ["healing aborted"];
+        _pilot setVariable ["GRAD_rattrap_pilotHealingInProgress", false, true];
+        _medic setVariable ["GRAD_rattrap_pilotHealingInProgress", false, true];
 		} else {
 				hint format ["healing success"];
 		};
