@@ -36,14 +36,16 @@ _breakBones = ["ACE_MainActions", "Break Bones", "grad_pilotTracking\data\ico_br
 },
 {
 	!(_target getVariable ["GRAD_pilotTracking_bonesBroken", false]) &&
-	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
+	(_target getVariable ["GRAD_pilotTracking_isPilot", false]) &&
+	alive _target
 }] call ace_interact_menu_fnc_createAction;
 
 _estimateBleedout = ["ACE_MainActions", "Estimate Bleedout", "grad_pilotTracking\data\ico_bleedout.paa", {
 		[_target] call GRAD_pilotTracking_fnc_estimateBleedout;
 },
 {
-	(_target getVariable ["GRAD_pilotTracking_isPilot", false])
+	(_target getVariable ["GRAD_pilotTracking_isPilot", false]) &&
+	alive _target
 }] call ace_interact_menu_fnc_createAction;
 
 _stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "grad_pilotTracking\data\ico_stabilize.paa", {
@@ -52,7 +54,8 @@ _stabilizePilot = ["ACE_MainActions", "Stabilize Pilot", "grad_pilotTracking\dat
 {
 	(_target getVariable ["GRAD_pilotTracking_isPilot", false]) &&
 	(_target getVariable ["GRAD_pilotTracking_isBleeding", false]) &&
-	((typeOf _player isEqualTo "B_medic_F") || (typeOf _player isEqualTo "O_medic_F"))
+	((typeOf _player isEqualTo "B_medic_F") || (typeOf _player isEqualTo "O_medic_F")) &&
+	alive _target
 }] call ace_interact_menu_fnc_createAction;
 
 ["Man", 0, ["ACE_MainActions"], _breakBones, true] call ace_interact_menu_fnc_addActionToClass;

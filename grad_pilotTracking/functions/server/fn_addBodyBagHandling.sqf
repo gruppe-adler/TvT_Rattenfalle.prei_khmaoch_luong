@@ -8,7 +8,7 @@
         private _isPilot = _deadGuy getVariable ["GRAD_pilotTracking_isPilot", false];
         // private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
-        [_deadGuy] call GRAD_pilotTracking_fnc_bodyBagHintRemove;
+        [_deadGuy] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintRemove", [0,-2] select isDedicated];
         deleteVehicle _bodyBag;
 
         [{
@@ -36,7 +36,7 @@
                 // set target for gps tracker to bodybag
                 [_bodyBag, true] call grad_gpsTracker_fnc_setTarget;
                 // add hints to bodybag position like flies
-                [_bodyBag] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
+                [_bodyBag] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintAdd", [0,-2] select isDedicated];
                 diag_log format ["putting someone into bodybag %1, its the pilot.", _bodyBag];
             } else {
             	diag_log format ["putting someone into bodybag %1, its NOT the pilot.", _bodyBag];
@@ -60,7 +60,7 @@
         _item setVariable ["GRAD_pilotTracking_isCargoOf", _vehicle, true];
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", _vehicle, true];
 
-        [_bodybag] call GRAD_pilotTracking_fnc_bodyBagHintRemove;
+        [_bodybag] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintRemove", [0,-2] select isDedicated];
 
         [[worldSize/2,worldSize/2,400], 100, 0] call GRAD_crows_fnc_setCirclePoint; // move bird on position of bodybag
     };
@@ -79,7 +79,7 @@
         _item setVariable ["GRAD_pilotTracking_isCargoOf", objNull, true];
         missionNamespace setVariable ["GRAD_pilotTracking_bodyBagCargoVehicle", objNull, true];
 
-        [_bodybag] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
+        [_bodybag] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintAdd", [0,-2] select isDedicated];
 
         [position _bodybag, 25, 0] call GRAD_crows_fnc_setCirclePoint; // move bird on position of bodybag
     };

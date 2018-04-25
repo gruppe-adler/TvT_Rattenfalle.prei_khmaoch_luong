@@ -65,7 +65,7 @@ _unit addEventhandler ["killed", {
         };
 
         // todo clean up
-        [_unit] call GRAD_pilotTracking_fnc_bodyBagHintAdd;
+        [_unit] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintAdd", [0,-2] select isDedicated];
 
         // initial bird spawn
         ["Crowe", position _unit, 10, 10, 25, 0] remoteExec ["GRAD_crows_fnc_crowSingleCreate", [0,-2] select isDedicated, true];

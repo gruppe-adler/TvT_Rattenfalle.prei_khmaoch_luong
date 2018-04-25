@@ -20,16 +20,22 @@ if (player getVariable ["GRAD_pilotTracking_isPilot", false]) then {
 
 	if (!(_camObj getVariable ["GRAD_pilotCam_camIsOn", false])) exitWith {
 			[_handle] call CBA_fnc_removePerFrameHandler;
-			[(_camAreaProgressArray select 0)] call CBA_fnc_removePerFrameHandler;
-			ctrldelete (_camAreaProgressArray select 1);
 			[_pipcamObject, _progressBar] call GRAD_pilotCam_fnc_camTurnOffPlayer;
+			// catch empty array
+			if (count _camAreaProgressArray > 0) then {
+				[(_camAreaProgressArray select 0)] call CBA_fnc_removePerFrameHandler;
+				ctrldelete (_camAreaProgressArray select 1);
+			};			
 	};
 
 	if (count (missionNamespace getVariable ["GRAD_pilotCam_cameraRunningParams", []]) < 1) exitWith {
 		[_handle] call CBA_fnc_removePerFrameHandler;
-		[(_camAreaProgressArray select 0)] call CBA_fnc_removePerFrameHandler;
-		ctrldelete (_camAreaProgressArray select 1);
 		[_pipcamObject, _progressBar] call GRAD_pilotCam_fnc_camTurnOffPlayer;
+		
+		if (count _camAreaProgressArray > 0) then {
+			[(_camAreaProgressArray select 0)] call CBA_fnc_removePerFrameHandler;
+			ctrldelete (_camAreaProgressArray select 1);
+		};		
 	};
 
   if (_side isEqualTo west) then {
