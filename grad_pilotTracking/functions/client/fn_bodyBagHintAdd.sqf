@@ -1,6 +1,6 @@
 params ["_bodybag"];
 
-_handle = [_bodybag] call GRAD_flies_fnc_flies;
+private _handle = ([_bodybag] call GRAD_flies_fnc_flies) select 1;
 _bodybag setVariable ["GRAD_flies_handle", _handle];
 
 // todo with finished function
