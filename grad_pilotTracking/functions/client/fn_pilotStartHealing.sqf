@@ -56,6 +56,7 @@ _pilot addEventhandler ["AnimDone", {
 		if (!(_unit getVariable ["GRAD_rattrap_pilotHealingInProgress", false])) then {
 				_unit removeEventhandler ["AnimDone", _thisEventHandler];
 				_unit playMoveNow "AinjPpneMstpSnonWnonDnon_rolltofront"; // todo insert right animation
+				_unit playMove "Stand";
 		} else {
 				private _gettingHealedAnimations = missionNameSpace getVariable ["GRAD_rattrap_gettingHealedAnimations", ["UnconsciousReviveLegs_A"]];
 				_unit playMoveNow (selectRandom _gettingHealedAnimations);
