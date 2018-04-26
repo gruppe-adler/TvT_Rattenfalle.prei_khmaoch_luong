@@ -17,7 +17,18 @@
             _bodyBag = createVehicle ["Land_Bodybag_01_black_F", [0,0,0], [], 0, "NONE"];
             _bodyBag setDir _dir;
             if (surfaceIsWater _position) then {
-                _bodybag setPosASL [_position select 0, _position select 1, 3];
+                private _positionOnShore = ([
+                      position _bodyBag,
+                      0,
+                      40,
+                      0.25,
+                      0,
+                      1,
+                      1,
+                      [],
+                      []
+                    ] call BIS_fnc_findSafePos);
+                    _bodybag setPos _positionOnShore;
             } else {
                 _bodybag setPos _position;
             };

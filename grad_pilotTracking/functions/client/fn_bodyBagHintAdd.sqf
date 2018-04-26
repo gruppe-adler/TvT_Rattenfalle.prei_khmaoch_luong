@@ -3,9 +3,6 @@ params ["_bodybag"];
 private _handle = ([_bodybag] call GRAD_flies_fnc_flies) select 1;
 _bodybag setVariable ["GRAD_flies_handle", _handle];
 
-// todo with finished function
-[position _bodybag, 25, 0] call GRAD_crows_fnc_setCirclePoint;
-
-private _chemlight = "Chemlight_yellow" createVehicleLocal (position _bodybag);
-_chemlight attachTo [_bodybag,[0,0,0]];
+private _chemlight = "ACE_Chemlight_HiYellow" createVehicleLocal (position _bodybag);
+_chemlight attachTo [_bodybag,[0,0,0.2]];
 _bodyBag setVariable ["GRAD_chemlight_handle", _chemlight];
