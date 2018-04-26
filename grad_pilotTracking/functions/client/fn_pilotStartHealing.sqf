@@ -54,11 +54,14 @@ _pilot addEventhandler ["AnimDone", {
 		if (!alive _unit) exitWith { _unit removeEventhandler ["AnimDone", _thisEventHandler]; };
 
 		if (!(_unit getVariable ["GRAD_rattrap_pilotHealingInProgress", false])) then {
+				 [_unit, "AinjPpneMstpSnonWnonDnon_rolltofront"] remoteExec ["switchMove", 0];
+				_unit playMoveNow "Stand";
+				// systemChat "exiting animdone eh";
 				_unit removeEventhandler ["AnimDone", _thisEventHandler];
-				_unit playMoveNow "AinjPpneMstpSnonWnonDnon_rolltofront"; // todo insert right animation
-				_unit playMove "Stand";
 		} else {
 				private _gettingHealedAnimations = missionNameSpace getVariable ["GRAD_rattrap_gettingHealedAnimations", ["UnconsciousReviveLegs_A"]];
-				_unit playMoveNow (selectRandom _gettingHealedAnimations);
+				private _randomAnim = (selectRandom _gettingHealedAnimations);
+				_unit playMoveNow _randomAnim;
+				// systemChat str _randomAnim;
 		};
 }];
