@@ -29,6 +29,13 @@ _unit addEventhandler ["killed", {
           [format ["Pilot filming time for Opfor set to %1 for killing the pilot early.", GRAD_pilotCam_RECORDING_DURATION_OPFOR]] remoteExec ["hint"];
     };
 
+    // todo clean up
+    [_unit] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintAdd", [0,-2] select isDedicated];
+
+    // initial bird spawn
+    ["Crowe", position _unit, 10, 10, 25, 0] remoteExec ["GRAD_crows_fnc_crowSingleCreate", [0,-2] select isDedicated, true];
+    [position _unit, 25, 0] call GRAD_crows_fnc_setCirclePoint;
+
     // define position
     private _pX = floor random -5;
     private _pY = floor random -5;
@@ -62,14 +69,9 @@ _unit addEventhandler ["killed", {
 
         if (!(isAbleToBreathe _unit) || eyePos _unit select 2 < 0) then {
             _unit setPos _positionOnShore;
+            [_positionOnShore, 25, 0] call GRAD_crows_fnc_setCirclePoint;
         };
 
-        // todo clean up
-        [_unit] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintAdd", [0,-2] select isDedicated];
-
-        // initial bird spawn
-        ["Crowe", position _unit, 10, 10, 25, 0] remoteExec ["GRAD_crows_fnc_crowSingleCreate", [0,-2] select isDedicated, true];
-        [position _unit, 25, 0] call GRAD_crows_fnc_setCirclePoint;
     }, [_unit], 5] call CBA_fnc_waitAndExecute;
 }];
 
