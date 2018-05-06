@@ -23,12 +23,16 @@ _unit addMPEventhandler ["MPKilled", {
     // todo reduce for east probably
     if ((side _killer) isEqualTo west) then {
           GRAD_pilotCam_RECORDING_DURATION_BLUFOR = GRAD_pilotCam_RECORDING_DURATION_BLUFOR + (60*15);
-          [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_BLUFOR]] remoteExec ["hint"];
+          publicVariable "GRAD_pilotCam_RECORDING_DURATION_BLUFOR";
+          diag_log format ["Blufor teamkilled Pilot"];
+          [format ["Pilot filming time for Blufor set to %1 min due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_BLUFOR/60]] remoteExec ["hint"];
     };
 
     if ((side _killer isEqualTo east) && (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false]))) then {
           GRAD_pilotCam_RECORDING_DURATION_OPFOR = GRAD_pilotCam_RECORDING_DURATION_OPFOR + (60*5);
-          [format ["Pilot filming time for Opfor set to %1 for killing the pilot early.", GRAD_pilotCam_RECORDING_DURATION_OPFOR]] remoteExec ["hint"];
+          publicVariable "GRAD_pilotCam_RECORDING_DURATION_OPFOR";
+          diag_log format ["Opfor killed Pilot early"];
+          [format ["Pilot filming time for Opfor set to %1 min for killing the pilot early.", GRAD_pilotCam_RECORDING_DURATION_OPFOR/60]] remoteExec ["hint"];
     };
 
     // todo clean up
