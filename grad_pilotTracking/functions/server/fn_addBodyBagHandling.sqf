@@ -12,7 +12,7 @@
                 _x setVariable ["GRAD_pilotTracking_isPilot",false, true];
                 _x setVariable ["GRAD_pilotTracking_wasPilot",true, true];
             };
-        } forEach allUnits;
+        } forEach allUnits + allDead;
         
         // private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
