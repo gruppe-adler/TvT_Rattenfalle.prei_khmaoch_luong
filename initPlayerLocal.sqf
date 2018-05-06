@@ -17,6 +17,11 @@ call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 "mrk_base_US_text" setMarkerAlphaLocal 1;
 "mrk_noFlyZone" setMarkerAlphaLocal 1;
 
+"mrk_bridge_north" setMarkerAlphaLocal 1;
+"mrk_bridge_north_2" setMarkerAlphaLocal 1;
+"mrk_bridge_south" setMarkerAlphaLocal 1;
+"mrk_bridge_south_2" setMarkerAlphaLocal 1;
+
 
 
 // FADE TO BLACK

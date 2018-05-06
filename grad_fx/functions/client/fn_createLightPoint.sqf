@@ -27,8 +27,10 @@ _light setlightintensity _intensity;
 	_light setlightintensity (_intensity + (random (_intensity/5)));
 }, 1, [_light, _intensity]] call CBA_fnc_addPerFrameHandler;
 
-[{_condition}, {
+/*
+[(_this select 0), {
 
-    deleteVehicle _light;
+    deleteVehicle (_this select 1);
 
-}, [], 0, {}] call CBA_fnc_waitUntilAndExecute;
+}, [_condition, _light]] call CBA_fnc_waitUntilAndExecute;
+*/

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2509;
+		nextID=2511;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6087.8926,19.068336,1347.0468};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={3881.679,19.957817,4949.7617};
+		dir[]={-0.023073992,-0.70319706,0.71065146};
+		up[]={-0.02281883,0.71098948,0.70282763};
+		aside[]={0.99949068,4.052381e-007,0.032450557};
 	};
 };
 binarizationWanted=0;
@@ -22633,8 +22633,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3866.6062,3.8699367,4974.4038};
-				angles[]={0.11754793,6.1673827,6.2313843};
+				position[]={3939.0515,3.4834819,5001.2056};
+				angles[]={6.2344856,4.6329813,6.2169394};
 			};
 			side="Empty";
 			flags=4;
@@ -22645,7 +22645,6 @@ class Mission
 			};
 			id=2160;
 			type="C_Van_02_transport_F";
-			atlOffset=-0.016074181;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -25524,7 +25523,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6103.3652,0,1903.0861};
-			name="marker_12";
+			name="mrk_bridge_south_2";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorYellow";
@@ -25538,13 +25537,13 @@ class Mission
 		class Item320
 		{
 			dataType="Marker";
-			position[]={6129.0991,0,1899.2363};
-			name="marker_13";
+			position[]={6129.0991,0,1899.236};
+			name="mrk_bridge_south";
 			text="Bridge";
 			type="mil_box";
 			colorName="ColorYellow";
 			id=2329;
-			atlOffset=1.2603903;
+			atlOffset=1.2603469;
 		};
 		class Item321
 		{
@@ -26133,8 +26132,8 @@ class Mission
 		class Item338
 		{
 			dataType="Marker";
-			position[]={3930.4485,-0.83921951,5076.2144};
-			name="marker_14";
+			position[]={3930.448,-0.83899999,5076.2139};
+			name="mrk_bridge_north_2";
 			markerType="RECTANGLE";
 			type="rectangle";
 			colorName="ColorYellow";
@@ -26143,17 +26142,18 @@ class Mission
 			b=7;
 			angle=90.615974;
 			id=2376;
+			atlOffset=0.00053745508;
 		};
 		class Item339
 		{
 			dataType="Marker";
-			position[]={3938.0879,-2.7158113,5077.5308};
-			name="marker_15";
+			position[]={3938.0879,-2.7160001,5077.5308};
+			name="mrk_bridge_north";
 			text="Bridge";
 			type="mil_box";
 			colorName="ColorYellow";
 			id=2377;
-			atlOffset=-4.0633254;
+			atlOffset=-4.0635142;
 		};
 		class Item340
 		{
@@ -28061,22 +28061,176 @@ class Mission
 		};
 		class Item413
 		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3863.8418,4.8625932,4974.6621};
+			};
+			areaSize[]={5,-1,5};
+			flags=1;
+			id=2505;
+			type="ModuleHideTerrainObjects_F";
+			atlOffset=2.6030946;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item414
+		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3862.5278,3.9685702,4974.9971};
-				angles[]={0.29277897,6.2209468,6.1624784};
+				position[]={3923.2771,2.7576499,4995.5776};
+				angles[]={6.1316385,6.1981425,0.021454247};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="call{[this, false] call GRAD_simpleVehicleRespawn_fnc_config;}";
-				textures="Black";
 			};
-			id=2504;
-			type="C_Van_02_transport_F";
-			atlOffset=-0.1146903;
+			id=2506;
+			type="RDS_tt650_Civ_01";
+			atlOffset=-0.030742764;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item415
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3912.5017,2.8291118,4992.2642};
+				angles[]={6.2273216,5.9000912,6.2488527};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, false] call GRAD_simpleVehicleRespawn_fnc_config;}";
+			};
+			id=2507;
+			type="RDS_tt650_Civ_01";
+			atlOffset=0.00012695789;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item416
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6090.9712,3.2425079,1356.3597};
+				angles[]={0.048973937,3.0987797,0.0094073238};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this] call acex_sitting_fnc_addSitActions;}";
+			};
+			id=2508;
+			type="Land_CampingChair_V2_F";
+			atlOffset=-0.0099999905;
+		};
+		class Item417
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3879.553,3.7919574,4965.2334};
+				angles[]={0.024563154,6.1406174,6.2142143};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this] call GRAD_simpleVehicleRespawn_fnc_config;}";
+				textures="Olive";
+			};
+			id=2509;
+			type="I_C_Offroad_02_unarmed_F";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28142,7 +28296,7 @@ class Mission
 										};
 										class value
 										{
-											items=42;
+											items=20;
 											class Item0
 											{
 												class data
@@ -28154,7 +28308,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Door_1_source";
+													value="hideLeftDoor";
 												};
 											};
 											class Item1
@@ -28182,7 +28336,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Door_2_source";
+													value="hideRightDoor";
 												};
 											};
 											class Item3
@@ -28210,7 +28364,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Door_3_source";
+													value="hideRearDoor";
 												};
 											};
 											class Item5
@@ -28238,7 +28392,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Door_4_source";
+													value="hideBullbar";
 												};
 											};
 											class Item7
@@ -28252,7 +28406,7 @@ class Mission
 															"SCALAR"
 														};
 													};
-													value=1;
+													value=0;
 												};
 											};
 											class Item8
@@ -28266,7 +28420,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Hide_Door_1_source";
+													value="hideFenders";
 												};
 											};
 											class Item9
@@ -28294,7 +28448,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Hide_Door_2_source";
+													value="hideHeadSupportRear";
 												};
 											};
 											class Item11
@@ -28308,7 +28462,7 @@ class Mission
 															"SCALAR"
 														};
 													};
-													value=0;
+													value=1;
 												};
 											};
 											class Item12
@@ -28322,7 +28476,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Hide_Door_3_source";
+													value="hideHeadSupportFront";
 												};
 											};
 											class Item13
@@ -28336,7 +28490,7 @@ class Mission
 															"SCALAR"
 														};
 													};
-													value=0;
+													value=1;
 												};
 											};
 											class Item14
@@ -28350,7 +28504,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="Hide_Door_4_source";
+													value="hideRollcage";
 												};
 											};
 											class Item15
@@ -28364,7 +28518,7 @@ class Mission
 															"SCALAR"
 														};
 													};
-													value=0;
+													value=1;
 												};
 											};
 											class Item16
@@ -28378,7 +28532,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="lights_em_hide";
+													value="hideSeatsRear";
 												};
 											};
 											class Item17
@@ -28406,7 +28560,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ladder_hide";
+													value="hideSpareWheel";
 												};
 											};
 											class Item19
@@ -28420,315 +28574,7 @@ class Mission
 															"SCALAR"
 														};
 													};
-													value=1;
-												};
-											};
-											class Item20
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="spare_tyre_holder_hide";
-												};
-											};
-											class Item21
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
 													value=0;
-												};
-											};
-											class Item22
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="spare_tyre_hide";
-												};
-											};
-											class Item23
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0;
-												};
-											};
-											class Item24
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="reflective_tape_hide";
-												};
-											};
-											class Item25
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item26
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="roof_rack_hide";
-												};
-											};
-											class Item27
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item28
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="LED_lights_hide";
-												};
-											};
-											class Item29
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item30
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="sidesteps_hide";
-												};
-											};
-											class Item31
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item32
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="rearsteps_hide";
-												};
-											};
-											class Item33
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item34
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="side_protective_frame_hide";
-												};
-											};
-											class Item35
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item36
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="front_protective_frame_hide";
-												};
-											};
-											class Item37
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item38
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="beacon_front_hide";
-												};
-											};
-											class Item39
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-											class Item40
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="beacon_rear_hide";
-												};
-											};
-											class Item41
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
 												};
 											};
 										};
@@ -28740,161 +28586,6 @@ class Mission
 				};
 				nAttributes=2;
 			};
-		};
-		class Item414
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={3863.8418,4.8625932,4974.6621};
-			};
-			areaSize[]={5,-1,5};
-			flags=1;
-			id=2505;
-			type="ModuleHideTerrainObjects_F";
-			atlOffset=2.6030946;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=15;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item415
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3923.2771,2.7576499,4995.5776};
-				angles[]={6.1316385,6.1981425,0.021454247};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, false] call GRAD_simpleVehicleRespawn_fnc_config;}";
-			};
-			id=2506;
-			type="RDS_tt650_Civ_01";
-			atlOffset=-0.030742764;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item416
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3912.5017,2.8291118,4992.2642};
-				angles[]={6.2273216,5.9000912,6.2488527};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, false] call GRAD_simpleVehicleRespawn_fnc_config;}";
-			};
-			id=2507;
-			type="RDS_tt650_Civ_01";
-			atlOffset=0.00012695789;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item417
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6090.9712,3.2425079,1356.3597};
-				angles[]={0.048973937,3.0987797,0.0094073238};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this] call acex_sitting_fnc_addSitActions;}";
-			};
-			id=2508;
-			type="Land_CampingChair_V2_F";
-			atlOffset=-0.0099999905;
 		};
 	};
 };

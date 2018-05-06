@@ -10,6 +10,8 @@
 params [["_helilights",[]]];
 
 
+if (!isServer) exitWith {};
+
 // default all lights on map are taken
 if (typeName _helilights isEqualTo "STRING") then {
 	_helilights = nearestobjects [[worldSize/2, worldSize/2],[
