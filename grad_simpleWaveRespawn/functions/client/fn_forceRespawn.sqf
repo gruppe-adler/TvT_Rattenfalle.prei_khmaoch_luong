@@ -19,8 +19,10 @@ setPlayerRespawnTime 0;
 	player setVariable ["GRAD_simpleWaveRespawn_respawning", false];
 	player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", false, true];
 
-	if (player getVariable ["GRAD_pilotTracking_isPilot", false]) then {
+	if (player getVariable ["GRAD_pilotTracking_wasPilot", false]) then {
 		player setPos getMarkerPos "mrk_spawn_blufor_1";
+
+		diag_log format ["player respawning is pilot"];
 
 		// wait a bit to workaround grad loadout triggering after this
 		[] spawn {

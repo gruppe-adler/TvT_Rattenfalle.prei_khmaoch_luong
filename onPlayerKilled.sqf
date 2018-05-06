@@ -28,8 +28,9 @@ waitUntil {!GRAD_DEATHCAM_RUNNING};
 private _enemySides = [west,east,independent,civilian] - [playerSide];
 [[playerSide], _enemySides] call ace_spectator_fnc_updateSides;
 
-if (player getVariable ["GRAD_pilotTracking_isPilot", false]) then {
+if (player getVariable ["GRAD_pilotTracking_isPilot", false] || player getVariable ["GRAD_pilotTracking_wasPilot", false]) then {
 	[[west, independent], [east,civilian]] call ace_spectator_fnc_updateSides;
+	player setVariable ["GRAD_pilotTracking_wasPilot", true, true];
 };
 
 // give pilot free cam
