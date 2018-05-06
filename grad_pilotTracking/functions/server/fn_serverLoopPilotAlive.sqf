@@ -15,7 +15,7 @@ _unit addMPEventhandler ["MPKilled", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
 
     if (!isServer) exitWith {
-            _unit removeMPEventHandler ["MPKilled", _thisEventhandler]; 
+        // dont execute this on clients, but mpkilled is more reliable nonetheless            
     };
 
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
