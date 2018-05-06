@@ -3,16 +3,12 @@
         diag_log format ["placedInBodyBag eh %1", _this];
         params ["_deadGuy", "_bodyBag"];
 
-        private _dir = getDir _bodyBag;
         private _position = getPos _bodyBag;
         private _isPilot = _deadGuy getVariable ["GRAD_pilotTracking_isPilot", false];
         // private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
         // [_deadGuy] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintRemove", [0,-2] select isDedicated];
-        deleteVehicle _bodyBag;
-      
-        _bodyBag = createVehicle ["Land_Bodybag_01_black_F", [0,0,0], [], 0, "NONE"];
-        _bodyBag setDir _dir;
+        
         if (surfaceIsWater _position) then {
             diag_log format ["position for bodybag on water, searching shore"];
             private _positionOnShore = ([
