@@ -26,7 +26,7 @@ setPlayerRespawnTime 0;
 
 		// wait a bit to workaround grad loadout triggering after this
 		[] spawn {
-			sleep 4;
+			sleep 1;
 			player setUnitLoadout [
 				["rhs_weap_hk416d10_grip3","","acc_flashlight","rhsusf_acc_compm4",
 				["30Rnd_556x45_Stanag_Tracer_Red",30],[],"rhsusf_acc_grip3"],[],["rhsusf_weap_glock17g4","rhsusf_acc_omega9k","","",

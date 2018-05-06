@@ -30,7 +30,6 @@ private _enemySides = [west,east,independent,civilian] - [playerSide];
 
 if (player getVariable ["GRAD_pilotTracking_isPilot", false] || player getVariable ["GRAD_pilotTracking_wasPilot", false]) then {
 	[[west, independent], [east,civilian]] call ace_spectator_fnc_updateSides;
-	player setVariable ["GRAD_pilotTracking_wasPilot", true, true];
 };
 
 // give pilot free cam
@@ -85,7 +84,6 @@ if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 	_shooter = player getVariable ["ACE_medical_lastDamageSource",player];
 	
 	[{
-			player setVariable ["GRAD_pilotTracking_isPilot",false, true];
 			player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 0];
 			player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", true, true];
 			call grad_simpleWaveRespawn_fnc_showRemainingTime;

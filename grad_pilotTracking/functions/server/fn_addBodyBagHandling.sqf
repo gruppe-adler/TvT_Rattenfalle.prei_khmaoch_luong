@@ -5,6 +5,15 @@
 
         private _position = getPos _bodyBag;
         private _isPilot = _deadGuy getVariable ["GRAD_pilotTracking_isPilot", false];
+
+        // remove pilot var from pilot
+        {
+            if (_x getVariable ["GRAD_pilotTracking_isPilot", false]) exitWith {                
+                _x setVariable ["GRAD_pilotTracking_isPilot",false, true];
+                _x setVariable ["GRAD_pilotTracking_wasPilot",true, true];
+            };
+        } forEach allUnits;
+        
         // private _marker = missionNamespace getVariable ["GRAD_pilotTracking_markerObj", objNull];
 
         // [_deadGuy] remoteExec ["GRAD_pilotTracking_fnc_bodyBagHintRemove", [0,-2] select isDedicated];
