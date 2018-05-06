@@ -54,8 +54,7 @@ _pilot addEventhandler ["AnimDone", {
 		if (!alive _unit) exitWith { _unit removeEventhandler ["AnimDone", _thisEventHandler]; };
 
 		if (!(_unit getVariable ["GRAD_rattrap_pilotHealingInProgress", false])) then {
-				 [_unit, "AinjPpneMstpSnonWnonDnon_rolltofront"] remoteExec ["switchMove", 0];
-				_unit playMoveNow "Stand";
+				[_unit, ""] remoteExec ["switchmove", [0, -2] select isDedicated];
 				// systemChat "exiting animdone eh";
 				_unit removeEventhandler ["AnimDone", _thisEventHandler];
 		} else {

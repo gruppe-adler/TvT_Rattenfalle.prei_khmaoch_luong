@@ -8,6 +8,10 @@ _unit action ["TakeFlag", objNull];
 
 if (_timestamp < 0) exitWith { hint "can't read this blood"; };
 
+if (!(_unit getVariable ["GRAD_pilotTracking_isScout", false])) exitWith {
+    hint format ["This trace leads to %1. I need a scout to say how long ago it dropped.", _cardinalDirection];
+};
+
 if (_delta > 30*60) then {
     hint format ["This trace is really old. More than 30 mins. It leads to %1.", _cardinalDirection];
 } else {

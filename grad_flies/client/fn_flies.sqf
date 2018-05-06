@@ -79,4 +79,6 @@ _handle =
 	};
 }, 2, [_source, _target,_sounds]] call CBA_fnc_addPerFrameHandler;
 
+diag_log format ["adding flies to body/bodybag"];
+
 [_source, _handle]
