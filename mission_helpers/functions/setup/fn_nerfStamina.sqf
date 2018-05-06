@@ -3,7 +3,7 @@ params ["_isNerf"];
 if (_isNerf) then {
 
 	["staminaNerf", { 
-	            0.4
+	            0.2
 	}] call ace_advanced_fatigue_fnc_addDutyFactor;
 
 } else {
