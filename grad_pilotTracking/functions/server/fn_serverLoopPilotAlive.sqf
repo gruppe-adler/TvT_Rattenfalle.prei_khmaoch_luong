@@ -18,13 +18,15 @@ _unit addMPEventhandler ["MPKilled", {
 
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
 
+    _killer = _unit getVariable ["ACE_medical_lastDamageSource", _unit];
+
     // todo reduce for east probably
-    if (side _killer isEqualTo west) then {
+    if ((side _killer) isEqualTo west) then {
           GRAD_pilotCam_RECORDING_DURATION_BLUFOR = GRAD_pilotCam_RECORDING_DURATION_BLUFOR + (60*15);
           [format ["Pilot filming time for Blufor set to %1 due to teamkill.", GRAD_pilotCam_RECORDING_DURATION_BLUFOR]] remoteExec ["hint"];
     };
 
-    if ((side _killer isEqualTo east) + (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false]))) then {
+    if ((side _killer isEqualTo east) && (!(missionNamespace getVariable ["GRAD_pilotCam_camRunning", false]))) then {
           GRAD_pilotCam_RECORDING_DURATION_OPFOR = GRAD_pilotCam_RECORDING_DURATION_OPFOR + (60*5);
           [format ["Pilot filming time for Opfor set to %1 for killing the pilot early.", GRAD_pilotCam_RECORDING_DURATION_OPFOR]] remoteExec ["hint"];
     };
