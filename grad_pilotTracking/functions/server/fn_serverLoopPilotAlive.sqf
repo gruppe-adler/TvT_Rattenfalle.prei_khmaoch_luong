@@ -14,6 +14,10 @@ if (!isMultiplayer) then {
 _unit addMPEventhandler ["MPKilled", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
 
+    if (!isServer) exitWith {
+            _unit removeMPEventHandler ["MPKilled", _thisEventhandler]; 
+    };
+
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
 
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
@@ -80,8 +84,7 @@ _unit addMPEventhandler ["MPKilled", {
 
     }, [_unit], 5] call CBA_fnc_waitAndExecute;
 
-    diag_log format ["removing killed EH %1", _thisEventhandler];
-    _unit removeMPEventHandler ["MPKilled", 0]; 
+    _unit removeMPEventHandler ["MPKilled", _thisEventhandler]; 
 }];
 
 
