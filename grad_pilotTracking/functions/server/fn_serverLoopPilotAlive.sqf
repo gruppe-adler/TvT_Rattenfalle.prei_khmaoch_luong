@@ -11,7 +11,7 @@ if (!isMultiplayer) then {
     _unit setVariable ["GRAD_pilotTracking_isScout", true]; // only for debug
 };
 
-_unit addEventhandler ["killed", {
+_unit addMPEventhandler ["MPKilled", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
 
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
@@ -73,6 +73,9 @@ _unit addEventhandler ["killed", {
         };
 
     }, [_unit], 5] call CBA_fnc_waitAndExecute;
+
+    diag_log format ["removing killed EH %1", _thisEventhandler];
+    _unit removeMPEventHandler ["MPKilled", 0]; 
 }];
 
 
