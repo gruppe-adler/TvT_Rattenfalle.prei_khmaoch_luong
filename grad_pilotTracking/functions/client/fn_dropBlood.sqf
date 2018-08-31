@@ -5,8 +5,10 @@ private _inWater = surfaceIsWater (_posASL);
 private _speed = speed _unit;
 private _type = ["BloodSpray_01_New_F", "BloodSpray_01_Old_F"];
 private _nearObjects = _unit nearObjects 1; // 1m must be enough
+private _nearObjectsOnGround = [getPos _unit select 0, getPos _unit select 1, 0] nearObjects 1;
 private _placeOccupied = false;
 
+/*
 {
     if (  
           _x isKindOf "Helper_Base_F"
@@ -14,6 +16,14 @@ private _placeOccupied = false;
         _placeOccupied = true;
     };
 } forEach _nearObjects;
+*/
+{
+    if (  
+          _x isKindOf "Helper_Base_F"
+        ) exitWith {
+        _placeOccupied = true;
+    };
+} forEach _nearObjectsOnGround;
 
 // diag_log format ["%1", _nearObjects];
 

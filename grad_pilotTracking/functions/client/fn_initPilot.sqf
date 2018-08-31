@@ -33,6 +33,8 @@ _pilot addEventHandler ["Fired",
 
 		private _flare = "F_40mm_Yellow" createVehicle _position;
 		_flare setVelocity _velocity;
+
+		[position player] remoteExec ["GRAD_pilotTracking_fnc_createFlareMarker", [0,-2] select isDedicated, true];
 	};
 }];
 

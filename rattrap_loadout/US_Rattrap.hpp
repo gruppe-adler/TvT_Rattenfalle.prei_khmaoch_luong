@@ -9,9 +9,9 @@ class US_Rattrap: SOGBLACK {
         primaryWeaponMuzzle = "";
         primaryWeaponPointer = "acc_flashlight";
         primaryWeaponOptics = "rhsusf_acc_compm4";
-		    primaryWeaponUnderbarrel = "rhsusf_acc_grip3";
+        primaryWeaponUnderbarrel = "rhsusf_acc_grip3";
         handgunWeapon = "rhsusf_weap_glock17g4";
-		    handgunWeaponMuzzle = "rhsusf_acc_omega9k";
+        handgunWeaponMuzzle = "rhsusf_acc_omega9k";
         handgunWeaponMagazine = "rhsusf_mag_17Rnd_9x19_FMJ";
         binoculars = "ACE_Vector";
         map = "ItemMap";
@@ -30,7 +30,7 @@ class US_Rattrap: SOGBLACK {
                         LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
                         LIST_10("ACE_fieldDressing"),
                         LIST_4("ACE_morphine"),
-        				LIST_1("ACE_epinephrine"),
+                        LIST_1("ACE_epinephrine"),
                         LIST_1("ACE_key_west"),
                         "ACE_Flashlight_MX991",
                         LIST_1("ACE_bodyBag"),
@@ -44,6 +44,40 @@ class US_Rattrap: SOGBLACK {
                         "ACE_IR_Strobe_Item"
                     };
                 };
+
+                class Survivor_F {
+                    uniform = "rhs_uniform_g3_rgr";
+                    vest = "rhsusf_spc_corpsman";
+                    backpack = "";
+                    headgear = "H_HeadBandage_bloody_F";
+                    primaryWeapon = "";
+                    primaryWeaponMagazine = "";
+                    primaryWeaponMuzzle = "";
+                    primaryWeaponPointer = "";
+                    primaryWeaponOptics = "";
+                    handgunWeapon = "rds_weap_latarka_janta";
+                    handgunWeaponMagazine = "";
+                    binoculars = "Binocular";
+                    map = "";
+                    compass = "";
+                    watch = "ItemWatch";
+                    gps = "";
+                    radio = "";
+                    nvgoggles = "";
+                    goggles = "NeckTight_OD";
+
+                    addItemsToUniform[] = {
+                            LIST_2("ACE_epinephrine"),
+                            LIST_8("ACE_fieldDressing"),
+                            LIST_2("ACE_morphine"),
+                            LIST_1("ACE_SpraypaintYellow")
+                    };
+                    addItemsToVest[] = {
+                            LIST_4("ACE_Chemlight_HiYellow"),
+                            LIST_1("6Rnd_GreenSignal_F")
+                    };
+                };
+
                 //Asst. Autorifleman
                 class soldier_AAR_F: Soldier_F {
 
@@ -97,7 +131,7 @@ class US_Rattrap: SOGBLACK {
                     addItemsToBackpack[] = {
                         LIST_2("HandGrenade"),
                         LIST_2("SmokeShell"),
-        				LIST_2("rhs_200rnd_556x45_M_SAW"),
+                        LIST_2("rhs_200rnd_556x45_M_SAW"),
                         "rhsusf_100Rnd_556x45_soft_pouch"
                     };
                 };
@@ -148,7 +182,7 @@ class US_Rattrap: SOGBLACK {
                     addItemsToBackpack[] = {
                         LIST_2("HandGrenade"),
                         LIST_2("SmokeShell"),
-        				LIST_2("rhsusf_100Rnd_762x51_m62_tracer"),
+                        LIST_2("rhsusf_100Rnd_762x51_m62_tracer"),
                         "rhsusf_100Rnd_762x51"
                     };
                 };
@@ -156,7 +190,7 @@ class US_Rattrap: SOGBLACK {
                 class soldier_M_F: Soldier_F {
                     primaryWeapon = "rhs_weap_sr25_ec";
                     primaryWeaponMagazine = "rhsusf_20Rnd_762x51_m118_special_Mag";
-        			primaryWeaponMuzzle = SUPPRESSORITEM_MARKSMAN;
+                    primaryWeaponMuzzle = SUPPRESSORITEM_MARKSMAN;
                     primaryWeaponPointer = LLITEM;
                     primaryWeaponOptics = "optic_DMS";
                     primaryWeaponUnderbarrel = "bipod_01_F_blk";

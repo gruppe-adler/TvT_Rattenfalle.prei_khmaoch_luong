@@ -9,6 +9,7 @@ class GRAD_pilotTracking {
 		class bodyBagHintRemove;
 		class breakBones;
 		class createBloodSplatter;
+		class createFlareMarker;
 		class disableCollision;
 		class dropBlood;
 		class estimateBleedout;
