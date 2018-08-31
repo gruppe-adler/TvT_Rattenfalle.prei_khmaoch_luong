@@ -34,7 +34,15 @@ _pilot addEventHandler ["Fired",
 		private _flare = "F_40mm_Yellow" createVehicle _position;
 		_flare setVelocity _velocity;
 
-		[position player] remoteExec ["GRAD_pilotTracking_fnc_createFlareMarker", [0,-2] select isDedicated, true];
+		// get flare position and broadcast for markers
+		[{
+			params ["_flare"];
+
+			if (!isNull _flare) then {
+				[_flare] remoteExec ["GRAD_pilotTracking_fnc_createFlareMarker", [0,-2] select isDedicated, true];
+			};
+		}, [_flare], 10] call CBA_fnc_waitAndExecute;
+		
 	};
 }];
 

@@ -31,7 +31,7 @@ if (isMultiplayer) then {
 [_pilot] call GRAD_pilotTracking_fnc_dropBlood;
 [_pilot] call GRAD_pilotTracking_fnc_serverLoopPilotAlive;
 
-GRAD_pilotTracking_trackingRange = 1000;
+GRAD_pilotTracking_trackingRange = 2000;
 publicVariable "GRAD_pilotTracking_trackingRange";
 
 call GRAD_pilotTracking_fnc_addBodyBagHandling;

@@ -56,6 +56,16 @@ class Loadouts {
     };
 };
 
+class cfgNotifications {
+    class flareMarker
+    {
+        title = "FLARE SIGHTED";
+        iconPicture = "\A3\ui_f\data\map\MapControl\taskicondone_ca.paa";
+        description = "Check your Map";
+        priority = 3;
+    };
+};
+
 
 class Header
 {
