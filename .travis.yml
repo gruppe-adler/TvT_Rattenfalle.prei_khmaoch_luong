@@ -1,0 +1,12 @@
+language: python
+python:
+- '3.4'
+install:
+- pip install sqflint
+script:
+- tools/lint.sh -d . -C /tmp
+notifications:
+  template:
+  - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
+  - "Commit Title : %{commit_subject}"
+  - "Commit details : %{commit_message}"
