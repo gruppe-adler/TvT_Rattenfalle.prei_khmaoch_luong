@@ -201,6 +201,14 @@ class Rebels_Rattrap: ModerateRebels {
             backpack = "B_LegStrapBag_coyote_F";
             headgear = "H_Hat_Safari_sand_F";
             goggles = "rhsusf_shemagh_tan";
+
+            addItemsToVest[] = {
+                "rhs_mag_rgd5",
+                LIST_2("rhs_mag_rdg2_white"),
+                LIST_6("30Rnd_762x39_Mag_Tracer_Green_F"),
+                "grad_axe"
+            };
+
         };
 
         class Soldier_Unarmed_F: Soldier_F {

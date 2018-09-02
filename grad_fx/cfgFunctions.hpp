@@ -3,7 +3,9 @@ class GRAD_fx {
 	class client {
 		file = grad_fx\functions\client;
 
-		class createLightPoint;
+		class attachSearchLight;
+        class convertVectorToDir;
+        class createLightPoint;
 		class fireAndSmoke;
 		class rotatingCam;
 	};
