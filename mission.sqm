@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={7225.6982,64.04113,2479.9111};
-		dir[]={-0.17001745,-0.68047827,0.7127859};
-		up[]={-0.15788217,0.73276871,0.66190833};
-		aside[]={0.97271967,-2.1612504e-007,0.23201859};
+		dir[]={-0.012261445,-0.57898927,0.81525844};
+		up[]={-0.0087077366,0.81533229,0.57892793};
+		aside[]={0.9998982,-1.7011189e-007,0.015038853};
 	};
 };
 binarizationWanted=0;
@@ -17049,7 +17049,7 @@ class Mission
 							};
 							class backpack
 							{
-								typeName="ARC_GER_Backpack_Flecktarn";
+								typeName="B_FieldPack_cbr_LAT";
 								isBackpack=1;
 							};
 							map="ItemMap";
@@ -17389,7 +17389,7 @@ class Mission
 							};
 							class backpack
 							{
-								typeName="ARC_GER_Kitbag_compact_Flecktarn";
+								typeName="B_FieldPack_cbr_LAT";
 								isBackpack=1;
 								class ItemCargo
 								{
