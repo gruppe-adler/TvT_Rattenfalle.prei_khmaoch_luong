@@ -17,7 +17,7 @@ private _spawnBlufor = getMarkerPos "mrk_spawn_blufor_1";
 
 // teleport players and AI
 {
-  if (side _x == independent) then {
+  if (_x getVariable ["GRAD_pilotTracking_isPilot", false]) then {
       [_crashSite, 50, _x] remoteExec ["GRAD_mission_helpers_fnc_teleportPlayer", _x, true];
   };
 

@@ -19,6 +19,7 @@ _unit addMPEventhandler ["MPKilled", {
     };
 
     ["The pilot was killed, check your map."] remoteExec ["hint", 0];
+    [allPlayers, []] remoteExec ["ace_spectator_fnc_updateUnits", 0, true];
 
     missionNamespace setVariable ["GRAD_pilotTracking_pilotTrackingObj", _unit, true];
 

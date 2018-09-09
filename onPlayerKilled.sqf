@@ -52,7 +52,7 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 		[player, true] call TFAR_fnc_forceSpectator; // set to real spec channel
 		60 call TFAR_fnc_setVoiceVolume; // just to be sure voice is allowed
 		[[west,east,independent,civilian], []] call ace_spectator_fnc_updateSides; // allow all sides
-
+		
 		private _hintMsg = "You ended your last life and have free spectator now.";
 		[_hintMsg] call EFUNC(common,displayTextStructured);
 		[true] call ace_spectator_fnc_setSpectator;

@@ -20,6 +20,6 @@ _nul = _unit setPos _spawn;
 _unit allowDamage true;
 // 3 call fn_sthud_usermenu_changeMode;
 
-if (side _unit == independent) then {
+if (_unit getVariable ["GRAD_pilotTracking_isPilot", false]) then {
 	_unit setDir (_unit getRelDir CRASH_SITE_VEHICLE_POS);
 };

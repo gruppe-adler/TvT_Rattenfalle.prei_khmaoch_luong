@@ -23,7 +23,7 @@ if (_type isEqualTo "RHS_UH1Y_UNARMED_d") then {
 
 	[_veh] remoteExec ["GRAD_simpleVehicleRespawn_fnc_addSearchLightAction", [0,-2] select isDedicated, true];
 
-	[_veh] call GRAD_fx_fnc_attachSearchLight;
+	// [_veh] call GRAD_fx_fnc_attachSearchLight; // disabled bc performance
 	[_veh, false] call GRAD_simpleVehicleRespawn_fnc_add;
 	
 } else {
