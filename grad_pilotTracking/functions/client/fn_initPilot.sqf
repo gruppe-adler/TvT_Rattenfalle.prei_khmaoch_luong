@@ -3,7 +3,10 @@ params ["_pilot"];
 // initial delay
 // sleep 5;
 
-_pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
+_pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true]; // initiate custom bleeding
+_pilot setCaptive true; // to allow entering vehicles
+
+
 
 [_pilot] call grad_pilotTracking_fnc_pilotLoop;
 
