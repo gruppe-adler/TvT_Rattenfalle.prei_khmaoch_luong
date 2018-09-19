@@ -3,7 +3,10 @@ params ["_pilot"];
 // initial delay
 // sleep 5;
 
-_pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true];
+_pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true]; // initiate custom bleeding
+_pilot setCaptive true; // to allow entering vehicles
+
+
 
 [_pilot] call grad_pilotTracking_fnc_pilotLoop;
 
@@ -39,7 +42,8 @@ _pilot addEventHandler ["Fired",
 			params ["_flare"];
 
 			if (!isNull _flare) then {
-				[_flare] remoteExec ["GRAD_pilotTracking_fnc_createFlareMarker", [0,-2] select isDedicated, true];
+				private _flarePosition = position _flare;
+				[_flarePosition] remoteExec ["GRAD_pilotTracking_fnc_createFlareMarker", [0,-2] select isDedicated, true];
 			};
 		}, [_flare], 10] call CBA_fnc_waitAndExecute;
 		

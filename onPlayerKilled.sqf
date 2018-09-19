@@ -80,7 +80,7 @@ if (!(player getVariable ["GRAD_pilotTracking_isPilot",false])) then {
 } else {
 	// SET PENALTY DELAY FOR PILOT
 	player setVariable ["GRAD_simpleWaveRespawn_respawnCount", 999999];
-
+	player setCaptive false;
 	_shooter = player getVariable ["ACE_medical_lastDamageSource",player];
 	
 	[{
