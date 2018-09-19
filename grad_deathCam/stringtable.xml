@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="GRAD">
+  <Package name="Strings">
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Stalin">
+         <English>A single death is a tragedy; a million deaths is a statistic.</English>
+         <German>Der Tod eines Mannes ist eine Tragödie, aber der Tod von Millionen nur eine Statistik.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_N_Reagan">
+         <English>I believe that people would be alive today if there were a death penalty.</English>
+         <German>Ich bin überzeugt, dass Menschen heute am Leben wären, wenn es die Todesstrafe gäbe.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_G_Orwell">
+       <English>The quickest way to end a war is to lose it.</English>
+       <German>Am schnellsten beendet man einen Krieg, indem man ihn verliert.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_A_Einstein">
+       <English>I know not with what weapons World War III will be fought, but World War IV will be fought with sticks and stones.</English>
+       <German>Ich bin nicht sicher, mit welchen Waffen der dritte Weltkrieg ausgetragen wird, aber im vierten Weltkrieg werden sie mit Stöcken und Steinen kämpfen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_G_Clemenceau">
+       <English>War is much too serious a matter to be entrusted to the military.</English>
+       <German>Der Krieg ist viel zu wichtig, um ihn dem Militär anzuvertrauen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_G_Clemenceau_2">
+       <English>War is a series of disasters which result in a winner.</English>
+       <German>Der Krieg ist eine Serie von Fehlschlägen, aus der ein Sieger hervorgeht.</German>
+    </Key>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_B_Bush">
+       <English>War is not nice.</English>
+       <German>Krieg ist nicht nett.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_W_Churchill">
+       <English>War is a game that is played with a smile. If you can't smile, grin. If you can't grin, keep out of the way till you can.</English>
+       <German>Krieg ist ein Spiel, bei dem man lächelt. Wenn man nicht lächeln kann, sollte man grinsen. Wenn man nicht grinsen kann, sollte man sich für eine Zeit nicht blicken lassen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_G_Washington">
+       <English>To be prepared for war is one of the most effective means of preserving peace.</English>
+       <German>Wer auf den Krieg vorbereitet ist, kann den Frieden am Besten wahren.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_P_Floyd">
+       <English>Stay out of the road, if you want to grow old.</English>
+       <German>Blockier' nicht den Weg, wenn du alt werden willst.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_W_Somerset_Maugham">
+       <English>Death is a very dull, dreary affair, and my advice to you is to have nothing whatsoever to do with it.</English>
+       <German>Der Tod ist eine trübselige Angelegenheit, und ich rate Ihnen, nichts damit zu tun zu haben.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Tolkien">
+       <English>Many that live deserve death. And some that die deserve life.</English>
+       <German>Viele, die leben, verdienen den Tod.  Und mache, die sterben, verdienen zu leben.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Tolkien_2">
+       <English>And lastly there is the oldest and deepest desire, the Great Escape: the Escape from Death.</English>
+       <German>Und schließlich gibt es das älteste und tiefste Verlangen, die große Flucht: Dem Tod zu entrinnen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_W_Whitman">
+       <English>As to you, Life, I reckon you are the leavings of many deaths; No doubt I have died, myself ten thousand times before.</English>
+       <German>Und was dich angeht, Leben, so sehe ich dich als Überbleibsel vieler Tode. Sicher bin auch ich selbst schon zehntausend Mal gestorben.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_F_Meehan">
+       <English>Men are at war with each other because each man is at war with himself.</English>
+       <German>Männer führen Kriege gegeneinander, weil jeder Mann in sich selbst einen Krieg ausficht.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_W_Allen">
+       <English>It's not that I'm afraid to die, I just don't want to be there when it happens.</English>
+       <German>Ich habe keine Angst vor dem Tod, ich möchte nur nicht dabeisein, wenn's passiert.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_C_Lewis">
+       <English>It is hard to have patience with people who say 'There is no death' or 'Death doesn't matter.' There is death and whatever is matters.</English>
+       <German>It is hard to have patience with people who say 'There is no death' or 'Death doesn't matter.' There is death and whatever is matters.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_T_Mann">
+       <English>A man's dying is more the survivors' affair than his own.</English>
+       <German>Der Tod eines Mannes ist eher eine Angelegenheit seiner Hinterbliebenen denn seine eigene.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_G_Chesterton">
+       <English>I do not believe in a fate that falls on men however they act; but I do believe in a fate that falls on them unless they act.</English>
+       <German>Ich glaube nicht an ein Schicksal, welches die Menschen unabhängig von Ihren Handlungen ereilt. Ich glaube eher an ein Schicksal, welches die Menschen ereilt, wenn sie nicht handeln.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_M_King">
+       <English>A man who won't die for something is not fit to live.</English>
+       <German>Ein Mensch, der für nichts zu sterben gewillt ist, verdient nicht zu leben.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_I_Sprichwort">
+       <English>Once the game is over, the king and the pawn go back in the same box.</English>
+       <German>Wenn das Spiel zuende ist, landen König und Bauer wieder in derselben Schachtel.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Jones">
+       <English>I have not yet begun to fight!</English>
+       <German>Ich habe den Kampf noch nicht begonnen!</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Fitzgerald_Kennedy">
+       <English>Mankind must put an end to war, or war will put an end to mankind.</English>
+       <German>Die Menschheit muß dem Krieg ein Ende setzen, oder der Krieg setzt der Menschheit ein Ende.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_S_Dali">
+       <English>Wars have never hurt anybody except the people who die.</English>
+       <German>Kriege haben noch nie jemandem geschadet, außer denen, die in ihnen umkommen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_B_Russell">
+       <English>War does not determine who is right - only who is left.</English>
+       <German>Der Krieg entscheidet nicht darüber, wer Recht hat, sondern nur darüber, wer übrig bleibt.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_E_Gibbon">
+       <English>We improve ourselves by victories over ourself. There must be contests, and you must win.</English>
+       <German>Wir verbessern uns durch die Siege über uns selbst. Es muss Wettstreit geben, in dem man gewinnt.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_D_Eisenhower">
+       <English>We succeed only as we identify in life, or in war, or in anything else, a single overriding objective, and make all other considerations bend to that one objective.</English>
+       <German>Wir sind nur dadurch erfolgreich, dass wir uns im Leben oder im Krieg oder wo auch immer ein einzelnes beherrschendes Ziel setzen und diesem Ziel alle anderen Überlegungen unterordnen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_V_Sanders_Law">
+       <English>Experience is a hard teacher because she gives the test first, the lesson afterwards.</English>
+       <German>Die Erfahrung ist ein strenger Schulmeister: Sie prüft uns, bevor sie uns lehrt.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_Sprichwort">
+       <English>You might as well fall flat on your face as lean over too far backwards.</English>
+       <German>Man kann besser auf die Nase fallen, als sich zu weit zurück zu lehnen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Wayne">
+       <English>Death is more universal than life; everyone dies but not everyone lives.</English>
+       <German>Mut ist, wenn man Todesangst hat, aber sich trotzdem in den Sattel schwingt.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_A_Sachs">
+       <English>Death is more universal than life; everyone dies but not everyone lives.</English>
+       <German>Der Tod ist allgemeiner als das Leben: Jeder stirbt, aber nicht jeder lebt.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Gaultier">
+       <English>Imagination is the one weapon in the war against reality.</English>
+       <German>Die Fantasie ist die einzige Waffe im Kampf gegen die Wirklichkeit.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_W_Rogers">
+       <English>You can't say that civilization don't advance, however, for in every war they kill you in a new way.</English>
+       <German>Man kann nicht sagen, dass die Zivilisation keine Fortschritte macht: Für jeden Krieg wird eine neue Todesart entwickelt.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_C_Sandburg">
+       <English>...Sometime they'll give a war and nobody will come.</English>
+       <German>...Stell dir vor, es ist Krieg, und keiner geht hin.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_R_Lee">
+       <English>It is well that war is so terrible, or we should get too fond of it.</English>
+       <German>Der Krieg ist aus gutem Grund so schrecklich, ansonsten würden wir ihn zu sehr genießen.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_J_Rankin">
+       <English>You can no more win a war than you can win an earthquake.</English>
+       <German>Man kann einen Krieg genauso wenig gewinnen wie ein Erdbeben.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_C_Richelieu">
+       <English>War is one of the scourges with which it has pleased God to afflict men.</English>
+       <German>Der Krieg ist eine der Plagen, mit denen Gott die Menschheit straft.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_D_MacArthur">
+       <English>In war there is no substitute for victory.</English>
+       <German>In einem Krieg gibt es keinen Ersatz für den Sieg.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_A_Russell">
+       <English>War isn't about who's right, its about who's left.</English>
+       <German>In einem Krieg geht es nicht ums Recht, sondern ums Überleben.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_G_Patton">
+       <English>The object of war is not to die for your country but to make the other bastard die for his.</English>
+       <German>Das Ziel in einem Krieg ist nicht, dass man für sein Land stirbt, sondern das der Lump da drüben für seins stirbt.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_E_Harriman">
+       <English>Much good work is lost for the lack of a little more.</English>
+       <German>Viel gute Arbeit wird mangels etwas mehr Arbeit verschwendet.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_N_Hill">
+       <English>When defeat comes, accept it as a signal that your plans are not sound, rebuild those plans, and set sail once more toward your coveted goal.</English>
+       <German>Nimm eine Niederlage als Zeichen, dass deine Pläne nicht solide waren. Plane um und verfolge dein Ziel erneut.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_L_Carroll">
+       <English>Brave men are all vertebrates; they have their softness on the surface and their toughness in the middle.</English>
+       <German>Tapfere Männer sind wie Wirbeltiere: Außen weich, aber innen mit einem harten Kern.</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_S_Clegane">
+       <English>You're shit at dying, you know that?</English>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_T_Lanister">
+       <English>Death is so terribly final, while life is full of possibilities.</English>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_G_Martin">
+       <English>The man who fears losing has already lost.</English>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Quote_T_Lanister_2">
+       <English>Rhaegar fought valiantly, Rhaegar fought nobly, Rhaegar fought honorably. And Rhaegar died.</English>
+    </Key>
+  </Package>
+</Project>
