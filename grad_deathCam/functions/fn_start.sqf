@@ -60,7 +60,7 @@ private _quotes = [
 
 
 // CONFIGURE TEXTS
-private _title = "<t color='#8f110a' size='3' align='center' shadow='0'>Du bist tot.</t>";
+private _title = "<t color='#8f110a' size='3' align='center' shadow='0'>" + (localize "STR_GRAD_DeathCam_Dead_Message") + "</t>";
 private _selectedQuote = selectRandom _quotes;
 private _quote = "<t color='#f9f9f9' size='1.5' align='center' shadow='0'>" + (localize (_selectedQuote select 0)) + "</t>";
 private _author = "<t color='#f9f9f9' size='1' align='right' shadow='0'>" + (_selectedQuote select 1) + "</t>";
@@ -94,7 +94,7 @@ _ctrlAuthor ctrlCommit 0;
 private _unit = player;
 private _shooter = _unit getVariable ["ACE_medical_lastDamageSource",_unit];
 
-private _killedBy = format ["Killed by: %1", name _shooter];
+private _killedBy = format ["%1 %2",(localize "STR_GRAD_DeathCam_killed_by"), name _shooter];
 systemChat _killedBy;
 [_killedBy] call EFUNC(common,displayTextStructured);
 
@@ -115,29 +115,39 @@ _camera cameraEffect ["internal","back"];
 _camera camSetFov 0.4;
 _camera camCommit 1;
 _camera camSetTarget _unit; // target dead player
-sleep 1;
 
-_camera camSetPos [getpos _unit select 0, getpos _unit select 1,3];
-_camera camSetFov 0.6;
-_camera camCommit 1;
-sleep 1;
-_camera camSetTarget _shooter; // target killer
-_camera camSetFov 0.2;
-_camera camCommit 3;
-sleep 5;
-cutRsc ["RscStatic", "PLAIN" , 1];
-sleep 1;
+[{
+   params ["_unit", "_camera"];
 
-// END ALL EFFECTS
-cutText ["", "BLACK OUT", 1];
-_filmgrain ppEffectEnable false;
-ppEffectDestroy _filmgrain;
-_camera cameraEffect ["terminate","back"];
-camDestroy _camera;
-showCinemaBorder false;
+   _camera camSetPos [getpos _unit select 0, getpos _unit select 1,3];
+   _camera camSetFov 0.6;
+   _camera camCommit 1;
+   [{
+      params ["", "_shooter", "_camera"];
 
-GRAD_DEATHCAM_RUNNING = false;
+      _camera camSetTarget _shooter; // target killer
+      _camera camSetFov 0.2;
+      _camera camCommit 3;
+      [{
+         cutRsc ["RscStatic", "PLAIN" , 1];
+         [{
+            params ["", "_camera", "_filmgrain"];
 
-// fade back in
-sleep 1;
-cutText ["", "BLACK IN", 1];
+            // END ALL EFFECTS
+            cutText ["", "BLACK OUT", 1];
+            _filmgrain ppEffectEnable false;
+            ppEffectDestroy _filmgrain;
+            _camera cameraEffect ["terminate","back"];
+            camDestroy _camera;
+            showCinemaBorder false;
+
+            GRAD_DEATHCAM_RUNNING = false;
+
+            // fade back in
+            [{
+               cutText ["", "BLACK IN", 1];
+            },this,1] call CBA_fnc_waitAndExecute;
+         },this,1] call CBA_fnc_waitAndExecute;
+      },this,5] call CBA_fnc_waitAndExecute;
+   },this,1] call CBA_fnc_waitAndExecute;
+},[_unit, _shooter, _camera, _filmgrain],1] call CBA_fnc_waitAndExecute;

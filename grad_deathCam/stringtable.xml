@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="GRAD">
-  <Package name="Strings">
+  <Package name="Strings">.
+    <Key ID="STR_GRAD_DeathCam_killed_by">
+         <English>Killed by:</English>
+         <German>Ermordet von:</German>
+    </Key>
+    <Key ID="STR_GRAD_DeathCam_Dead_Message">
+         <English>You are dead.</English>
+         <German>Du bist tot.</German>
+    </Key>
     <Key ID="STR_GRAD_DeathCam_Quote_J_Stalin">
          <English>A single death is a tragedy; a million deaths is a statistic.</English>
          <German>Der Tod eines Mannes ist eine Tragödie, aber der Tod von Millionen nur eine Statistik.</German>
