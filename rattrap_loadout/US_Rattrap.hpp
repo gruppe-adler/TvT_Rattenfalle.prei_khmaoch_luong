@@ -45,38 +45,60 @@ class US_Rattrap: SOGBLACK {
                     };
                 };
 
-                class Survivor_F {
-                    uniform = "rhs_uniform_g3_rgr";
-                    vest = "rhsusf_spc_corpsman";
-                    backpack = "";
-                    headgear = "H_HeadBandage_bloody_F";
-                    primaryWeapon = "";
-                    primaryWeaponMagazine = "";
-                    primaryWeaponMuzzle = "";
-                    primaryWeaponPointer = "";
-                    primaryWeaponOptics = "";
-                    handgunWeapon = "rds_weap_latarka_janta";
-                    handgunWeaponMagazine = "";
-                    binoculars = "Binocular";
-                    map = "";
-                    compass = "";
-                    watch = "ItemWatch";
-                    gps = "";
-                    radio = "";
-                    nvgoggles = "";
-                    goggles = "NeckTight_OD";
+                class Survivor_F: Soldier_F {
+                   addItemsToUniform[] = {
+                       "ACE_MapTools",
+                       LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
+                       LIST_10("ACE_fieldDressing"),
+                       LIST_4("ACE_morphine"),
+                       LIST_1("ACE_epinephrine"),
+                       LIST_1("ACE_key_west"),
+                       "ACE_Flashlight_MX991",
+                       LIST_1("ACE_bodyBag"),
+                       LIST_2("ACE_Chemlight_HiRed"),
+                       "ACE_acc_pointer_green"
+                   };
+                   addItemsToBackpack[] = {
+                       LIST_2("HandGrenade"),
+                       LIST_2("SmokeShell"),
+                       LIST_10("30Rnd_556x45_Stanag_Tracer_Red"),
+                       "ACE_IR_Strobe_Item"
+                   };
+                   class Rank {
+                      class PRIVATE {
+                       uniform = "rhs_uniform_g3_rgr";
+                       vest = "rhsusf_spc_corpsman";
+                       backpack = "";
+                       headgear = "H_HeadBandage_bloody_F";
+                       primaryWeapon = "";
+                       primaryWeaponMagazine = "";
+                       primaryWeaponMuzzle = "";
+                       primaryWeaponPointer = "";
+                       primaryWeaponOptics = "";
+                       handgunWeapon = "rds_weap_latarka_janta";
+                       handgunWeaponMagazine = "";
+                       binoculars = "Binocular";
+                       map = "";
+                       compass = "";
+                       watch = "ItemWatch";
+                       gps = "";
+                       radio = "";
+                       nvgoggles = "";
+                       goggles = "NeckTight_OD";
 
-                    addItemsToUniform[] = {
-                            LIST_2("ACE_epinephrine"),
-                            LIST_8("ACE_fieldDressing"),
-                            LIST_2("ACE_morphine"),
-                            LIST_1("ACE_SpraypaintYellow")
-                    };
-                    addItemsToVest[] = {
-                            LIST_4("ACE_Chemlight_HiYellow"),
-                            LIST_1("6Rnd_GreenSignal_F")
-                    };
+                       addItemsToUniform[] = {
+                               LIST_2("ACE_epinephrine"),
+                               LIST_8("ACE_fieldDressing"),
+                               LIST_2("ACE_morphine"),
+                               LIST_1("ACE_SpraypaintYellow")
+                       };
+                       addItemsToVest[] = {
+                               LIST_4("ACE_Chemlight_HiYellow"),
+                               LIST_1("6Rnd_GreenSignal_F")
+                       };
+                   };
                 };
+             };
 
                 //Asst. Autorifleman
                 class soldier_AAR_F: Soldier_F {
