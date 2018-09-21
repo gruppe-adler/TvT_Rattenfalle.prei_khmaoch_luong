@@ -1,8 +1,8 @@
 #include "grad_deathCam\rscDefines.hpp"
 #include "grad_deathCam\rscDialogs.hpp"
 #include "grad_pilotTracking\rscDefines.hpp"
-#include "node_modules\grad-replay\ui\defines.hpp"
-#include "node_modules\grad-replay\ui\dialog.hpp"
+#include "node_modules\@gruppe-adler\replay\ui\defines.hpp"
+#include "node_modules\@gruppe-adler\replay\ui\dialog.hpp"
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
 
 OnLoadMission = "TvT_Rattrap";
@@ -34,7 +34,7 @@ class cfgFunctions {
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-gpsTracker\cfgFunctions.hpp"
     #include "node_modules\grad-makeFire\cfgFunctions.hpp"
-    #include "node_modules\grad-replay\cfgFunctions.hpp"
+    #include "node_modules\@gruppe-adler\replay\cfgFunctions.hpp"
     #include "node_modules\grad-crows\cfgFunctions.hpp"
     #include "grad_flies\cfgFunctions.hpp"
 
