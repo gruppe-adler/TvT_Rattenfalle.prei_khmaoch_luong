@@ -35,6 +35,7 @@ class GRAD_mission_helpers {
 		file = mission_helpers\functions\setup;
 
 		class nerfStamina;
+		class registerDynamicGroup;
 		class createCrashSite;
 		class selectCrashSite;
 		class teleportPlayer;
