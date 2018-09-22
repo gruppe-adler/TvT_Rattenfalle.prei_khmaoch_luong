@@ -17,7 +17,6 @@ RHSDecalsOff = true;
 
 ["BLU_F", "US_Rattrap"] call GRAD_Loadout_fnc_FactionSetLoadout;
 ["OPF_F", "Rebels_Rattrap"] call GRAD_Loadout_fnc_FactionSetLoadout;
-["IND_F", "UsDownedPilot"] call GRAD_Loadout_fnc_FactionSetLoadout;
 
 // PVP settings
 // disableRemoteSensors true; // save bandwidth, but probably shitty for AI AA

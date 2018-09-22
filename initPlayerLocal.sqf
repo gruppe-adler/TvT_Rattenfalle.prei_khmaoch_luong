@@ -1,5 +1,9 @@
 call compile preprocessfile "node_modules\shk_pos\functions\shk_pos_init.sqf";
 
+if ((typeOf player == Survivor_F) && (player getVariable ["GRAD_pilotTracking_isPilot", false])) then {
+	    player setRank "PRIVATE";
+};
+
 // HIDE ALL MARKERS
 {_x setMarkerAlphaLocal 0;} forEach allMapMarkers;
 
@@ -63,7 +67,6 @@ if (isMultiplayer) then {
 				] call grad_fx_fnc_rotatingCam;
 	},
 	[]] call CBA_fnc_waitUntilAndExecute;
-
 };
 
 
@@ -71,7 +74,7 @@ if (!isNull (getAssignedCuratorLogic player) && {isClass (configFile >> "CfgPatc
 {
   // Note that the line below has to be uncommented if your mission is a Zeus Game Master mission.
   waitUntil {missionnamespace getvariable ["BIS_moduleMPTypeGameMaster_init", false] and {not isNil "ares_category_list"}};
-  ["Gruppe Adler", "Force follow Waypoints", 
+  ["Gruppe Adler", "Force follow Waypoints",
   {
   	// Get all the passed parameters
   	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
@@ -87,7 +90,7 @@ if (!isNull (getAssignedCuratorLogic player) && {isClass (configFile >> "CfgPatc
     } forEach _waypoints;
 
     {
-        deleteWaypoint _x;      
+        deleteWaypoint _x;
     } forEach _waypoints;
 
     _objectUnderCursor setDriveOnPath _positions;
