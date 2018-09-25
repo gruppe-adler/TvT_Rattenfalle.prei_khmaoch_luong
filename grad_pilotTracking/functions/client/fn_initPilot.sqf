@@ -5,7 +5,7 @@ params ["_pilot"];
 
 _pilot setVariable ["GRAD_pilotTracking_isBleeding", true, true]; // initiate custom bleeding
 _pilot setCaptive true; // to allow entering vehicles
-_pilot joinSilent (createGroup civilian);
+[_pilot] joinSilent (createGroup civilian);
 
 
 [_pilot] call grad_pilotTracking_fnc_pilotLoop;
