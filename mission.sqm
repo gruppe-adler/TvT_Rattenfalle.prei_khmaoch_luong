@@ -94,7 +94,6 @@ addons[]=
 	"ace_overpressure",
 	"ace_realisticweights",
 	"ace_reloadlaunchers",
-	"DynaSound_DS_w_Alamut",
 	"A3_Weapons_F_Items",
 	"ace_medical",
 	"ace_laserpointer",
