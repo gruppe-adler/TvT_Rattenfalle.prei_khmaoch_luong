@@ -24,13 +24,7 @@ GRAD_DEATHCAM_RUNNING = true;
 [] spawn GRAD_deathcam_fnc_start;
 waitUntil {!GRAD_DEATHCAM_RUNNING};
 
-// SPECTATOR SETTINGS
-private _enemySides = [west,east,independent,civilian] - [playerSide];
-[[playerSide], _enemySides] call ace_spectator_fnc_updateSides;
 
-if (player getVariable ["GRAD_pilotTracking_isPilot", false] || player getVariable ["GRAD_pilotTracking_wasPilot", false]) then {
-	[[west, independent], [east,civilian]] call ace_spectator_fnc_updateSides;
-};
 
 // give pilot free cam
 /*
@@ -69,6 +63,11 @@ player setVariable ["GRAD_simpleWaveRespawn_hintShown", true];
 
 // ENGAGE SPECTATOR
 [true] call ace_spectator_fnc_setSpectator;
+
+// SPECTATOR SETTINGS
+private _enemySides = [west,east,independent,civilian] - [playerSide];
+[[playerSide], _enemySides] call ace_spectator_fnc_updateSides;
+
 
 // set voice level to zero, so specs cant talk to each other if not in free cam, default is 60
 // 0 call TFAR_fnc_setVoiceVolume;
