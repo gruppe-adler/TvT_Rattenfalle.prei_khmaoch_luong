@@ -3,7 +3,7 @@ GRAD_ANIMATION_WAVE = false;
 _waveAction =
 [
     'waveBothArms','Wave both arms','',
-    {[] call GRAD_mission_helpers_fnc_doWave;},
+    {[] spawn GRAD_mission_helpers_fnc_doWave;},
     {!GRAD_ANIMATION_WAVE},
     {},
     [],
