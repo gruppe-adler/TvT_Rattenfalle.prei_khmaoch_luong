@@ -3,7 +3,7 @@
 // dont execute for jip/clients
 if (!isServer) exitWith {};
 
-[0] call rattrap_objectives_fnc_startPreparationTime;
+[180] call rattrap_objectives_fnc_startPreparationTime;
 
 // blufor tasks
 [

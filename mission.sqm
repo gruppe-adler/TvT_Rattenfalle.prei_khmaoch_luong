@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2534;
+		nextID=2538;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3968.9546,30.615667,4962.2437};
-		dir[]={-0.51162595,-0.65667003,0.55410022};
-		up[]={-0.44547731,0.75417763,0.48246008};
-		aside[]={0.73470712,1.0430813e-007,0.67838794};
+		pos[]={3953.9404,26.508644,4958.7056};
+		dir[]={-0.73402888,-0.58589774,-0.3434656};
+		up[]={-0.53068799,0.81037813,-0.24831846};
+		aside[]={-0.42382446,3.1664968e-008,0.90576786};
 	};
 };
 binarizationWanted=0;
@@ -94,6 +94,7 @@ addons[]=
 	"ace_overpressure",
 	"ace_realisticweights",
 	"ace_reloadlaunchers",
+	"DynaSound_DS_w_Alamut",
 	"A3_Weapons_F_Items",
 	"ace_medical",
 	"ace_laserpointer",
@@ -113,13 +114,14 @@ addons[]=
 	"blud_huts",
 	"Misc_Steps",
 	"A3_Boat_F_Boat_Armed_01",
-	"A3_Boat_F_Gamma_Boat_Transport_01"
+	"A3_Boat_F_Gamma_Boat_Transport_01",
+	"CUP_CAStructures_E_Misc_Misc_Lamp"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=61;
+		items=63;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -428,101 +430,112 @@ class AddonsMetaData
 		};
 		class Item46
 		{
+			className="DynaSound_DS_w_Alamut";
+			name="DynaSound_DS_w_Alamut";
+			author="LAxemann";
+		};
+		class Item47
+		{
 			className="ace_medical";
 			name="ACE3 - Medical";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item47
+		class Item48
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item48
+		class Item49
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item49
+		class Item50
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item50
+		class Item51
 		{
 			className="A3_Soft_F_Orange";
 			name="Arma 3 Orange - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item51
+		class Item52
 		{
 			className="rhsusf_c_Caiman";
 			name="Caiman MRAP";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item52
+		class Item53
 		{
 			className="CUP_Editor_A2_Roads_Config";
 			name="CUP_Editor_A2_Roads_Config";
 		};
-		class Item53
+		class Item54
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item54
+		class Item55
 		{
 			className="CUP_Editor_Signs_Config";
 			name="CUP_Editor_Signs_Config";
 		};
-		class Item55
+		class Item56
 		{
 			className="A3_Structures_F_Wrecks";
 			name="Arma 3 - Vehicle Wrecks";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item56
+		class Item57
 		{
 			className="A3_Structures_F_Exp_Civilian";
 			name="Arma 3 Apex - Civilian Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item57
+		class Item58
 		{
 			className="blud_huts";
 			name="blud_huts";
 			author="bludclot";
 		};
-		class Item58
+		class Item59
 		{
 			className="Misc_Steps";
 			name="Misc_Steps";
 		};
-		class Item59
+		class Item60
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item60
+		class Item61
 		{
 			className="A3_Boat_F_Gamma";
 			name="Arma 3 - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item62
+		{
+			className="CUP_CAStructures_E_Misc_Misc_Lamp";
+			name="CUP_CAStructures_E_Misc_Misc_Lamp";
 		};
 	};
 };
@@ -3095,7 +3108,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=417;
+		items=421;
 		class Item0
 		{
 			dataType="Marker";
@@ -28758,6 +28771,72 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item417
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3893.6328,4.5511713,4937.5566};
+				angles[]={0,0.98859638,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=2534;
+			type="Land_Lamp_Small_EP1";
+			atlOffset=-0.011179447;
+		};
+		class Item418
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3878.8777,4.2774038,4976.5264};
+				angles[]={0,5.7728624,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=2535;
+			type="Land_Lamp_Small_EP1";
+		};
+		class Item419
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3917.0955,3.3821158,4994.8354};
+				angles[]={0,6.0259094,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=2536;
+			type="Land_Lamp_Small_EP1";
+		};
+		class Item420
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4048.0544,2.5646873,4976.0718};
+				angles[]={0,2.9361372,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=2537;
+			type="Land_Lamp_Small_EP1";
+			atlOffset=3.8064156;
 		};
 	};
 };
