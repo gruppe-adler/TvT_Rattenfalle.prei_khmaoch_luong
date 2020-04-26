@@ -16,7 +16,7 @@ if (player getVariable ["GRAD_pilotTracking_isScout", false]) then {
 };
 
 
-_blood setDir (selectRandom [_dir, _dir-180]);
+_blood setDir _dir;
 _blood setVectorUp (surfaceNormal _posASL);
 
 _blood setVariable ["GRAD_pilotTracking_bloodDropTimestamp", CBA_missionTime];
