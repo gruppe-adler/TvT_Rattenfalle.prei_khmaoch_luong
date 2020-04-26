@@ -226,7 +226,7 @@ class Rebels_Rattrap: ModerateRebels {
             vest = "V_TacVest_camo";
             headgear = "rhs_fieldcap_khk";
 
-            primaryWeapon = "arifle_AK12_GL_F";
+            primaryWeapon = "rhs_weap_ak74m_gp25";
             backpack = "tf_mr3000_rhs";
 
              addItemsToBackpack[] = {
@@ -241,7 +241,7 @@ class Rebels_Rattrap: ModerateRebels {
             vest = "V_TacVest_brn";
             headgear = "H_Booniehat_oli";
 
-            primaryWeapon = "arifle_AK12_GL_F";
+            primaryWeapon = "rhs_weap_ak74m_gp25";
             backpack = "tf_mr3000_rhs";
 
             addItemsToBackpack[] = {
