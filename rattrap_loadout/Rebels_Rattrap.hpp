@@ -5,8 +5,8 @@ class Rebels_Rattrap: ModerateRebels {
         vest = "V_TacChestrig_oli_F";
         backpack = "";
         headgear = "rhsgref_helmet_M1_bare";
-        primaryWeapon = "arifle_AK12_F";
-        primaryWeaponMagazine = "30Rnd_762x39_Mag_Tracer_Green_F";
+        primaryWeapon = "rhs_weap_ak74m_camo";
+        primaryWeaponMagazine = "rhs_30Rnd_545x39_AK_plum_green";
         primaryWeaponMuzzle = "";
         primaryWeaponPointer = "acc_flashlight";
         primaryWeaponOptics = "rhs_acc_1p87";
@@ -37,7 +37,7 @@ class Rebels_Rattrap: ModerateRebels {
             addItemsToVest[] = {
                 "rhs_mag_rgd5",
                 LIST_2("rhs_mag_rdg2_white"),
-                LIST_7("30Rnd_762x39_Mag_Tracer_Green_F")
+                LIST_7("rhs_30Rnd_545x39_AK_plum_green")
             };
         };
         //Asst. Autorifleman
@@ -93,7 +93,7 @@ class Rebels_Rattrap: ModerateRebels {
 
             addItemsToVest[] = {
                 LIST_2("rhs_mag_rgd5"),
-                LIST_6("30Rnd_762x39_Mag_Tracer_Green_F")
+                LIST_6("rhs_30Rnd_545x39_AK_plum_green")
             };
             addItemsToBackpack[] = {
                 LIST_2("ACE_bloodIV"),
@@ -121,7 +121,7 @@ class Rebels_Rattrap: ModerateRebels {
             vest = "V_TacChestrig_cbr_F";
             backpack = "B_FieldPack_khk";
             headgear = "H_Bandanna_khk";
-            primaryWeapon = "arifle_AK12_F_fullplum_gp25";
+            primaryWeapon = "rhs_weap_ak74m_gp25";
             addItemsToBackpack[] = {
                 LIST_2("rhs_mag_rgd5"),
                 LIST_2("rhs_mag_rdg2_white"),
@@ -205,7 +205,7 @@ class Rebels_Rattrap: ModerateRebels {
             addItemsToVest[] = {
                 "rhs_mag_rgd5",
                 LIST_2("rhs_mag_rdg2_white"),
-                LIST_6("30Rnd_762x39_Mag_Tracer_Green_F"),
+                LIST_6("rhs_30Rnd_545x39_AK_plum_green"),
                 "grad_axe"
             };
 
@@ -230,9 +230,9 @@ class Rebels_Rattrap: ModerateRebels {
             backpack = "tf_mr3000_rhs";
 
              addItemsToBackpack[] = {
-                LIST_10("UGL_FlareGreen_F"),
-                LIST_2("1Rnd_SmokeGreen_Grenade_shell"),
-                LIST_2("1Rnd_Smoke_Grenade_shell")
+                LIST_10("rhs_VG40OP_green"),
+                LIST_2("rhs_GRD40_Green"),
+                LIST_2("rhs_GRD40_White")
             };
         };
         //Team Leader
@@ -245,9 +245,9 @@ class Rebels_Rattrap: ModerateRebels {
             backpack = "tf_mr3000_rhs";
 
             addItemsToBackpack[] = {
-                LIST_10("UGL_FlareGreen_F"),
-                LIST_2("1Rnd_SmokeGreen_Grenade_shell"),
-                LIST_2("1Rnd_Smoke_Grenade_shell")
+                LIST_10("rhs_VG40OP_green"),
+                LIST_2("rhs_GRD40_Green"),
+                LIST_2("rhs_GRD40_White")
             };
         };
     };

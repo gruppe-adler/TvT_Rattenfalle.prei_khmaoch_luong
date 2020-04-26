@@ -21,7 +21,7 @@ _relPos set [2,_heightAboveGround];
 } forEach allPlayers;
 
 
-_handle = [{
+private _handle = [{
 	params ["_args", "_handle"];
 	_args params ["_camObj", "_area"];
 

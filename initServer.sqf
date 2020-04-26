@@ -37,6 +37,7 @@ addMissionEventHandler ["HandleDisconnect",{
     params [["_unit",objNull]];
 
 		if (_unit getVariable ["grad_pilotTracking_isPilot", false]) exitWith {
+			_unit setDamage 1; // dont make the ai do things
 			true
 		};
 

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2538;
+		nextID=2541;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7234.73,55.161503,2471.3455};
-		dir[]={0.026147101,-0.57052189,0.82087135};
-		up[]={0.018163787,0.82128173,0.57023638};
-		aside[]={0.99949735,-7.4265699e-008,-0.031836685};
+		pos[]={7225.4536,41.694855,2483.092};
+		dir[]={0.83495688,-0.54617548,0.067499369};
+		up[]={0.54440445,0.83766687,0.044010535};
+		aside[]={0.08057747,9.9651515e-008,-0.99675578};
 	};
 };
 binarizationWanted=0;
@@ -3361,7 +3361,7 @@ class CustomAttributes
 							"BOOL"
 						};
 					};
-					value=0;
+					value=1;
 				};
 			};
 		};

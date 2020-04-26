@@ -5,6 +5,7 @@ if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEW
 
 player setVariable ["GRAD_simpleWaveRespawn_respawning", true];
 setPlayerRespawnTime 0;
+forceRespawn player;
 
 [false] call ace_spectator_fnc_setSpectator;
 [player, false] call TFAR_fnc_forceSpectator;

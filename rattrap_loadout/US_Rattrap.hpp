@@ -5,7 +5,7 @@ class US_Rattrap: SOGBLACK {
         backpack = "B_ViperLightHarness_blk_F";
         headgear = "rhsusf_opscore_bk_pelt";
         primaryWeapon = "rhs_weap_hk416d10";
-        primaryWeaponMagazine = "30Rnd_556x45_Stanag_Tracer_Red";
+        primaryWeaponMagazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
         primaryWeaponMuzzle = "";
         primaryWeaponPointer = "acc_flashlight";
         primaryWeaponOptics = "rhsusf_acc_compm4";
@@ -40,7 +40,7 @@ class US_Rattrap: SOGBLACK {
                     addItemsToBackpack[] = {
                         LIST_2("HandGrenade"),
                         LIST_2("SmokeShell"),
-                        LIST_10("30Rnd_556x45_Stanag_Tracer_Red"),
+                        LIST_10("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red"),
                         "ACE_IR_Strobe_Item"
                     };
                 };
@@ -143,7 +143,7 @@ class US_Rattrap: SOGBLACK {
                         LIST_2("SmokeShellPurple"),
                         LIST_2("SmokeShell"),
                         LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
-                        LIST_6("30Rnd_556x45_Stanag_Tracer_Red"),
+                        LIST_6("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red"),
                         LIST_2("ACE_bloodIV"),
                         LIST_10("ACE_epinephrine"),
                         LIST_10("ACE_morphine"),
@@ -167,7 +167,7 @@ class US_Rattrap: SOGBLACK {
                         LIST_2("HandGrenade"),
                         LIST_2("SmokeShell"),
                         LIST_1("rhsusf_mag_17Rnd_9x19_FMJ"),
-                        LIST_8("30Rnd_556x45_Stanag_Tracer_Red"),
+                        LIST_8("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red"),
                         LIST_6("rhs_mag_M441_HE"),
                         LIST_2("rhs_mag_m713_Red")
                     };
@@ -237,7 +237,7 @@ class US_Rattrap: SOGBLACK {
                         LIST_10("UGL_FlareRed_F"),
                         LIST_2("1Rnd_SmokeRed_Grenade_shell"),
                         LIST_2("1Rnd_Smoke_Grenade_shell"),
-                        LIST_6("30Rnd_556x45_Stanag_Tracer_Red")
+                        LIST_6("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red")
                     };
                 };
 
@@ -250,7 +250,7 @@ class US_Rattrap: SOGBLACK {
                         LIST_6("UGL_FlareRed_F"),
                         LIST_2("1Rnd_SmokeRed_Grenade_shell"),
                         LIST_2("1Rnd_Smoke_Grenade_shell"),
-                        LIST_10("30Rnd_556x45_Stanag_Tracer_Red")
+                        LIST_10("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red")
                     };
                 };
     };

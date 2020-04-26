@@ -1,4 +1,6 @@
-_turnOn = ["CameraOn", "Turn Cam On", "", {
+if (!hasInterface) exitWith {};
+
+private _turnOn = ["CameraOn", "Turn Cam On", "", {
 	[_player, _target] remoteExec ["GRAD_pilotCam_fnc_camTurnOnServer", 2];
 },
 {!(_target getVariable ["GRAD_pilotCam_camIsOn", false])}] call ace_interact_menu_fnc_createAction;
@@ -6,7 +8,7 @@ _turnOn = ["CameraOn", "Turn Cam On", "", {
 ["Camera1", 0, ["ACE_MainActions"], _turnOn, true] call ace_interact_menu_fnc_addActionToClass;
 
 
-_turnOff = ["CameraOff", "Turn Cam Off", "", {
+private _turnOff = ["CameraOff", "Turn Cam Off", "", {
 	[_target, "shutter"] remoteExec ["GRAD_pilotCam_fnc_camTurnOffServer", 2];
 },
 {(_target getVariable ["GRAD_pilotCam_camIsOn", false])}] call ace_interact_menu_fnc_createAction;
@@ -16,7 +18,7 @@ _turnOff = ["CameraOff", "Turn Cam Off", "", {
 
 player addEventHandler ["GetInMan", {
 
-	_cameraRunningParams = missionNamespace getVariable ["GRAD_pilotCam_cameraRunningParams", []];
+	private _cameraRunningParams = missionNamespace getVariable ["GRAD_pilotCam_cameraRunningParams", []];
 
 	if (count _cameraRunningParams > 0) then {
 		_cameraRunningParams params ["_camObj", "_relPos", "_area", "_progressBar", "_pipcamObject", "_pipcamVehicle"];
@@ -33,7 +35,7 @@ player addEventHandler ["GetInMan", {
 
 player addEventHandler ["GetOutMan", {
 
-	_cameraRunningParams = missionNamespace getVariable ["GRAD_pilotCam_cameraRunningParams", []];
+	private _cameraRunningParams = missionNamespace getVariable ["GRAD_pilotCam_cameraRunningParams", []];
 
 	if (count _cameraRunningParams > 0) then {
 		_cameraRunningParams params ["_camObj", "_relPos", "_area", "_progressBar", "_pipcamObject", "_pipcamVehicle"];
