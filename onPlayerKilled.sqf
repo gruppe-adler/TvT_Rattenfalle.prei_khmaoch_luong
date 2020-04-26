@@ -9,6 +9,7 @@ if (_player getVariable ["GRAD_simpleWaveRespawn_respawning", false]) exitWith {
 
 // remove radio to prevent taking an enemys radio
 // todo: does this work actually?
+/*
 private _items = items _player;
 {
 	_isHandheld = _x isKindOf ["ItemRadio", configFile >> "CfgWeapons"];
@@ -18,6 +19,7 @@ private _items = items _player;
 		_player unlinkItem typeOf _x;
 	};
 } forEach _items;
+*/
 
 // DEATH CAM
 GRAD_DEATHCAM_RUNNING = true;
@@ -42,12 +44,12 @@ if (player getVariable ["GRAD_pilotTracking_isPilot",false]) then {
 // disable respawn if max respawns reached
 if (player getVariable ["GRAD_simpleWaveRespawn_respawnCount", 0] > GRAD_SIMPLEWAVERESPAWN_COUNT_MAX) exitWith {
 		player setVariable ["GRAD_pilotTracking_isWaitingForRespawn", false, true];
-		[[0,1,2],[]] call ace_spectator_fnc_updateCameraModes; // allow free cam
+		// [[0,1,2],[]] call ace_spectator_fnc_updateCameraModes; // allow free cam
 		[player, true] call TFAR_fnc_forceSpectator; // set to real spec channel
 		60 call TFAR_fnc_setVoiceVolume; // just to be sure voice is allowed
-		[[west,east,independent,civilian], []] call ace_spectator_fnc_updateSides; // allow all sides
+		// [[west,east,independent,civilian], []] call ace_spectator_fnc_updateSides; // allow all sides
 		
-		private _hintMsg = "You ended your last life and have free spectator now.";
+		private _hintMsg = "You ended your last life.";
 		[_hintMsg] call EFUNC(common,displayTextStructured);
 		[true] call ace_spectator_fnc_setSpectator;
 };
