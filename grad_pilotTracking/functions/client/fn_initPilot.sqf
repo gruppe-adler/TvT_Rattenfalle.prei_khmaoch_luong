@@ -10,6 +10,7 @@ _pilot setCaptive true; // to allow entering vehicles
 
 [_pilot] call grad_pilotTracking_fnc_pilotLoop;
 
+/*
 [{
 	player getVariable ["GRAD_loadout_applicationCount",0] > 0
 }, {
@@ -21,9 +22,11 @@ _pilot setCaptive true; // to allow entering vehicles
 	}, 3] call CBA_fnc_waitAndExecute;
 
 }] call CBA_fnc_waitUntilAndExecute;
+*/
 
 
 // exchange flares of pilot for yellow ones because reasons
+/*
 _pilot addEventHandler ["Fired",
 {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
@@ -49,7 +52,7 @@ _pilot addEventHandler ["Fired",
 		
 	};
 }];
-
+*/
 
 // eventhandler to catch healing
 _pilot addEventHandler ["GetInMan", {

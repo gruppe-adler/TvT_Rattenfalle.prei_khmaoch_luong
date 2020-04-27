@@ -27,8 +27,7 @@ class UsDownedPilot {
                 LIST_1("ACE_SpraypaintYellow")
         };
         addItemsToVest[] = {
-                LIST_4("ACE_Chemlight_HiYellow"),
-                LIST_1("6Rnd_GreenSignal_F")
+                LIST_4("ACE_Chemlight_HiYellow")
         };
     };
 };

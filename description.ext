@@ -56,6 +56,20 @@ class Loadouts {
     };
 };
 
+class GRAD_makeFire {
+    treeRadius = 40;                                
+    buildTime = 30;                                 
+    upgradeTime = 30;                               
+    addLeavesTime = 10;                             
+    burntimeSmall = 180;                            
+    burntimeBig = 300;                              
+    burntimeLeaves = 120;                            
+    canBuildDefault = 1;                            
+
+    playerDist = 2;                                 
+    classSmall = "FirePlace_burning_F";             
+    classBig = "Campfire_burning_F";                             
+};
 
 class GRAD_Replay {
     precision = 5; // every 5s a snapshot
